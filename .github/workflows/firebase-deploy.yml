@@ -37,8 +37,4 @@ jobs:
           service_account: github-action-1248138855@blumacawtech-launchpad.iam.gserviceaccount.com
 
       - name: Deploy to Firebase Hosting
-        uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
-          repoToken: ${{ secrets.GITHUB_TOKEN }}
-          channelId: live
-          projectId: blumacawtech-launchpad
+        run: npx firebase-tools deploy --only hosting --project blumacawtech-launchpad
