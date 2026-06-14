@@ -1,4 +1,3 @@
-import AnnouncementBar from "@/components/AnnouncementBar";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import LogoBar from "@/components/LogoBar";
@@ -38,8 +37,7 @@ const Index = () => {
           "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "8" }
         }}
       />
-      <AnnouncementBar />
-      <Header />
+      <Header showAnnouncement />
       <main>
         <Hero />
         <LogoBar />

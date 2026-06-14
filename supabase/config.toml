@@ -1,0 +1,4 @@
+project_id = "gfukrjbewysjuwnrpkvq"
+
+[functions.send-affiliate-application]
+verify_jwt = false

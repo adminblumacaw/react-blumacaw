@@ -19,6 +19,24 @@ import imgMagicPass from "@/assets/blog/wholesale-apps/08-magicpass.webp";
 import imgWlm from "@/assets/blog/wholesale-apps/09-wlm.webp";
 import imgSimplified from "@/assets/blog/wholesale-apps/10-simplified.webp";
 import imgBss from "@/assets/blog/wholesale-apps/11-bss.webp";
+import regBanner from "@/assets/blog/registration-form/banner.webp";
+import regCycle from "@/assets/blog/registration-form/cycle.webp";
+import regMistakes from "@/assets/blog/registration-form/mistakes.webp";
+import regShopifyForms from "@/assets/blog/registration-form/shopify-forms.webp";
+import regBmtListing from "@/assets/blog/registration-form/bmt-listing.webp";
+import gaBanner from "@/assets/blog/gorilla-alternatives/banner.webp";
+import ga01 from "@/assets/blog/gorilla-alternatives/01.webp";
+import ga02 from "@/assets/blog/gorilla-alternatives/02.webp";
+import ga03 from "@/assets/blog/gorilla-alternatives/03.webp";
+import ga04 from "@/assets/blog/gorilla-alternatives/04.webp";
+import ga05 from "@/assets/blog/gorilla-alternatives/05.webp";
+import ga06 from "@/assets/blog/gorilla-alternatives/06.webp";
+import ga07 from "@/assets/blog/gorilla-alternatives/07.webp";
+import ga08 from "@/assets/blog/gorilla-alternatives/08.webp";
+import ga09 from "@/assets/blog/gorilla-alternatives/09.webp";
+import ga10 from "@/assets/blog/gorilla-alternatives/10.webp";
+import ga11 from "@/assets/blog/gorilla-alternatives/11.webp";
+
 
 interface BlogPostData {
   category: string;
@@ -1443,6 +1461,757 @@ const posts: Record<string, BlogPostData> = {
         <h2>Conclusion</h2>
         <p>Selling wholesale on Shopify has never been easier thanks to native B2B features and a thriving app ecosystem. Start by outlining what your buyers truly need - tiered pricing, net terms, hidden catalogs, quoting or quick ordering - and then pick the app that solves those problems with the least complexity.</p>
         <p>Apps like <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline">BMT B2B Wholesale Pricing</a> and Wholesale, All in One provide a balanced toolkit, while SparkLayer and Wholesale Gorilla cater to more demanding operations. With the right app in place, you can scale B2B sales without sacrificing your retail experience.</p>
+      </>
+    ),
+  },
+  "shopify-wholesale-registration-form-approve-b2b-customers": {
+    category: "Guide",
+    title: "How to Create a Shopify Wholesale Registration Form and Approve B2B Customers",
+    date: "May 20, 2026",
+    isoDate: "2026-05-20",
+    readTime: "13 min read",
+    metaDescription: "Create a Shopify wholesale registration form, approve B2B buyers, tag customers, and hide prices before approval.",
+    keywords: ["shopify wholesale registration form", "approve b2b customers shopify", "shopify b2b onboarding", "wholesale signup form shopify", "shopify forms wholesale", "BMT B2B Wholesale Pricing", "shopify wholesale app", "b2b approval workflow shopify", "company account request shopify"],
+    faq: [
+      { question: "Can I create a Shopify wholesale registration form without Shopify Plus?", answer: "Yes. You can use Shopify Forms to collect wholesale applications, and you can also use a wholesale app like BMT B2B Wholesale Pricing to create registration forms and manage B2B approval, pricing, and access control. Shopify's native B2B features and limits vary by plan, so check your Shopify plan before choosing the native method." },
+      { question: "What fields should I add to a wholesale registration form?", answer: "Add business name, contact name, email, phone number, website, business address, tax ID or resale certificate, business type, expected monthly order volume, and product interest. Keep the form focused on information you actually need for approval." },
+      { question: "Can I approve B2B customers before they see wholesale prices?", answer: "Yes. Shopify's company account request flow creates company records for review, and by default those companies cannot access B2B pricing until approved. Apps like BMT can also help hide prices and manage access for approved buyers." },
+      { question: "What is the best URL for a Shopify wholesale application page?", answer: "Use a simple URL like /pages/wholesale-application, /pages/wholesale-signup, or /pages/b2b-registration. I prefer /pages/wholesale-application because it is clear and matches how buyers search." },
+      { question: "Should I use Shopify Forms or a wholesale app?", answer: "Use Shopify Forms if you only need a native company account request form. Use a wholesale app like BMT if you need registration forms, approval workflow, auto-tagging, hidden prices, customer-specific pricing, order limits, quick order pages, and payment terms in one setup." }
+    ],
+    content: (
+      <>
+        <img src={regBanner} alt="How to Create a Shopify Wholesale Registration Form and Approve B2B Customers" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" width={1280} height={720} />
+
+        <p><strong>Quick answer:</strong> You can create a Shopify wholesale registration form in two ways.</p>
+        <p>The first way is to use Shopify's native B2B company account request flow with the Shopify Forms app. This works well if you want buyers to submit a company request, then review and approve them inside Shopify.</p>
+        <p>The second way is to use a Shopify wholesale app like <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline">BMT B2B Wholesale Pricing</a>. This is better if you want the registration form, customer approval, auto-tagging, wholesale pricing, hidden prices, order limits, and payment terms to work together in one setup.</p>
+        <p>In simple terms:</p>
+
+        <div className="my-6 overflow-x-auto">
+          <table className="w-full text-sm border border-border/60 rounded-lg overflow-hidden">
+            <thead className="bg-muted/50">
+              <tr>
+                <th className="text-left p-3 font-semibold text-foreground border-b border-border/60">Method</th>
+                <th className="text-left p-3 font-semibold text-foreground border-b border-border/60">Best for</th>
+                <th className="text-left p-3 font-semibold text-foreground border-b border-border/60">What it helps you do</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border/40">
+                <td className="p-3 text-muted-foreground align-top">Shopify native Forms + B2B</td>
+                <td className="p-3 text-muted-foreground align-top">Stores using Shopify's native B2B company account flow</td>
+                <td className="p-3 text-muted-foreground align-top">Collect company account requests, create company records, review and approve buyers</td>
+              </tr>
+              <tr>
+                <td className="p-3 text-muted-foreground align-top">BMT B2B Wholesale Pricing app</td>
+                <td className="p-3 text-muted-foreground align-top">Stores that want registration, approval, pricing, and access control in one place</td>
+                <td className="p-3 text-muted-foreground align-top">Create wholesale forms, approve buyers, auto-tag customers, hide prices, apply B2B pricing, set limits and terms</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>If you only need a basic B2B application form, Shopify's native route may be enough. If you want to control who sees wholesale prices and then apply customer-specific pricing after approval, an app like BMT is usually the more practical setup.</p>
+
+        <h2>Why a wholesale registration form matters on Shopify</h2>
+        <p>A Shopify wholesale registration form lets retailers, distributors, dealers, resellers, and other B2B buyers apply for access before they can see private wholesale pricing.</p>
+        <p>That matters because wholesale pricing should not be visible to every retail shopper.</p>
+        <p>If you show discounted B2B pricing publicly, you can create three problems fast:</p>
+        <ul>
+          <li>You weaken your retail margins.</li>
+          <li>You confuse regular customers who do not qualify for wholesale pricing.</li>
+          <li>You expose private pricing, payment terms, and product access to people who are not serious business buyers.</li>
+        </ul>
+        <p>A registration form fixes that. It gives buyers a clear way to apply, and it gives you a simple approval process before you unlock wholesale pricing.</p>
+        <p>Shopify's own B2B documentation confirms that company account requests can be used to let new B2B customers request access, and when someone submits the form, Shopify can automatically create a company, company location, and customer record for review. (Shopify Help Center)</p>
+
+        <h2>What to know before creating a Shopify wholesale registration form</h2>
+        <p>Before you build the form, decide what the form is supposed to do.</p>
+        <p>Most merchants think, "I need a form." But the real workflow is bigger than that. You need to answer five questions first.</p>
+
+        <img src={regCycle} alt="Shopify wholesale registration cycle infographic" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" width={1280} height={720} />
+
+        <h3>Who should be allowed to apply?</h3>
+        <p>Be specific. Your form should clearly say who it is for.</p>
+        <p>For example:</p>
+        <ul>
+          <li>Retail stores</li>
+          <li>Resellers</li>
+          <li>Distributors</li>
+          <li>Interior designers</li>
+          <li>Salons or spas</li>
+          <li>Dealers</li>
+          <li>Stockists</li>
+          <li>Corporate buyers</li>
+        </ul>
+        <p>Wholesale buyers usually want to know if they qualify before they spend time filling out a form. A short line at the top of the page helps.</p>
+        <p>Example:</p>
+        <blockquote className="border-l-4 border-primary/40 pl-4 italic my-4 text-muted-foreground">Apply for a wholesale account if you are a retailer, reseller, distributor, or approved business buyer interested in bulk pricing.</blockquote>
+
+        <h3>What information do you need to approve them?</h3>
+        <p>A good wholesale registration form should collect enough information to qualify the buyer, but not so much that serious buyers abandon the form.</p>
+        <p>For US-focused Shopify stores, I would usually collect:</p>
+        <ul>
+          <li>Business name</li>
+          <li>Contact person name</li>
+          <li>Email address</li>
+          <li>Phone number</li>
+          <li>Website or social profile</li>
+          <li>Business address</li>
+          <li>Country and state</li>
+          <li>EIN, resale certificate, or tax ID</li>
+          <li>Type of business</li>
+          <li>Estimated monthly order volume</li>
+          <li>Products or collections they are interested in</li>
+          <li>Message or notes</li>
+        </ul>
+        <p>If you sell regulated products, region-specific goods, or products with tax exemptions, you may need extra fields. Keep those fields relevant.</p>
+
+        <h3>What happens after they apply?</h3>
+        <p>Do not leave buyers guessing.</p>
+        <p>Your form page should explain:</p>
+        <ul>
+          <li>How long approval usually takes</li>
+          <li>Whether pricing is hidden before approval</li>
+          <li>How approved buyers will get access</li>
+          <li>Who they should contact if they have questions</li>
+        </ul>
+        <p>Example:</p>
+        <blockquote className="border-l-4 border-primary/40 pl-4 italic my-4 text-muted-foreground">We review wholesale applications within 1 to 2 business days. Approved buyers will receive login instructions by email. Wholesale pricing is only visible after approval.</blockquote>
+        <p>This simple line reduces support questions.</p>
+
+        <h3>How will you approve or reject buyers?</h3>
+        <p>You need a review process.</p>
+        <p>For example:</p>
+        <ul>
+          <li>New form submission comes in.</li>
+          <li>The buyer gets tagged as <code>b2b-pending</code>.</li>
+          <li>You review their business information.</li>
+          <li>If approved, you add <code>b2b-approved</code>.</li>
+          <li>If rejected, you send a polite email or delete the request.</li>
+        </ul>
+        <p>The exact process depends on whether you use Shopify's native B2B setup or an app like BMT.</p>
+
+        <h3>What should approved buyers see?</h3>
+        <p>Approval should trigger the right buying experience.</p>
+        <p>That may include:</p>
+        <ul>
+          <li>Wholesale pricing</li>
+          <li>Customer-specific pricing</li>
+          <li>Hidden product collections</li>
+          <li>Bulk order page</li>
+          <li>Minimum or maximum order limits</li>
+          <li>Net payment terms</li>
+          <li>Custom shipping terms</li>
+        </ul>
+        <p>The form is only the first step. The real goal is to route approved buyers into the correct B2B buying flow.</p>
+
+        <h2>Method 1: Create a wholesale registration form with Shopify's native tools</h2>
+        <p>Shopify's native method uses Shopify Forms and company account requests.</p>
+        <p>This is the cleanest route if you already use Shopify's native B2B features and want buyers to request access as companies.</p>
+
+        <h3>What you need before starting</h3>
+        <p>Before you use Shopify's native method, you need:</p>
+        <ul>
+          <li>Shopify Forms app installed</li>
+          <li>A supported Shopify plan with the B2B features you need</li>
+          <li>Customer accounts configured for your B2B flow</li>
+          <li>A decision between popup form and inline form</li>
+          <li>A list of required company and customer fields</li>
+          <li>A review process for company account requests</li>
+        </ul>
+        <p>Shopify says you need to install the Shopify Forms app before setting up a company account request form. Shopify also notes that you can create either a popup or inline form. Inline forms are usually better for longer forms or dedicated signup pages, which is what most wholesale applications need. (Shopify Help Center)</p>
+
+        <h3>Step 1: Install Shopify Forms</h3>
+        <img src={regShopifyForms} alt="Shopify Forms app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" width={1280} height={720} />
+        <p>Start by installing the Shopify Forms app.</p>
+        <p>Then go to:</p>
+        <ul>
+          <li>Shopify admin → Apps → Forms</li>
+          <li>Click Create form.</li>
+        </ul>
+        <p>Choose either:</p>
+        <ul>
+          <li>Popup form</li>
+          <li>Inline form</li>
+        </ul>
+        <p>For wholesale registration, I recommend an inline form on a dedicated page.</p>
+        <p>Use a page like:</p>
+        <ul>
+          <li><code>/pages/wholesale-application</code></li>
+          <li>or <code>/pages/b2b-registration</code></li>
+        </ul>
+        <p>A popup can work for short email capture forms, but wholesale applications usually need more details. A dedicated page feels more serious and gives you room to explain the approval process.</p>
+
+        <h3>Step 2: Create a company account request form</h3>
+        <p>In Shopify Forms, create your form and name it something clear.</p>
+        <p>Use a name like:</p>
+        <ul>
+          <li>Wholesale Account Request</li>
+          <li>B2B Registration Form</li>
+          <li>Dealer Application</li>
+          <li>Reseller Application</li>
+        </ul>
+        <p>Then add the Company and customer field section.</p>
+        <p>This part matters.</p>
+        <p>Shopify says company name and email address are required for automatic company record creation. When the form is submitted, Shopify can create a company, company location, and customer record in your admin. (Shopify Help Center)</p>
+        <p>That is the main advantage of the native route. You are not just collecting a random form response. You are creating B2B records that can be reviewed inside Shopify.</p>
+
+        <h3>Step 3: Add qualification fields</h3>
+        <p>After adding the required company and customer fields, add the fields you need to qualify wholesale buyers.</p>
+        <p>I would include:</p>
+        <ul>
+          <li>Business website</li>
+          <li>Phone number</li>
+          <li>Business type</li>
+          <li>EIN or resale certificate number</li>
+          <li>State</li>
+          <li>Expected monthly order volume</li>
+          <li>Products they want to buy wholesale</li>
+          <li>How they found you</li>
+          <li>Message or notes</li>
+        </ul>
+        <p>Shopify lets you add custom fields to the form. Those fields can be stored as local fields, customer metafields, or company metafields. If you want the submitted information to be visible on the company or customer profile later, store the field as a company or customer metafield instead of leaving it only as a local field.</p>
+        <p>That is a small detail, but it matters.</p>
+        <p>If your team will review wholesale applications from the company profile, metafields make the process much easier.</p>
+
+        <h3>Step 4: Add a clear approval message</h3>
+        <p>Your form should not end with a generic "Thanks for submitting."</p>
+        <p>Use the success message to explain the next step.</p>
+        <p>Example:</p>
+        <blockquote className="border-l-4 border-primary/40 pl-4 italic my-4 text-muted-foreground">Thanks for applying for a wholesale account. We review applications within 1 to 2 business days. If approved, you will receive an email with login instructions and access to wholesale pricing.</blockquote>
+        <p>This keeps expectations clear.</p>
+
+        <h3>Step 5: Add the form to your Shopify store</h3>
+        <p>Add the form to a dedicated wholesale page.</p>
+        <p>Good page titles include:</p>
+        <ul>
+          <li>Wholesale Application</li>
+          <li>Apply for Wholesale</li>
+          <li>B2B Registration</li>
+          <li>Dealer Application</li>
+          <li>Become a Stockist</li>
+        </ul>
+        <p>Add the page to your footer, wholesale landing page, or B2B navigation.</p>
+        <p>If you use a dedicated page, add a few lines above the form:</p>
+        <ul>
+          <li>Who can apply</li>
+          <li>What documents they may need</li>
+          <li>How approval works</li>
+          <li>How long review takes</li>
+          <li>Whether pricing is hidden until approval</li>
+        </ul>
+        <p>This turns the page from a plain form into a useful onboarding page.</p>
+
+        <h3>Step 6: Review company account requests</h3>
+        <p>Once a buyer submits the form, Shopify creates a company with an associated customer and company location.</p>
+        <p>By default, companies created through the form cannot place orders or access B2B pricing until you approve them. You can review requests in the Shopify admin under Customers → Companies, then open the company and manage permissions. Shopify also gives you the option to notify the customer when they can start placing B2B orders.</p>
+        <p>This is the core native approval flow.</p>
+        <ul>
+          <li>The buyer applies.</li>
+          <li>You review.</li>
+          <li>You approve or reject.</li>
+        </ul>
+        <p>Approved buyers can then access the correct B2B buying experience.</p>
+
+        <h3>Important limitations of Shopify's native method</h3>
+        <p>Shopify's native route is useful, but it is not perfect for every store.</p>
+
+        <h4 className="text-base font-semibold text-foreground mt-6 mb-2">You cannot use company account requests on a fully gated B2B store</h4>
+        <p>Shopify says company account requests cannot be used when a dedicated store is gated and available only to B2B customers. The reason is simple: non-logged-in B2B customers cannot access the form.</p>
+        <p>So if your entire store is locked behind login, this native form flow may not work as expected.</p>
+        <p>A better setup is to keep a public-facing wholesale application page available while hiding sensitive information like pricing, products, or buy buttons.</p>
+
+        <h4 className="text-base font-semibold text-foreground mt-6 mb-2">Hiding prices may require extra setup</h4>
+        <p>Shopify says you can hide products, prices, buy buttons, and other information from non-logged-in customers using Liquid code or the theme editor, depending on your theme. Shopify also recommends duplicating your theme before editing it.</p>
+        <p>That means native forms solve the application part, but they may not fully solve price hiding or access control unless your theme and plan support the setup you want.</p>
+
+        <h4 className="text-base font-semibold text-foreground mt-6 mb-2">Some B2B setups still need apps</h4>
+        <p>If your goal is only company account requests, Shopify Forms can work well.</p>
+        <p>But if you also need customer-specific pricing, tiered pricing, hidden prices, order limits, quick order forms, and payment terms in one workflow, an app-based setup may be easier.</p>
+
+        <h2>Method 2: Create a wholesale registration form with BMT B2B Wholesale Pricing</h2>
+        <p>An app-based setup makes sense when you do not just need a form.</p>
+        <img src={regBmtListing} alt="BMT B2B Wholesale Pricing app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" width={1280} height={720} />
+        <p>You need the full wholesale flow.</p>
+        <p>That means:</p>
+        <ul>
+          <li>A buyer applies.</li>
+          <li>The buyer is tagged or approved.</li>
+          <li>Unapproved visitors cannot see private pricing.</li>
+          <li>Approved buyers see the right wholesale prices.</li>
+          <li>You can apply order limits, payment terms, and quick ordering.</li>
+        </ul>
+        <p>This is where <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline">BMT B2B Wholesale Pricing</a> fits.</p>
+
+        <div className="my-8 rounded-xl overflow-hidden shadow-lg">
+          <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="block">
+            <img src={wholesaleAppsCta} alt="Install BMT B2B Wholesale Pricing on Shopify" className="w-full hover:opacity-95 transition-opacity" loading="lazy" />
+          </a>
+        </div>
+
+        <p>BMT's Shopify App Store listing says the app supports custom wholesale registration forms with approval workflow, tiered pricing, customer-specific discounts, multi-currency support, smart limits, Net payment terms, shipping terms, password-protected pages, B2B login access, and quick order pages.</p>
+
+
+
+
+        <h3>Step 1: Open BMT inside your Shopify admin</h3>
+        <p>After installing BMT B2B Wholesale Pricing, open the app from your Shopify admin. From there, go to the registration form area inside the app. Since app interfaces change over time, the exact label may vary, but the goal is simple: create a new wholesale registration form for B2B buyers.</p>
+
+        <h3>Step 2: Create your wholesale registration form</h3>
+        <p>Create a form that asks for the information you need to review the buyer. Use fields like:</p>
+        <ul>
+          <li>Business name</li>
+          <li>Contact name</li>
+          <li>Email address</li>
+          <li>Phone number</li>
+          <li>Business website</li>
+          <li>Business address</li>
+          <li>Tax ID, EIN, or resale certificate</li>
+          <li>Buyer type</li>
+          <li>Expected monthly order volume</li>
+          <li>Product interest</li>
+          <li>Notes or message</li>
+        </ul>
+        <p>Do not make every field required. Only require the fields you truly need to approve or reject the buyer. For example, business name, email, location, and resale information may be required. A longer "notes" field can stay optional.</p>
+
+        <h3>Step 3: Add your pending and approved customer tags</h3>
+        <p>Tags make your approval process easier. Use simple tags like:</p>
+        <ul>
+          <li><code>b2b-pending</code></li>
+          <li><code>b2b-approved</code></li>
+          <li><code>wholesale-tier-1</code></li>
+          <li><code>wholesale-tier-2</code></li>
+          <li><code>distributor-us</code></li>
+          <li><code>reseller-approved</code></li>
+        </ul>
+        <p>BMT's app supports registration forms with auto-tagging and manual or tag-based customer approval. A clean tagging structure helps you later assign different prices, discounts, or access rules.</p>
+
+        <h3>Step 4: Publish the form on a dedicated wholesale page</h3>
+        <p>Create a dedicated Shopify page for the form. Use a URL like:</p>
+        <ul>
+          <li><code>/pages/wholesale-application</code></li>
+        </ul>
+        <p>Add a short introduction above the form. Example:</p>
+        <blockquote className="border-l-4 border-primary/40 pl-4 italic my-4 text-muted-foreground">Interested in wholesale pricing? Fill out the form below to apply for a B2B account. We review applications within 1 to 2 business days. Approved buyers will receive access to wholesale pricing, order limits, and available payment terms.</blockquote>
+        <p>Then embed or publish the BMT registration form on that page.</p>
+
+        <h3>Step 5: Review new B2B applications</h3>
+        <p>When a buyer submits the form, review the details inside your BMT or Shopify customer workflow. Check:</p>
+        <ul>
+          <li>Is this a real business?</li>
+          <li>Does the buyer fit your wholesale program?</li>
+          <li>Did they provide enough information?</li>
+          <li>Are they in a region you serve?</li>
+          <li>Do they meet your order volume expectations?</li>
+        </ul>
+        <p>If yes, approve the buyer and assign the correct customer tag or wholesale tier. If not, send a polite rejection or request more information.</p>
+
+        <h3>Step 6: Hide prices from unapproved visitors</h3>
+        <p>This is one of the biggest reasons to use a wholesale app. BMT supports hiding prices and B2B login access for products, collections, or the store. That means you can show regular retail shoppers your normal store while keeping wholesale pricing private.</p>
+        <p>For example, unapproved visitors can see:</p>
+        <ul>
+          <li>"Login to view wholesale pricing"</li>
+          <li>"Apply for a wholesale account"</li>
+          <li>"Wholesale pricing available after approval"</li>
+        </ul>
+        <p>This is better than showing discounted prices publicly.</p>
+
+        <h3>Step 7: Set wholesale pricing rules</h3>
+        <p>Once the buyer is approved, assign pricing based on their customer tag, group, or rule. You can create rules such as:</p>
+        <ul>
+          <li>10 percent off for approved wholesale buyers</li>
+          <li>20 percent off for distributors</li>
+          <li>Fixed product pricing for specific customers</li>
+          <li>Bulk discounts by quantity</li>
+          <li>Customer-specific discounts</li>
+        </ul>
+        <p>BMT's App Store listing mentions tiered pricing, customer-specific discounts, volume discounts, bulk discounts, wholesale pricing, dynamic pricing, and custom discounts.</p>
+        <p>Keep your pricing structure simple at first. Do not create five buyer tiers unless you actually need five buyer tiers. Start with one or two:</p>
+        <ul>
+          <li>Wholesale</li>
+          <li>Distributor</li>
+        </ul>
+        <p>You can always add more once your wholesale channel grows.</p>
+
+        <h3>Step 8: Add order limits and payment terms</h3>
+        <p>Wholesale buyers often need different buying rules than retail customers. With BMT, you can set minimum and maximum order limits by quantity or amount. The app listing also mentions quick order pages and Net payment terms on its plans.</p>
+        <p>Use order limits to protect your margins. For example:</p>
+        <ul>
+          <li>Minimum order amount: $250</li>
+          <li>Minimum quantity: 12 units</li>
+          <li>Maximum quantity: based on available stock</li>
+          <li>Net payment terms: Net 15, Net 30, or Net 60 for approved buyers</li>
+        </ul>
+        <p>Do not offer Net terms to every buyer immediately. Start with trusted accounts or repeat buyers.</p>
+
+        <h3>Step 9: Test the complete buyer flow</h3>
+        <p>Before you publish the form publicly, test everything. Create a test buyer account and walk through the full process:</p>
+        <ul>
+          <li>Submit the wholesale registration form.</li>
+          <li>Confirm the pending tag is applied.</li>
+          <li>Approve the buyer.</li>
+          <li>Confirm the approved tag is applied.</li>
+          <li>Log in as the buyer.</li>
+          <li>Check that wholesale pricing appears.</li>
+          <li>Check that hidden prices stay hidden for unapproved users.</li>
+          <li>Add products to cart.</li>
+          <li>Test order limits.</li>
+          <li>Test checkout.</li>
+          <li>Check the approval email.</li>
+        </ul>
+        <p>This is where many stores break. The form works, but the pricing rule does not. The tag applies, but the buyer still cannot see products. The buyer gets approved, but never receives login instructions. Test it like a real buyer before you send traffic to the page.</p>
+
+        <h2>When BMT is the better option</h2>
+        <p>I would use BMT instead of only Shopify Forms if you want to:</p>
+        <ul>
+          <li>Approve and manage B2B buyers with registration forms and auto-tagging</li>
+          <li>Hide prices from visitors who are not approved</li>
+          <li>Lock products, collections, pages, or the full store</li>
+          <li>Create customer-specific wholesale pricing</li>
+          <li>Set tiered or bulk discounts</li>
+          <li>Set minimum or maximum order limits</li>
+          <li>Offer Net 15, Net 30, or Net 60 payment terms</li>
+          <li>Give wholesale buyers a quick order page</li>
+          <li>Run retail and wholesale from the same Shopify store</li>
+        </ul>
+        <p>The biggest difference is this:</p>
+        <ul>
+          <li>Shopify Forms helps with the application flow.</li>
+          <li>BMT helps connect the application flow to pricing, visibility, and wholesale buying rules.</li>
+        </ul>
+
+        <h3>Video walkthrough: how to create a Shopify wholesale registration form using BMT</h3>
+        <div className="my-6 rounded-xl overflow-hidden border border-border/50 bg-black">
+          <video controls preload="metadata" className="w-full h-auto">
+            <source src="https://storage.googleapis.com/bmt-videos/wholesale_registration.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+
+        <h2>What to include on your wholesale registration page</h2>
+        <p>Your wholesale page should not be just a form dropped onto a blank page. It should answer the questions buyers already have.</p>
+
+        <h3>Use a clear headline</h3>
+        <p>Use one of these:</p>
+        <ul>
+          <li>Apply for a Wholesale Account</li>
+          <li>Become a Wholesale Partner</li>
+          <li>B2B Account Registration</li>
+          <li>Dealer Application</li>
+          <li>Reseller Application</li>
+        </ul>
+        <p>For SEO, "Apply for a Wholesale Account" or "Wholesale Registration Form" is usually the clearest.</p>
+
+        <h3>Explain who the program is for</h3>
+        <p>Example:</p>
+        <blockquote className="border-l-4 border-primary/40 pl-4 italic my-4 text-muted-foreground">Our wholesale program is for retailers, resellers, distributors, and approved business buyers who want access to bulk pricing and B2B order terms.</blockquote>
+        <p>This helps filter out poor-fit applicants.</p>
+
+        <h3>Tell buyers what they get after approval</h3>
+        <p>Mention the benefits:</p>
+        <ul>
+          <li>Wholesale pricing</li>
+          <li>Bulk discounts</li>
+          <li>Quick ordering</li>
+          <li>Private catalog access</li>
+          <li>Order limits</li>
+          <li>Net payment terms, if available</li>
+          <li>Custom shipping terms, if available</li>
+        </ul>
+        <p>Keep this honest. Only mention what you actually offer.</p>
+
+        <h3>Tell buyers what they need before applying</h3>
+        <p>Example:</p>
+        <blockquote className="border-l-4 border-primary/40 pl-4 italic my-4 text-muted-foreground">Before applying, please have your business name, contact information, website, and resale certificate or tax ID ready.</blockquote>
+        <p>This reduces incomplete submissions.</p>
+
+        <h3>Add a pricing visibility note</h3>
+        <p>Example:</p>
+        <blockquote className="border-l-4 border-primary/40 pl-4 italic my-4 text-muted-foreground">Wholesale pricing is visible only after your account is approved.</blockquote>
+        <p>This protects you and sets expectations.</p>
+
+        <h3>Add an approval timeline</h3>
+        <p>Example:</p>
+        <blockquote className="border-l-4 border-primary/40 pl-4 italic my-4 text-muted-foreground">We review most applications within 1 to 2 business days.</blockquote>
+        <p>If your team takes longer, say that. Do not promise same-day approval unless you can actually do it.</p>
+
+        <h3>Add a login link for approved buyers</h3>
+        <p>Near the form, add: <em>Already approved? Log in here.</em></p>
+        <p>This helps returning buyers and reduces support messages.</p>
+
+        <h2>Common mistakes to avoid</h2>
+        <img src={regMistakes} alt="Common mistakes to avoid with Shopify Registration forms" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" width={1280} height={720} />
+
+        <h2>Shopify wholesale registration form checklist</h2>
+        <p>Use this checklist before publishing your form.</p>
+        <ul>
+          <li>Form page created</li>
+          <li>Clear headline added</li>
+          <li>Buyer eligibility explained</li>
+          <li>Required fields added</li>
+          <li>Tax ID or resale field added</li>
+          <li>Estimated order volume field added</li>
+          <li>Approval timeline added</li>
+          <li>Pricing visibility note added</li>
+          <li>Pending tag created</li>
+          <li>Approved tag created</li>
+          <li>Customer segment created</li>
+          <li>Wholesale pricing rule assigned</li>
+          <li>Hide-price rule tested</li>
+          <li>Approval email written</li>
+          <li>Rejection or follow-up email written</li>
+          <li>Checkout tested as an approved buyer</li>
+          <li>Checkout tested as an unapproved visitor</li>
+          <li>Mobile layout tested</li>
+          <li>Support contact added</li>
+        </ul>
+
+        <h2>Should you use Shopify Forms or BMT?</h2>
+        <p>Use Shopify Forms if you want a native company account request flow and you are comfortable managing B2B approval inside Shopify.</p>
+        <p>Use <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline">BMT B2B Wholesale Pricing</a> if you want the form to connect directly with your wholesale pricing and access rules.</p>
+        <p>My simple recommendation:</p>
+        <ul>
+          <li>If you only need applications, start with Shopify Forms.</li>
+          <li>If you need applications plus pricing, hidden prices, order limits, quick ordering, and payment terms, use BMT.</li>
+        </ul>
+        <p>For many growing wholesale stores, the app-based route is easier because it keeps the moving parts in one place.</p>
+
+        <h2>Conclusion</h2>
+        <p>A Shopify wholesale registration form is not just a contact form. It is the front door to your B2B sales process.</p>
+        <p>The right setup helps you collect buyer details, review applications, approve serious customers, hide private pricing, and give wholesale buyers the right buying experience after approval.</p>
+        <p>Shopify's native Forms and B2B company account request flow is a good option if you want to keep the process inside Shopify. But if you want registration, approval, auto-tagging, price hiding, customer-specific pricing, order limits, quick order pages, and Net terms in one workflow, <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline">BMT B2B Wholesale Pricing</a> is the stronger option.</p>
+        <p>Start simple. Create the form. Collect the right information. Approve buyers carefully. Test the full flow before launch. That is how you turn wholesale interest into a clean B2B buying experience.</p>
+      </>
+    ),
+  },
+  "wholesale-gorilla-alternatives": {
+    category: "Guide",
+    title: "11 Wholesale Gorilla Alternatives for Shopify B2B Pricing",
+    date: "May 31, 2026",
+    isoDate: "2026-05-31",
+    readTime: "12 min read",
+    metaDescription: "Compare Wholesale Gorilla alternatives for Shopify B2B pricing, wholesale forms, bulk discounts, buyer approval, and price hiding.",
+    keywords: ["wholesale gorilla alternatives", "shopify wholesale apps", "shopify b2b pricing", "wholesale registration form", "hide price shopify", "net terms shopify", "BMT B2B Wholesale Pricing", "sparklayer alternative"],
+    faq: [
+      { question: "What is the best Wholesale Gorilla alternative for Shopify?", answer: "The best Wholesale Gorilla alternative depends on your store. BMT B2B Wholesale Pricing is a strong fit for simple wholesale pricing, buyer approval, hidden prices, order limits, and quick order workflows. SparkLayer is better for advanced B2B portals and sales rep workflows. Wholesale Pricing Discount B2B is a good fit for mature stores that need POS, Shopify Markets, tax controls, and bulk pricing tools." },
+      { question: "Is there a cheaper alternative to Wholesale Gorilla?", answer: "Yes. BMT has a free plan and paid plans starting at $10/month, while Wholesale Gorilla currently starts at $34.95/month. OSCP also has a free plan and paid plans starting at $5/month. Pricing can change, so always check the Shopify App Store before installing." },
+      { question: "Can I run wholesale pricing on Shopify without Wholesale Gorilla?", answer: "Yes. Shopify merchants can use apps like BMT, SparkLayer, Wholesale Pricing Discount B2B, B2B Wholesale Hub, BSS B2B Wholesale Pricing, Sami, OSCP, and Process Wholesale to manage wholesale pricing, registration forms, buyer approval, price hiding, net terms, and order rules." },
+      { question: "Which Wholesale Gorilla alternative lets me hide prices from non-approved buyers?", answer: "BMT supports hide price and B2B login rules for products, collections, and store access. B2B Wholesale Hub supports product locking. Process Wholesale supports locking products/pages and hiding prices from non-wholesale customers." },
+      { question: "Which Wholesale Gorilla alternative supports customer-specific pricing?", answer: "BMT supports customer-specific wholesale pricing. SparkLayer supports customer-specific price lists. Wholesale Pricing Discount B2B supports customer and tag-based wholesale pricing and variant-level custom pricing. BSS also supports customer-specific custom pricing on higher plans." },
+      { question: "Do I need Shopify Plus for wholesale pricing?", answer: "No. Many Shopify wholesale apps let merchants run B2B pricing without Shopify Plus. Apps like BMT, SparkLayer, Wholesale Pricing Discount B2B, B2B Wholesale Hub, BSS, Sami, OSCP, and Process Wholesale can support wholesale pricing on standard Shopify plans, depending on the features you need." }
+    ],
+    content: (
+      <>
+        <img src={gaBanner} alt="11 Wholesale Gorilla Alternatives for Shopify B2B Pricing" className="w-full rounded-lg mb-8 shadow-lg" loading="eager" />
+
+        <p>Wholesale Gorilla is one of the better-known Shopify wholesale apps, but it is not the only option for running B2B pricing on Shopify.</p>
+        <p>Some merchants look for Wholesale Gorilla alternatives because they want a lower starting price, a simpler setup, better buyer approval workflows, customer-specific pricing, price hiding, quick order pages, net terms, or a more modern B2B buying experience.</p>
+        <p>The best alternative depends on what your store actually needs. A small Shopify brand starting wholesale does not need the same setup as a large B2B catalog with sales reps, quotes, multiple price lists, and complex ordering rules.</p>
+        <p>Here are the strongest Wholesale Gorilla alternatives to compare in 2026.</p>
+
+        <h2>Quick comparison of the top 5 Wholesale Gorilla alternatives</h2>
+        <div className="overflow-x-auto my-6 -mx-4 sm:mx-0">
+          <table className="w-full text-sm border border-border/60 rounded-lg overflow-hidden">
+            <thead className="bg-muted/50">
+              <tr>
+                <th className="text-left p-3 font-semibold text-foreground">App</th>
+                <th className="text-left p-3 font-semibold text-foreground">Best for</th>
+                <th className="text-left p-3 font-semibold text-foreground">Key features</th>
+                <th className="text-left p-3 font-semibold text-foreground">Starting price</th>
+              </tr>
+            </thead>
+            <tbody className="text-muted-foreground align-top">
+              <tr className="border-t border-border/50"><td className="p-3 font-medium text-foreground">SparkLayer</td><td className="p-3">More advanced B2B portals and sales rep workflows</td><td className="p-3">B2B price lists, sales rep portal, quoting, registration forms, approval workflows, volume rules, integrations</td><td className="p-3">Free plan available; paid plans start at $49/month</td></tr>
+              <tr className="border-t border-border/50"><td className="p-3 font-medium text-foreground"><a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline">BMT B2B Wholesale Pricing</a></td><td className="p-3">Shopify stores that want simple wholesale pricing, buyer approval, and price hiding in one app</td><td className="p-3">Customer-specific pricing, tiered pricing, registration forms, approval workflow, auto-tagging, hide price, order limits, quick order page, net terms, multi-currency</td><td className="p-3">Free plan; paid plans start at $10/month</td></tr>
+              <tr className="border-t border-border/50"><td className="p-3 font-medium text-foreground">Wholesale Pricing Discount B2B</td><td className="p-3">Stores that want mature B2B pricing with POS and Shopify Markets support</td><td className="p-3">Custom pricing, tiered pricing, signup forms, net terms, shipping rules, VAT/tax controls, multi-currency, POS</td><td className="p-3">Starts at $24.99/month</td></tr>
+              <tr className="border-t border-border/50"><td className="p-3 font-medium text-foreground">B2B Wholesale Hub</td><td className="p-3">Stores that want tag-based wholesale pricing and quick order workflows</td><td className="p-3">Customer group pricing, variant-level custom prices, order minimums, volume discounts, net terms, product locking, POS</td><td className="p-3">Starts at $39/month</td></tr>
+              <tr className="border-t border-border/50"><td className="p-3 font-medium text-foreground">BSS B2B Wholesale Pricing</td><td className="p-3">Growing B2B stores with advanced pricing, tax, MOQ, and form needs</td><td className="p-3">Custom price lists, registration forms, approval workflow, auto-tagging, MOQ, net terms, tax display, POS</td><td className="p-3">Paid plans start at $25/month</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>1. SparkLayer</h2>
+        <img src={ga01} alt="SparkLayer Shopify B2B app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <p><strong>Best for:</strong> Brands that need a more advanced B2B portal, sales rep workflows, quoting, and customer self-service ordering.</p>
+        <p>SparkLayer is one of the strongest alternatives to Wholesale Gorilla for merchants who want a fuller B2B buying experience, not just wholesale discounts. It supports B2B price lists, sales rep ordering, quoting, registration forms with approval workflows, customer-specific pricing, tiers, volume rules, net terms, multi-currency, quick order, and integrations with tools like Xero, QuickBooks Online, Cin7, Katana, Linnworks, and Unleashed.</p>
+        <p>This makes SparkLayer a better fit for brands with serious wholesale operations, larger catalogs, sales teams, or buyers who expect a polished B2B portal.</p>
+        <h3>Key features</h3>
+        <ul>
+          <li>Unlimited B2B price lists on paid plans</li>
+          <li>Sales rep portal</li>
+          <li>Quoting engine</li>
+          <li>Registration forms with approval workflows</li>
+          <li>Customer-specific price lists</li>
+          <li>Volume rules and tiered pricing</li>
+          <li>Net payment terms</li>
+          <li>Quick order</li>
+          <li>Multi-currency</li>
+          <li>Inventory and ERP/accounting integrations</li>
+        </ul>
+        <h3>Pricing</h3>
+        <p>SparkLayer has a free plan. Paid plans start at $49/month, with higher plans at $149/month and $299/month depending on order volume and advanced features.</p>
+        <h3>Pros &amp; limitations</h3>
+        <p>SparkLayer is strong when you want a more complete B2B portal and a better ordering experience for wholesale buyers. It may be more than a small merchant needs if the main requirement is simple wholesale pricing, registration, and price hiding.</p>
+
+        <h2>2. <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline">BMT B2B Wholesale Pricing</a></h2>
+        <img src={ga02} alt="BMT B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <p><strong>Best for:</strong> Shopify merchants who want a simple, cost-conscious way to manage wholesale pricing, buyer approval, price hiding, and B2B order rules inside Shopify.</p>
+        <p>BMT B2B Wholesale Pricing is a strong Wholesale Gorilla alternative for merchants who want core wholesale features without overcomplicating the setup. It supports customer-specific wholesale pricing, tiered pricing, wholesale registration forms, approval workflows, auto-tagging, hidden prices, B2B login access, order limits, quick order pages, net terms, shipping terms, Shopify Markets, and multi-currency wholesale pricing.</p>
+        <p>The biggest reason BMT belongs high on this list is the pricing-to-feature fit. It has a free plan, and the paid plans start at $10/month. That makes it practical for Shopify merchants who are just starting wholesale or moving from a manual B2B process into a proper app-based setup.</p>
+        <h3>Key features</h3>
+        <ul>
+          <li>Customer-specific wholesale pricing</li>
+          <li>Tiered pricing and bulk discounts</li>
+          <li>Wholesale registration forms</li>
+          <li>Manual and tag-based customer approval</li>
+          <li>Auto-tagging for B2B buyers</li>
+          <li>Hide price and B2B login rules</li>
+          <li>Product, collection, and store access control</li>
+          <li>Min/max order limits by quantity or amount</li>
+          <li>CSV/XLSX bulk uploads</li>
+          <li>Shopify Markets and multi-currency support</li>
+          <li>Quick order page</li>
+          <li>Net 15/30/60 payment terms</li>
+          <li>Custom shipping rates</li>
+          <li>Live chat and call support</li>
+        </ul>
+        <h3>Pricing</h3>
+        <p>BMT has a free plan with one active pricing rule, one hide price/B2B login rule, unlimited registration forms, customer approval, and 50 CSV/XLSX bulk uploads monthly. Paid plans start at $10/month. The $30/month Advanced plan includes custom shipping rates, Net 15/30/60 payment terms, payment method controls, and a quick order page.</p>
+        <h3>Pros &amp; limitations</h3>
+        <p>BMT is a good fit if you want wholesale pricing, registration, approval, price hiding, order limits, and quick order workflows in one place. It is also easier to justify for newer wholesale programs because the entry price is lower than many established wholesale apps. BMT is newer than long-established apps like Wholesale Gorilla, SparkLayer, and Wholesale Pricing Discount B2B. If you have complex enterprise B2B workflows, test the setup carefully before switching.</p>
+
+        <h2>3. Wholesale Pricing Discount B2B</h2>
+        <img src={ga03} alt="Wholesale Pricing Discount B2B Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <p><strong>Best for:</strong> Shopify stores that want a mature B2B pricing app with strong pricing controls, POS support, Shopify Markets support, and tax options.</p>
+        <p>Wholesale Pricing Discount B2B is a well-rounded Wholesale Gorilla alternative for stores that sell retail and wholesale from one Shopify store. It supports custom pricing, tiered pricing, quantity breaks, wholesale signup forms, net terms, wholesale shipping rates, VAT control, multi-currency, Shopify Markets, and Shopify POS.</p>
+        <h3>Key features</h3>
+        <ul>
+          <li>Customer and tag-based wholesale pricing</li>
+          <li>Percentage discounts by store or product</li>
+          <li>Variant-level custom pricing</li>
+          <li>Wholesale signup forms</li>
+          <li>Manual and draft orders</li>
+          <li>Net 15/30/60 payment terms</li>
+          <li>Volume discounts and quantity breaks</li>
+          <li>Bulk import/export via CSV</li>
+          <li>Shopify Markets, multi-currency, POS support</li>
+        </ul>
+        <h3>Pricing</h3>
+        <p>Plans start at $24.99/month. Higher plans unlock features like variant-level custom pricing, signup form customization, net terms, manual orders, volume discounts, quantity breaks, and bulk import/export.</p>
+
+        <h2>4. B2B Wholesale Hub</h2>
+        <img src={ga04} alt="B2B Wholesale Hub Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <p><strong>Best for:</strong> Stores that want customer tag-based wholesale pricing, quick order forms, order minimums, and POS compatibility.</p>
+        <p>B2B Wholesale Hub, formerly Wholesale Club, helps merchants offer wholesale pricing to tagged B2B customers while still running retail and wholesale from one Shopify store. It supports percentage discounts, custom prices per customer group, variant-level custom pricing, net terms, volume discounts, quantity breaks, quick order forms, order minimums, product locking, Markets, and POS.</p>
+        <h3>Key features</h3>
+        <ul>
+          <li>Customer group pricing</li>
+          <li>Custom prices per variant</li>
+          <li>Volume discounts and quantity breaks</li>
+          <li>Order minimums</li>
+          <li>Net 15/Net 30 payment terms</li>
+          <li>Quick order form and manual order entry</li>
+          <li>Product locking</li>
+          <li>Shopify Markets and POS support</li>
+        </ul>
+        <h3>Pricing</h3>
+        <p>Plans start at $39/month. Higher plans add custom prices per variant, net terms, volume discounts, order minimums, product visibility/locking, and priority support.</p>
+
+        <h2>5. BSS B2B Wholesale Pricing</h2>
+        <img src={ga05} alt="BSS B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <p><strong>Best for:</strong> Growing B2B stores that need advanced pricing controls, registration forms, approval workflows, tax controls, MOQ, and POS support.</p>
+        <p>BSS B2B Wholesale Pricing is built for stores with more complex B2B needs. It supports custom price lists, tiered discounts, bulk pricing rules, dedicated B2B registration forms, approval workflows, auto-tagging, quantity breaks, minimum quantity, MOQ, order limits, tax-exempt rules, VAT support, net terms, manual orders, multi-currency, and Shopify POS.</p>
+        <h3>Key features</h3>
+        <ul>
+          <li>Custom price lists, tiered discounts, bulk pricing rules</li>
+          <li>B2B registration forms and approval workflow</li>
+          <li>Auto-tagging</li>
+          <li>MOQ and order limits</li>
+          <li>Tax display, VAT and tax-exempt support</li>
+          <li>Net terms, manual orders, multi-currency, POS</li>
+        </ul>
+        <h3>Pricing</h3>
+        <p>BSS has a free development store option. Paid plans start at $25/month, with advanced plans at $50/month and $100/month. Because it has many controls, setup may take more planning than simpler wholesale pricing apps.</p>
+
+        <h2>6. Sami B2B Wholesale Pricing</h2>
+        <img src={ga06} alt="Sami B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <p><strong>Best for:</strong> Merchants who want an all-in-one B2B wholesale app with a usable free plan and affordable paid tiers.</p>
+        <p>B2B Wholesale Pricing Discount by Sami includes wholesale pricing rules, volume discounts, customer-based pricing, variant pricing, B2B login, registration forms, quick order forms, Shopify Markets support, tax display controls, tax exemption, net terms, order limits, MOQs, shipping rules, POS support, and API support depending on plan.</p>
+        <h3>Pricing</h3>
+        <p>There is a free plan. Paid plans start at $24.90/month. The Gold plan is $49.90/month. Compare the free plan carefully if you have a larger product catalog. Some clients have reported wrong prices in the product catalog.</p>
+
+        <h2>7. Wholesale - All In One</h2>
+        <img src={ga07} alt="Wholesale All In One Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <p><strong>Best for:</strong> Merchants who want a traditional wholesale app with customer approval, custom pricing, order limits, and optional add-ons.</p>
+        <p>Wholesale All In One supports discounts, custom pricing, separate prices for customer groups, wholesale signup forms, customer account approval, manual wholesale orders, volume pricing, quantity breaks, minimum/maximum order limits, and wholesale shipping management. It also offers optional add-ons for net terms, quick order forms, bulk import, lock management, login-to-view-price, and MOQ.</p>
+        <h3>Pricing</h3>
+        <p>Plans start at $24/month. Professional is $29/month, and Business is $39/month. Important features may require add-ons, so the listed base price may not reflect the final setup cost.</p>
+
+        <h2>8. OSCP B2B Wholesale Pricing</h2>
+        <img src={ga08} alt="OSCP B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <p><strong>Best for:</strong> Budget-conscious stores that need volume pricing, registration forms, order limits, import/export, and Shopify Markets support.</p>
+        <p>OSCP B2B Wholesale Pricing is a cost-friendly option for Shopify stores that need wholesale pricing rules without a high monthly commitment. It supports volume pricing by customer tag, discounts by product, variant, or collection, B2B registration forms, min/max order limits, Shopify Markets pricing, import/export, quick order form by SKU, manual orders, multi-currency, and Shopify discounts compatibility.</p>
+        <h3>Pricing</h3>
+        <p>OSCP has a free plan. Paid plans start at $5/month, with higher plans at $15/month and $30/month. The interface, support depth, and advanced workflow fit should be tested before using it for a complex wholesale program.</p>
+
+        <h2>9. Wholesale Bear</h2>
+        <img src={ga09} alt="Wholesale Bear Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <p><strong>Best for:</strong> Merchants who mainly need wholesale pricing, bulk discounts, tiered pricing, and net terms in a simple app.</p>
+        <p>Wholesale Bear focuses on wholesale pricing, customer tag-based discounts, net terms, volume discounts, custom B2B price lists, and minimum line item quantity or multiples for tiered pricing. It is a simpler option compared with full B2B portal tools.</p>
+        <h3>Pricing</h3>
+        <p>Wholesale Bear has one plan at $39.99/month with a 14-day free trial. It may not be the best fit if you need a full wholesale registration and approval workflow.</p>
+
+        <h2>10. Wholesale Pricing Now: B2B</h2>
+        <img src={ga10} alt="Wholesale Pricing Now B2B Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <p><strong>Best for:</strong> Stores that want wholesale pricing, order forms, net terms, and custom pricing inside the main Shopify store.</p>
+        <p>Wholesale Pricing Now supports tiered pricing, custom pricing, volume discounts, net terms, order forms, individual product pricing, auto-tag rules, custom shipping rates, and tax-exempt wholesale orders.</p>
+        <h3>Pricing</h3>
+        <p>There is a free plan. Paid pricing depends on the Shopify subscription level, starting at $14.95/month for Shopify Basic stores. Recent reviews show mixed feedback, so test the app carefully on your theme and checkout flow before relying on it.</p>
+
+        <h2>11. Process Wholesale: B2B Pricing</h2>
+        <img src={ga11} alt="Process Wholesale B2B Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <p><strong>Best for:</strong> Merchants who want wholesale pricing, signup forms, quick buy tables, MOQ, net terms, and content locking.</p>
+        <p>Process Wholesale helps Shopify merchants manage wholesale pricing in an existing store without creating a separate wholesale site. It supports customizable wholesale signup forms, quick buy tables, wholesale prices on product pages, minimum order amount, MOQ, net terms, flat and tier discounts, content locking, B2B shipping, hide prices, and product/page locks.</p>
+        <h3>Pricing</h3>
+        <p>Process Wholesale has a free plan for the first $500 in wholesale revenue. Paid plans start at $14.99/month, with higher plans at $44.99/month and $89.99/month. The lower plan is limited, so most serious wholesale stores may need to compare the Enterprise or Professional plan.</p>
+
+        <h2>Why merchants look for Wholesale Gorilla alternatives</h2>
+        <p>Wholesale Gorilla gives merchants a full B2B setup, including customer groups, custom pricing, tiered pricing, volume discounts, signup forms, wholesale login, order forms, net terms, product visibility, manual orders, and multi-currency support. Its paid plans currently start at $34.95/month and go up to $149.95/month.</p>
+        <p>That works for many stores. But some Shopify merchants still compare alternatives because they want a different fit. The common reasons are simple:</p>
+        <ul>
+          <li>They want to start wholesale without jumping into a higher monthly plan.</li>
+          <li>They want a lighter app that covers core B2B pricing without feeling too heavy.</li>
+          <li>They need better control over who can see prices, products, or locked wholesale content.</li>
+          <li>They want wholesale registration forms with approval workflows and customer tagging.</li>
+          <li>They want customer-specific pricing, tiered pricing, volume discounts, order limits, or quick order pages without stacking multiple apps.</li>
+          <li>They are also comparing support quality, theme compatibility, Shopify Markets support, POS support, and how easy the app is to manage day to day.</li>
+        </ul>
+
+        <h2>What to look for in a Wholesale Gorilla alternative</h2>
+        <p>Before picking an app, check whether it handles the actual wholesale workflow you need. At minimum, most Shopify B2B stores should look for:</p>
+        <ul>
+          <li>Custom pricing by customer, tag, group, product, variant, or collection.</li>
+          <li>Tiered pricing and volume discounts for bulk orders.</li>
+          <li>Wholesale registration forms with manual approval or auto-tagging.</li>
+          <li>Price hiding or locked content for non-approved buyers.</li>
+          <li>Order limits, MOQs, or min/max quantity rules.</li>
+          <li>Quick order pages or bulk order forms.</li>
+          <li>Net payment terms like Net 15, Net 30, or Net 60.</li>
+          <li>Shipping rules for B2B buyers.</li>
+          <li>Multi-currency and Shopify Markets support if you sell internationally.</li>
+          <li>POS support if you offer wholesale pricing in-store.</li>
+          <li>Good support, because wholesale pricing issues can affect revenue quickly.</li>
+        </ul>
+        <p>Do not choose the app with the longest feature list by default. Choose the one that matches your current wholesale stage.</p>
+
+        <h2>Conclusion</h2>
+        <p>Wholesale Gorilla is still a solid Shopify wholesale app, especially for merchants who want a known B2B solution with wholesale pricing, signup forms, order forms, net terms, product visibility, and pricing rules. But it is not the only path.</p>
+        <p>If you are looking for a Wholesale Gorilla alternative because you want a cleaner setup, lower monthly cost, buyer approval, hidden prices, customer-specific pricing, order limits, and quick order workflows, <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline">BMT B2B Wholesale Pricing</a> is worth testing.</p>
+        <p>If your store needs a more advanced B2B portal with sales reps, quoting, and deeper integrations, SparkLayer is likely the stronger comparison. If you want a more established mid-market B2B pricing app with POS and tax controls, Wholesale Pricing Discount B2B, B2B Wholesale Hub, and BSS are also worth reviewing.</p>
+        <p>The best choice is not the app with the longest feature list. It is the app that matches how your wholesale buyers actually place orders.</p>
       </>
     ),
   },

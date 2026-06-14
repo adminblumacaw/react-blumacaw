@@ -24,6 +24,8 @@ const CustomShippingRulesGuide = lazy(() => import("./pages/CustomShippingRulesG
 const LockPageHidePriceGuide = lazy(() => import("./pages/LockPageHidePriceGuide"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
+const Affiliate = lazy(() => import("./pages/Affiliate"));
+const AffiliateApply = lazy(() => import("./pages/AffiliateApply"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -57,6 +59,8 @@ const AppRoutes = () => {
           <Route path="/custom-payment-terms-guide" element={<CustomPaymentTermsGuide />} />
           <Route path="/custom-shipping-rules-guide" element={<CustomShippingRulesGuide />} />
           <Route path="/lock-page-hide-price-guide" element={<LockPageHidePriceGuide />} />
+          <Route path="/affiliate" element={<Affiliate />} />
+          <Route path="/affiliate/apply" element={<AffiliateApply />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -50,6 +50,7 @@ const Footer = () => {
             <ul className="space-y-2.5 text-sm">
               <li><a href="/documentation" className="text-muted-foreground hover:text-accent transition-smooth">Documentation</a></li>
               <li><a href="/blog" className="text-muted-foreground hover:text-accent transition-smooth">Blog</a></li>
+              <li><a href="/affiliate" className="text-muted-foreground hover:text-accent transition-smooth">Affiliate Program</a></li>
               <li><a href="/#support" className="text-muted-foreground hover:text-accent transition-smooth">Support</a></li>
             </ul>
           </div>

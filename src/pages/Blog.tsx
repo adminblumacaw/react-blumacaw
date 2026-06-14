@@ -10,6 +10,24 @@ import { Button } from "@/components/ui/button";
 
 const allPosts = [
   {
+    slug: "wholesale-gorilla-alternatives",
+    category: "Guide",
+    title: "11 Wholesale Gorilla Alternatives for Shopify B2B Pricing",
+    excerpt: "Compare Wholesale Gorilla alternatives for Shopify B2B pricing, wholesale forms, bulk discounts, buyer approval, and price hiding.",
+    readTime: "12 min read",
+    date: "May 31, 2026",
+    isoDate: "2026-05-31",
+  },
+  {
+    slug: "shopify-wholesale-registration-form-approve-b2b-customers",
+    category: "Guide",
+    title: "How to Create a Shopify Wholesale Registration Form & Approve B2B Customers",
+    excerpt: "Learn how to build a wholesale registration form in Shopify, tag and approve B2B customers, and streamline your onboarding process — with credible market data and a practical step-by-step workflow.",
+    readTime: "12 min read",
+    date: "May 20, 2026",
+    isoDate: "2026-05-20",
+  },
+  {
     slug: "best-shopify-wholesale-apps",
     category: "Guide",
     title: "11 Best Shopify Wholesale Apps for B2B Pricing and Bulk Orders in 2026",

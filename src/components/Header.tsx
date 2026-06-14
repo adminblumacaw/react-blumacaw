@@ -3,8 +3,13 @@ import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import AnnouncementBar from "./AnnouncementBar";
 
-const Header = () => {
+interface HeaderProps {
+  showAnnouncement?: boolean;
+}
+
+const Header = ({ showAnnouncement = false }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
@@ -13,10 +18,12 @@ const Header = () => {
     { label: "Reviews", href: "/#reviews" },
     { label: "Documentation", href: "/documentation" },
     { label: "Blog", href: "/blog" },
+    { label: "Affiliate", href: "/affiliate" },
   ];
 
   return (
     <header className="fixed top-0 w-full bg-background/80 backdrop-blur-xl border-b border-border/30 z-50">
+      {showAnnouncement && <AnnouncementBar />}
       <div className="container mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center justify-between">
           <a href="/" className="flex items-center space-x-2.5">
