@@ -147,18 +147,18 @@ const AffiliateApply = () => {
           "@context": "https://schema.org",
           "@type": "WebPage",
           name: "BMT Affiliate Program Application",
-          url: "https://bmtb2bwholesalepricing.com/affiliate/apply",
+          url: "https://blumacawtech.com/affiliate/apply",
           description:
             "Application form to join the BMT B2B Wholesale Pricing affiliate program with 25% recurring commission.",
           isPartOf: {
             "@type": "WebSite",
             name: "BMT B2B Wholesale Pricing",
-            url: "https://bmtb2bwholesalepricing.com",
+            url: "https://blumacawtech.com",
           },
           potentialAction: {
             "@type": "ApplyAction",
             name: "Apply to BMT Affiliate Program",
-            target: "https://bmtb2bwholesalepricing.com/affiliate/apply",
+            target: "https://blumacawtech.com/affiliate/apply",
           },
         }}
       />

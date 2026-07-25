@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 
+# Local env (Supabase config is supplied by CI secrets at build time)
+.env
+.env.*
+!.env.example
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -22,6 +22,7 @@ const EnableOrderLimitsGuide = lazy(() => import("./pages/EnableOrderLimitsGuide
 const CustomPaymentTermsGuide = lazy(() => import("./pages/CustomPaymentTermsGuide"));
 const CustomShippingRulesGuide = lazy(() => import("./pages/CustomShippingRulesGuide"));
 const LockPageHidePriceGuide = lazy(() => import("./pages/LockPageHidePriceGuide"));
+const QuickOrderFormGuide = lazy(() => import("./pages/QuickOrderFormGuide"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Affiliate = lazy(() => import("./pages/Affiliate"));
@@ -59,8 +60,10 @@ const AppRoutes = () => {
           <Route path="/custom-payment-terms-guide" element={<CustomPaymentTermsGuide />} />
           <Route path="/custom-shipping-rules-guide" element={<CustomShippingRulesGuide />} />
           <Route path="/lock-page-hide-price-guide" element={<LockPageHidePriceGuide />} />
+          <Route path="/quick-order-form-guide" element={<QuickOrderFormGuide />} />
           <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/affiliate/apply" element={<AffiliateApply />} />
+          <Route path="/shopify-wholesale-registration-form" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

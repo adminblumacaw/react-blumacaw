@@ -17,7 +17,9 @@ import {
   CreditCard,
   Truck,
   Lock,
+  ShoppingCart,
 } from "lucide-react";
+
 
 const Documentation = () => {
   const sections = [
@@ -88,6 +90,14 @@ const Documentation = () => {
       description: "Restrict access to pages, products, or your entire store and hide prices or Add to Cart buttons from specific customer groups",
       items: [
         { text: "Configure Lock Page & Hide Price Rule", href: "/lock-page-hide-price-guide" }
+      ]
+    },
+    {
+      icon: ShoppingCart,
+      title: "Quick Order Form",
+      description: "Create a customizable quick order page where wholesale buyers can add multiple products to cart from one screen",
+      items: [
+        { text: "Configure Quick Order Forms", href: "/quick-order-form-guide" }
       ]
     }
   ];

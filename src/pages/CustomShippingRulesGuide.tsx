@@ -200,7 +200,7 @@ const CustomShippingRulesGuide = () => {
     },
     {
       question: "Do I need the Advanced Plan for shipping rules?",
-      answer: "Yes, Custom Shipping Rules are available on the Advanced Plan ($30/month or $300/year). This plan also includes Custom Payment Rules and all Standard plan features."
+      answer: "Yes, Custom Shipping Rules are available on the Advanced Plan ($29.99/month or $299.90/year). This plan also includes Custom Payment Rules and all Standard plan features."
     },
     {
       question: "Can I combine shipping rules with payment rules?",
