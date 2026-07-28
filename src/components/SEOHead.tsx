@@ -12,7 +12,7 @@ interface SEOHeadProps {
   jsonLd?: Record<string, any>;
 }
 
-const BASE_URL = "https://bmtb2bwholesalepricing.com";
+const BASE_URL = "https://blumacawtech.com";
 
 const SEOHead = ({
   title,
@@ -22,7 +22,7 @@ const SEOHead = ({
   publishedDate,
   modifiedDate,
   author = "BlumacawTech",
-  image = "https://bmtb2bwholesalepricing.com/og-image.png",
+  image = "https://blumacawtech.com/og-image.png",
   jsonLd,
 }: SEOHeadProps) => {
   useEffect(() => {

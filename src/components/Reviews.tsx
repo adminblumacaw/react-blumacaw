@@ -6,6 +6,25 @@ import reviewsHeroImg from "@/assets/reviews-hero.webp";
 const Reviews = () => {
   const reviews = [
     {
+      text: "wow, very easy to use. We transitioned from Wholesale Gorilla after their app outage and have not looked back. More features, lower cost, smooth interface and great support. Thank you Utie!",
+      store: "Smoking Cat Distribution",
+      location: "Canada",
+      date: "July 2026",
+    },
+    {
+      text: "Amazing App, great help for my problem of handling B2B service, and the support from the team is outstanding, they understand my problem and resolve it within no time, hats off to them and good luck. Highly recommended if you do B2B business.",
+      store: "bpckw",
+      location: "Kuwait",
+      date: "July 2026",
+    },
+    {
+      text: "This app and developer team is very good, very supporting at speed dial.",
+      store: "Rising Wholesale Inc.",
+      location: "United States",
+      date: "June 2026",
+    },
+
+    {
       text: "We are very happy with the app.. its powerful and user friendly wholesale app. We are impressed with the functionality to support our wholesale operations. In addition, they have amazing support team... We got instant support and they were able to help us through the set up process. Overall, very satisfied.",
       store: "Satyam Farm",
       location: "United States",

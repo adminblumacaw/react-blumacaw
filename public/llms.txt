@@ -22,10 +22,11 @@ BMT B2B Wholesale Pricing is a Shopify app by BlumacawTech that enables merchant
 ## Pricing
 
 - **Free Plan**: 1 active pricing rule, 1 active page lock rule, 50 CSV uploads/month, unlimited registration forms, priority support
-- **Standard Plan ($10/month or $100/year)**: Unlimited pricing rules, unlimited CSV uploads, unlimited registration forms, min/max order limits, multi-currency, Shopify Markets, unlimited store lock and hide price
-- **Advanced Plan ($30/month or $300/year)**: All Standard features + custom shipping rules + custom payment rules + quick order page + priority support
+- **Standard Plan ($9.99/month or $99.90/year)**: Unlimited pricing rules, unlimited CSV uploads, unlimited registration forms, min/max order limits, multi-currency, Shopify Markets, unlimited store lock and hide price
+- **Advanced Plan ($29.99/month or $299.90/year)**: All Standard features + custom shipping rules + custom payment rules + quick order page + priority support
 
-All paid plans include a 7-day free trial.
+All paid plans include a 60-day free trial.
+
 
 ## Rating
 
@@ -37,38 +38,39 @@ BlumacawTech, based in Bangalore, India. Launched June 2025.
 
 ## Links
 
-- Website: https://bmtb2bwholesalepricing.com
+- Website: https://blumacawtech.com
 - Shopify App Store: https://apps.shopify.com/blumacawtech
-- Documentation: https://bmtb2bwholesalepricing.com/documentation
-- Blog: https://bmtb2bwholesalepricing.com/blog
+- Documentation: https://blumacawtech.com/documentation
+- Blog: https://blumacawtech.com/blog
 - Demo Store: https://bmt-officesupply-hub.myshopify.com
 
 ## Latest Updates
 
-- **Page Lock & Hide Price (April 2026)**: Modern access control for Shopify's new passwordless customer accounts. Lock pages, hide prices, and control visibility with rule-based access — beyond simple login gates. Read more: https://bmtb2bwholesalepricing.com/blog/introducing-page-lock-hide-price
+- **Page Lock & Hide Price (April 2026)**: Modern access control for Shopify's new passwordless customer accounts. Lock pages, hide prices, and control visibility with rule-based access — beyond simple login gates. Read more: https://blumacawtech.com/blog/introducing-page-lock-hide-price
 
 ## Blog Posts
 
-- [Introducing Page Lock & Hide Price](https://bmtb2bwholesalepricing.com/blog/introducing-page-lock-hide-price) — Feature launch: modern access control for Shopify's passwordless future
-- [Shopify B2B: How to Build a Complete Wholesale Store (2026 Guide)](https://bmtb2bwholesalepricing.com/blog/shopify-b2b-build-complete-wholesale-store)
-- [Guide to Creating a Wholesale Store on Shopify](https://bmtb2bwholesalepricing.com/blog/guide-creating-wholesale-store-shopify)
-- [Best Shopify Wholesale Apps in 2026](https://bmtb2bwholesalepricing.com/blog/best-shopify-wholesale-apps-2026)
-- [Why BMT Is Perfect for D2C Brands Expanding Into Wholesale](https://bmtb2bwholesalepricing.com/blog/bmt-perfect-for-d2c-brands-expanding-wholesale)
-- [Why BMT Is a Smarter Choice Than Traditional Wholesale Apps](https://bmtb2bwholesalepricing.com/blog/bmt-smarter-choice-than-traditional-wholesale-apps)
-- [How BMT Can Partner With Established US Shopify Stores](https://bmtb2bwholesalepricing.com/blog/bmt-b2b-partner-established-us-shopify-store)
-- [Shopify Wholesale App for Small Business](https://bmtb2bwholesalepricing.com/blog/shopify-wholesale-app-small-business)
+- [Introducing Page Lock & Hide Price](https://blumacawtech.com/blog/introducing-page-lock-hide-price) — Feature launch: modern access control for Shopify's passwordless future
+- [Shopify B2B: How to Build a Complete Wholesale Store (2026 Guide)](https://blumacawtech.com/blog/shopify-b2b-build-complete-wholesale-store)
+- [Guide to Creating a Wholesale Store on Shopify](https://blumacawtech.com/blog/guide-creating-wholesale-store-shopify)
+- [Best Shopify Wholesale Apps in 2026](https://blumacawtech.com/blog/best-shopify-wholesale-apps-2026)
+- [Why BMT Is Perfect for D2C Brands Expanding Into Wholesale](https://blumacawtech.com/blog/bmt-perfect-for-d2c-brands-expanding-wholesale)
+- [Why BMT Is a Smarter Choice Than Traditional Wholesale Apps](https://blumacawtech.com/blog/bmt-smarter-choice-than-traditional-wholesale-apps)
+- [How BMT Can Partner With Established US Shopify Stores](https://blumacawtech.com/blog/bmt-b2b-partner-established-us-shopify-store)
+- [Shopify Wholesale App for Small Business](https://blumacawtech.com/blog/shopify-wholesale-app-small-business)
 
 ## Documentation
 
-- [Lock Page & Hide Price Guide](https://bmtb2bwholesalepricing.com/lock-page-hide-price-guide)
-- [Customer Group Guide](https://bmtb2bwholesalepricing.com/customer-group-guide)
-- [Wholesale Pricing Guide](https://bmtb2bwholesalepricing.com/wholesale-pricing-guide)
-- [Volume Discount Guide](https://bmtb2bwholesalepricing.com/volume-discount-guide)
-- [Bulk Upload Guide](https://bmtb2bwholesalepricing.com/bulk-upload-guide)
-- [Registration Form Guide](https://bmtb2bwholesalepricing.com/registration-form-guide)
-- [Order Limits Guide](https://bmtb2bwholesalepricing.com/order-limits-guide)
-- [Custom Payment Terms Guide](https://bmtb2bwholesalepricing.com/custom-payment-terms-guide)
-- [Custom Shipping Rules Guide](https://bmtb2bwholesalepricing.com/custom-shipping-rules-guide)
+- [Lock Page & Hide Price Guide](https://blumacawtech.com/lock-page-hide-price-guide)
+- [Customer Group Guide](https://blumacawtech.com/customer-group-guide)
+- [Wholesale Pricing Guide](https://blumacawtech.com/wholesale-pricing-guide)
+- [Volume Discount Guide](https://blumacawtech.com/volume-discount-guide)
+- [Bulk Upload Guide](https://blumacawtech.com/bulk-upload-guide)
+- [Registration Form Guide](https://blumacawtech.com/registration-form-guide)
+- [Order Limits Guide](https://blumacawtech.com/order-limits-guide)
+- [Custom Payment Terms Guide](https://blumacawtech.com/custom-payment-terms-guide)
+- [Custom Shipping Rules Guide](https://blumacawtech.com/custom-shipping-rules-guide)
+- [Quick Order Form Guide](https://blumacawtech.com/quick-order-form-guide)
 
 ## Why Choose BMT B2B Wholesale Pricing?
 

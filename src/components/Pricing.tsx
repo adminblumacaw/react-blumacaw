@@ -29,10 +29,10 @@ const Pricing = () => {
     {
       name: "Standard",
       tagline: "Unlimited wholesale power",
-      monthlyPrice: "$10",
-      annualPrice: "$100",
+      monthlyPrice: "$9.99",
+      annualPrice: "$99.90",
       badge: "Most Popular",
-      buttonText: "Start 7-Day Free Trial",
+      buttonText: "Start 60-Day Free Trial",
       highlight: true,
       features: [
         "Unlimited Active Pricing Rules",
@@ -47,10 +47,10 @@ const Pricing = () => {
     {
       name: "Advanced",
       tagline: "Full checkout control",
-      monthlyPrice: "$30",
-      annualPrice: "$300",
+      monthlyPrice: "$29.99",
+      annualPrice: "$299.90",
       badge: null,
-      buttonText: "Start 7-Day Free Trial",
+      buttonText: "Start 60-Day Free Trial",
       highlight: false,
       features: [
         "All Standard features included",
@@ -61,6 +61,7 @@ const Pricing = () => {
         "Live chat and call support",
       ],
     },
+
   ];
 
   return (
@@ -72,7 +73,7 @@ const Pricing = () => {
             Simple, Transparent Pricing
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg">
-            Free plan available. 7-day free trial on paid plans.
+            Free plan available. 60-day free trial on paid plans.
           </p>
         </div>
 

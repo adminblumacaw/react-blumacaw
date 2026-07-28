@@ -68,8 +68,9 @@ import {
 const CALENDAR_URL = "https://calendar.app.google/kxiwZQ9QCWjve2rn7";
 
 const COMMISSION = 0.25; // 25% recurring
-const MIN_PLAN = 10; // BMT Starter $10/mo
-const MAX_PLAN = 30; // BMT Pro $30/mo
+const MIN_PLAN = 9.99; // BMT Standard $9.99/mo
+const MAX_PLAN = 29.99; // BMT Advanced $29.99/mo
+
 
 const bmtHelps = [
   { icon: DollarSign, text: "Offer wholesale pricing" },
@@ -175,7 +176,7 @@ const idealMerchants = [
 const faqs = [
   {
     q: "How much can I earn?",
-    a: "You earn 25% of every paying merchant's monthly subscription for as long as they remain a BMT customer. Plans start free, with paid tiers at $10/month (Starter) and $30/month (Pro), so an agency referring 20 stores on the Pro plan can earn $150/month recurring.",
+    a: "You earn 25% of every paying merchant's monthly subscription for as long as they remain a BMT customer. Plans start free, with paid tiers at $9.99/month (Standard) and $29.99/month (Advanced), so an agency referring 20 stores on the Advanced plan can earn roughly $150/month recurring.",
   },
   {
     q: "When do I get paid?",
@@ -223,7 +224,7 @@ const Affiliate = () => {
         {
           "@type": "WebPage",
           name: "BMT Affiliate Program",
-          url: "https://bmtb2bwholesalepricing.com/affiliate",
+          url: "https://blumacawtech.com/affiliate",
           description:
             "Earn 25% lifetime recurring commission by referring Shopify merchants to BMT B2B Wholesale Pricing.",
         },
@@ -233,7 +234,8 @@ const Affiliate = () => {
           provider: {
             "@type": "Organization",
             name: "Blumacaw Tech",
-            url: "https://bmtb2bwholesalepricing.com",
+            url: "https://blumacawtech.com",
+            logo: "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png",
           },
           areaServed: "Worldwide",
           serviceType: "Affiliate / Partner Program",

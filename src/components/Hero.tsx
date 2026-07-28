@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 import { ArrowRight, Star } from "lucide-react";
-import blumacawMascot from "@/assets/blumacaw-mascot-nobg.webp";
+
 
 const Hero = () => {
   return (
@@ -37,21 +37,22 @@ const Hero = () => {
             </div>
 
             <p className="text-xs text-muted-foreground">
-              Free plan available · No credit card required · 7-day free trial on paid plans
+              Free plan available · No credit card required · 60-day free trial on paid plans
             </p>
           </div>
 
-          {/* Right — Logo */}
+          {/* Right — Video */}
           <div className="animate-fade-up-delay-2 hidden md:flex items-center justify-center">
-            <img
-              src={blumacawMascot}
-              alt="BluMacawTech — Where your vision takes flight"
-              className="w-full max-w-sm"
-              width={720}
-              height={720}
-              fetchPriority="high"
-              decoding="async"
-            />
+            <div className="w-full max-w-lg aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
+              <iframe
+                src="https://www.youtube.com/embed/JQo9cGHlY_E?rel=0"
+                title="BMT B2B Wholesale Pricing — Introductory App Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -77,7 +78,7 @@ const Hero = () => {
               <p className="text-3xl sm:text-4xl font-bold text-foreground">5.0</p>
               <Star className="w-5 h-5 fill-yellow-400 text-yellow-400 mt-1" />
             </div>
-            <p className="text-sm text-muted-foreground mt-1">Star rating (8 reviews)</p>
+            <p className="text-sm text-muted-foreground mt-1">Star rating (11 reviews)</p>
           </div>
         </div>
       </div>

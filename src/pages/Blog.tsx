@@ -10,6 +10,15 @@ import { Button } from "@/components/ui/button";
 
 const allPosts = [
   {
+    slug: "sparklayer-alternatives",
+    category: "Guide",
+    title: "7 SparkLayer Alternatives for Shopify Brands Running B2B and Retail Together",
+    excerpt: "Compare 7 SparkLayer alternatives for Shopify B2B pricing, wholesale forms, net terms, order limits, quick orders, and pricing rules.",
+    readTime: "12 min read",
+    date: "Jun 15, 2026",
+    isoDate: "2026-06-15",
+  },
+  {
     slug: "wholesale-gorilla-alternatives",
     category: "Guide",
     title: "11 Wholesale Gorilla Alternatives for Shopify B2B Pricing",
@@ -19,7 +28,8 @@ const allPosts = [
     isoDate: "2026-05-31",
   },
   {
-    slug: "shopify-wholesale-registration-form-approve-b2b-customers",
+    slug: "shopify-wholesale-registration-form",
+    url: "/shopify-wholesale-registration-form",
     category: "Guide",
     title: "How to Create a Shopify Wholesale Registration Form & Approve B2B Customers",
     excerpt: "Learn how to build a wholesale registration form in Shopify, tag and approve B2B customers, and streamline your onboarding process — with credible market data and a practical step-by-step workflow.",
@@ -137,19 +147,20 @@ const Blog = () => {
           "@type": "Blog",
           "name": "BMT B2B Wholesale Pricing Blog",
           "description": "Expert guides and tips for Shopify wholesale, B2B pricing, bulk ordering, and wholesale customer management.",
-          "url": "https://bmtb2bwholesalepricing.com/blog",
+          "url": "https://blumacawtech.com/blog",
           "publisher": {
             "@type": "Organization",
             "name": "BlumacawTech",
-            "url": "https://bmtb2bwholesalepricing.com"
+            "url": "https://blumacawtech.com",
+            "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png"
           },
           "blogPost": allPosts.map(p => ({
             "@type": "BlogPosting",
             "headline": p.title,
             "description": p.excerpt,
-            "url": `https://bmtb2bwholesalepricing.com/blog/${p.slug}`,
+            "url": `https://blumacawtech.com${(p as any).url ?? `/blog/${p.slug}`}`,
             "datePublished": p.isoDate,
-            "author": { "@type": "Organization", "name": "BlumacawTech" }
+            "author": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" }
           }))
         }}
       />
@@ -168,7 +179,7 @@ const Blog = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {allPosts.map((post) => (
-              <Link key={post.slug} to={`/blog/${post.slug}`} className="group">
+              <Link key={post.slug} to={(post as any).url ?? `/blog/${post.slug}`} className="group">
                 <Card className="h-full border-border/60 hover:border-primary/40 hover:shadow-card transition-smooth overflow-hidden">
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="flex items-center gap-3 mb-4">

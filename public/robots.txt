@@ -1,4 +1,4 @@
-# BMT B2B Wholesale Pricing - https://bmtb2bwholesalepricing.com
+# BMT B2B Wholesale Pricing - https://blumacawtech.com
 # Allow all search engines and AI crawlers
 
 User-agent: *
@@ -47,4 +47,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://bmtb2bwholesalepricing.com/sitemap.xml
+Sitemap: https://blumacawtech.com/sitemap.xml
