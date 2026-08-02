@@ -5,7 +5,7 @@ import { ArrowRight, Star } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="pt-20 sm:pt-28 pb-14 sm:pb-24 px-4 overflow-hidden">
+    <section className="pt-40 sm:pt-28 pb-14 sm:pb-24 px-4 overflow-hidden">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Copy */}
@@ -16,12 +16,12 @@ const Hero = () => {
             </div>
 
             <h1 className="text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl lg:text-[3.25rem] sm:leading-[1.12] font-bold mb-5 sm:mb-6 tracking-tight text-balance">
-              Unlock Wholesale Revenue with{" "}
-              <span className="text-gradient">Custom Pricing, Lock &amp; Hide Prices, Smart Order Limits</span>
+              Transform Your Shopify Store Into a{" "}
+              <span className="text-gradient">B2B Wholesale Powerhouse</span>
             </h1>
 
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-7 sm:mb-8 max-w-lg">
-              BMT B2B Wholesale Pricing App helps you grow wholesale revenue directly within your Shopify store — no extra setup needed. Increase AOV with tiered pricing, customer-specific discounts, and custom wholesale registration forms with approval workflow.
+              BMT B2B Wholesale Pricing App helps you grow B2B wholesale revenue directly within your Shopify store — no extra setup needed.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
@@ -78,7 +78,7 @@ const Hero = () => {
               <p className="text-3xl sm:text-4xl font-bold text-foreground">5.0</p>
               <Star className="w-5 h-5 fill-yellow-400 text-yellow-400 mt-1" />
             </div>
-            <p className="text-sm text-muted-foreground mt-1">Star rating (11 reviews)</p>
+            <p className="text-sm text-muted-foreground mt-1">Star rating (12 reviews)</p>
           </div>
         </div>
       </div>

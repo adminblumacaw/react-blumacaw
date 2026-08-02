@@ -44,6 +44,7 @@ import sl04 from "@/assets/blog/sparklayer-alternatives/04.webp";
 import sl05 from "@/assets/blog/sparklayer-alternatives/05.webp";
 import sl06 from "@/assets/blog/sparklayer-alternatives/06.webp";
 import sl07 from "@/assets/blog/sparklayer-alternatives/07.webp";
+import rlBanner from "@/assets/blog/revenue-leaks/banner.jpg";
 
 
 interface BlogPostData {
@@ -1340,7 +1341,7 @@ const posts: Record<string, BlogPostData> = {
         <p>BMT B2B Wholesale Pricing is built for Shopify merchants who want to run wholesale and retail from one store without stacking multiple apps. Instead of using one app for pricing, another for registration, another for locked pages, and another for order rules, BMT brings the core wholesale workflow into one setup.</p>
         <p>The app supports customer-specific pricing, tiered pricing, volume discounts, hide-price rules, locked content, B2B login access, and wholesale registration forms with manual or tag-based approval. It also supports CSV/XLSX bulk uploads, min/max order limits, multi-currency wholesale pricing, Shopify Markets, custom shipping rates, net payment terms, hidden payment methods, and a quick order page depending on the plan.</p>
         <p>BMT is meant replace 3 to 4 separate apps merchants often use for wholesale pricing, registration forms, access control, order limits, and buyer management. That makes it especially useful for price-sensitive merchants who do not want to spend $60 to $100/month across multiple apps.</p>
-        <p>The trade-off is that BMT is still early compared with older apps like Wholesale Gorilla or B2B Wholesale Hub. It has fewer public reviews, but the Shopify App Store listing currently shows a 5.0 rating from 11 reviews, and the reviews mention ease of setup, strong support, and solving issues that other wholesale apps did not handle cleanly.</p>
+        <p>The trade-off is that BMT is still early compared with older apps like Wholesale Gorilla or B2B Wholesale Hub. It has fewer public reviews, but the Shopify App Store listing currently shows a 5.0 rating from 12 reviews, and the reviews mention ease of setup, strong support, and solving issues that other wholesale apps did not handle cleanly.</p>
 
         <h3>Best for</h3>
         <p>BMT is best for Shopify merchants who want an affordable, all-in-one wholesale setup without upgrading to Shopify Plus.</p>
@@ -2597,6 +2598,154 @@ const posts: Record<string, BlogPostData> = {
       </>
     ),
   },
+  "shopify-revenue-leaks": {
+    category: "Guide",
+    title: "5 Shopify Revenue Leaks Growing Stores Should Fix Before Buying More Traffic",
+    date: "Aug 2, 2026",
+    isoDate: "2026-08-02",
+    readTime: "10 min read",
+    metaDescription: "Find 5 Shopify revenue leaks in wholesale, lead capture, support, phone calls, and retention before spending more on traffic.",
+    keywords: ["shopify revenue leaks", "shopify conversion optimization", "shopify wholesale app", "shopify lead capture", "shopify live chat", "shopify retention apps", "BMT B2B wholesale pricing", "shopify b2b pricing"],
+    faq: [
+      { question: "What are Shopify revenue leaks?", answer: "Shopify revenue leaks are gaps in your store's workflow that lose revenue you have already earned or attracted. Common leaks include wholesale buyers handled manually, visitors leaving without becoming leads, product and order questions going unanswered, missed phone calls, and customers who buy once and never return." },
+      { question: "Should I fix revenue leaks before buying more traffic?", answer: "Usually yes. More traffic multiplies existing leaks. Shopify's 2026 checkout optimization guide cites Baymard's average cart abandonment benchmark of 70.22% and Dynamic Yield's April 2026 average of 77.68%, so a large share of shoppers already leave before buying. Fixing the leak closest to revenue makes new traffic cheaper to convert." },
+      { question: "Which revenue leak should I fix first?", answer: "Start with the leak closest to revenue. If retailers ask for custom pricing, fix wholesale pricing first. If traffic is decent but lead capture is weak, fix email or SMS capture. If buyers ask questions before purchasing, fix support. If calls are missed, fix phone support. If customers do not return, fix retention." },
+      { question: "Do I need a wholesale app for Shopify B2B pricing?", answer: "Not on day one. If you only have one or two wholesale buyers and Shopify's native setup covers your workflow, keep it simple. Add a dedicated wholesale app when pricing rules, buyer approvals, hidden prices, order limits, net terms, or reordering become hard to manage manually." },
+      { question: "How does BMT B2B Wholesale Pricing help with the wholesale leak?", answer: "BMT gives Shopify merchants customer-specific pricing, tiered pricing, volume discounts, wholesale registration, buyer approvals, hidden prices, B2B login rules, min/max order limits, net terms, shipping controls, and quick order pages — so approved buyers can self-serve instead of emailing for price sheets." },
+      { question: "How many apps should I install at once?", answer: "One at a time. A lean Shopify stack should solve one active bottleneck at a time. Pick one leak, fix the workflow, measure the impact, and add the next layer only when there is a real problem to solve." }
+    ],
+    content: (
+      <>
+        <img src={rlBanner} alt="5 Shopify Revenue Leaks Growing Stores Should Fix Before Buying More Traffic" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" width={1280} height={720} />
+        <p>Most Shopify brands try to grow by sending more traffic to the store.</p>
+        <p>That can work, but only if the store is ready to convert, support, and retain that traffic. If wholesale buyers are still handled manually, visitors leave without becoming leads, product questions go unanswered, calls are missed, and first-time customers never come back, more traffic only makes those leaks more expensive.</p>
+        <p>The problem is not theoretical. Shopify's 2026 checkout optimization guide cites Baymard's average cart abandonment benchmark of 70.22% and Dynamic Yield's April 2026 average of 77.68%. In simple terms, a large share of shoppers already leave before completing the purchase. Adding more traffic without fixing the leaks can make that loss bigger.</p>
+        <p>This is not a head-to-head comparison of unrelated apps. It is a practical way to identify five common revenue leaks in growing Shopify stores and understand which type of tool can help with each one.</p>
+
+        <h2>Quick comparison of the 5 Shopify revenue leaks</h2>
+        <div className="overflow-x-auto my-6">
+          <table className="w-full text-sm border border-border/50 rounded-lg">
+            <thead className="bg-muted/50">
+              <tr>
+                <th className="text-left p-3 border-b border-border/50">Revenue leak</th>
+                <th className="text-left p-3 border-b border-border/50">What it looks like</th>
+                <th className="text-left p-3 border-b border-border/50">App category</th>
+                <th className="text-left p-3 border-b border-border/50">Example apps</th>
+                <th className="text-left p-3 border-b border-border/50">When to fix it</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="p-3 border-b border-border/30 font-medium text-foreground">Wholesale buyers are handled manually</td>
+                <td className="p-3 border-b border-border/30">You manage B2B pricing through emails, draft orders, or discount codes</td>
+                <td className="p-3 border-b border-border/30">Wholesale pricing and B2B buyer access</td>
+                <td className="p-3 border-b border-border/30">BMT, Wholesale Gorilla</td>
+                <td className="p-3 border-b border-border/30">When retailers or bulk buyers need different pricing</td>
+              </tr>
+              <tr>
+                <td className="p-3 border-b border-border/30 font-medium text-foreground">Visitors leave without becoming leads</td>
+                <td className="p-3 border-b border-border/30">Traffic comes in, but visitors leave without subscribing or buying</td>
+                <td className="p-3 border-b border-border/30">Popups and lead capture</td>
+                <td className="p-3 border-b border-border/30">Poptin, Privy</td>
+                <td className="p-3 border-b border-border/30">When paid or organic traffic is not being captured</td>
+              </tr>
+              <tr>
+                <td className="p-3 border-b border-border/30 font-medium text-foreground">Product and order questions go unanswered</td>
+                <td className="p-3 border-b border-border/30">Buyers ask about shipping, sizing, returns, or order status and wait too long</td>
+                <td className="p-3 border-b border-border/30">Live chat and customer support</td>
+                <td className="p-3 border-b border-border/30">Chatway, Tidio</td>
+                <td className="p-3 border-b border-border/30">When pre-sale questions slow down purchases</td>
+              </tr>
+              <tr>
+                <td className="p-3 border-b border-border/30 font-medium text-foreground">Phone calls are missed</td>
+                <td className="p-3 border-b border-border/30">Customers call, but the team cannot answer every call</td>
+                <td className="p-3 border-b border-border/30">Phone support and AI voice support</td>
+                <td className="p-3 border-b border-border/30">Ringly, Aircall</td>
+                <td className="p-3 border-b border-border/30">When calls are tied to support or sales</td>
+              </tr>
+              <tr>
+                <td className="p-3 font-medium text-foreground">Customers buy once and do not return</td>
+                <td className="p-3">First-time buyers do not leave reviews, join loyalty, or reorder</td>
+                <td className="p-3">Retention, reviews, and loyalty</td>
+                <td className="p-3">Growave, Smile.io</td>
+                <td className="p-3">When repeat purchase is weak</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>Revenue leak 1: Wholesale buyers are handled manually</h2>
+        <p>This leak shows up when retailers, stockists, distributors, clinics, salons, or local stores start asking for special pricing. The team replies manually, shares price sheets, creates draft orders, or uses discount codes that were never meant for proper B2B pricing.</p>
+        <p>At first, this feels manageable. But as wholesale demand grows, manual pricing slows down buyers, creates inconsistent discounts, and makes reordering harder than it should be.</p>
+        <p>For a growing Shopify store, the fix is not just "give a discount." The fix is to build a wholesale workflow where approved buyers can log in, see the right pricing, place bulk orders, follow order limits, and reorder without waiting for the founder or support team.</p>
+        <h3>Apps that can help</h3>
+        <p><strong>BMT B2B Wholesale Pricing</strong> — <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline">BMT</a> is built for Shopify merchants that need customer-specific pricing, tiered pricing, volume discounts, wholesale registration, buyer approvals, hidden prices, B2B login, min/max order limits, net terms, shipping controls, and quick order pages. It is a good fit when a store wants practical wholesale workflows inside Shopify without moving into a heavy enterprise B2B setup. It makes the most sense for brands selling both DTC and wholesale from one store.</p>
+        <p><strong>Wholesale Gorilla</strong> — an established Shopify wholesale app for merchants that need wholesale pricing, customer groups, net terms, custom shipping, quantity breaks, order limits, and buyer-friendly wholesale workflows. It works well for stores that want a dedicated wholesale layer on top of an existing Shopify store. Merchants comparing wholesale apps should look closely at pricing, required features, and how much setup support they need.</p>
+        <p>Also read: <Link to="/blog/wholesale-gorilla-alternatives" className="text-primary hover:underline">11 best Wholesale Gorilla alternatives you can try</Link>.</p>
+        <h3>When not to add a wholesale app</h3>
+        <p>Do not add a wholesale app too early. If you only have one or two wholesale buyers and Shopify's native setup already covers your workflow, start simple. Add a dedicated wholesale app when pricing rules, approvals, order limits, buyer access, or reordering become harder to manage manually.</p>
+
+        <h2>Revenue leak 2: Visitors leave without becoming leads</h2>
+        <p>A lot of Shopify stores focus only on the final sale. But most visitors do not buy on the first visit, especially if they are comparing products, checking shipping, waiting for a discount, or browsing from mobile.</p>
+        <p>This leak shows up when traffic is coming in, but visitors leave without subscribing, joining a list, filling a form, claiming an offer, or showing intent. If you do not capture that visitor, you often have to pay again to bring them back.</p>
+        <p>Lead capture should not mean throwing aggressive popups at every visitor. The better approach is to match the offer to the moment: exit intent, first-order discount, wholesale inquiry, back-in-stock request, newsletter signup, or product quiz.</p>
+        <h3>Apps that can help</h3>
+        <p><strong>Poptin</strong> — helps Shopify stores create popups, forms, exit-intent campaigns, announcement bars, and lead capture flows. It is useful when a store wants to turn more visitors into email or SMS leads before they leave. The strongest use case is simple: capture intent without needing a custom-built onsite campaign system.</p>
+        <p><strong>Privy</strong> — a popular ecommerce marketing app for popups, email capture, SMS, and basic follow-up campaigns. It is useful for stores that want lead capture and simple lifecycle messaging in one place, especially merchants who want to grow their list without building a complex marketing stack.</p>
+        <h3>When not to add a popup app</h3>
+        <p>Do not add popups just because every store has them. If the offer is weak, the product page is unclear, or the site is slow, a popup will not fix the real problem. Lead capture works best when the visitor already has a reason to care.</p>
+
+        <h2>Revenue leak 3: Product and order questions go unanswered</h2>
+        <p>This leak is easy to miss because it often happens before checkout. A customer wants to know about sizing, material, shipping time, returns, product compatibility, order status, or wholesale availability, but the store only has an email address or a slow support process.</p>
+        <p>Pre-sale questions usually come from high-intent buyers. If they do not get an answer quickly, they may delay the purchase or leave completely.</p>
+        <p>The fix is not always a large helpdesk. Many growing stores just need faster answers, basic automation, and a way to handle product or order questions without losing context.</p>
+        <h3>Apps that can help</h3>
+        <p><strong>Chatway</strong> — a live chat and AI support app for Shopify stores that want a simpler way to answer product, order, and customer questions. It suits stores that need live chat, FAQ support, WhatsApp options, and conversation handling without moving into a large helpdesk system. For stores where shoppers ask questions before buying, faster replies can directly support conversion.</p>
+        <p><strong>Tidio</strong> — a live chat and chatbot platform for ecommerce stores that want a mix of automation and human support. It is useful when a merchant wants to answer common questions quickly while still giving customers a way to reach a person.</p>
+        <h3>When not to add a live chat app</h3>
+        <p>Do not add live chat if nobody can manage it. A chat widget with slow replies can hurt trust more than it helps. Start with clear FAQs, basic automation, and realistic response expectations before expanding support coverage.</p>
+
+        <h2>Revenue leak 4: Phone calls are missed or hard to manage</h2>
+        <p>Some Shopify stores assume phone support does not matter anymore. But depending on the category, customers may still call about order status, returns, delivery issues, product questions, store hours, or wholesale inquiries.</p>
+        <p>This is especially true when the purchase is urgent, expensive, technical, or B2B-related. A missed call can mean a missed sale, a frustrated customer, or a wholesale buyer who moves on.</p>
+        <p>The fix is to understand whether phone calls are actually part of your buyer journey. If they are, you need a better way to answer, route, log, or automate common calls.</p>
+        <h3>Apps that can help</h3>
+        <p><strong>Ringly</strong> — an AI phone support app for ecommerce brands that need help answering customer calls, covering use cases like order status, returns, product questions, and store policy questions. It is most relevant when calls matter, but the team cannot answer every call manually.</p>
+        <p><strong>Aircall</strong> — a business phone system for teams that need call routing, call management, analytics, and support workflows. It is better suited for stores with a more structured sales or support team.</p>
+        <h3>When not to add a phone support app</h3>
+        <p>Do not add a phone system just because it sounds useful. First check call volume, missed calls, and the type of questions people ask by phone. If customers rarely call, this is probably not your first leak to fix.</p>
+
+        <h2>Revenue leak 5: Customers buy once and do not return</h2>
+        <p>This is one of the most expensive leaks because it hides behind new customer acquisition. A store may keep getting orders, but if every order depends on new traffic, growth becomes harder over time.</p>
+        <p>Shopify's 2026 ecommerce growth guide frames growth around conversion optimization, customer retention, international expansion, and unified commerce, not just traffic acquisition. That supports the main point here: before scaling traffic, fix the systems that help your store convert, support, and retain more of the demand you already have.</p>
+        <p>This leak shows up when customers buy once and never come back. There may be weak review collection, no loyalty program, no referral flow, no wishlist, no post-purchase offer, and no reason for customers to engage again.</p>
+        <p>The fix is to build retention into the store experience. That can include reviews, loyalty points, referrals, wishlist reminders, VIP tiers, post-purchase flows, and repeat-purchase campaigns.</p>
+        <h3>Apps that can help</h3>
+        <p><strong>Growave</strong> — a retention app for Shopify stores that want loyalty, reviews, wishlist, referrals, and customer engagement tools in one place. It fits brands where reviews, saved products, referrals, and customer loyalty can influence future purchases.</p>
+        <p><strong>Smile.io</strong> — focuses on loyalty programs, rewards, referrals, VIP tiers, and points. It is useful for merchants that want a dedicated loyalty engine rather than a broader retention suite, and works best when the store has products customers can reasonably come back to buy again.</p>
+        <h3>When not to add a loyalty app</h3>
+        <p>Do not install a loyalty app before checking whether your product has natural repeat-purchase potential. For low-frequency or one-time purchase products, reviews and referrals may matter more than points. Retention tools work better when the product, post-purchase experience, and email flows are already strong.</p>
+
+        <h2>How to choose which revenue leak to fix first</h2>
+        <p>You don't need to install all these apps at once. That only adds cost, complexity, and more systems to manage.</p>
+        <p>Start with the leak closest to revenue.</p>
+        <ul>
+          <li>If wholesale buyers are asking for custom pricing, fix wholesale pricing first.</li>
+          <li>If traffic is decent but lead capture is weak, fix email or SMS capture first.</li>
+          <li>If buyers ask questions before purchasing, fix support first.</li>
+          <li>If calls are being missed, fix phone support first.</li>
+          <li>If customers do not return, fix retention first.</li>
+        </ul>
+        <p>A lean Shopify stack should solve one active bottleneck at a time. Pick one leak, fix the workflow, measure the impact, and then add the next layer only when there is a real problem to solve.</p>
+
+        <h2>Conclusion</h2>
+        <p>Buying more traffic is tempting because it feels like the fastest way to grow. But for many Shopify stores, the bigger opportunity is fixing the leaks already inside the business.</p>
+        <p>If wholesale buyers are handled manually, visitors leave without becoming leads, questions go unanswered, calls are missed, and customers do not return, more traffic will not solve the real issue. It will just push more people into the same broken paths.</p>
+        <p>The smarter move is to diagnose the leak closest to money, fix that workflow, and then scale traffic once the store is ready to convert and retain more of it.</p>
+        <p>For stores expanding into wholesale, that often starts with pricing, buyer access, approvals, and ordering workflows — which is exactly what <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline">BMT B2B Wholesale Pricing</a> is built for.</p>
+      </>
+    ),
+  },
 };
 
 // Map slugs that have a custom (non-/blog) public URL
@@ -2633,43 +2782,55 @@ const BlogPost = () => {
   const canonicalPath = customSlugPaths[slug] ?? `/blog/${slug}`;
   const canonicalUrl = `https://blumacawtech.com${canonicalPath}`;
 
-  const articleJsonLd: Record<string, any> = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": post.title,
-    "description": post.metaDescription,
-    "datePublished": post.isoDate,
-    "dateModified": post.isoDate,
-    "author": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" },
-    "publisher": {
-      "@type": "Organization",
-      "name": "BlumacawTech",
-      "url": "https://blumacawtech.com",
-      "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png"
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": canonicalUrl
-    },
-    "keywords": post.keywords.join(", ")
+  const publisher = {
+    "@type": "Organization",
+    "name": "BlumacawTech",
+    "url": "https://blumacawtech.com",
+    "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png"
   };
+
+  const graph: Record<string, any>[] = [
+    {
+      "@type": "BlogPosting",
+      "@id": `${canonicalUrl}#article`,
+      "headline": post.title,
+      "description": post.metaDescription,
+      "datePublished": post.isoDate,
+      "dateModified": post.isoDate,
+      "author": publisher,
+      "publisher": publisher,
+      "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+      "url": canonicalUrl,
+      "keywords": post.keywords.join(", ")
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://blumacawtech.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://blumacawtech.com/blog" },
+        { "@type": "ListItem", "position": 3, "name": post.title, "item": canonicalUrl }
+      ]
+    }
+  ];
 
   // Add FAQ schema if present — this is what AI assistants like ChatGPT use to source answers
   if (post.faq && post.faq.length > 0) {
-    articleJsonLd["@graph"] = [
-      {
-        "@type": "FAQPage",
-        "mainEntity": post.faq.map(f => ({
-          "@type": "Question",
-          "name": f.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": f.answer
-          }
-        }))
-      }
-    ];
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${canonicalUrl}#faq`,
+      "mainEntity": post.faq.map(f => ({
+        "@type": "Question",
+        "name": f.question,
+        "acceptedAnswer": { "@type": "Answer", "text": f.answer }
+      }))
+    });
   }
+
+  const articleJsonLd: Record<string, any> = {
+    "@context": "https://schema.org",
+    "@graph": graph
+  };
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -2690,33 +2851,45 @@ const BlogPost = () => {
           </Button>
 
           <Badge variant="outline" className="mb-4 border-primary/30 text-primary">{post.category}</Badge>
-          <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-4 leading-tight">{post.title}</h1>
+          <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground mb-4 leading-[1.15] tracking-tight">{post.title}</h1>
           
           <div className="flex items-center gap-5 text-sm text-muted-foreground mb-10 pb-6 border-b border-border/50">
             <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" />{post.date}</span>
             <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" />{post.readTime}</span>
           </div>
 
-          <div className="prose prose-slate max-w-none
-            [&_h2]:text-xl [&_h2]:sm:text-2xl [&_h2]:font-semibold [&_h2]:text-foreground [&_h2]:mt-8 [&_h2]:mb-4
-            [&_p]:text-muted-foreground [&_p]:leading-relaxed [&_p]:mb-4
-            [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:mb-4 [&_ul]:text-muted-foreground [&_ul]:space-y-2
-            [&_li]:leading-relaxed
+          <div className="prose prose-lg prose-slate max-w-none text-[1.0625rem] sm:text-lg
+            [&_h2]:text-2xl [&_h2]:sm:text-3xl [&_h2]:font-bold [&_h2]:text-foreground [&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:leading-snug [&_h2]:tracking-tight
+            [&_h3]:text-lg [&_h3]:sm:text-xl [&_h3]:font-semibold [&_h3]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3
+            [&_p]:text-foreground/80 [&_p]:leading-[1.8] [&_p]:mb-6 [&_p]:text-[1.0625rem] [&_p]:sm:text-lg
+            [&_ul]:list-none [&_ul]:pl-0 [&_ul]:mb-6 [&_ul]:space-y-3
+            [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:mb-6 [&_ol]:space-y-3 [&_ol]:text-foreground/80
+            [&_ul>li]:relative [&_ul>li]:pl-7 [&_ul>li]:text-foreground/80
+            [&_ul>li]:before:content-[''] [&_ul>li]:before:absolute [&_ul>li]:before:left-1 [&_ul>li]:before:top-[0.65em]
+            [&_ul>li]:before:w-2 [&_ul>li]:before:h-2 [&_ul>li]:before:rounded-full [&_ul>li]:before:bg-primary/60
+            [&_li]:leading-[1.75] [&_li]:text-[1.0625rem] [&_li]:sm:text-lg
             [&_strong]:text-foreground [&_strong]:font-semibold
             [&_em]:italic
-            [&_a]:text-primary [&_a]:hover:underline
+            [&_a]:text-primary [&_a]:font-medium [&_a]:underline [&_a]:underline-offset-4 [&_a]:decoration-primary/40 [&_a]:hover:decoration-primary
+            [&_blockquote]:border-l-4 [&_blockquote]:border-primary/50 [&_blockquote]:bg-secondary/40 [&_blockquote]:rounded-r-lg
+            [&_blockquote]:py-3 [&_blockquote]:px-5 [&_blockquote]:my-8 [&_blockquote]:italic
+            [&_img]:rounded-xl [&_img]:shadow-lg [&_img]:my-8
+            [&_table]:my-8 [&_table]:text-base
+            [&_th]:text-foreground [&_th]:font-semibold
+            [&_td]:text-foreground/80
           ">
             {post.content}
           </div>
 
+
           {post.faq && post.faq.length > 0 && (
             <section className="mt-12 pt-8 border-t border-border/50">
-              <h2 className="text-xl sm:text-2xl font-semibold text-foreground mb-6">Frequently Asked Questions</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-6 tracking-tight">Frequently Asked Questions</h2>
               <div className="space-y-6">
                 {post.faq.map((item, i) => (
-                  <div key={i}>
-                    <h3 className="text-base font-semibold text-foreground mb-2">{item.question}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{item.answer}</p>
+                  <div key={i} className="rounded-xl border border-border/50 bg-card/50 p-5 sm:p-6">
+                    <h3 className="text-base sm:text-lg font-semibold text-foreground mb-2">{item.question}</h3>
+                    <p className="text-foreground/80 leading-[1.8] text-[1.0625rem]">{item.answer}</p>
                   </div>
                 ))}
               </div>

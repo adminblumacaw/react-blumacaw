@@ -161,7 +161,7 @@
   }
 
   .animate-scroll-x {
-    animation: scroll-x 30s linear infinite;
+    animation: scroll-x 45s linear infinite;
   }
 
   @keyframes fade-up {

@@ -12,6 +12,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { buildGuideJsonLd } from "@/lib/guideSchema";
 import {
   Lock,
   Settings,
@@ -253,6 +254,7 @@ const LockPageHidePriceGuide = () => {
         title="Configure Lock Page & Hide Price Rules — BMT B2B Wholesale Pricing"
         description="Step-by-step guide to setting up page locks and hiding prices on your Shopify store. Control access to products, collections, and pages with BMT B2B Wholesale Pricing."
         canonicalPath="/lock-page-hide-price-guide"
+        jsonLd={buildGuideJsonLd({ title: "Configure Lock Page & Hide Price Rules — BMT B2B Wholesale Pricing", description: "Step-by-step guide to setting up page locks and hiding prices on your Shopify store. Control access to products, collections, and pages with BMT B2B Wholesale Pricing.", path: "/lock-page-hide-price-guide", steps, faqs, })}
       />
       <Header />
       <main className="pt-20">

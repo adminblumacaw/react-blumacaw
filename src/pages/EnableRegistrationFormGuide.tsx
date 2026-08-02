@@ -12,6 +12,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { buildGuideJsonLd } from "@/lib/guideSchema";
 import {
   ClipboardList,
   CheckCircle,
@@ -209,6 +210,7 @@ const EnableRegistrationFormGuide = () => {
         title="How to Enable Registration Forms on Your Shopify Store"
         description="Step-by-step guide to enable wholesale registration forms on your Shopify storefront. Let B2B buyers apply directly on your store with BMT B2B Wholesale Pricing."
         canonicalPath="/enable-registration-form-guide"
+        jsonLd={buildGuideJsonLd({ title: "How to Enable Registration Forms on Your Shopify Store", description: "Step-by-step guide to enable wholesale registration forms on your Shopify storefront. Let B2B buyers apply directly on your store with BMT B2B Wholesale Pricing.", path: "/enable-registration-form-guide", steps, faqs, })}
       />
       <Header />
       <main className="pt-20">

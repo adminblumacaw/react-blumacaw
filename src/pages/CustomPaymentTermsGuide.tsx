@@ -12,6 +12,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { buildGuideJsonLd } from "@/lib/guideSchema";
 import {
   CreditCard,
   Settings,
@@ -231,6 +232,7 @@ const CustomPaymentTermsGuide = () => {
         title="Create Custom Payment Terms in Shopify — BMT B2B Wholesale Pricing"
         description="Step-by-step guide to creating custom payment terms like Net 30, Net 60, and Net 45 in Shopify and controlling visibility with BMT B2B Wholesale Pricing payment rules."
         canonicalPath="/custom-payment-terms-guide"
+        jsonLd={buildGuideJsonLd({ title: "Create Custom Payment Terms in Shopify — BMT B2B Wholesale Pricing", description: "Step-by-step guide to creating custom payment terms like Net 30, Net 60, and Net 45 in Shopify and controlling visibility with BMT B2B Wholesale Pricing payment rules.", path: "/custom-payment-terms-guide", faqs, })}
       />
       <Header />
       <main className="pt-20">

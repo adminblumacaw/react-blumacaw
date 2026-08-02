@@ -12,6 +12,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { buildGuideJsonLd } from "@/lib/guideSchema";
 import { 
   Settings, 
   DollarSign,
@@ -303,6 +304,7 @@ const VolumeDiscountGuide = () => {
         title="How to Set Up Volume & Tiered Pricing on Shopify"
         description="Create volume discounts and quantity-break pricing on Shopify. Reward bulk buyers with tiered pricing using BMT B2B Wholesale Pricing app. Step-by-step setup guide."
         canonicalPath="/volume-discount-guide"
+        jsonLd={buildGuideJsonLd({ title: "How to Set Up Volume & Tiered Pricing on Shopify", description: "Create volume discounts and quantity-break pricing on Shopify. Reward bulk buyers with tiered pricing using BMT B2B Wholesale Pricing app. Step-by-step setup guide.", path: "/volume-discount-guide", steps, faqs, })}
       />
       <Header />
       <main className="pt-20">

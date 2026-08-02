@@ -12,6 +12,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { buildGuideJsonLd } from "@/lib/guideSchema";
 import {
   ShieldCheck,
   Settings,
@@ -254,6 +255,7 @@ const OrderLimitsGuide = () => {
         title="How to Configure Order Limits for Wholesale on Shopify"
         description="Set minimum and maximum order limits by quantity or value on Shopify. Protect wholesale margins with BMT B2B Wholesale Pricing app order controls."
         canonicalPath="/order-limits-guide"
+        jsonLd={buildGuideJsonLd({ title: "How to Configure Order Limits for Wholesale on Shopify", description: "Set minimum and maximum order limits by quantity or value on Shopify. Protect wholesale margins with BMT B2B Wholesale Pricing app order controls.", path: "/order-limits-guide", steps, faqs, })}
       />
       <Header />
       <main className="pt-20">

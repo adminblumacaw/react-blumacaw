@@ -12,6 +12,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { buildGuideJsonLd } from "@/lib/guideSchema";
 import {
   ShieldCheck,
   Settings,
@@ -136,6 +137,7 @@ const EnableOrderLimitsGuide = () => {
         title="How to Enable Order Limits on Your Shopify Store"
         description="Step-by-step guide to enable min/max order limits on your Shopify storefront. Control wholesale order quantities and values with BMT B2B Wholesale Pricing app."
         canonicalPath="/enable-order-limits-guide"
+        jsonLd={buildGuideJsonLd({ title: "How to Enable Order Limits on Your Shopify Store", description: "Step-by-step guide to enable min/max order limits on your Shopify storefront. Control wholesale order quantities and values with BMT B2B Wholesale Pricing app.", path: "/enable-order-limits-guide", steps, faqs, })}
       />
       <Header />
       <main className="pt-20">

@@ -3,10 +3,9 @@ import Hero from "@/components/Hero";
 import LogoBar from "@/components/LogoBar";
 import Benefits from "@/components/Benefits";
 
-import ComparisonTable from "@/components/ComparisonTable";
 import Pricing from "@/components/Pricing";
 import Reviews from "@/components/Reviews";
-import FAQ from "@/components/FAQ";
+import FAQ, { faqs } from "@/components/FAQ";
 import BlogSection from "@/components/BlogSection";
 import BookOnboarding from "@/components/BookOnboarding";
 import Support from "@/components/Support";
@@ -22,20 +21,31 @@ const Index = () => {
         canonicalPath="/"
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "SoftwareApplication",
-          "name": "BMT B2B Wholesale Pricing",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "Web",
-          "offers": [
-            { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free Plan" },
-            { "@type": "Offer", "price": "9.99", "priceCurrency": "USD", "name": "Standard Plan" },
-            { "@type": "Offer", "price": "29.99", "priceCurrency": "USD", "name": "Advanced Plan" }
-          ],
-          "description": "BMT B2B Wholesale Pricing App helps you grow wholesale revenue directly within your Shopify store. Boost average order value with tiered and volume pricing, customer-specific discounts, and controlled wholesale registration approvals. Lock & hide prices for guest users, enable quick order page, fast bulk ordering via CSV or Excel, protect margins with smart order limits, and offer custom shipping and flexible payment terms like Net 15 or Net 30.",
-          "url": "https://blumacawtech.com",
-          "publisher": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" },
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "11" }
-
+          "@graph": [
+            {
+              "@type": "SoftwareApplication",
+              "name": "BMT B2B Wholesale Pricing",
+              "applicationCategory": "BusinessApplication",
+              "operatingSystem": "Web",
+              "offers": [
+                { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free Plan" },
+                { "@type": "Offer", "price": "9.99", "priceCurrency": "USD", "name": "Standard Plan" },
+                { "@type": "Offer", "price": "29.99", "priceCurrency": "USD", "name": "Advanced Plan" }
+              ],
+              "description": "BMT B2B Wholesale Pricing App helps you grow wholesale revenue directly within your Shopify store. Boost average order value with tiered and volume pricing, customer-specific discounts, and controlled wholesale registration approvals. Lock & hide prices for guest users, enable quick order page, fast bulk ordering via CSV or Excel, protect margins with smart order limits, and offer custom shipping and flexible payment terms like Net 15 or Net 30.",
+              "url": "https://blumacawtech.com",
+              "publisher": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" },
+              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "12" }
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": faqs.map((f) => ({
+                "@type": "Question",
+                "name": f.q,
+                "acceptedAnswer": { "@type": "Answer", "text": f.a }
+              }))
+            }
+          ]
         }}
       />
       <Header showAnnouncement />
@@ -44,7 +54,6 @@ const Index = () => {
         <LogoBar />
         <Benefits />
         <Reviews />
-        <ComparisonTable />
         <Pricing />
         <BlogSection />
         <Support />
