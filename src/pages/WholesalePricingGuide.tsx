@@ -6,6 +6,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { buildGuideJsonLd } from "@/lib/guideSchema";
 import { 
   Settings, 
   Users, 
@@ -128,6 +129,7 @@ const WholesalePricingGuide = () => {
         title="How to Enable Wholesale Pricing on Shopify — Setup Guide"
         description="Step-by-step guide to enable wholesale pricing on your Shopify store using BMT B2B Wholesale Pricing app. Learn how to activate the app embed and start offering B2B prices."
         canonicalPath="/wholesale-pricing-guide"
+        jsonLd={buildGuideJsonLd({ title: "How to Enable Wholesale Pricing on Shopify — Setup Guide", description: "Step-by-step guide to enable wholesale pricing on your Shopify store using BMT B2B Wholesale Pricing app. Learn how to activate the app embed and start offering B2B prices.", path: "/wholesale-pricing-guide", steps, })}
       />
       <Header />
       <main className="pt-20">

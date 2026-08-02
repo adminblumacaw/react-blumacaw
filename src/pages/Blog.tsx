@@ -10,6 +10,15 @@ import { Button } from "@/components/ui/button";
 
 const allPosts = [
   {
+    slug: "shopify-revenue-leaks",
+    category: "Guide",
+    title: "5 Shopify Revenue Leaks Growing Stores Should Fix Before Buying More Traffic",
+    excerpt: "Find 5 Shopify revenue leaks in wholesale, lead capture, support, phone calls, and retention before spending more on traffic.",
+    readTime: "10 min read",
+    date: "Aug 2, 2026",
+    isoDate: "2026-08-02",
+  },
+  {
     slug: "sparklayer-alternatives",
     category: "Guide",
     title: "7 SparkLayer Alternatives for Shopify Brands Running B2B and Retail Together",

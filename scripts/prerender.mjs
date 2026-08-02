@@ -264,6 +264,11 @@ const blogPosts = [
     title: "7 SparkLayer Alternatives for Shopify Brands Running B2B and Retail Together",
     description: "Compare 7 SparkLayer alternatives for Shopify B2B pricing, wholesale forms, net terms, order limits, quick orders, and pricing rules.",
   },
+  {
+    slug: "shopify-revenue-leaks",
+    title: "5 Shopify Revenue Leaks Growing Stores Should Fix Before Buying More Traffic",
+    description: "Find 5 Shopify revenue leaks in wholesale, lead capture, support, phone calls, and retention before spending more on traffic.",
+  },
 ];
 
 const blogRoutes = blogPosts.map((p) => ({

@@ -6,6 +6,7 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { buildGuideJsonLd } from "@/lib/guideSchema";
 import { 
   Settings, 
   Upload, 
@@ -242,6 +243,7 @@ const BulkUploadGuide = () => {
         title="How to Set Up CSV/Excel Bulk Ordering on Shopify"
         description="Enable bulk ordering via CSV and Excel file uploads on your Shopify store. Let wholesale buyers place large orders in seconds with BMT B2B Wholesale Pricing app."
         canonicalPath="/bulk-upload-guide"
+        jsonLd={buildGuideJsonLd({ title: "How to Set Up CSV/Excel Bulk Ordering on Shopify", description: "Enable bulk ordering via CSV and Excel file uploads on your Shopify store. Let wholesale buyers place large orders in seconds with BMT B2B Wholesale Pricing app.", path: "/bulk-upload-guide", steps, })}
       />
       <Header />
       <main className="pt-20">

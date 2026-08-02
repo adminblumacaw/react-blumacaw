@@ -5,6 +5,7 @@ import { Separator } from "@/components/ui/separator";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { buildGuideJsonLd } from "@/lib/guideSchema";
 import { 
   ArrowLeft, 
   Users, 
@@ -205,6 +206,7 @@ const CustomerGroupGuide = () => {
         title="How to Create Customer Groups for Wholesale on Shopify"
         description="Guide to creating and managing wholesale customer groups on Shopify. Tag customers, import via CSV, and assign tiered pricing with BMT B2B Wholesale Pricing app."
         canonicalPath="/customer-group-guide"
+        jsonLd={buildGuideJsonLd({ title: "How to Create Customer Groups for Wholesale on Shopify", description: "Guide to creating and managing wholesale customer groups on Shopify. Tag customers, import via CSV, and assign tiered pricing with BMT B2B Wholesale Pricing app.", path: "/customer-group-guide", steps, })}
       />
       <Header />
       <main className="pt-20">

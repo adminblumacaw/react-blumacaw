@@ -52,7 +52,7 @@ const Benefits = () => {
         <div className="text-center mb-12 sm:mb-14 max-w-2xl mx-auto">
           <p className="text-sm font-medium text-accent mb-3 tracking-wide uppercase">Why Merchants Choose Us</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight">
-            Everything You Need to Sell Wholesale on Shopify
+            Everything You Need to Sell B2B Wholesale on Shopify
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
             A fast, high-performance solution built to scale your B2B channel alongside your D2C store
@@ -67,8 +67,8 @@ const Benefits = () => {
                 <div className="w-14 h-14 rounded-full bg-primary/8 flex items-center justify-center mb-4">
                   <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="font-semibold text-sm mb-1.5">{b.title}</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">{b.description}</p>
+                <h3 className="font-semibold text-base sm:text-lg mb-2">{b.title}</h3>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{b.description}</p>
               </div>
             );
           })}

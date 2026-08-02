@@ -4,6 +4,22 @@ import { Link } from "react-router-dom";
 
 const blogPosts = [
   {
+    slug: "shopify-revenue-leaks",
+    category: "Guide",
+    title: "5 Shopify Revenue Leaks Growing Stores Should Fix Before Buying More Traffic",
+    excerpt: "Find 5 Shopify revenue leaks in wholesale, lead capture, support, phone calls, and retention before spending more on traffic.",
+    readTime: "10 min read",
+    date: "Aug 2, 2026",
+  },
+  {
+    slug: "sparklayer-alternatives",
+    category: "Guide",
+    title: "7 SparkLayer Alternatives for Shopify Brands Running B2B and Retail Together",
+    excerpt: "Compare 7 SparkLayer alternatives for Shopify B2B pricing, wholesale forms, net terms, order limits, and quick orders.",
+    readTime: "12 min read",
+    date: "Jun 15, 2026",
+  },
+  {
     slug: "shopify-b2b-build-complete-wholesale-store",
     category: "Guide",
     title: "Shopify B2B: How to Build a Complete Wholesale Store (2026 Guide)",

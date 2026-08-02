@@ -12,6 +12,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { buildGuideJsonLd } from "@/lib/guideSchema";
 import {
   Users,
   CheckCircle,
@@ -167,6 +168,7 @@ const AcceptRejectCustomersGuide = () => {
         title="How to Accept or Reject Wholesale Customers on Shopify"
         description="Learn how to approve or reject wholesale customer applications on Shopify using BMT B2B Wholesale Pricing. Manage B2B buyer access with registration form workflows."
         canonicalPath="/accept-reject-customers-guide"
+        jsonLd={buildGuideJsonLd({ title: "How to Accept or Reject Wholesale Customers on Shopify", description: "Learn how to approve or reject wholesale customer applications on Shopify using BMT B2B Wholesale Pricing. Manage B2B buyer access with registration form workflows.", path: "/accept-reject-customers-guide", steps, faqs, })}
       />
       <Header />
       <main className="pt-20">

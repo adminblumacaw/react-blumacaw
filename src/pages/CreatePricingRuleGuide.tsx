@@ -12,6 +12,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import { buildGuideJsonLd } from "@/lib/guideSchema";
 import { 
   Settings, 
   Users, 
@@ -262,6 +263,7 @@ const CreatePricingRuleGuide = () => {
         title="How to Create Wholesale Pricing Rules on Shopify — Guide"
         description="Learn how to create wholesale pricing rules on Shopify with BMT B2B Wholesale Pricing. Set percentage discounts, fixed amounts, or custom prices for tagged customer groups."
         canonicalPath="/create-pricing-rule-guide"
+        jsonLd={buildGuideJsonLd({ title: "How to Create Wholesale Pricing Rules on Shopify — Guide", description: "Learn how to create wholesale pricing rules on Shopify with BMT B2B Wholesale Pricing. Set percentage discounts, fixed amounts, or custom prices for tagged customer groups.", path: "/create-pricing-rule-guide", steps, faqs, })}
       />
       <Header />
       <main className="pt-20">

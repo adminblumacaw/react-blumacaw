@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
-const faqs = [
+export const faqs = [
   {
     q: "Do I need Shopify Plus to use BMT B2B Wholesale Pricing?",
     a: "No. BMT B2B Wholesale Pricing works on all Shopify plans — Basic, Shopify, and Advanced. You get enterprise-grade B2B features like tiered pricing, net terms, and custom shipping without the $2,000+/month Plus price tag.",

@@ -116,7 +116,27 @@ const Documentation = () => {
         title="Documentation — BMT B2B Wholesale Pricing App for Shopify"
         description="Complete guides and tutorials for setting up wholesale pricing, customer groups, registration forms, bulk ordering, and order limits on your Shopify store with BMT B2B Wholesale Pricing."
         canonicalPath="/documentation"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "CollectionPage",
+              "@id": "https://blumacawtech.com/documentation",
+              name: "BMT B2B Wholesale Pricing Documentation",
+              description:
+                "Guides and tutorials for setting up wholesale pricing, customer groups, registration forms, bulk ordering, and order limits on Shopify.",
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: "Home", item: "https://blumacawtech.com/" },
+                { "@type": "ListItem", position: 2, name: "Documentation", item: "https://blumacawtech.com/documentation" },
+              ],
+            },
+          ],
+        }}
       />
+
       <Header />
       <main className="pt-20">
         {/* Hero Section */}

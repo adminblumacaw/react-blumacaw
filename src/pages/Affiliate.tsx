@@ -587,12 +587,13 @@ const Affiliate = () => {
         <section className="py-8 sm:py-12 bg-muted/30">
           <div className="container mx-auto px-4 text-center">
             <p className="text-sm text-muted-foreground mb-3">View our official app listing</p>
-            <Button variant="outline" asChild>
-              <a href="https://apps.shopify.com/blumacawtech" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2">
-                <ExternalLink className="w-4 h-4" />
+            <Button variant="outline" className="h-auto max-w-full whitespace-normal py-3" asChild>
+              <a href="https://apps.shopify.com/blumacawtech" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-center">
+                <ExternalLink className="w-4 h-4 shrink-0" />
                 BMT B2B Wholesale Pricing on Shopify App Store
               </a>
             </Button>
+
           </div>
         </section>
 
