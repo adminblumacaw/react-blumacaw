@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 import { ArrowRight, Star } from "lucide-react";
-
+import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
 
 const Hero = () => {
   return (
@@ -10,9 +10,20 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Copy */}
           <div className="max-w-xl animate-fade-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-xs sm:text-sm text-primary font-medium mb-5 sm:mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-xs sm:text-sm text-primary font-medium mb-3 sm:mb-4">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               Rated 5.0 ★ on the Shopify App Store
+            </div>
+
+            <div className="flex items-center gap-3 mb-5 sm:mb-6">
+              <img
+                src={builtForShopifyBadge}
+                alt="Built for Shopify badge"
+                width={830}
+                height={220}
+                className="h-9 sm:h-10 w-auto rounded-md border border-primary/10 shadow-sm"
+              />
+              <span className="text-sm text-muted-foreground">Official Shopify Partner</span>
             </div>
 
             <h1 className="text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl lg:text-[3.25rem] sm:leading-[1.12] font-bold mb-5 sm:mb-6 tracking-tight text-balance">

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react";
 import { Link, useParams, useLocation, Navigate } from "react-router-dom";
 import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
+import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
 import wholesaleAppsBanner from "@/assets/blog/wholesale-apps/banner.webp";
 import wholesaleAppsCta from "@/assets/blog/wholesale-apps/cta.webp";
 import imgBmt from "@/assets/blog/wholesale-apps/01-bmt.webp";
@@ -2852,10 +2853,22 @@ const BlogPost = () => {
 
           <Badge variant="outline" className="mb-4 border-primary/30 text-primary">{post.category}</Badge>
           <h1 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-foreground mb-4 leading-[1.15] tracking-tight">{post.title}</h1>
-          
-          <div className="flex items-center gap-5 text-sm text-muted-foreground mb-10 pb-6 border-b border-border/50">
+
+          <div className="flex items-center gap-5 text-sm text-muted-foreground mb-4 pb-6 border-b border-border/50">
             <span className="flex items-center gap-1.5"><Calendar className="w-4 h-4" />{post.date}</span>
             <span className="flex items-center gap-1.5"><Clock className="w-4 h-4" />{post.readTime}</span>
+          </div>
+
+          <div className="flex items-center gap-3 mb-10">
+            <img
+              src={builtForShopifyBadge}
+              alt="Built for Shopify badge"
+              width={830}
+              height={220}
+              className="h-8 w-auto rounded-md border border-border/50 shadow-sm"
+              loading="lazy"
+            />
+            <span className="text-sm text-muted-foreground">Official Shopify Partner</span>
           </div>
 
           <div className="prose prose-lg prose-slate max-w-none text-[1.0625rem] sm:text-lg

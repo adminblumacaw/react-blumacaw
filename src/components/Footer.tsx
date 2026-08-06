@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 import { ExternalLink } from "lucide-react";
+import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -58,13 +59,21 @@ const Footer = () => {
 
         <Separator className="mb-6 bg-[hsl(var(--dark-border))]" />
 
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-xs text-muted-foreground text-center">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-muted-foreground text-center">
           <div className="flex items-center flex-wrap justify-center gap-x-4 gap-y-2">
             <span>&copy; {currentYear} BlumacawTech</span>
             <a href="https://blumacawtech.com/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">Privacy</a>
             <a href="https://blumacawtech.com/#faqs" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">FAQ</a>
           </div>
           <div className="flex items-center gap-2">
+            <img
+              src={builtForShopifyBadge}
+              alt="Built for Shopify badge"
+              width={830}
+              height={220}
+              className="h-7 w-auto rounded-md bg-background border border-border/50"
+              loading="lazy"
+            />
             <span>Official Shopify Partner</span>
             <div className="w-2 h-2 bg-accent rounded-full" />
           </div>
