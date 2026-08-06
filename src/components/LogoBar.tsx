@@ -8,7 +8,7 @@ import forsportsAsset from "@/assets/logos/forsports.png";
 import footaidAsset from "@/assets/logos/footaid.png";
 import kristallGrossistenAsset from "@/assets/logos/kristallgrossisten.png";
 import nikkoBtbStoreAsset from "@/assets/logos/nikko-btb-store.png";
-import poppyBeansAsset from "@/assets/logos/poppy-beans.png";
+
 import magicgooAsset from "@/assets/logos/magicgoo.png";
 import hamiltonSinklerAsset from "@/assets/logos/hamilton-sinkler.png";
 
@@ -27,7 +27,6 @@ const brands: Brand[] = [
   { name: "Lexicon Medical Supply", logo: lexiconAsset },
   { name: "Fan Hub", logo: fanHubAsset },
   { name: "NIKKO BtB STORE", logo: nikkoBtbStoreAsset, wideLogo: true },
-  { name: "Poppy Beans", logo: poppyBeansAsset, wideLogo: true },
   { name: "Magicgoo", logo: magicgooAsset, wideLogo: true },
   { name: "Hamilton Sinkler", logo: hamiltonSinklerAsset, wideLogo: true },
 ];

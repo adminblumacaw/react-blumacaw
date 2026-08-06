@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Clock, Calendar, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
 
 const allPosts = [
   {
@@ -184,6 +185,17 @@ const Blog = () => {
             <p className="text-muted-foreground text-lg max-w-2xl">
               Practical tips, product updates, and merchant success stories to help you grow.
             </p>
+            <div className="flex items-center gap-3 mt-4">
+              <img
+                src={builtForShopifyBadge}
+                alt="Built for Shopify badge"
+                width={830}
+                height={220}
+                className="h-8 w-auto rounded-md border border-border/50 shadow-sm"
+                loading="lazy"
+              />
+              <span className="text-sm text-muted-foreground">Official Shopify Partner</span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
