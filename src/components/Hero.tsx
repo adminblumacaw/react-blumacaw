@@ -32,7 +32,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-7 sm:mb-8 max-w-lg">
-              BMT B2B Wholesale Pricing App helps you grow B2B wholesale revenue directly within your Shopify store — no extra setup needed.
+              BMT B2B Wholesale Pricing App helps you grow B2B wholesale revenue directly within your Shopify store — no extra setup needed. Tiered and volume pricing, Net 15/30/45 terms, registration forms, hide price and more, in any language.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
@@ -89,7 +89,7 @@ const Hero = () => {
               <p className="text-3xl sm:text-4xl font-bold text-foreground">5.0</p>
               <Star className="w-5 h-5 fill-yellow-400 text-yellow-400 mt-1" />
             </div>
-            <p className="text-sm text-muted-foreground mt-1">Star rating (12 reviews)</p>
+            <p className="text-sm text-muted-foreground mt-1">Star rating (13 reviews)</p>
           </div>
         </div>
       </div>

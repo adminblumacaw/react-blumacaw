@@ -4,6 +4,22 @@ import { Link } from "react-router-dom";
 
 const blogPosts = [
   {
+    slug: "sami-b2b-wholesale-pricing-alternatives",
+    category: "Guide",
+    title: "7 “SAMI B2B Wholesale Pricing” Alternatives for Shopify Brands Running B2B and Retail Together",
+    excerpt: "Compare 7 SAMI B2B Wholesale Pricing alternatives for Shopify B2B pricing, wholesale registration, order limits, net terms, and quick ordering.",
+    readTime: "13 min read",
+    date: "Aug 11, 2026",
+  },
+  {
+    slug: "bss-b2b-wholesale-pricing-alternatives",
+    category: "Guide",
+    title: "6 BSS B2B Wholesale Pricing Alternatives for Shopify Brands Running B2B and Retail Together",
+    excerpt: "Compare 6 BSS B2B Wholesale Pricing alternatives for Shopify B2B pricing, wholesale registration, order limits, net terms, and quick ordering.",
+    readTime: "12 min read",
+    date: "Aug 11, 2026",
+  },
+  {
     slug: "shopify-revenue-leaks",
     category: "Guide",
     title: "5 Shopify Revenue Leaks Growing Stores Should Fix Before Buying More Traffic",
@@ -34,22 +50,6 @@ const blogPosts = [
     excerpt: "A complete step-by-step guide to creating a D2C + B2B wholesale store on Shopify. Learn pricing, bulk ordering, access control, and scaling.",
     readTime: "14 min read",
     date: "Mar 15, 2026",
-  },
-  {
-    slug: "best-shopify-wholesale-apps-2026",
-    category: "Guide",
-    title: "Best Shopify Wholesale Apps in 2026 (Top 6 B2B Apps Compared)",
-    excerpt: "Compare the 6 best Shopify wholesale apps in 2026. See which B2B app is right for your store.",
-    readTime: "12 min read",
-    date: "Mar 14, 2026",
-  },
-  {
-    slug: "bmt-smarter-choice-than-traditional-wholesale-apps",
-    category: "Guide",
-    title: "Why BMT B2B Wholesale Pricing Is a Smarter Choice Than Traditional Apps",
-    excerpt: "Older doesn't always mean better. Here's why a modern wholesale app outperforms legacy systems.",
-    readTime: "7 min read",
-    date: "Feb 26, 2026",
   },
 ];
 

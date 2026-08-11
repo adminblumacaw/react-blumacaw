@@ -35,6 +35,14 @@ export const faqs = [
     a: "Yes. The Standard and Advanced plans support multi-currency wholesale pricing and Shopify Markets integration, so you can sell globally and manage international B2B buyers easily.",
   },
   {
+    q: "Can I show tax inclusive or tax exclusive wholesale prices?",
+    a: "Yes — this is a new feature. You can choose whether wholesale prices display as tax inclusive or tax exclusive, so B2B buyers see the pricing format they expect while retail customers keep seeing your standard tax display.",
+  },
+  {
+    q: "What languages are supported for my customers?",
+    a: "BMT works with all languages and markets your Shopify store supports, so you can sell wholesale globally without language barriers.",
+  },
+  {
     q: "Is there a free plan?",
     a: "Yes. The Free plan includes 1 active pricing rule, 50 CSV/XLSX bulk uploads per month, unlimited registration forms, manual or auto-tag and approve customers, and live chat and call support.",
   },

@@ -1,4 +1,4 @@
-import { DollarSign, TrendingUp, Users, ShoppingCart, Globe, Clock, Lock, Zap, ArrowRight } from "lucide-react";
+import { DollarSign, TrendingUp, Users, ShoppingCart, Globe, Clock, Lock, Zap, Receipt, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 
@@ -30,8 +30,8 @@ const benefits = [
   },
   {
     icon: Globe,
-    title: "Multi-Currency & Markets",
-    description: "Sell globally with Shopify Markets and multi-currency support.",
+    title: "All Languages & Markets",
+    description: "Sell globally in any language with Shopify Markets and multi-currency support.",
   },
   {
     icon: Clock,
@@ -42,6 +42,11 @@ const benefits = [
     icon: Zap,
     title: "Smart Order Limits",
     description: "Set min/max order limits by quantity or amount to protect margins.",
+  },
+  {
+    icon: Receipt,
+    title: "Tax Inclusive/Exclusive Prices",
+    description: "New: display wholesale prices with or without tax for each customer group.",
   },
 ];
 
@@ -59,7 +64,7 @@ const Benefits = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-6 max-w-5xl mx-auto mb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto mb-12">
           {benefits.map((b, i) => {
             const Icon = b.icon;
             return (

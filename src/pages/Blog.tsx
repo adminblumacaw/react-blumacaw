@@ -11,6 +11,24 @@ import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
 
 const allPosts = [
   {
+    slug: "sami-b2b-wholesale-pricing-alternatives",
+    category: "Guide",
+    title: "7 “SAMI B2B Wholesale Pricing” Alternatives for Shopify Brands Running B2B and Retail Together",
+    excerpt: "Compare 7 SAMI B2B Wholesale Pricing alternatives for Shopify B2B pricing, wholesale registration, order limits, net terms, and quick ordering.",
+    readTime: "13 min read",
+    date: "Aug 11, 2026",
+    isoDate: "2026-08-11",
+  },
+  {
+    slug: "bss-b2b-wholesale-pricing-alternatives",
+    category: "Guide",
+    title: "6 BSS B2B Wholesale Pricing Alternatives for Shopify Brands Running B2B and Retail Together",
+    excerpt: "Compare 6 BSS B2B Wholesale Pricing alternatives for Shopify B2B pricing, wholesale registration, order limits, net terms, and quick ordering.",
+    readTime: "12 min read",
+    date: "Aug 11, 2026",
+    isoDate: "2026-08-11",
+  },
+  {
     slug: "shopify-revenue-leaks",
     category: "Guide",
     title: "5 Shopify Revenue Leaks Growing Stores Should Fix Before Buying More Traffic",

@@ -47,7 +47,14 @@ const ReviewAvatar = ({ review }: { review: { store: string; logo?: string; doma
 
 
 const Reviews = () => {
-  const reviews = [
+    const reviews = [
+    {
+      text: "The service provided from BMT was simply outstanding. Uti was hands on all the time I was setting up and helped me to navigate to where I wanted to be. He called me from India when I got stuck. The App is amazing and does exactly what we need for our business. I highly recommend this app.",
+      store: "Electric Harness Systems",
+      domain: "electricharnesssystems.com.au",
+      location: "Australia",
+      date: "August 2026",
+    },
     {
       text: "Utakarsh has been amazing to work with! He's incredibly helpful, always taking the time to find solutions that fit my business needs. He's also very responsive, providing quick answers and support whenever I need it. I've been searching for a quick order page app like this for a long time, and I'm so glad I finally found the perfect solution.",
       store: "Flambette",
@@ -172,7 +179,7 @@ const Reviews = () => {
               Loved by merchants worldwide.
             </h2>
             <p className="text-muted-foreground text-base mb-8">
-              5.0 on the Shopify App Store · 12 reviews · 100% five stars
+              5.0 on the Shopify App Store · 13 reviews · 100% five stars
             </p>
 
             <div ref={emblaRef} className="overflow-hidden">
