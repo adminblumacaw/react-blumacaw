@@ -12,7 +12,7 @@ const AnnouncementBar = () => {
       <div className="container mx-auto flex items-center justify-center gap-1.5 sm:gap-2 flex-wrap">
         <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0 hidden sm:block" />
         <span className="font-medium">
-          New: NET 15/30/60 &amp; Custom Shipping now available
+          New: Display tax inclusive/exclusive prices now available
         </span>
         <button
           type="button"

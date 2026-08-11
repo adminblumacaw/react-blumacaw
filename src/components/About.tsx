@@ -12,7 +12,7 @@ const About = () => {
     {
       icon: Award,
       title: "5.0 Star Rating",
-      description: "Rated 5.0 out of 5 stars on the Shopify App Store with 12 reviews — 100% are 5 stars"
+      description: "Rated 5.0 out of 5 stars on the Shopify App Store with 13 reviews — 100% are 5 stars"
     },
     {
       icon: Headphones,
@@ -46,7 +46,7 @@ const About = () => {
                 It enables custom pricing for different customer groups, flexible discounts, quantity breaks, tiered pricing, and bulk ordering via CSV/Excel uploads. Wholesale buyers can register easily via forms, and smart minimum and maximum order limits protect your margins.
               </p>
               <p>
-                Based in Bangalore, India, and launched in June 2025, we're dedicated to simplifying wholesale operations for Shopify merchants worldwide. Our app works seamlessly with Shopify Checkout and Admin.
+                Based in Bangalore, India, and launched in June 2025, we're dedicated to simplifying wholesale operations for Shopify merchants worldwide. Our app is Built for Shopify, works seamlessly with Shopify Checkout and Admin, and supports all languages and markets.
               </p>
             </div>
             

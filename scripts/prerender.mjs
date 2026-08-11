@@ -269,6 +269,16 @@ const blogPosts = [
     title: "5 Shopify Revenue Leaks Growing Stores Should Fix Before Buying More Traffic",
     description: "Find 5 Shopify revenue leaks in wholesale, lead capture, support, phone calls, and retention before spending more on traffic.",
   },
+  {
+    slug: "bss-b2b-wholesale-pricing-alternatives",
+    title: "6 BSS B2B Wholesale Pricing Alternatives for Shopify Brands Running B2B and Retail Together",
+    description: "Compare 6 BSS B2B Wholesale Pricing alternatives for Shopify B2B pricing, wholesale registration, order limits, net terms, and quick ordering.",
+  },
+  {
+    slug: "sami-b2b-wholesale-pricing-alternatives",
+    title: "7 SAMI B2B Wholesale Pricing Alternatives for Shopify Brands Running B2B and Retail Together",
+    description: "Compare 7 SAMI B2B Wholesale Pricing alternatives for Shopify B2B pricing, wholesale registration, order limits, net terms, and quick ordering.",
+  },
 ];
 
 const blogRoutes = blogPosts.map((p) => ({
