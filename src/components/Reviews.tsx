@@ -228,12 +228,15 @@ const Reviews = () => {
                   <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
-              <div className="flex flex-wrap items-center">
+              <p className="sm:hidden text-sm text-muted-foreground tabular-nums">
+                {selectedIndex + 1} / {reviews.length}
+              </p>
+              <div className="hidden sm:flex flex-wrap items-center">
                 {reviews.map((_, i) => (
                   <button
                     key={i}
                     onClick={() => emblaApi?.scrollTo(i)}
-                    className="inline-flex items-center justify-center min-h-11 min-w-11 sm:min-h-0 sm:min-w-0 sm:mr-2"
+                    className="inline-flex items-center justify-center sm:mr-2"
                     aria-label={`Go to review ${i + 1}`}
                     aria-current={i === selectedIndex}
                   >
