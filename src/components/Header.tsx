@@ -14,7 +14,7 @@ const Header = ({ showAnnouncement = false }: HeaderProps) => {
 
   const navItems = [
     { label: "Features", href: "/#features" },
-    { label: "Pricing", href: "/#pricing" },
+    { label: "Pricing", href: "/pricing" },
     { label: "Reviews", href: "/#reviews" },
     { label: "Documentation", href: "/documentation" },
     { label: "Blog", href: "/blog" },
@@ -38,25 +38,15 @@ const Header = ({ showAnnouncement = false }: HeaderProps) => {
           </a>
 
           <nav className="hidden lg:flex items-center space-x-1">
-            {navItems.map((item) =>
-              item.href.startsWith("/") && !item.href.includes("#") ? (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground rounded-md transition-smooth"
-                >
-                  {item.label}
-                </Link>
-              ) : (
-                <a
-                  key={item.label}
-                  href={item.href}
-                  className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground rounded-md transition-smooth"
-                >
-                  {item.label}
-                </a>
-              )
-            )}
+            {navItems.map((item) => (
+              <Link
+                key={item.label}
+                to={item.href}
+                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground rounded-md transition-smooth"
+              >
+                {item.label}
+              </Link>
+            ))}
             <div className="flex items-center space-x-2 ml-4">
               <Button size="sm" className="gradient-primary text-sm px-5 shadow-glow hover:shadow-lg transition-all duration-300" type="button" onClick={() => openExternalUrl(SHOPIFY_APP_URL)}>
                 Install Free
@@ -76,27 +66,16 @@ const Header = ({ showAnnouncement = false }: HeaderProps) => {
         {isMenuOpen && (
           <nav className="lg:hidden mt-4 py-4 border-t border-border/30">
             <div className="flex flex-col space-y-1">
-              {navItems.map((item) =>
-                item.href.startsWith("/") && !item.href.includes("#") ? (
-                  <Link
-                    key={item.label}
-                    to={item.href}
-                    className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg min-h-[44px] flex items-center"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg min-h-[44px] flex items-center"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                )
-              )}
+              {navItems.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.href}
+                  className="px-4 py-3 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg min-h-[44px] flex items-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
               <div className="flex flex-col space-y-2 pt-3 px-4">
                 <Button size="sm" className="gradient-primary w-full shadow-glow min-h-[44px]" type="button" onClick={() => { setIsMenuOpen(false); openExternalUrl(SHOPIFY_APP_URL); }}>
                   Install Free on Shopify

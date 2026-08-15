@@ -36,7 +36,7 @@ const Footer = () => {
             <h3 className="font-semibold text-sm mb-4">Product</h3>
             <ul className="space-y-2.5 text-sm">
               <li><a href="/#features" className="text-muted-foreground hover:text-accent transition-smooth">Features</a></li>
-              <li><a href="/#pricing" className="text-muted-foreground hover:text-accent transition-smooth">Pricing</a></li>
+              <li><a href="/pricing" className="text-muted-foreground hover:text-accent transition-smooth">Pricing</a></li>
               <li>
                 <a href="https://apps.shopify.com/blumacawtech" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-smooth inline-flex items-center gap-1">
                   Shopify App Store <ExternalLink className="w-3 h-3" />

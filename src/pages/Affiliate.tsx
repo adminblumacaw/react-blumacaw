@@ -46,6 +46,7 @@ import {
   Bell,
   Store,
   Tag,
+
   EyeOff,
   Lock,
   UserCog,
@@ -60,9 +61,9 @@ import {
   Truck,
   Handshake,
   PackageSearch,
-  Link2,
   Image as ImageIcon,
   ExternalLink,
+
 } from "lucide-react";
 
 const CALENDAR_URL = "https://calendar.app.google/kxiwZQ9QCWjve2rn7";
@@ -153,15 +154,6 @@ const whoCanJoin = [
   { icon: Users, title: "Shopify Educators" },
 ];
 
-const affiliateBenefits = [
-  { icon: Link2, text: "Referral tracking links" },
-  { icon: ImageIcon, text: "Marketing banners" },
-  { icon: ImageIcon, text: "Product screenshots" },
-  { icon: Store, text: "Demo store access" },
-  { icon: FileText, text: "Feature comparison sheets" },
-  { icon: MessageCircle, text: "Priority support" },
-  { icon: Bell, text: "Launch/update announcements" },
-];
 
 const idealMerchants = [
   { icon: Factory, text: "Wholesale businesses" },
@@ -560,23 +552,6 @@ const Affiliate = () => {
           </div>
         </section>
 
-        {/* AFFILIATE BENEFITS */}
-        <section className="py-12 sm:py-20 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-3">Affiliate Benefits</h2>
-              <p className="text-center text-muted-foreground mb-10">Included Resources for every approved affiliate partner.</p>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {affiliateBenefits.map(({ icon: Icon, text }) => (
-                  <div key={text} className="flex items-start gap-3 p-4 rounded-lg border border-border/60 bg-card">
-                    <Icon className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm text-foreground">{text}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* COOKIE DURATION + PAYOUT TERMS */}
         <section className="py-12 sm:py-16">
