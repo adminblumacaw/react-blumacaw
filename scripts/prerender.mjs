@@ -105,12 +105,6 @@ const staticRoutes = [
       "Join the BMT B2B Wholesale Pricing affiliate program. Earn 25% lifetime recurring commission for every Shopify merchant you refer.",
   },
   {
-    path: "/affiliate/apply",
-    title: "Apply — BMT Affiliate Program",
-    description:
-      "Apply to join the BMT B2B Wholesale Pricing affiliate program and earn 25% recurring commission on Shopify merchants you refer.",
-  },
-  {
     path: "/wholesale-pricing-guide",
     title: "How to Enable Wholesale Pricing on Shopify — Setup Guide",
     description:

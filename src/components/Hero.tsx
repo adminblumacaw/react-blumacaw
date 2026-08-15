@@ -5,7 +5,7 @@ import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
 
 const Hero = () => {
   return (
-    <section className="pt-40 sm:pt-28 pb-14 sm:pb-24 px-4 overflow-hidden">
+    <section className="pt-56 sm:pt-28 pb-14 sm:pb-24 px-4 overflow-hidden">
       <div className="container mx-auto">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Copy */}
@@ -15,15 +15,15 @@ const Hero = () => {
               Rated 5.0 ★ on the Shopify App Store
             </div>
 
-            <div className="flex items-center gap-3 mb-5 sm:mb-6">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
               <img
                 src={builtForShopifyBadge}
                 alt="Built for Shopify badge"
                 width={830}
                 height={220}
-                className="h-9 sm:h-10 w-auto rounded-md border border-primary/10 shadow-sm"
+                className="h-9 sm:h-10 w-auto max-w-[160px] object-contain rounded-md border border-primary/10 shadow-sm"
               />
-              <span className="text-sm text-muted-foreground">Official Shopify Partner</span>
+              <span className="text-xs sm:text-sm text-muted-foreground">Official Shopify Partner</span>
             </div>
 
             <h1 className="text-[2rem] leading-[1.1] sm:text-4xl md:text-5xl lg:text-[3.25rem] sm:leading-[1.12] font-bold mb-5 sm:mb-6 tracking-tight text-balance">
@@ -53,7 +53,7 @@ const Hero = () => {
           </div>
 
           {/* Right — Video */}
-          <div className="animate-fade-up-delay-2 hidden md:flex items-center justify-center">
+          <div className="animate-fade-up-delay-2 flex items-center justify-center">
             <div className="w-full max-w-lg aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
               <iframe
                 src="https://www.youtube.com/embed/JQo9cGHlY_E?rel=0"

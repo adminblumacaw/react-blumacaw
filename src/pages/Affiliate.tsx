@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import AffiliateSignupForm from "@/components/AffiliateSignupForm";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -173,7 +173,38 @@ const idealMerchants = [
   { icon: Tag, text: "Customer-specific pricing stores" },
 ];
 
+const programSteps = [
+  {
+    icon: PenLine,
+    title: "Sign up using the button below",
+    desc: "Fill in the short partner application — it takes under 3 minutes.",
+  },
+  {
+    icon: MessageCircle,
+    title: "Our team contacts you & determines fit",
+    desc: "Every application is reviewed manually so we can support you properly.",
+  },
+  {
+    icon: ImageIcon,
+    title: "We provide assets to convert new business",
+    desc: "Banners, screenshots, demo store access, comparison sheets and email templates.",
+  },
+  {
+    icon: DollarSign,
+    title: "You get paid 25% recurring commission",
+    desc: "Earn every month for as long as your referred merchant stays subscribed.",
+  },
+];
+
+const programStats = [
+  { value: "25%", label: "Recurring commission" },
+  { value: "60", label: "Day cookie window" },
+  { value: "5.0", label: "Rating on Shopify App Store" },
+  { value: "$50", label: "Minimum monthly payout" },
+];
+
 const faqs = [
+
   {
     q: "How much can I earn?",
     a: "You earn 25% of every paying merchant's monthly subscription for as long as they remain a BMT customer. Plans start free, with paid tiers at $9.99/month (Standard) and $29.99/month (Advanced), so an agency referring 20 stores on the Advanced plan can earn roughly $150/month recurring.",
@@ -277,18 +308,21 @@ const Affiliate = () => {
           <div className="container mx-auto px-4 py-16 sm:py-24 relative">
             <div className="max-w-3xl mx-auto text-center">
               <Badge variant="secondary" className="mb-5 inline-flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5" /> Affiliate Program
+                <Sparkles className="w-3.5 h-3.5" /> Partner Program
               </Badge>
+              <p className="text-base sm:text-xl font-semibold text-accent mb-3">
+                Do you work with Shopify store owners and want to earn more?
+              </p>
               <h1 className="text-3xl sm:text-5xl md:text-6xl font-bold tracking-tight text-foreground mb-5 leading-[1.15] sm:leading-[1.1]">
-                Earn Recurring Revenue by Helping Shopify Merchants Grow Their{" "}
-                <span className="text-primary">B2B Business</span>
+                Come join the BMT{" "}
+                <span className="text-primary">Partner Program</span> today
               </h1>
               <p className="text-base sm:text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Partner with BMT B2B Wholesale Pricing and earn recurring commission for every merchant you refer.
+                Earn 25% recurring commission by referring merchants to BMT B2B Wholesale Pricing — the all-in-one Shopify wholesale solution.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button size="lg" className="gradient-primary shadow-glow" asChild>
-                  <Link to="/affiliate/apply">Apply to Join</Link>
+                  <a href="#apply">Become a Partner</a>
                 </Button>
                 <Button size="lg" variant="outline" asChild>
                   <a href="#calculator">See Earnings Calculator</a>
@@ -299,9 +333,60 @@ const Affiliate = () => {
                 <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> Real-time tracking</span>
                 <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-primary" /> Dedicated support</span>
               </div>
+              <p className="text-xs text-muted-foreground mt-6">
+                *The partner program is for new merchants only. Referrals of existing BMT customers cannot be honoured.*
+              </p>
             </div>
           </div>
         </section>
+
+        {/* STATS BAND */}
+        <section className="border-y border-border/60 bg-card">
+          <div className="container mx-auto px-4 py-8 sm:py-10">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 text-center">
+              {programStats.map(({ value, label }) => (
+                <div key={label}>
+                  <p className="text-3xl sm:text-4xl font-bold text-primary">{value}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-1">{label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* HOW THE PROGRAM WORKS */}
+        <section className="py-12 sm:py-20">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center text-foreground mb-3">
+              How Does the BMT Partner Program Work?
+            </h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Four simple steps from application to your first recurring payout.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
+              {programSteps.map(({ icon: Icon, title, desc }, i) => (
+                <Card key={title} className="border-border/60 hover:border-primary/40 transition-colors h-full">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                        <Icon className="w-5 h-5 text-primary" />
+                      </div>
+                      <span className="text-sm font-semibold text-muted-foreground">Step {i + 1}</span>
+                    </div>
+                    <h3 className="text-lg font-semibold text-foreground mb-2 leading-snug">{title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{desc}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <Button size="lg" className="gradient-primary shadow-glow" asChild>
+                <a href="#apply">Sign Up Today</a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
 
         {/* WHAT BMT HELPS MERCHANTS DO */}
         <section className="py-12 sm:py-16 bg-muted/30">
@@ -570,14 +655,12 @@ const Affiliate = () => {
                 ))}
               </div>
 
-              <div className="rounded-2xl bg-gradient-to-br from-primary to-accent p-10 sm:p-14 text-center shadow-glow">
-                <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">How to Apply</h2>
+              <div id="apply" className="scroll-mt-28 rounded-2xl bg-gradient-to-br from-primary to-accent p-8 sm:p-14 text-center shadow-glow">
+                <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">BMT Affiliate Partner Application</h2>
                 <p className="text-primary-foreground/90 mb-8 max-w-xl mx-auto">
-                  Apply to become a BMT affiliate partner and start earning recurring revenue by helping Shopify merchants launch and scale their B2B operations.
+                  Just your name and email — our team reviews every application and will get back to you shortly.
                 </p>
-                <Button size="lg" variant="secondary" className="shadow-lg" asChild>
-                  <Link to="/affiliate/apply">Apply to Join</Link>
-                </Button>
+                <AffiliateSignupForm />
               </div>
             </div>
           </div>
@@ -753,7 +836,7 @@ const Affiliate = () => {
                 Earn 25% recurring commission by referring merchants to BMT B2B Wholesale Pricing — the all-in-one Shopify wholesale solution.
               </p>
               <Button size="lg" variant="secondary" className="shadow-lg" asChild>
-                <Link to="/affiliate/apply">Apply to Join</Link>
+                <a href="#apply">Apply to Join</a>
               </Button>
             </div>
           </div>

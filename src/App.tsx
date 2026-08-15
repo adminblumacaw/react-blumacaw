@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { lazy, Suspense } from "react";
 import usePageTracking from "@/hooks/usePageTracking";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -26,7 +26,6 @@ const QuickOrderFormGuide = lazy(() => import("./pages/QuickOrderFormGuide"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Affiliate = lazy(() => import("./pages/Affiliate"));
-const AffiliateApply = lazy(() => import("./pages/AffiliateApply"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -62,7 +61,7 @@ const AppRoutes = () => {
           <Route path="/lock-page-hide-price-guide" element={<LockPageHidePriceGuide />} />
           <Route path="/quick-order-form-guide" element={<QuickOrderFormGuide />} />
           <Route path="/affiliate" element={<Affiliate />} />
-          <Route path="/affiliate/apply" element={<AffiliateApply />} />
+          <Route path="/affiliate/apply" element={<Navigate to="/affiliate#apply" replace />} />
           <Route path="/shopify-wholesale-registration-form" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

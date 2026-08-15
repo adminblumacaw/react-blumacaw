@@ -7,6 +7,13 @@
       "**/node_modules/**"
     ],
     "trailingSlash": false,
+    "redirects": [
+      {
+        "source": "/affiliate/apply",
+        "destination": "/affiliate#apply",
+        "type": 301
+      }
+    ],
     "rewrites": [
       {
         "source": "**",
