@@ -23,6 +23,7 @@ const CustomPaymentTermsGuide = lazy(() => import("./pages/CustomPaymentTermsGui
 const CustomShippingRulesGuide = lazy(() => import("./pages/CustomShippingRulesGuide"));
 const LockPageHidePriceGuide = lazy(() => import("./pages/LockPageHidePriceGuide"));
 const QuickOrderFormGuide = lazy(() => import("./pages/QuickOrderFormGuide"));
+const PricingPage = lazy(() => import("./pages/PricingPage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Affiliate = lazy(() => import("./pages/Affiliate"));
@@ -43,6 +44,7 @@ const AppRoutes = () => {
       <Suspense fallback={<PageFallback />}>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/pricing" element={<PricingPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/documentation" element={<Documentation />} />

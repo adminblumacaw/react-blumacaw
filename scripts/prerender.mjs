@@ -87,6 +87,12 @@ const staticRoutes = [
       "BMT B2B Wholesale Pricing App helps you grow wholesale revenue directly within your Shopify store—no extra setup needed. Tiered and volume pricing, customer-specific discounts, lock & hide prices, quick order page, bulk CSV/Excel ordering, registration forms, smart order limits, custom payment & shipping rules, and net terms like Net 15/Net 30. Free plan available.",
   },
   {
+    path: "/pricing",
+    title: "Pricing — BMT B2B Wholesale Pricing App for Shopify",
+    description:
+      "BMT B2B Wholesale Pricing plans: free plan available, Standard at $9.99/mo and Advanced at $29.99/mo with a 60-day free trial. Wholesale pricing, registration forms, order limits, custom shipping and Net terms for Shopify.",
+  },
+  {
     path: "/blog",
     title: "BMT B2B Wholesale Pricing Blog — Shopify Wholesale Tips & Guides",
     description:

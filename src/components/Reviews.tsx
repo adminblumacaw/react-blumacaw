@@ -49,6 +49,13 @@ const ReviewAvatar = ({ review }: { review: { store: string; logo?: string; doma
 const Reviews = () => {
     const reviews = [
     {
+      text: "Amazing, I went to so many other apps before finding this one and I love it! Took a little tweaking as I am using a paid theme but Utakarsh has been amazing. The customer service level is 5 Stars! Thank you so much for your amazing app!",
+      store: "Scavenger Supplies",
+      domain: "scavengersupplies.com.au",
+      location: "Australia",
+      date: "August 2026",
+    },
+    {
       text: "The service provided from BMT was simply outstanding. Uti was hands on all the time I was setting up and helped me to navigate to where I wanted to be. He called me from India when I got stuck. The App is amazing and does exactly what we need for our business. I highly recommend this app.",
       store: "Electric Harness Systems",
       domain: "electricharnesssystems.com.au",
@@ -179,7 +186,7 @@ const Reviews = () => {
               Loved by merchants worldwide.
             </h2>
             <p className="text-muted-foreground text-base mb-8">
-              5.0 on the Shopify App Store · 13 reviews · 100% five stars
+              5.0 on the Shopify App Store · 14 reviews · 100% five stars
             </p>
 
             <div ref={emblaRef} className="overflow-hidden">

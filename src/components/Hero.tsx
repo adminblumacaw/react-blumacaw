@@ -89,7 +89,7 @@ const Hero = () => {
               <p className="text-3xl sm:text-4xl font-bold text-foreground">5.0</p>
               <Star className="w-5 h-5 fill-yellow-400 text-yellow-400 mt-1" />
             </div>
-            <p className="text-sm text-muted-foreground mt-1">Star rating (13 reviews)</p>
+            <p className="text-sm text-muted-foreground mt-1">Star rating (14 reviews)</p>
           </div>
         </div>
       </div>

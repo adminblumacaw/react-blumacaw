@@ -185,3 +185,10 @@
     animation: fade-up 0.6s ease-out 0.3s both;
   }
 }
+
+/* Offset anchor scrolling for the fixed header */
+@layer base {
+  [id] {
+    scroll-margin-top: 7rem;
+  }
+}

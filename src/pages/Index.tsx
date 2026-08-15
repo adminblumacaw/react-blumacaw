@@ -36,7 +36,7 @@ const Index = () => {
               "inLanguage": ["en","fr","nl","it","cs","es","ja","zh-Hans","zh-Hant","de","fi","nb","pt-PT","ro","sv","tr"],
               "url": "https://blumacawtech.com",
               "publisher": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" },
-              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "13" }
+              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "14" }
             },
             {
               "@type": "FAQPage",
