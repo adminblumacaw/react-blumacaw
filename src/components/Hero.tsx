@@ -5,8 +5,13 @@ import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
 
 const Hero = () => {
   return (
-    <section className="pt-56 sm:pt-28 pb-14 sm:pb-24 px-4 overflow-hidden">
-      <div className="container mx-auto">
+    <section className="relative pt-56 sm:pt-28 pb-14 sm:pb-24 px-4 overflow-hidden">
+      {/* Decorative background */}
+      <div aria-hidden className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-24 -left-24 w-[28rem] h-[28rem] rounded-full bg-primary/10 blur-3xl" />
+        <div className="absolute top-24 -right-32 w-[32rem] h-[32rem] rounded-full bg-accent/10 blur-3xl" />
+      </div>
+      <div className="container mx-auto relative">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Copy */}
           <div className="max-w-xl animate-fade-up">
@@ -16,13 +21,15 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
-              <img
-                src={builtForShopifyBadge}
-                alt="Built for Shopify badge"
-                width={830}
-                height={220}
-                className="h-9 sm:h-10 w-auto max-w-[160px] object-contain rounded-md border border-primary/10 shadow-sm"
-              />
+              <span className="inline-flex h-9 sm:h-10 w-[150px] sm:w-[160px] items-center justify-center overflow-hidden rounded-md border border-primary/10 bg-card shadow-sm">
+                <img
+                  src={builtForShopifyBadge}
+                  alt="Built for Shopify badge"
+                  width={830}
+                  height={220}
+                  className="h-full w-full object-contain"
+                />
+              </span>
               <span className="text-xs sm:text-sm text-muted-foreground">Official Shopify Partner</span>
             </div>
 
@@ -32,7 +39,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-7 sm:mb-8 max-w-lg">
-              BMT B2B Wholesale Pricing App helps you grow B2B wholesale revenue directly within your Shopify store — no extra setup needed. Tiered and volume pricing, Net 15/30/45 terms, registration forms, hide price and more, in any language.
+              Turn your store into a wholesale channel without running a second site. Set wholesale, fixed or volume pricing by tag so approved buyers see their own prices, let them order by CSV/XLSX upload or quick order form, enforce order minimums and case-pack multiples, and offer net payment terms — in any language.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
@@ -69,7 +76,7 @@ const Hero = () => {
       </div>
 
       {/* Trust stats bar */}
-      <div className="container mx-auto mt-16 sm:mt-20">
+      <div className="container mx-auto mt-16 sm:mt-20 max-w-4xl rounded-3xl border border-border/60 bg-card/80 backdrop-blur-sm shadow-card px-6 py-8 sm:py-10">
         <p className="text-center text-xs font-medium text-muted-foreground uppercase tracking-widest mb-8">
           Trusted by the fastest growing merchants
         </p>

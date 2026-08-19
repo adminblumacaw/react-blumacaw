@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import AnnouncementBar from "./AnnouncementBar";
 
 interface HeaderProps {
@@ -11,6 +11,7 @@ interface HeaderProps {
 
 const Header = ({ showAnnouncement = false }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { pathname } = useLocation();
 
   const navItems = [
     { label: "Features", href: "/#features" },
@@ -26,7 +27,7 @@ const Header = ({ showAnnouncement = false }: HeaderProps) => {
       {showAnnouncement && <AnnouncementBar />}
       <div className="container mx-auto px-4 sm:px-6 py-3">
         <div className="flex items-center justify-between">
-          <a href="/" className="flex items-center space-x-2.5">
+          <Link to="/" className="flex items-center space-x-2.5">
             <img
               src="/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png"
               alt="BlumacawTech Logo"
@@ -35,14 +36,18 @@ const Header = ({ showAnnouncement = false }: HeaderProps) => {
             <span className="text-lg sm:text-xl font-inter font-bold text-foreground tracking-tight">
               Blumacaw<span className="text-primary">Tech</span>
             </span>
-          </a>
+          </Link>
 
           <nav className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 to={item.href}
-                className="px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground rounded-md transition-smooth"
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-smooth ${
+                  pathname === item.href
+                    ? "text-primary bg-primary/5"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                }`}
               >
                 {item.label}
               </Link>

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
 
 const Footer = () => {
@@ -35,8 +36,8 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-sm mb-4">Product</h3>
             <ul className="space-y-2.5 text-sm">
-              <li><a href="/#features" className="text-muted-foreground hover:text-accent transition-smooth">Features</a></li>
-              <li><a href="/pricing" className="text-muted-foreground hover:text-accent transition-smooth">Pricing</a></li>
+              <li><Link to="/#features" className="text-muted-foreground hover:text-accent transition-smooth">Features</Link></li>
+              <li><Link to="/pricing" className="text-muted-foreground hover:text-accent transition-smooth">Pricing</Link></li>
               <li>
                 <a href="https://apps.shopify.com/blumacawtech" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-smooth inline-flex items-center gap-1">
                   Shopify App Store <ExternalLink className="w-3 h-3" />
@@ -49,10 +50,10 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-sm mb-4">Resources</h3>
             <ul className="space-y-2.5 text-sm">
-              <li><a href="/documentation" className="text-muted-foreground hover:text-accent transition-smooth">Documentation</a></li>
-              <li><a href="/blog" className="text-muted-foreground hover:text-accent transition-smooth">Blog</a></li>
-              <li><a href="/affiliate" className="text-muted-foreground hover:text-accent transition-smooth">Affiliate Program</a></li>
-              <li><a href="/#support" className="text-muted-foreground hover:text-accent transition-smooth">Support</a></li>
+              <li><Link to="/documentation" className="text-muted-foreground hover:text-accent transition-smooth">Documentation</Link></li>
+              <li><Link to="/blog" className="text-muted-foreground hover:text-accent transition-smooth">Blog</Link></li>
+              <li><Link to="/affiliate" className="text-muted-foreground hover:text-accent transition-smooth">Affiliate Program</Link></li>
+              <li><Link to="/#support" className="text-muted-foreground hover:text-accent transition-smooth">Support</Link></li>
             </ul>
           </div>
         </div>

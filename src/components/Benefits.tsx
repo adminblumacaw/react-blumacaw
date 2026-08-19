@@ -5,28 +5,28 @@ import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 const benefits = [
   {
     icon: DollarSign,
-    title: "Wholesale Pricing",
-    description: "Customer-specific wholesale pricing to boost loyalty & profit.",
+    title: "Wholesale & Fixed Pricing",
+    description: "Set wholesale, fixed or custom prices by customer tag — applied automatically at checkout.",
   },
   {
     icon: TrendingUp,
     title: "Volume & Tiered Pricing",
-    description: "Quantity breaks pricing based on customer type.",
+    description: "Quantity breaks and tiered pricing so bigger orders unlock better prices.",
   },
   {
     icon: Lock,
-    title: "Lock & Hide Prices",
-    description: "Lock pages and hide prices from guest or non-wholesale users.",
+    title: "Lock Pages & Hide Prices",
+    description: "Gate pages behind login or approval and hide prices from guests and retail shoppers.",
   },
   {
     icon: Users,
-    title: "Registration & Auto-Tag",
-    description: "Approve B2B buyers with custom forms and auto-tagging.",
+    title: "Wholesale Application Form",
+    description: "Built-in registration forms with manual or automatic tagging and approval of B2B buyers.",
   },
   {
     icon: ShoppingCart,
     title: "Bulk & Quick Ordering",
-    description: "CSV/XLSX bulk uploads and quick order page for repeat buyers.",
+    description: "CSV or XLSX purchase order uploads, plus a quick order form for repeat buyers.",
   },
   {
     icon: Globe,
@@ -35,18 +35,18 @@ const benefits = [
   },
   {
     icon: Clock,
-    title: "Net Terms & Shipping",
-    description: "NET 15/30/60 terms and custom shipping rules per group.",
+    title: "Net Terms & Shipping Rules",
+    description: "Offer NET 15/30/60 terms, custom shipping rates, and hide payment methods by group.",
   },
   {
     icon: Zap,
-    title: "Smart Order Limits",
-    description: "Set min/max order limits by quantity or amount to protect margins.",
+    title: "Order Limits & Case Packs",
+    description: "Minimum and maximum order quantities, order value minimums, and case-pack multiples.",
   },
   {
     icon: Receipt,
     title: "Tax Inclusive/Exclusive Prices",
-    description: "New: display wholesale prices with or without tax for each customer group.",
+    description: "Show ex-VAT prices to trade buyers and inc-VAT prices to retail customers.",
   },
 ];
 
@@ -64,15 +64,19 @@ const Benefits = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto mb-12">
           {benefits.map((b, i) => {
             const Icon = b.icon;
             return (
-              <div key={i} className="flex flex-col items-center text-center">
-                <div className="w-14 h-14 rounded-full bg-primary/8 flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-primary" />
+              <div
+                key={i}
+                className="group relative rounded-2xl border border-border/60 bg-card p-6 sm:p-7 shadow-card transition-smooth hover:-translate-y-1 hover:shadow-elevated hover:border-primary/30"
+              >
+                <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-smooth" />
+                <div className="w-12 h-12 rounded-xl gradient-brand flex items-center justify-center mb-5 shadow-sm">
+                  <Icon className="w-6 h-6 text-primary-foreground" />
                 </div>
-                <h3 className="font-semibold text-base sm:text-lg mb-2">{b.title}</h3>
+                <h3 className="font-semibold text-lg sm:text-xl mb-2 tracking-tight">{b.title}</h3>
                 <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">{b.description}</p>
               </div>
             );

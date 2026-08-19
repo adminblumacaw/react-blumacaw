@@ -17,7 +17,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="BMT B2B Wholesale Pricing — Shopify Wholesale & Bulk Order App"
-      description="BMT B2B Wholesale Pricing App helps you grow wholesale sales directly in Shopify—no extra setup. Tiered and volume pricing, tax inclusive/exclusive price display, lock & hide prices and B2B login, quick order page, bulk CSV/Excel ordering, registration forms, order limits, custom shipping and Net 15/30/45 terms. Built for Shopify. Free plan available."
+      description="Turn your Shopify store into a wholesale channel without a second site. Wholesale, fixed and volume pricing by tag, CSV/XLSX bulk ordering, quick order form, order minimums and case packs, tax inclusive/exclusive prices, lock pages & hide prices, and NET 15/30/60 terms. Built for Shopify. Free plan available."
         canonicalPath="/"
         jsonLd={{
           "@context": "https://schema.org",
@@ -27,12 +27,33 @@ const Index = () => {
               "name": "BMT B2B Wholesale Pricing",
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "Web",
+              "image": ["https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png"],
               "offers": [
-                { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free Plan" },
-                { "@type": "Offer", "price": "9.99", "priceCurrency": "USD", "name": "Standard Plan" },
-                { "@type": "Offer", "price": "29.99", "priceCurrency": "USD", "name": "Advanced Plan" }
-              ],
-              "description": "BMT B2B Wholesale Pricing App helps you grow wholesale sales directly in Shopify—no extra setup. Boost AOV with tiered pricing, volume discounts, and customer-specific pricing. Display prices tax inclusive or tax exclusive for wholesale buyers. Simplify onboarding with a customizable wholesale registration form and approval workflow. Sell globally with multi-currency support in any language and market, offer Net 15/30/45 payment terms, and protect margins with order limits. Restrict access with B2B login and password-protected pages, and enable faster ordering with a quick-order page. Built for Shopify.",
+                { "price": "0", "name": "Free Plan" },
+                { "price": "9.99", "name": "Standard Plan" },
+                { "price": "29.99", "name": "Advanced Plan" }
+              ].map((o) => ({
+                "@type": "Offer",
+                "name": o.name,
+                "price": o.price,
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "itemCondition": "https://schema.org/NewCondition",
+                "url": "https://blumacawtech.com/pricing",
+                "shippingDetails": {
+                  "@type": "OfferShippingDetails",
+                  "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+                  "shippingDestination": { "@type": "DefinedRegion", "name": "Worldwide" },
+                  "doesNotShip": true
+                },
+                "hasMerchantReturnPolicy": {
+                  "@type": "MerchantReturnPolicy",
+                  "applicableCountry": "US",
+                  "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+                }
+              })),
+
+              "description": "Turn your Shopify store into a wholesale channel without running a second site. Set wholesale, fixed or volume pricing by customer tag so approved buyers see their own prices. Let buyers order fast with CSV or XLSX purchase order uploads and a quick order form. Enforce minimum and maximum order quantities, order value minimums and case-pack multiples. Show ex-VAT prices to trade and inc-VAT to retail. Gate pages behind login or approval, hide shipping and payment methods by customer group, and offer NET 15/30/60 payment terms. Built for Shopify.",
               "inLanguage": ["en","fr","nl","it","cs","es","ja","zh-Hans","zh-Hant","de","fi","nb","pt-PT","ro","sv","tr"],
               "url": "https://blumacawtech.com",
               "publisher": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" },
