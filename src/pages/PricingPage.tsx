@@ -34,17 +34,49 @@ const PricingPage = () => {
               description:
                 "Shopify B2B wholesale app with tiered pricing, volume discounts, registration forms, order limits, custom shipping and Net payment terms.",
               brand: { "@type": "Brand", name: "BlumacawTech" },
+              url: "https://blumacawtech.com/pricing",
+              image: [
+                "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png",
+              ],
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "5",
                 reviewCount: "14",
               },
               offers: [
-                { "@type": "Offer", name: "Free", price: "0", priceCurrency: "USD" },
-                { "@type": "Offer", name: "Standard", price: "9.99", priceCurrency: "USD" },
-                { "@type": "Offer", name: "Advanced", price: "29.99", priceCurrency: "USD" },
-              ],
+                { name: "Free", price: "0" },
+                { name: "Standard", price: "9.99" },
+                { name: "Advanced", price: "29.99" },
+              ].map((o) => ({
+                "@type": "Offer",
+                name: o.name,
+                price: o.price,
+                priceCurrency: "USD",
+                availability: "https://schema.org/InStock",
+                itemCondition: "https://schema.org/NewCondition",
+                url: "https://blumacawtech.com/pricing",
+                shippingDetails: {
+                  "@type": "OfferShippingDetails",
+                  shippingRate: {
+                    "@type": "MonetaryAmount",
+                    value: "0",
+                    currency: "USD",
+                  },
+                  shippingDestination: {
+                    "@type": "DefinedRegion",
+                    name: "Worldwide",
+                  },
+                  doesNotShip: true,
+                },
+                hasMerchantReturnPolicy: {
+                  "@type": "MerchantReturnPolicy",
+                  applicableCountry: "US",
+                  returnPolicyCategory:
+                    "https://schema.org/MerchantReturnNotPermitted",
+                },
+              })),
             },
+
             {
               "@type": "FAQPage",
               mainEntity: faqs.map((f) => ({

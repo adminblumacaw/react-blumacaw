@@ -27,6 +27,10 @@ export const faqs = [
     a: "On the Standard plan and above, you can set min/max order limits by both quantity and amount. This protects your margins by ensuring wholesale orders meet minimum requirements.",
   },
   {
+    q: "Can I sell in case packs or fixed quantity increments?",
+    a: "Yes. On the Advanced plan you can set quantity increments per product, so buyers can only order in case-pack multiples such as 6, 12, or 24 units.",
+  },
+  {
     q: "What are NET payment terms?",
     a: "On the Advanced plan, you can offer NET 15, NET 30, or NET 60 payment terms — allowing wholesale buyers to purchase now and pay later. You can also set custom shipping rates and sort or hide payment methods.",
   },

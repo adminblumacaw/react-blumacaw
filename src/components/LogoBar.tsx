@@ -69,7 +69,7 @@ const BrandMark = ({
   const showLogo = src && !failed;
 
   return (
-    <div className={`flex items-center gap-2 sm:gap-3 ${className}`}>
+    <div className={`flex items-center gap-2 sm:gap-3 rounded-2xl border border-border/50 bg-card/70 backdrop-blur-sm px-4 sm:px-5 py-2.5 sm:py-3 shadow-card transition-smooth hover:shadow-elevated hover:border-primary/25 ${className}`}>
       {showLogo ? (
         <img
           src={src}
