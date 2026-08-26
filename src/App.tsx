@@ -27,6 +27,7 @@ const PricingPage = lazy(() => import("./pages/PricingPage"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Affiliate = lazy(() => import("./pages/Affiliate"));
+const Privacy = lazy(() => import("./pages/Privacy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -62,6 +63,7 @@ const AppRoutes = () => {
           <Route path="/custom-shipping-rules-guide" element={<CustomShippingRulesGuide />} />
           <Route path="/lock-page-hide-price-guide" element={<LockPageHidePriceGuide />} />
           <Route path="/quick-order-form-guide" element={<QuickOrderFormGuide />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/affiliate/apply" element={<Navigate to="/affiliate#apply" replace />} />
           <Route path="/shopify-wholesale-registration-form" element={<BlogPost />} />
