@@ -28,3 +28,6 @@ dist-ssr
 *.sln
 *.sw?
 
+
+# SSR build output (used only by scripts/prerender.mjs)
+dist-server

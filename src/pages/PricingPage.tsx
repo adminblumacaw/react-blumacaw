@@ -22,7 +22,7 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pricing — BMT B2B Wholesale Pricing for Shopify"
+        title="Pricing — BMT B2B Wholesale Pricing App for Shopify"
         description="BMT B2B Wholesale Pricing plans: Free plan available, Standard at $9.99/mo and Advanced at $29.99/mo with a 60-day free trial. Wholesale pricing, registration forms, order limits, custom shipping and Net terms for Shopify."
         canonicalPath="/pricing"
         jsonLd={{
