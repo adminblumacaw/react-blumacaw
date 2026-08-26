@@ -72,27 +72,18 @@ const SEOHead = ({
     }
     canonical.setAttribute("href", `${BASE_URL}${canonicalPath}`);
 
-    // JSON-LD
-    const scriptId = "seo-jsonld";
-    let script = document.getElementById(scriptId) as HTMLScriptElement | null;
-    if (jsonLd) {
-      if (!script) {
-        script = document.createElement("script");
-        script.id = scriptId;
-        script.type = "application/ld+json";
-        document.head.appendChild(script);
-      }
-      script.textContent = JSON.stringify(jsonLd);
-    }
+  }, [title, description, canonicalPath, type, publishedDate, modifiedDate, author, image]);
 
-    return () => {
-      // Cleanup JSON-LD on unmount
-      const s = document.getElementById(scriptId);
-      if (s) s.remove();
-    };
-  }, [title, description, canonicalPath, type, publishedDate, modifiedDate, author, image, jsonLd]);
-
-  return null;
+  // Rendered in JSX (not injected via effect) so server-side rendering emits it
+  // statically — non-JS crawlers (GPTBot, ClaudeBot, PerplexityBot) only ever
+  // see this copy.
+  if (!jsonLd) return null;
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
 };
 
 export default SEOHead;

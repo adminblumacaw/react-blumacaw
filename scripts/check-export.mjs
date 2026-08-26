@@ -87,6 +87,42 @@ for (const slug of prerenderSlugs) {
   }
 }
 
+// ---------------------------------------------------------------- check 5
+// SSR route parity: every route in App.tsx must also exist in
+// entry-server.tsx (except the NotFound catch-all and pure redirects),
+// or prerendering silently ships an empty page for it.
+const routesOf = (file) =>
+  new Set(
+    [...readFileSync(resolve(ROOT, file), "utf8").matchAll(/<Route path="([^"]+)"/g)]
+      .map((m) => m[1])
+      .filter((r) => r !== "*" && r !== "/affiliate/apply")
+  );
+const appRoutes = routesOf("src/App.tsx");
+const ssrRoutes = routesOf("src/entry-server.tsx");
+for (const r of appRoutes) {
+  if (!ssrRoutes.has(r)) {
+    fail("ssr-route-missing", `route "${r}" is in App.tsx but not src/entry-server.tsx (would prerender empty)`);
+  }
+}
+
+// ---------------------------------------------------------------- check 6
+// Every blog post in prerender.mjs needs a date (drives sitemap lastmod).
+const prerenderSrc = readFileSync(resolve(ROOT, "scripts/prerender.mjs"), "utf8");
+const blogSection = prerenderSrc.slice(prerenderSrc.indexOf("const blogPosts"));
+for (const m of blogSection.matchAll(/\{([^{}]*?)\}/gs)) {
+  const slug = m[1].match(/slug:\s*"([^"]+)"/);
+  if (slug && !/date:\s*"/.test(m[1])) {
+    fail("post-missing-date", `"${slug[1]}" in prerender.mjs has no date: (sitemap lastmod needs it)`);
+  }
+}
+
+// ---------------------------------------------------------------- check 7
+// Social/share image must exist — every page's og:image points at it, and a
+// missing file gets swallowed by the SPA rewrite and served as text/html.
+if (!existsSync(resolve(ROOT, "public/og-image.png"))) {
+  fail("missing-og-image", "public/og-image.png does not exist (og:image would serve HTML)");
+}
+
 // ---------------------------------------------------------------- report
 const checks = [
   "no .asset.json stubs (imports or files)",
@@ -94,6 +130,9 @@ const checks = [
   "every imported image exists on disk",
   "every Blog.tsx slug is prerendered",
   "every prerendered slug is in the sitemap",
+  "every App.tsx route exists in entry-server.tsx",
+  "every prerender blog post has a date",
+  "public/og-image.png exists",
 ];
 
 if (failures.length === 0) {
