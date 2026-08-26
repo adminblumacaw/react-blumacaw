@@ -33,6 +33,7 @@ import CustomShippingRulesGuide from "./pages/CustomShippingRulesGuide";
 import LockPageHidePriceGuide from "./pages/LockPageHidePriceGuide";
 import QuickOrderFormGuide from "./pages/QuickOrderFormGuide";
 import Affiliate from "./pages/Affiliate";
+import Privacy from "./pages/Privacy";
 
 export function render(url: string): string {
   const queryClient = new QueryClient();
@@ -62,6 +63,7 @@ export function render(url: string): string {
             <Route path="/lock-page-hide-price-guide" element={<LockPageHidePriceGuide />} />
             <Route path="/quick-order-form-guide" element={<QuickOrderFormGuide />} />
             <Route path="/affiliate" element={<Affiliate />} />
+            <Route path="/privacy" element={<Privacy />} />
           </Routes>
         </StaticRouter>
       </TooltipProvider>

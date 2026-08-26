@@ -115,6 +115,12 @@ const staticRoutes = [
       "Complete guides and tutorials for setting up wholesale pricing, customer groups, registration forms, bulk ordering, and order limits on your Shopify store with BMT B2B Wholesale Pricing.",
   },
   {
+    path: "/privacy",
+    title: "Privacy Policy — BMT B2B Wholesale Pricing",
+    description:
+      "How BlumacawTech collects, uses, stores and deletes data for the BMT B2B Wholesale Pricing Shopify app and this website, including our subprocessors, Google Drive data handling, and your rights.",
+  },
+  {
     path: "/affiliate",
     title: "BMT Affiliate Program — 25% Recurring Shopify B2B",
     description:
