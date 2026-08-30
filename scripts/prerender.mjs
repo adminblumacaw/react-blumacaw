@@ -121,6 +121,12 @@ const staticRoutes = [
       "How BlumacawTech collects, uses, stores and deletes data for the BMT B2B Wholesale Pricing Shopify app and this website, including our subprocessors, Google Drive data handling, and your rights.",
   },
   {
+    path: "/terms",
+    title: "Terms of Service — BMT B2B Wholesale Pricing",
+    description:
+      "The terms governing use of the BMT B2B Wholesale Pricing Shopify app and blumacawtech.com — plans and billing, merchant responsibilities, acceptable use, connected accounts, liability and termination.",
+  },
+  {
     path: "/affiliate",
     title: "BMT Affiliate Program — 25% Recurring Shopify B2B",
     description:
