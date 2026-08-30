@@ -34,6 +34,7 @@ import LockPageHidePriceGuide from "./pages/LockPageHidePriceGuide";
 import QuickOrderFormGuide from "./pages/QuickOrderFormGuide";
 import Affiliate from "./pages/Affiliate";
 import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 export function render(url: string): string {
   const queryClient = new QueryClient();
@@ -64,6 +65,7 @@ export function render(url: string): string {
             <Route path="/quick-order-form-guide" element={<QuickOrderFormGuide />} />
             <Route path="/affiliate" element={<Affiliate />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
           </Routes>
         </StaticRouter>
       </TooltipProvider>
