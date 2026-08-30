@@ -55,19 +55,6 @@ const PricingPage = () => {
                 availability: "https://schema.org/InStock",
                 itemCondition: "https://schema.org/NewCondition",
                 url: "https://blumacawtech.com/pricing",
-                shippingDetails: {
-                  "@type": "OfferShippingDetails",
-                  shippingRate: {
-                    "@type": "MonetaryAmount",
-                    value: "0",
-                    currency: "USD",
-                  },
-                  shippingDestination: {
-                    "@type": "DefinedRegion",
-                    name: "Worldwide",
-                  },
-                  doesNotShip: true,
-                },
                 hasMerchantReturnPolicy: {
                   "@type": "MerchantReturnPolicy",
                   applicableCountry: "US",
