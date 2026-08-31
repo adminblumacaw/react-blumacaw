@@ -40,6 +40,12 @@ const Index = () => {
                 "availability": "https://schema.org/InStock",
                 "itemCondition": "https://schema.org/NewCondition",
                 "url": "https://blumacawtech.com/pricing",
+                "shippingDetails": {
+                  "@type": "OfferShippingDetails",
+                  "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+                  "shippingDestination": { "@type": "DefinedRegion", "name": "Worldwide" },
+                  "doesNotShip": true
+                },
                 "hasMerchantReturnPolicy": {
                   "@type": "MerchantReturnPolicy",
                   "applicableCountry": "US",
@@ -48,7 +54,7 @@ const Index = () => {
               })),
 
               "description": "Turn your Shopify store into a wholesale channel without running a second site. Set wholesale, fixed or volume pricing by customer tag so approved buyers see their own prices. Let buyers order fast with CSV or XLSX purchase order uploads and a quick order form. Enforce minimum and maximum order quantities, order value minimums and case-pack multiples. Show ex-VAT prices to trade and inc-VAT to retail. Gate pages behind login or approval, hide shipping and payment methods by customer group, and offer NET 15/30/60 payment terms. Built for Shopify.",
-              "inLanguage": ["en","fr","nl","it","cs","es","ja","zh-Hans","zh-Hant","de","fi","nb","pt-PT","ro","sv","tr"],
+              "inLanguage": ["en","fr","nl","it","cs","es","ja","zh-Hans","zh-Hant","de","fi","nb","pt-PT","ro","sv","tr","da","el","he","ko"],
               "url": "https://blumacawtech.com",
               "publisher": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" },
               "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "15" }
