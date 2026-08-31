@@ -8,6 +8,8 @@
 //   3. deleted routes for pages added outside Lovable (export 8 dropped
 //      /privacy and /terms). rsync keeps the page files, so the only trace is
 //      an App.tsx that no longer routes them — checks 1-7 all passed on it.
+//   4. reinstated JSON-LD that was deliberately removed. Export 8 restored the
+//      invalid offers.shippingDetails block, undoing a Search Console fix.
 //
 // Run `npm run check:export` after porting an export, before committing.
 
@@ -159,6 +161,26 @@ for (const m of prerenderSrc.matchAll(/path:\s*"([^"]+)"/g)) {
   }
 }
 
+// ---------------------------------------------------------------- check 10
+// The offer markup must not carry shippingDetails/doesNotShip. We sell a
+// Shopify app subscription — nothing ships. That block triggered a Search
+// Console "Merchant listings" warning (invalid shippingRate: doesNotShip is
+// not in Google's spec, value was a string, and shippingDestination had no
+// addressCountry). It was removed deliberately, then an older Lovable export
+// silently reinstated it. Schema validity is invisible to every other check.
+for (const f of codeFiles) {
+  const src = readFileSync(f, "utf8");
+  for (const bad of ["shippingDetails", "doesNotShip"]) {
+    if (src.includes(bad)) {
+      fail(
+        "invalid-shipping-markup",
+        `${rel(f)} contains "${bad}" — removed on purpose; an app subscription ships nothing ` +
+          `and this re-triggers the Search Console merchant-listings warning`
+      );
+    }
+  }
+}
+
 // ---------------------------------------------------------------- report
 const checks = [
   "no .asset.json stubs (imports or files)",
@@ -171,6 +193,7 @@ const checks = [
   "public/og-image.png exists",
   "every page file is imported by App.tsx",
   "every prerendered path has an App.tsx route",
+  "no shippingDetails/doesNotShip in offer markup",
 ];
 
 if (failures.length === 0) {
