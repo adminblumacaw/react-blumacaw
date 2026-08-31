@@ -10,10 +10,13 @@ import { ArrowRight, CheckCircle } from "lucide-react";
 
 const included = [
   "Tiered, volume and customer-specific wholesale pricing",
+  "Set prices for unlimited SKUs",
   "Wholesale registration form with approval workflow",
   "Lock pages, hide prices and require B2B login",
   "Bulk CSV/XLSX price uploads",
   "Min/max order limits by quantity or amount",
+  "Quick order page and quantity increments per product",
+  "Tax inclusive/exclusive price display and draft order integration",
   "Multi-currency, all languages and Shopify Markets",
   "Live chat and call support on every plan",
 ];
@@ -22,7 +25,7 @@ const PricingPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Pricing — BMT B2B Wholesale Pricing App for Shopify"
+        title="Pricing — BMT B2B Wholesale Pricing for Shopify"
         description="BMT B2B Wholesale Pricing plans: Free plan available, Standard at $9.99/mo and Advanced at $29.99/mo with a 60-day free trial. Wholesale pricing, registration forms, order limits, custom shipping and Net terms for Shopify."
         canonicalPath="/pricing"
         jsonLd={{
@@ -55,6 +58,19 @@ const PricingPage = () => {
                 availability: "https://schema.org/InStock",
                 itemCondition: "https://schema.org/NewCondition",
                 url: "https://blumacawtech.com/pricing",
+                shippingDetails: {
+                  "@type": "OfferShippingDetails",
+                  shippingRate: {
+                    "@type": "MonetaryAmount",
+                    value: "0",
+                    currency: "USD",
+                  },
+                  shippingDestination: {
+                    "@type": "DefinedRegion",
+                    name: "Worldwide",
+                  },
+                  doesNotShip: true,
+                },
                 hasMerchantReturnPolicy: {
                   "@type": "MerchantReturnPolicy",
                   applicableCountry: "US",

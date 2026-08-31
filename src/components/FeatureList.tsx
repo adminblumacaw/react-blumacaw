@@ -46,7 +46,7 @@ const features = [
   {
     image: featurePaymentShipping,
     title: "Custom Payment & Shipping",
-    description: "Set NET 15/30/60 payment terms, custom shipping rates, sort and hide payment methods.",
+    description: "Set NET 15/30/60 payment terms, custom shipping rates and draft order integration.",
     span: "md:col-span-2",
   },
 ];

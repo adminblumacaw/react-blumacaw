@@ -49,6 +49,12 @@ const ReviewAvatar = ({ review }: { review: { store: string; logo?: string; doma
 const Reviews = () => {
     const reviews = [
     {
+      text: "I've had such a great experience setting up BMT Wholesale on Shopify. The app works phenomenally well — it's intuitive, efficient, and has made managing our wholesale side feel incredibly seamless. What really stood out was the support from Utakarsh, the founder. He went completely out of his way to understand what we needed and personally helped us get everything set up.",
+      store: "Naushad Ali",
+      location: "India",
+      date: "August 2026",
+    },
+    {
       text: "Amazing, I went to so many other apps before finding this one and I love it! Took a little tweaking as I am using a paid theme but Utakarsh has been amazing. The customer service level is 5 Stars! Thank you so much for your amazing app!",
       store: "Scavenger Supplies",
       domain: "scavengersupplies.com.au",
