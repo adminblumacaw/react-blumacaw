@@ -5,6 +5,9 @@
 //      `.url` points at /__l5e/assets-v1/..., a host that does not resolve
 //   2. shipped a stale scripts/prerender.mjs that drops already-published posts
 //      back to the SPA shell
+//   3. deleted routes for pages added outside Lovable (export 8 dropped
+//      /privacy and /terms). rsync keeps the page files, so the only trace is
+//      an App.tsx that no longer routes them — checks 1-7 all passed on it.
 //
 // Run `npm run check:export` after porting an export, before committing.
 
@@ -123,6 +126,39 @@ if (!existsSync(resolve(ROOT, "public/og-image.png"))) {
   fail("missing-og-image", "public/og-image.png does not exist (og:image would serve HTML)");
 }
 
+// ---------------------------------------------------------------- check 8
+// Orphaned page files: every src/pages/*.tsx must be imported by App.tsx.
+// Export 8 deleted the /privacy and /terms routes while rsync kept the page
+// files, leaving live pages unreachable — checks 1-7 all passed. This is the
+// signature of that class of regression.
+const appSrc = readFileSync(resolve(ROOT, "src/App.tsx"), "utf8");
+for (const f of allFiles) {
+  if (!/src\/pages\/[^/]+\.tsx$/.test(f)) continue;
+  const name = f.split("/").pop().replace(/\.tsx$/, "");
+  if (!appSrc.includes(`pages/${name}"`)) {
+    fail(
+      "orphaned-page",
+      `src/pages/${name}.tsx exists but App.tsx never imports it (page would be unreachable)`
+    );
+  }
+}
+
+// ---------------------------------------------------------------- check 9
+// Every literal path prerendered must be routable by the SPA. A prerendered
+// page whose App.tsx route disappeared still serves static HTML, then breaks
+// on hydration and falls through to NotFound — invisible without checking.
+// (Blog posts are generated as /blog/<slug> from the :slug route, so only
+// literal `path:` values appear here.)
+for (const m of prerenderSrc.matchAll(/path:\s*"([^"]+)"/g)) {
+  const path = m[1];
+  if (!appRoutes.has(path)) {
+    fail(
+      "prerendered-route-missing",
+      `"${path}" is prerendered but has no <Route> in src/App.tsx (breaks on hydration)`
+    );
+  }
+}
+
 // ---------------------------------------------------------------- report
 const checks = [
   "no .asset.json stubs (imports or files)",
@@ -133,6 +169,8 @@ const checks = [
   "every App.tsx route exists in entry-server.tsx",
   "every prerender blog post has a date",
   "public/og-image.png exists",
+  "every page file is imported by App.tsx",
+  "every prerendered path has an App.tsx route",
 ];
 
 if (failures.length === 0) {
