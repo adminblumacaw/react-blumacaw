@@ -43,7 +43,6 @@ const Pricing = () => {
         "Support multi-currency wholesale pricing",
         "Support Shopify markets",
         "Unlimited hide price and B2B login rules",
-        "Get live chat and call support",
       ],
     },
     {
@@ -62,11 +61,27 @@ const Pricing = () => {
         "Setup quick order page",
         "Set qty increments for products",
         "Get Draft order integration",
+      ],
+    },
+    {
+      name: "Expert",
+      tagline: "Invoicing on autopilot",
+      monthlyPrice: "$49.99",
+      annualPrice: "$499",
+      badge: null,
+      buttonText: "Start 60-Day Free Trial",
+      highlight: false,
+      features: [
+        "All Advanced features included",
+        "Invoice Generator",
+        "Automatic invoice emails",
+        "Google Drive sync",
         "Get live chat and call support",
       ],
     },
 
   ];
+
 
   return (
     <section id="pricing" className="py-16 sm:py-20 px-4">
@@ -106,7 +121,7 @@ const Pricing = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <Card
               key={index}

@@ -17,7 +17,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="BMT B2B Wholesale Pricing — Shopify Wholesale & Bulk Order App"
-      description="Turn your Shopify store into a wholesale channel without a second site. Wholesale, fixed and volume pricing by tag, CSV/XLSX bulk ordering, quick order form, order minimums and case packs, tax inclusive/exclusive prices, lock pages & hide prices, and NET 15/30/60 terms. Built for Shopify. Free plan available."
+      description="Turn your Shopify store into a wholesale channel without a second site. Wholesale, fixed and volume pricing by tag, CSV/XLSX bulk ordering, quick order form, order minimums and case packs, tax inclusive/exclusive prices, lock pages & hide prices, NET 15/30/60 terms, and Expert plan invoicing with Google Drive sync. Built for Shopify. Free plan available."
         canonicalPath="/"
         jsonLd={{
           "@context": "https://schema.org",
@@ -31,7 +31,8 @@ const Index = () => {
               "offers": [
                 { "price": "0", "name": "Free Plan" },
                 { "price": "9.99", "name": "Standard Plan" },
-                { "price": "29.99", "name": "Advanced Plan" }
+                { "price": "29.99", "name": "Advanced Plan" },
+                { "price": "49.99", "name": "Expert Plan" }
               ].map((o) => ({
                 "@type": "Offer",
                 "name": o.name,
@@ -51,7 +52,7 @@ const Index = () => {
               "inLanguage": ["en","fr","nl","it","cs","es","ja","zh-Hans","zh-Hant","de","fi","nb","pt-PT","ro","sv","tr","da","el","he","ko"],
               "url": "https://blumacawtech.com",
               "publisher": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" },
-              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "15" }
+              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "16" }
             },
             {
               "@type": "FAQPage",

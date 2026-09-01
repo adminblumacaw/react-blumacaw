@@ -39,7 +39,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-7 sm:mb-8 max-w-lg">
-              Turn your store into a wholesale channel without running a second site. Set wholesale, fixed or volume pricing by tag so approved buyers see their own prices, let them order by CSV/XLSX upload or quick order form, enforce order minimums and case-pack multiples, and offer net payment terms — in any language.
+              Turn your store into a wholesale channel without running a second site. Set wholesale, fixed or volume pricing by tag so approved buyers see their own prices, let them order by CSV/XLSX upload or quick order form, enforce order minimums and case-pack multiples, offer net payment terms, and automate invoicing with Google Drive sync on Expert — in any language.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
@@ -96,7 +96,7 @@ const Hero = () => {
               <p className="text-3xl sm:text-4xl font-bold text-foreground">5.0</p>
               <Star className="w-5 h-5 fill-yellow-400 text-yellow-400 mt-1" />
             </div>
-            <p className="text-sm text-muted-foreground mt-1">Star rating (15 reviews)</p>
+            <p className="text-sm text-muted-foreground mt-1">Star rating (16 reviews)</p>
           </div>
         </div>
       </div>

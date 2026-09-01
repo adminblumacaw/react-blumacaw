@@ -199,7 +199,7 @@ const faqs = [
 
   {
     q: "How much can I earn?",
-    a: "You earn 25% of every paying merchant's monthly subscription for as long as they remain a BMT customer. Plans start free, with paid tiers at $9.99/month (Standard) and $29.99/month (Advanced), so an agency referring 20 stores on the Advanced plan can earn roughly $150/month recurring.",
+    a: "You earn 25% of every paying merchant's monthly subscription for as long as they remain a BMT customer. Plans start free, with paid tiers at $9.99/month (Standard), $29.99/month (Advanced), and $49.99/month (Expert), so an agency referring 20 stores on the Advanced plan can earn roughly $150/month recurring.",
   },
   {
     q: "When do I get paid?",

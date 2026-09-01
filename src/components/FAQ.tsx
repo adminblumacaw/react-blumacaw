@@ -32,11 +32,11 @@ export const faqs = [
   },
   {
     q: "What are NET payment terms?",
-    a: "On the Advanced plan, you can offer NET 15, NET 30, or NET 60 payment terms — allowing wholesale buyers to purchase now and pay later. You can also set custom shipping rates and sort or hide payment methods.",
+    a: "On the Advanced plan, you can offer NET 15, NET 30, or NET 60 payment terms — allowing wholesale buyers to purchase now and pay later. You can also set custom shipping rates and integrate draft orders.",
   },
   {
     q: "Does it support Shopify Markets and multi-currency?",
-    a: "Yes. The Standard and Advanced plans support multi-currency wholesale pricing and Shopify Markets integration, so you can sell globally and manage international B2B buyers easily.",
+    a: "Yes. The Standard, Advanced, and Expert plans support multi-currency wholesale pricing and Shopify Markets integration, so you can sell globally and manage international B2B buyers easily.",
   },
   {
     q: "Can I show tax inclusive or tax exclusive wholesale prices?",
@@ -48,7 +48,7 @@ export const faqs = [
   },
   {
     q: "Is there a free plan?",
-    a: "Yes. The Free plan includes 1 active pricing rule, 50 CSV/XLSX bulk uploads per month, unlimited registration forms, manual or auto-tag and approve customers, and live chat and call support.",
+    a: "Yes. The Free plan includes 1 active pricing rule, 50 CSV/XLSX bulk uploads per month, unlimited registration forms, manual or auto-tag and approve customers, and live chat and call support. Paid plans include a 60-day free trial.",
   },
   {
     q: "How do registration forms work?",
@@ -56,7 +56,7 @@ export const faqs = [
   },
   {
     q: "What kind of support do you offer?",
-    a: "All plans include live chat and call support. We also offer free onboarding sessions to help you set up pricing rules, configure registration forms, and get your wholesale channel running.",
+    a: "The Free and Expert plans include live chat and call support. We also offer free onboarding sessions to help you set up pricing rules, configure registration forms, and get your wholesale channel running.",
   },
 ];
 
