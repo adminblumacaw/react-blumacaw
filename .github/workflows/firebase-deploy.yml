@@ -4,13 +4,47 @@ on:
   push:
     branches:
       - main
+  # Also validate pull requests, so a bad Lovable port is caught before merge
+  # rather than after it has already deployed.
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: read
   id-token: write
 
 jobs:
+  # Gate. Runs on both PRs and pushes to main; deploy waits on it.
+  # check:export encodes the regressions every Lovable export has reintroduced
+  # (asset stubs, stale prerender, deleted routes, reinstated invalid schema).
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check export integrity
+        run: npm run check:export
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Build (verifies SSR prerender of every route)
+        run: npm run build
+
   build-and-deploy:
+    needs: validate
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     environment: Staging
 
