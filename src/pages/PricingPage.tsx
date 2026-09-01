@@ -18,7 +18,9 @@ const included = [
   "Quick order page and quantity increments per product",
   "Tax inclusive/exclusive price display and draft order integration",
   "Multi-currency, all languages and Shopify Markets",
-  "Live chat and call support on every plan",
+  "Expert plan: invoice generator and automatic invoice emails",
+  "Expert plan: Google Drive sync",
+  "Live chat and call support on the Free and Expert plans",
 ];
 
 const PricingPage = () => {
@@ -26,7 +28,7 @@ const PricingPage = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Pricing — BMT B2B Wholesale Pricing App for Shopify"
-        description="BMT B2B Wholesale Pricing plans: Free plan available, Standard at $9.99/mo and Advanced at $29.99/mo with a 60-day free trial. Wholesale pricing, registration forms, order limits, custom shipping and Net terms for Shopify."
+        description="BMT B2B Wholesale Pricing plans: Free, Standard at $9.99/mo, Advanced at $29.99/mo, and Expert at $49.99/mo with a free trial. Invoicing, Google Drive sync, wholesale pricing, order limits, and Net terms for Shopify."
         canonicalPath="/pricing"
         jsonLd={{
           "@context": "https://schema.org",
@@ -44,12 +46,13 @@ const PricingPage = () => {
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "5",
-                reviewCount: "15",
+                reviewCount: "16",
               },
               offers: [
                 { name: "Free", price: "0" },
                 { name: "Standard", price: "9.99" },
                 { name: "Advanced", price: "29.99" },
+                { name: "Expert", price: "49.99" },
               ].map((o) => ({
                 "@type": "Offer",
                 name: o.name,

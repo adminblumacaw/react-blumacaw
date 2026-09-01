@@ -64,7 +64,6 @@ const Footer = () => {
           <div className="flex items-center flex-wrap justify-center gap-x-4 gap-y-2">
             <span>&copy; {currentYear} BlumacawTech</span>
             <a href="https://blumacawtech.com/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">Privacy</a>
-            <a href="https://blumacawtech.com/terms" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">Terms</a>
             <a href="https://blumacawtech.com/#faqs" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">FAQ</a>
           </div>
           <div className="flex items-center gap-2">

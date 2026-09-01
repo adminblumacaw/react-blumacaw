@@ -83,6 +83,12 @@ const Reviews = () => {
       date: "July 2026",
     },
     {
+      text: "A very good wholesale BtoB app. Its easy to use and very supportive onboarding team. Utkarsh, the founder has been amazing to work with! He’s incredibly helpful, always taking the time to find solutions that fit my business needs. He’s also very responsive, providing quick answers and support whenever I need it. Highly recommend!!",
+      store: "NerdNerdy",
+      location: "India",
+      date: "August 2026",
+    },
+    {
       text: "Amazing App, great help for my problem of handling B2B service, and the support from the team is outstanding, they understand my problem and resolve it within no time, hats off to them and good luck. Highly recommended if you do B2B business.",
       store: "bpckw",
       logo: bpckwLogo,
@@ -192,7 +198,7 @@ const Reviews = () => {
               Loved by merchants worldwide.
             </h2>
             <p className="text-muted-foreground text-base mb-8">
-              5.0 on the Shopify App Store · 15 reviews · 100% five stars
+              5.0 on the Shopify App Store · 16 reviews · 100% five stars
             </p>
 
             <div ref={emblaRef} className="overflow-hidden">

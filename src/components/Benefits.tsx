@@ -48,6 +48,11 @@ const benefits = [
     title: "Tax Inclusive/Exclusive Prices",
     description: "Show ex-VAT prices to trade buyers and inc-VAT prices to retail customers.",
   },
+  {
+    icon: Receipt,
+    title: "Invoicing & Google Drive Sync",
+    description: "Generate invoices, send them automatically, and sync invoice files to Google Drive on the Expert plan.",
+  },
 ];
 
 const Benefits = () => {

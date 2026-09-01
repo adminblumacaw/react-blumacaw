@@ -12,7 +12,7 @@ const About = () => {
     {
       icon: Award,
       title: "5.0 Star Rating",
-      description: "Rated 5.0 out of 5 stars on the Shopify App Store with 15 reviews — 100% are 5 stars"
+      description: "Rated 5.0 out of 5 stars on the Shopify App Store with 16 reviews — 100% are 5 stars"
     },
     {
       icon: Headphones,
