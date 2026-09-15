@@ -56,7 +56,10 @@ const Documentation = () => {
       description: "Create and manage wholesale customer registration forms with approval workflows",
       items: [
         { text: "Create Registration Forms", href: "/registration-form-guide" },
-        { text: "Enable Registration Forms on Store", href: "/enable-registration-form-guide" }
+        { text: "Enable Registration Forms on Store", href: "/enable-registration-form-guide" },
+        { text: "Configure Email Functionality", href: "/registration-email-guide" },
+        { text: "Configure Translations", href: "/registration-translations-guide" },
+        { text: "Configure CAPTCHA", href: "/registration-captcha-guide" }
       ]
     },
     {

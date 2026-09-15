@@ -12,6 +12,7 @@ import {
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import BookOnboarding from "@/components/BookOnboarding";
 import { buildGuideJsonLd } from "@/lib/guideSchema";
 import { 
   Settings, 
@@ -28,179 +29,177 @@ import {
   ToggleRight,
   Globe,
   ShoppingCart,
-  Tag
+  Upload,
+  ListChecks
 } from "lucide-react";
 
 const CreatePricingRuleGuide = () => {
   const steps = [
     {
       step: 1,
-      title: "Go to the Pricing Section",
-      description: "Navigate to the Pricing section, just below BMT B2B Wholesale Pricing.",
+      title: "Create a B2B Pricing Rule",
+      description: "Open BMT B2B Wholesale Pricing in Shopify Admin, go to Pricing, and start a new rule.",
       details: [
-        "Open your Shopify admin dashboard",
-        "Go to the BMT B2B Wholesale Pricing app",
-        "Click on the Pricing section in the app menu"
+        "Open the BMT B2B Wholesale Pricing app in Shopify Admin",
+        "Go to Pricing",
+        "Click Create B2B pricing rule",
       ],
       icon: DollarSign
     },
     {
       step: 2,
-      title: "Create B2B Pricing Rule",
-      description: "Click the 'Create B2B Pricing Rule' CTA to start a new rule.",
+      title: "Configure General Settings",
+      description: "Define the rule, its priority, the checkout message, and whether it is active.",
       details: [
-        "Click the 'Create B2B Pricing Rule' button",
-        "The pricing rule configuration form will open"
+        "Enter a clear name, such as 'VIP Wholesale' or 'Distributor Pricing'",
+        "Set the priority; 0 is the highest priority",
+        "Enter the message customers should see in their cart at checkout",
+        "Use the Status field in the Summary panel to keep the rule Active or inactive",
+        "Review the Summary panel as it updates with your targeting and pricing choices",
       ],
       icon: Settings
     },
     {
       step: 3,
-      title: "Fill Out General Settings",
-      description: "In the configuration page, fill out the General Settings. Add a name (e.g., 'Sample'), set the priority, and type a message (like 'Wholesale discount') that will appear at checkout.",
+      title: "Choose the Applied Customers",
+      description: "Select which customers should receive the pricing rule.",
       details: [
-        "Enter a descriptive name for the pricing rule",
-        "Set the priority to control rule precedence",
-        "Add a message that appears at checkout (e.g., 'Wholesale discount')"
+        "Choose All customers, Logged in customers, Non-logged in customers, or Customers with tag",
+        "For tagged customers, enter the required Shopify customer tag",
+        "Advanced Plan: select Exempt these customers from tax at checkout when required",
+        "Tax exemption must also be enabled in your Shopify tax settings",
       ],
-      icon: Settings
+      icon: Users
     },
     {
       step: 4,
-      title: "Choose Customer Targeting",
-      description: "Choose which customers see this pricing. Options include all customers, only logged-in customers, non-logged-in customers, or customers with a specific tag.",
+      title: "Exclude Customers",
+      description: "Prevent selected customers from receiving the rule, even when they match the applied-customer settings.",
       details: [
-        "Select customer targeting: All, logged-in, non-logged-in, or tagged",
-        "For broad B2B offers, select 'All Customers'",
-        "Use customer tags for targeted wholesale groups"
+        "Exclude customers by Shopify customer tag",
+        "Select individual customers to exclude when needed",
+        "Anyone matching an exclusion is never subject to the rule",
       ],
       icon: Users
     },
     {
       step: 5,
       title: "Select Markets",
-      description: "Decide whether this rule should appear in all markets or only specific markets.",
+      description: "Apply the rule across all Shopify Markets or only selected markets.",
       details: [
-        "Choose 'All markets' for global application",
-        "Or select specific markets for regional pricing"
+        "Choose All markets for store-wide coverage",
+        "Choose Specific markets to limit the rule",
+        "Search for a market and check each market you want to include",
       ],
       icon: Globe
     },
     {
       step: 6,
-      title: "Toggle on Wholesale Pricing",
-      description: "Enable the Wholesale Pricing toggle to activate the discount configuration.",
+      title: "Configure Wholesale Pricing",
+      description: "Turn on Wholesale Pricing, then choose one pricing method for the rule.",
       details: [
-        "Find the Wholesale Pricing toggle",
-        "Switch it ON to enable wholesale pricing for this rule"
+        "Set up price rule — use the same pricing logic across targeted products",
+        "Set up price list — configure prices for individual product variants",
+        "Upload prices (CSV/Excel) — configure many variant prices at once",
       ],
       icon: ToggleRight
     },
     {
       step: 7,
-      title: "Set Up Price Rule",
-      description: "For B2B Pricing Setup, select 'Set up Price Rule'.",
+      title: "Option A — Set Up a Price Rule, Exclusions, and Display",
+      description: "Apply the same pricing logic across targeted products, exclude items when needed, and choose how wholesale prices appear.",
       details: [
-        "Click 'Set up Price Rule' in the B2B Pricing Setup section",
-        "This opens the discount configuration options"
-      ],
-      icon: DollarSign
-    },
-    {
-      step: 8,
-      title: "Set Discount Value",
-      description: "Set your discount value — select percentage or fixed amount. For example, enter 20% for a percentage-based discount.",
-      details: [
-        "Choose discount type: Percentage or Fixed Amount",
-        "Enter the discount value (e.g., 20%)",
-        "Ensure the value aligns with your profit margins"
+        "Percent off — reduce original prices by a percentage",
+        "Amount off — subtract a fixed amount from each applicable item",
+        "Fixed price — set prices independently of the retail price",
+        "Enter the value in Discount per item",
+        "Apply the rule to All products, Specific products, or Specific collections",
+        "Use Exclude products for individual products that must not receive the rule",
+        "Use Exclude collections for collections that must not receive the rule",
+        "Choose Show new price only to display only the wholesale price",
+        "Choose Show new price and Original price to display both prices",
       ],
       icon: Percent
     },
     {
-      step: 9,
-      title: "Choose Products",
-      description: "Choose the products this rule applies to. It can cover all products, specific products, or certain collections.",
+      step: 8,
+      title: "Option B — Set Up a Price List",
+      description: "Use a price list to configure pricing for individual product variants.",
       details: [
-        "Select scope: all products, specific products, or collections",
-        "Browse and select individual products if needed",
-        "Choose collections for bulk product inclusion"
+        "Select Set up price list",
+        "Search for a product or click Browse",
+        "Add the required products and set pricing for individual variants",
+        "Add product or collection exclusions if needed",
+        "Choose how the new price should be displayed",
+      ],
+      icon: ListChecks
+    },
+    {
+      step: 9,
+      title: "Option C — Choose an Upload Template",
+      description: "Use Upload prices (CSV/Excel) to configure many variant prices at once.",
+      details: [
+        "Choose an SKU, barcode, or Shopify variant ID price template",
+        "Download a Discount template for percentage or fixed-amount discounts",
+        "Download a Fixed price template for final selling prices",
+        "The app recommends up to 500 rows per file; split larger lists across uploads",
+      ],
+      icon: Upload
+    },
+    {
+      step: 10,
+      title: "Complete and Upload the Price File",
+      description: "Fill in the selected template, upload it, and review the imported pricing.",
+      details: [
+        "Discount files include the identifier, Type, and Value",
+        "Use percentage with 10 for 10% off, or fixed_amount with 5 for 5 off",
+        "Fixed price files include the identifier and Final Price",
+        "Click Add file or drag and drop the completed CSV or Excel file",
+        "Review the uploaded pricing before saving the rule",
+      ],
+      icon: Upload
+    },
+    {
+      step: 11,
+      title: "Configure Volume Discount (Optional)",
+      description: "Turn on Volume Discount only when you also want quantity-based pricing for this rule.",
+      details: [
+        "Enable Volume Discount to add quantity-based pricing",
+        "Leave it turned off when volume-based pricing is not required",
       ],
       icon: ShoppingCart
     },
     {
-      step: 10,
-      title: "Set Price Display",
-      description: "Set how the price displays: just the new price or both the new and original price. We recommend showing both for transparency.",
-      details: [
-        "Choose to display only the discounted price",
-        "Or show both original and discounted prices (recommended)",
-        "Showing both prices increases transparency and perceived value"
-      ],
-      icon: Eye
-    },
-    {
-      step: 11,
-      title: "Set Active Dates",
-      description: "Set the active dates for this pricing rule so customers know when to expect the discount.",
-      details: [
-        "Configure the start date for the rule",
-        "Optionally set an end date",
-        "Leave end date empty for indefinite pricing"
-      ],
-      icon: Settings
-    },
-    {
       step: 12,
-      title: "Save the Rule",
-      description: "Click Save to save your new B2B pricing rule.",
+      title: "Set Active Dates, Review, and Save",
+      description: "Choose when the rule runs, review the Summary panel, and save the configuration.",
       details: [
-        "Review all configured settings",
-        "Click 'Save' to create the pricing rule",
-        "Wait for confirmation"
+        "Choose the Start date for the pricing rule",
+        "Select Set end date and specify a date if the rule should stop automatically",
+        "Confirm the name, priority, customers, markets, pricing, products, and price display in Summary",
+        "Save the pricing rule",
+        "Return to B2B Pricing Rules and use the toggle to activate or deactivate it",
       ],
       icon: Save
-    },
-    {
-      step: 13,
-      title: "Activate the Rule",
-      description: "Use the toggle button to switch the rule on or off. The status updates to Active when turned on. You can also Edit, Duplicate, or Delete the rule.",
-      details: [
-        "Toggle the rule ON to activate it",
-        "Status changes to 'Active' when enabled",
-        "Use Edit, Duplicate, or Delete for rule management"
-      ],
-      icon: ToggleRight
-    },
-    {
-      step: 14,
-      title: "Ensure App Embed is On",
-      description: "Make sure the App Embed is always on. If it's not, go to App Embeds under Themes and switch it on so your pricing displays correctly.",
-      details: [
-        "Check that the App Embed is enabled",
-        "If off, go to Themes > App Embeds and toggle it on",
-        "This ensures wholesale pricing appears on your storefront"
-      ],
-      icon: Settings
     }
   ];
 
   const previewSteps = [
     {
       step: 1,
-      description: "Open your store's home page. You'll see products listed with the wholesale discount applied.",
+      description: "Confirm the rule has a clear name, the correct priority, and the intended customer targeting and exclusions.",
     },
     {
       step: 2,
-      description: "Click into a product's PDP (Product Detail Page) to confirm the discounted price appears.",
+      description: "Check the market selection, pricing method and values, and included or excluded products and collections.",
     },
     {
       step: 3,
-      description: "Add a product to your cart.",
+      description: "Confirm the price display option and active dates, then make sure the saved rule is Active.",
     },
     {
       step: 4,
-      description: "Go to your cart to ensure the wholesale discount appears, along with your custom message if set.",
+      description: "Verify the expected wholesale price and customer message on the storefront and in the cart.",
     },
   ];
 
@@ -208,10 +207,11 @@ const CreatePricingRuleGuide = () => {
     {
       issue: "Rule not appearing in store",
       solutions: [
-        "Ensure the rule is activated (not in draft status)",
-        "Check that the app embed is enabled in theme settings",
-        "Verify customer meets the targeting criteria",
-        "Clear browser cache and reload the page"
+        "Ensure the rule is Active rather than Draft",
+        "Confirm the rule's start date has passed and its end date has not passed",
+        "Verify the customer and market match the targeting criteria",
+        "Check whether the customer, product, or collection is excluded",
+        "Review the product targeting and selected pricing method"
       ]
     },
     {
@@ -226,10 +226,10 @@ const CreatePricingRuleGuide = () => {
     {
       issue: "Discount not calculating correctly",
       solutions: [
-        "Verify discount type (percentage vs fixed amount)",
-        "Check minimum/maximum order requirements",
-        "Ensure product pricing is set up correctly",
-        "Test with different product combinations"
+        "Confirm the selected type: percent off, amount off, or fixed price",
+        "Check the value entered for each product or variant",
+        "Review the price-list upload identifiers and columns",
+        "Remember that a fixed price above the original price leaves the original price unchanged"
       ]
     }
   ];
@@ -240,12 +240,12 @@ const CreatePricingRuleGuide = () => {
       answer: "Yes, you can create as many pricing rules as needed. Use priorities to control which rule takes precedence when multiple rules could apply to the same customer or product."
     },
     {
-      question: "What's the difference between percentage and fixed amount discounts?",
-      answer: "Percentage discounts apply a proportional reduction (e.g., 20% off). Fixed amount discounts subtract a specific dollar value (e.g., $5 off). Choose based on your pricing strategy."
+      question: "What pricing methods can I use?",
+      answer: "You can apply a percentage discount, subtract a fixed amount, or use Fixed price to set prices independently of the retail price. You can also build a variant-level price list or upload prices in bulk using CSV or Excel."
     },
     {
-      question: "Can I schedule pricing rules for specific dates?",
-      answer: "Yes! Set the active dates when configuring the rule. You can define a start date and optionally an end date. Leave the end date empty for ongoing pricing."
+      question: "Can I exclude customers or products from a rule?",
+      answer: "Yes. You can exclude customer tags, individual customers, products, or collections. An exclusion always takes priority when the rule's targeting would otherwise match."
     },
     {
       question: "Will customers see the original price alongside the discounted price?",
@@ -254,16 +254,28 @@ const CreatePricingRuleGuide = () => {
     {
       question: "How do I apply wholesale pricing to specific collections only?",
       answer: "In the product selection step, choose 'Specific collections' and select the collections you want the rule to apply to. This allows targeted pricing for specific product categories."
+    },
+    {
+      question: "How many rows can I upload in one price file?",
+      answer: "Use one of the provided SKU, barcode, or variant ID templates. We recommend up to 500 rows per CSV or Excel file and splitting larger price lists across multiple uploads."
+    },
+    {
+      question: "Can a pricing rule run only during selected dates?",
+      answer: "Yes. Choose a start date and optionally set an end date if the rule should stop automatically. Check these dates when an expected price is not appearing."
+    },
+    {
+      question: "Can volume and wholesale discounts be combined?",
+      answer: "Yes. In Settings > Discounts, select 'Combine volume and wholesale discounts for any product' to apply a volume tier on top of the wholesale or price-list price. Leave it unselected if the volume tier price should replace the wholesale price once its quantity is reached."
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="How to Create Wholesale Pricing Rules on Shopify — Guide"
-        description="Learn how to create wholesale pricing rules on Shopify with BMT B2B Wholesale Pricing. Set percentage discounts, fixed amounts, or custom prices for tagged customer groups."
+        title="How to Configure B2B Pricing Rules on Shopify"
+        description="Configure BMT B2B pricing rules with customer targeting, fixed or discounted prices, CSV uploads, volume discounts, and discount combination settings."
         canonicalPath="/create-pricing-rule-guide"
-        jsonLd={buildGuideJsonLd({ title: "How to Create Wholesale Pricing Rules on Shopify — Guide", description: "Learn how to create wholesale pricing rules on Shopify with BMT B2B Wholesale Pricing. Set percentage discounts, fixed amounts, or custom prices for tagged customer groups.", path: "/create-pricing-rule-guide", steps, faqs, })}
+        jsonLd={buildGuideJsonLd({ title: "How to Configure B2B Pricing Rules in BMT B2B Wholesale Pricing", description: "Create targeted wholesale pricing for selected customers, markets, products, or collections using price rules, variant-level price lists, or CSV and Excel uploads.", path: "/create-pricing-rule-guide", steps, faqs, })}
       />
       <Header />
       <main className="pt-20">
@@ -285,15 +297,15 @@ const CreatePricingRuleGuide = () => {
                 Pricing Guide
               </Badge>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Create <span className="font-semibold text-primary">Wholesale Pricing</span>
+                 Configure <span className="font-semibold text-primary">Wholesale Pricing Rules</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Setting up wholesale pricing lets you offer special discounts to certain customers, boosting your B2B business easily
+                  Create targeted wholesale pricing for selected customers, markets, products, or collections using standard discounts, variant-level prices, or CSV and Excel uploads.
               </p>
               <Button size="lg" className="gradient-primary" asChild>
                 <a href="#setup-guide">
                   <Zap className="w-5 h-5 mr-2" />
-                  Start Creating
+                   Start Configuration
                 </a>
               </Button>
             </div>
@@ -306,7 +318,7 @@ const CreatePricingRuleGuide = () => {
             <Alert className="mb-8">
               <AlertTriangle className="h-4 w-4" />
               <AlertDescription>
-                <strong>Prerequisites:</strong> Ensure you have BMT B2B Wholesale Pricing app installed, wholesale pricing feature enabled, and administrative access to your Shopify store.
+                  <strong>Before you begin:</strong> Open BMT B2B Wholesale Pricing in Shopify Admin and have your customer tags, markets, products, collections, or price file ready.
               </AlertDescription>
             </Alert>
           </div>
@@ -320,7 +332,7 @@ const CreatePricingRuleGuide = () => {
                 Video Tutorial
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-                Watch this step-by-step video guide to create wholesale pricing
+                 Watch the setup walkthrough, then use the updated steps below to configure every current pricing option.
               </p>
             </div>
             <div className="max-w-4xl mx-auto">
@@ -346,7 +358,7 @@ const CreatePricingRuleGuide = () => {
                 Step-by-Step Guide
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Follow these steps to create and activate a wholesale pricing rule
+                  Follow the current BMT app workflow to configure targeting, pricing, optional volume discounts, active dates, and storefront verification.
               </p>
             </div>
 
@@ -354,7 +366,7 @@ const CreatePricingRuleGuide = () => {
               {steps.map((step, index) => {
                 const IconComponent = step.icon;
                 return (
-                  <Card key={index} className="shadow-card">
+                   <Card id={`step-${step.step}`} key={index} className="shadow-card scroll-mt-36">
                     <CardHeader>
                       <div className="flex items-center gap-4">
                         <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -395,10 +407,10 @@ const CreatePricingRuleGuide = () => {
           <div className="container mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Previewing Wholesale Pricing on Your Store
+                Quick Checklist
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Once your wholesale pricing rule is active, here's how it looks on your live store
+                  Review these essentials before relying on the rule for wholesale customers.
               </p>
             </div>
 
@@ -432,7 +444,7 @@ const CreatePricingRuleGuide = () => {
                 Common Issues & Solutions
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Quick fixes for common wholesale pricing setup problems
+                 Check these settings first if a rule is missing, conflicting, or calculating unexpectedly.
               </p>
             </div>
 
@@ -495,27 +507,58 @@ const CreatePricingRuleGuide = () => {
           </div>
         </section>
 
-        {/* Support CTA */}
-        <section className="py-16 px-4 bg-muted/30">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Still Need Help?</h2>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Our support team is available 24/7 to help you with wholesale pricing setup
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="gradient-primary" asChild>
-                <a href="mailto:support@blumacawtech.com">
-                  Contact Support
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="/documentation">
-                  View Full Documentation
-                </a>
-              </Button>
+        <Separator />
+
+        {/* Discount Settings */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Discount Settings
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+                Choose how volume discounts interact with wholesale and price-list prices.
+              </p>
             </div>
+
+            <Card className="max-w-4xl mx-auto shadow-card">
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Settings className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <Badge variant="outline" className="mb-2">Settings → Discounts</Badge>
+                    <CardTitle className="text-xl">Combining Discounts</CardTitle>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent className="space-y-5">
+                <p className="text-muted-foreground">
+                  Use <strong className="text-foreground">Combine volume and wholesale discounts for any product</strong> to choose whether both discounts apply together.
+                </p>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span><strong className="text-foreground">Combining on:</strong> a volume tier is applied on top of the wholesale or price-list price.</span>
+                  </li>
+                  <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <ToggleRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span><strong className="text-foreground">Combining off:</strong> once the tier quantity is reached, its price replaces the wholesale price.</span>
+                  </li>
+                </ul>
+                <Alert>
+                  <AlertTriangle className="h-4 w-4" />
+                  <AlertDescription>
+                    With combining off, a volume tier that discounts less than your wholesale rule can make buying more cost more per item. It also overrides price-list prices at that quantity.
+                  </AlertDescription>
+                </Alert>
+              </CardContent>
+            </Card>
           </div>
         </section>
+
+        <BookOnboarding />
       </main>
 
       <Footer />

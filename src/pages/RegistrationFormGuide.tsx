@@ -34,235 +34,238 @@ const RegistrationFormGuide = () => {
   const steps = [
     {
       step: 1,
-      title: "Go to the Forms Section",
-      description: "Navigate to the Forms section under BMT B2B. You'll see a prompt to create a registration form if none exists.",
+      title: "Open the Forms Overview",
+      description: "Open BMT B2B Wholesale Pricing in Shopify Admin and go to Forms to view or create registration forms.",
       details: [
-        "Open your Shopify admin dashboard",
-        "Go to the BMT B2B Wholesale Pricing app",
-        "Click on 'Forms' in the app navigation",
-        "Review existing forms or prepare to create a new one"
+        "Open the BMT B2B Wholesale Pricing app in Shopify Admin",
+        "Select Forms in the app navigation",
+        "Review your existing forms or prepare to create a new form",
       ],
       icon: ClipboardList
     },
     {
       step: 2,
-      title: "Click Create Form",
-      description: "Click the Create Form button to begin building your registration form.",
+      title: "Create a New Form",
+      description: "Start a new form and choose the preconfigured wholesale registration template.",
       details: [
-        "Click the 'Create Form' button",
-        "The form builder interface will open"
+        "Click Create Form on the forms overview page",
+        "Browse the available form templates",
+        "Select Wholesale Registration Form",
       ],
       icon: FileText
     },
     {
       step: 3,
-      title: "Select a Form Template",
-      description: "Select a form template. For this demo, use the available template and proceed.",
+      title: "Explore the Form Builder",
+      description: "Use the three main tabs to configure the form, customize its appearance, and manage email settings.",
       details: [
-        "Browse available form templates",
-        "Select a template that fits your needs",
-        "The template provides a starting structure for your form"
+        "Configuration controls the form content, fields, pages, and submission settings",
+        "Appearance controls the layout, width, typography, and colors",
+        "Emails contains the form's email settings",
+        "Use the live preview to see changes while you work",
       ],
-      icon: FileText
+      icon: Settings
     },
     {
       step: 4,
-      title: "Set Form Name and Page Title",
-      description: "Configure your form by setting the Form Name and Page Title to help organize and identify your form.",
+      title: "Configure the Form Name and Header",
+      description: "In Configuration, set the internal form name and customize the information customers see at the top of the form.",
       details: [
-        "Enter a descriptive form name (e.g., 'Wholesale Registration')",
-        "Set the page title for the form page",
-        "These help organize and identify your forms"
+        "Click Form Name to update the form name, page title, and handle",
+        "Edit the Header Name shown to customers",
+        "Add or revise the form Description",
+        "Check each change in the live preview",
       ],
       icon: Type
     },
     {
       step: 5,
-      title: "Add Header and Description",
-      description: "Add a header, description, and adjust text alignment as needed.",
+      title: "Edit Existing Form Fields",
+      description: "Select any field in the form to tailor the information requested from wholesale applicants.",
       details: [
-        "Enter a header text displayed to customers",
-        "Add a description explaining the form's purpose",
-        "Adjust text alignment (left, center, right)"
+        "Click an existing field, such as First Name or Email Address",
+        "Change the field label, placeholder, and help text",
+        "Choose the field alignment",
+        "Mark the field as required or optional",
       ],
-      icon: Type
+      icon: Settings
     },
     {
       step: 6,
-      title: "Edit Form Fields",
-      description: "Edit the form fields on Page 1. Standard fields include first name, last name, email, phone number, company name, company website, address, and years in business. Required fields are marked with an asterisk.",
+      title: "Add Pages and Form Elements",
+      description: "Extend the form with additional pages or fields when you need to collect more information.",
       details: [
-        "Review the default form fields",
-        "Mark required fields with an asterisk (*)",
-        "Standard fields: first name, last name, email, phone number",
-        "Additional fields: company name, website, address, years in business"
-      ],
-      icon: Settings
-    },
-    {
-      step: 7,
-      title: "Add New Elements",
-      description: "Add new elements if needed. For example, insert a Text field and configure its label, alignment, and validation settings.",
-      details: [
-        "Click 'Add Element' to insert new fields",
-        "Choose the field type (Text, Dropdown, Checkbox, etc.)",
-        "Configure the label, alignment, and validation rules",
-        "Set whether the field is required or optional"
-      ],
-      icon: Settings
-    },
-    {
-      step: 8,
-      title: "Add Additional Pages",
-      description: "If more sections are needed, add another page using the Add Page button. If your form only has one page, skip page navigation settings.",
-      details: [
-        "Click 'Add Page' to create multi-page forms",
-        "Organize related fields across pages",
-        "Skip this step if a single page is sufficient"
+        "Use the Pages area and click Add Page to create Page 2 or more steps",
+        "Click Add Element to insert a new field",
+        "Choose from available elements such as rich text, dropdown, terms and conditions, newsletter, checkbox, date, number, or file upload",
+        "Arrange related fields across pages to keep longer forms clear",
       ],
       icon: FileText
     },
     {
-      step: 9,
-      title: "Configure Submit Button and Success Message",
-      description: "Set up the Submit Button text and customize the message shown after the form is successfully submitted.",
+      step: 7,
+      title: "Configure a File Upload Field",
+      description: "Add File Upload when applicants need to submit certificates or supporting documents.",
       details: [
-        "Customize the submit button text",
-        "Write a clear success message for customers",
-        "Example: 'Thank you for registering! We will review your application.'"
+        "Select File Upload from the available form elements",
+        "Set the field name and help text",
+        "Choose the maximum file size and whether the field is required",
+        "Confirm that the upload area appears in the live form preview",
       ],
-      icon: CheckCircle
+      icon: FileText
     },
     {
-      step: 10,
-      title: "Preview Your Form",
-      description: "Preview your form on desktop and mobile to check its appearance.",
+      step: 8,
+      title: "Customize the Form Appearance",
+      description: "Open Appearance and adjust the form to match your storefront branding.",
       details: [
-        "Click 'Preview' to see how the form looks",
-        "Test on desktop view",
-        "Test on mobile view",
-        "Make adjustments as needed"
-      ],
-      icon: Eye
-    },
-    {
-      step: 11,
-      title: "Customize Appearance",
-      description: "Adjust the Appearance settings — select form width (default or boxed), font style, size, background, and text colors to match your store's branding.",
-      details: [
-        "Select form width: default or boxed layout",
-        "Choose font style and size",
-        "Set background color to match your brand",
-        "Configure text colors for readability"
+        "Choose the Default or Boxed layout",
+        "Set the form width",
+        "Select the font style and font size",
+        "Adjust the background, heading, text, primary button, and secondary button colors",
+        "Review the result in the live preview",
       ],
       icon: Palette
     },
     {
-      step: 12,
-      title: "Configure Form Settings",
-      description: "Configure form settings. Choose a Default Customer Tag — this is the tag assigned after you approve the registration. Mark the form as Active so it's ready for use.",
+      step: 9,
+      title: "Add Extra Form Elements",
+      description: "Choose from additional Select and Miscellaneous elements to collect the information your wholesale application needs.",
       details: [
-        "Set the Default Customer Tag (e.g., 'wholesale')",
-        "This tag is applied to approved registrations",
-        "Toggle the form status to 'Active'",
-        "Active forms are ready for customer submissions"
+        "Rich Text — add instructions, headings, or other helpful information without asking the applicant to enter a response",
+        "Dropdown — let applicants choose one option from a predefined list, such as business type or country",
+        "Terms and Conditions — ask applicants to review and accept your wholesale terms before submitting the form",
+        "Newsletter — let applicants choose whether they want to receive marketing news and updates",
+        "Checkbox — allow applicants to select or confirm one or more options",
+        "Date — collect a specific date, such as a business start date or preferred delivery date",
+        "Number — collect numeric information, such as the number of locations or estimated order quantity",
+        "File Upload — allow applicants to attach supporting documents, such as a resale certificate or business license",
+        "Captcha Verification — help protect the form from spam and automated submissions",
+        "Add each element where it best fits in the form, then customize its label, help text, options, and required status where available",
+        "Check the live preview to confirm every added element is clear and correctly positioned",
+      ],
+      icon: ClipboardList
+    },
+    {
+      step: 10,
+      title: "Configure Approval Settings",
+      description: "Choose whether submitted wholesale registrations require review or are approved automatically.",
+      details: [
+        "Turn on Auto Approval if eligible registrations should be approved instantly",
+        "Leave Auto Approval off when each submission should be reviewed manually",
+        "Confirm the selected approval flow before activating the form",
+      ],
+      icon: ToggleRight
+    },
+    {
+      step: 11,
+      title: "Set the Default Customer Tag",
+      description: "Assign a Shopify customer tag to approved registrants so they can be identified and targeted with wholesale rules.",
+      details: [
+        "Enter a Default Customer Tag, such as wholesale",
+        "The tag is assigned after a registration is approved",
+        "Use the same tag in customer-specific wholesale pricing rules when required",
       ],
       icon: Users
     },
     {
-      step: 13,
-      title: "Save the Form",
-      description: "Click Save to finalize the form. Note the generated Page URL — keep this handy, as you'll need it to share or embed the form.",
+      step: 12,
+      title: "Activate and Save the Form",
+      description: "Make the form available for new submissions and save the completed configuration.",
       details: [
-        "Click 'Save' to store your form configuration",
-        "Note the generated Page URL",
-        "Keep the URL for linking in your store navigation",
-        "The form is now ready for use"
+        "Click Mark as Active so the form can accept new registrations",
+        "Review the Configuration, Appearance, and approval settings",
+        "Click Save to publish the form",
       ],
       icon: Save
     },
     {
-      step: 14,
-      title: "Save Form to Complete Setup",
-      description: "Click Save Form to complete the setup. Your registration form is now ready to be published on your store.",
+      step: 13,
+      title: "Copy and Test the Form URL",
+      description: "Use the generated URL to open the live registration form and confirm that it is ready for applicants.",
       details: [
-        "Click 'Save Form' for final confirmation",
-        "Your form is now ready to be linked on your store",
-        "Proceed to enable the form on your storefront"
+        "Copy the generated form URL after saving",
+        "Paste the URL into a browser",
+        "Confirm the live form displays the correct fields, pages, styling, and file upload options",
+        "Submit a test registration before sharing the link with customers",
       ],
-      icon: Save
+      icon: Eye
     }
   ];
 
   const troubleshooting = [
     {
-      issue: "Registration form not appearing on storefront",
+      issue: "Registration form is not accepting submissions",
       solutions: [
-        "Verify that the form status is set to 'Active'",
-        "Check that the menu link is correctly pointing to the form URL",
-        "Ensure the menu containing the link is published",
-        "Clear browser cache and refresh the storefront page"
+        "Confirm the form is marked as Active",
+        "Save any pending changes",
+        "Open the generated form URL in a new browser tab",
+        "Check that all required fields are completed during testing"
       ]
     },
     {
-      issue: "Customers not receiving confirmation after registration",
+      issue: "Applicants are approved unexpectedly",
       solutions: [
-        "Check that the success message is properly configured",
-        "Verify email notification settings are enabled",
-        "Ensure customer email addresses are valid",
-        "Test the registration flow with a different email"
+        "Review the Auto Approval setting",
+        "Turn Auto Approval off when submissions must be reviewed manually",
+        "Save the form after changing the approval setting",
+        "Submit a test registration to confirm the intended flow"
       ]
     },
     {
-      issue: "Customer tag not being applied after approval",
+      issue: "File upload is not working as expected",
       solutions: [
-        "Verify the default customer tag is set in form configuration",
-        "Check that the approval was completed successfully",
-        "Refresh the customer list in Shopify admin",
-        "Manually verify the tag in customer details"
+        "Confirm the File Upload element is present on the correct page",
+        "Review its permitted file size and required status",
+        "Use the help text to tell applicants what document to upload",
+        "Test the field from the live form URL"
       ]
     },
     {
-      issue: "Form styling not matching store theme",
+      issue: "Form styling does not match the storefront",
       solutions: [
-        "Use the Appearance settings to customize colors and fonts",
-        "Ensure color codes match your store's brand palette",
-        "Preview the form on both desktop and mobile views",
-        "Save and refresh to see styling updates"
+        "Review the Default or Boxed layout selection",
+        "Check the form width, font style, and font size",
+        "Confirm the background, text, and button colors",
+        "Use the live preview while making appearance changes"
       ]
     }
   ];
 
   const faqs = [
     {
-      question: "Can I create multiple registration forms?",
-      answer: "Yes, you can create multiple registration forms for different purposes or customer segments. Each form can have its own fields, styling, and default customer tag."
+      question: "Which template should I use for wholesale registrations?",
+      answer: "Select the Wholesale Registration Form template. It provides a preconfigured starting point for collecting customer and company details from wholesale applicants."
     },
     {
-      question: "What happens when a customer submits a registration form?",
-      answer: "The submission appears in the Customer Management section under the 'Pending' tab. You can then review, approve, or reject the application. Approved customers automatically receive the default customer tag."
+      question: "Can I add custom fields or multiple pages?",
+      answer: "Yes. Use Add Element to insert fields such as dropdowns, checkboxes, dates, numbers, terms and conditions, or file uploads. Use Add Page when you want to organize a longer form into multiple steps."
     },
     {
-      question: "Can I add custom fields to the form?",
-      answer: "Yes, you can add various field types including text fields, dropdowns, checkboxes, and more. Each field can be configured with labels, alignment, and validation rules."
+      question: "What can applicants upload through the form?",
+      answer: "Add a File Upload field for certificates or supporting documents. You can customize its name and help text, set the maximum file size, and make it required or optional."
     },
     {
-      question: "How do I make the form match my store's branding?",
-      answer: "Use the Appearance settings to customize form width, font style, font size, background color, and text colors. Preview the form on desktop and mobile to ensure it looks great."
+      question: "How does Auto Approval work?",
+      answer: "When Auto Approval is enabled, submitted registrations can be approved instantly. Leave it disabled when you want to review each application before approval."
     },
     {
-      question: "Can I edit a form after publishing it?",
-      answer: "Yes, you can edit any form at any time. Changes are saved when you click 'Save Form'. The form URL remains the same after editing."
+      question: "What is the Default Customer Tag used for?",
+      answer: "The Default Customer Tag, such as 'wholesale', is assigned to approved registrants. You can use that Shopify customer tag to target the correct buyers with wholesale pricing rules."
+    },
+    {
+      question: "How do I check the form before sharing it?",
+      answer: "Mark the form as Active, save it, copy the generated form URL, and open it in a browser. Review the fields, pages, appearance, and upload options, then submit a test registration."
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="How to Create Wholesale Registration Forms on Shopify"
-        description="Build custom wholesale registration forms on Shopify to capture B2B leads. Auto-tag approved buyers and manage applications with BMT B2B Wholesale Pricing app."
+        title="How to Configure Wholesale Registration Forms"
+        description="Configure Shopify wholesale registration forms with custom fields, file uploads, branding, auto approval, customer tags, and a live form URL."
         canonicalPath="/registration-form-guide"
-        jsonLd={buildGuideJsonLd({ title: "How to Create Wholesale Registration Forms on Shopify", description: "Build custom wholesale registration forms on Shopify to capture B2B leads. Auto-tag approved buyers and manage applications with BMT B2B Wholesale Pricing app.", path: "/registration-form-guide", steps, faqs, })}
+        jsonLd={buildGuideJsonLd({ title: "How to Configure Wholesale Registration Forms", description: "Configure Shopify wholesale registration forms with custom fields, file uploads, branding, auto approval, customer tags, and a live form URL.", path: "/registration-form-guide", steps, faqs, })}
       />
       <Header />
       <main className="pt-20">
@@ -287,7 +290,7 @@ const RegistrationFormGuide = () => {
                 Create <span className="font-semibold text-primary">Registration Forms</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Configure registration forms for your wholesale customers to collect information and streamline onboarding
+                Customize wholesale registration forms, collect supporting files, control approvals, and onboard new B2B customers.
               </p>
               <Button size="lg" className="gradient-primary" asChild>
                 <a href="#setup-guide">
@@ -305,7 +308,7 @@ const RegistrationFormGuide = () => {
             <Alert className="mb-8">
               <AlertTriangle className="h-4 w-4" />
               <AlertDescription>
-                <strong>Prerequisites:</strong> Ensure you have BMT B2B Wholesale Pricing app installed, administrative access to your Shopify store, and theme customization permissions.
+                <strong>Before you begin:</strong> Open BMT B2B Wholesale Pricing in Shopify Admin and decide which customer and company details your wholesale application should collect.
               </AlertDescription>
             </Alert>
           </div>
@@ -319,7 +322,7 @@ const RegistrationFormGuide = () => {
                 Video Tutorial
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-                Watch this step-by-step video guide to create registration forms
+                Watch the setup walkthrough, then use the updated steps below to configure the current form builder.
               </p>
             </div>
             <div className="max-w-4xl mx-auto">
@@ -345,7 +348,7 @@ const RegistrationFormGuide = () => {
                 Step-by-Step Configuration Guide
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Follow these detailed steps to create and configure registration forms for your wholesale customers
+                Follow the current BMT app workflow to build, style, activate, and test a wholesale registration form.
               </p>
             </div>
 
@@ -397,7 +400,7 @@ const RegistrationFormGuide = () => {
                 Common Issues and Solutions
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Resolve common registration form configuration and usage issues
+                Check these settings first if submissions, approvals, uploads, or styling do not work as expected.
               </p>
             </div>
 
