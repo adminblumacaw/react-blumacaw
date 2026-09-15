@@ -34,7 +34,7 @@ Paid plans include a free trial.
 
 ## Rating
 
-5.0 out of 5 stars on the Shopify App Store (16 reviews, 100% five-star)
+5.0 out of 5 stars on the Shopify App Store (18 reviews, 100% five-star)
 
 ## Company
 
@@ -76,6 +76,9 @@ BlumacawTech, based in Bangalore, India. Launched June 2025.
 - [Volume Discount Guide](https://blumacawtech.com/volume-discount-guide)
 - [Bulk Upload Guide](https://blumacawtech.com/bulk-upload-guide)
 - [Registration Form Guide](https://blumacawtech.com/registration-form-guide)
+- [Registration Email Guide](https://blumacawtech.com/registration-email-guide)
+- [Registration Translations Guide](https://blumacawtech.com/registration-translations-guide)
+- [Registration CAPTCHA Guide](https://blumacawtech.com/registration-captcha-guide)
 - [Order Limits Guide](https://blumacawtech.com/order-limits-guide)
 - [Custom Payment Terms Guide](https://blumacawtech.com/custom-payment-terms-guide)
 - [Custom Shipping Rules Guide](https://blumacawtech.com/custom-shipping-rules-guide)

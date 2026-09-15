@@ -25,6 +25,9 @@ import AcceptRejectCustomersGuide from "./pages/AcceptRejectCustomersGuide";
 import BulkUploadGuide from "./pages/BulkUploadGuide";
 import VolumeDiscountGuide from "./pages/VolumeDiscountGuide";
 import RegistrationFormGuide from "./pages/RegistrationFormGuide";
+import RegistrationEmailGuide from "./pages/RegistrationEmailGuide";
+import RegistrationTranslationsGuide from "./pages/RegistrationTranslationsGuide";
+import RegistrationCaptchaGuide from "./pages/RegistrationCaptchaGuide";
 import EnableRegistrationFormGuide from "./pages/EnableRegistrationFormGuide";
 import OrderLimitsGuide from "./pages/OrderLimitsGuide";
 import EnableOrderLimitsGuide from "./pages/EnableOrderLimitsGuide";
@@ -56,6 +59,9 @@ export function render(url: string): string {
             <Route path="/bulk-upload-guide" element={<BulkUploadGuide />} />
             <Route path="/volume-discount-guide" element={<VolumeDiscountGuide />} />
             <Route path="/registration-form-guide" element={<RegistrationFormGuide />} />
+            <Route path="/registration-email-guide" element={<RegistrationEmailGuide />} />
+            <Route path="/registration-translations-guide" element={<RegistrationTranslationsGuide />} />
+            <Route path="/registration-captcha-guide" element={<RegistrationCaptchaGuide />} />
             <Route path="/enable-registration-form-guide" element={<EnableRegistrationFormGuide />} />
             <Route path="/order-limits-guide" element={<OrderLimitsGuide />} />
             <Route path="/enable-order-limits-guide" element={<EnableOrderLimitsGuide />} />

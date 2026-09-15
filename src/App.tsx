@@ -16,6 +16,9 @@ const AcceptRejectCustomersGuide = lazy(() => import("./pages/AcceptRejectCustom
 const BulkUploadGuide = lazy(() => import("./pages/BulkUploadGuide"));
 const VolumeDiscountGuide = lazy(() => import("./pages/VolumeDiscountGuide"));
 const RegistrationFormGuide = lazy(() => import("./pages/RegistrationFormGuide"));
+const RegistrationEmailGuide = lazy(() => import("./pages/RegistrationEmailGuide"));
+const RegistrationTranslationsGuide = lazy(() => import("./pages/RegistrationTranslationsGuide"));
+const RegistrationCaptchaGuide = lazy(() => import("./pages/RegistrationCaptchaGuide"));
 const EnableRegistrationFormGuide = lazy(() => import("./pages/EnableRegistrationFormGuide"));
 const OrderLimitsGuide = lazy(() => import("./pages/OrderLimitsGuide"));
 const EnableOrderLimitsGuide = lazy(() => import("./pages/EnableOrderLimitsGuide"));
@@ -57,6 +60,9 @@ const AppRoutes = () => {
           <Route path="/bulk-upload-guide" element={<BulkUploadGuide />} />
           <Route path="/volume-discount-guide" element={<VolumeDiscountGuide />} />
           <Route path="/registration-form-guide" element={<RegistrationFormGuide />} />
+          <Route path="/registration-email-guide" element={<RegistrationEmailGuide />} />
+          <Route path="/registration-translations-guide" element={<RegistrationTranslationsGuide />} />
+          <Route path="/registration-captcha-guide" element={<RegistrationCaptchaGuide />} />
           <Route path="/enable-registration-form-guide" element={<EnableRegistrationFormGuide />} />
           <Route path="/order-limits-guide" element={<OrderLimitsGuide />} />
           <Route path="/enable-order-limits-guide" element={<EnableOrderLimitsGuide />} />

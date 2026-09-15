@@ -49,6 +49,12 @@ const ReviewAvatar = ({ review }: { review: { store: string; logo?: string; doma
 const Reviews = () => {
     const reviews = [
     {
+      text: "Excellent customer service. Very helpful in troubleshooting. I had issues with my registration forms not working, but Utakarsh walked me through the process to fix it. I appreciate that I was able to talk to a human. Thanks so much!",
+      store: "Lalashiba",
+      location: "Australia",
+      date: "September 2026",
+    },
+    {
       text: "I've had such a great experience setting up BMT Wholesale on Shopify. The app works phenomenally well — it's intuitive, efficient, and has made managing our wholesale side feel incredibly seamless. What really stood out was the support from Utakarsh, the founder. He went completely out of his way to understand what we needed and personally helped us get everything set up.",
       store: "Naushad Ali",
       location: "India",
@@ -198,7 +204,7 @@ const Reviews = () => {
               Loved by merchants worldwide.
             </h2>
             <p className="text-muted-foreground text-base mb-8">
-              5.0 on the Shopify App Store · 16 reviews · 100% five stars
+              5.0 on the Shopify App Store · 18 reviews · 100% five stars
             </p>
 
             <div ref={emblaRef} className="overflow-hidden">

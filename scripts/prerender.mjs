@@ -175,6 +175,24 @@ const staticRoutes = [
       "Build custom wholesale registration forms on Shopify to capture B2B leads. Auto-tag approved buyers and manage applications with BMT B2B Wholesale Pricing app.",
   },
   {
+    path: "/registration-email-guide",
+    title: "Configure Registration Form Email Functionality",
+    description:
+      "Configure Shopify wholesale registration emails, customize templates, send tests, activate notifications, choose delivery methods, and set sender identity.",
+  },
+  {
+    path: "/registration-translations-guide",
+    title: "Configure Registration Form Translations",
+    description:
+      "Translate Shopify wholesale registration forms, override default text, localize fields and messages, and publish language versions with BMT B2B Wholesale Pricing.",
+  },
+  {
+    path: "/registration-captcha-guide",
+    title: "Configure CAPTCHA for Wholesale Registration Forms",
+    description:
+      "Add Google reCAPTCHA v2 to Shopify wholesale registration forms, configure your store domain, save Site and Secret Keys, and block spam signups.",
+  },
+  {
     path: "/enable-registration-form-guide",
     title: "How to Enable Registration Forms on Your Shopify Store",
     description:
