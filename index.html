@@ -19,6 +19,28 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <!-- Canonical is set per-route by SEOHead to avoid duplicate/incorrect canonicals -->
+    <!-- Metric-matched fallbacks for the Google Fonts below. When Montserrat or
+         Inter finishes loading it replaces these without reflowing the page;
+         the plain sans-serif fallback reflowed the hero (CLS 0.12). Values
+         from @capsizecss/metrics using Next.js's fallback formula, against Arial. -->
+    <style>
+      @font-face {
+        font-family: "Montserrat Fallback";
+        src: local("Arial");
+        size-adjust: 112.83%;
+        ascent-override: 85.79%;
+        descent-override: 22.25%;
+        line-gap-override: 0%;
+      }
+      @font-face {
+        font-family: "Inter Fallback";
+        src: local("Arial");
+        size-adjust: 107.12%;
+        ascent-override: 90.44%;
+        descent-override: 22.52%;
+        line-gap-override: 0%;
+      }
+    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">

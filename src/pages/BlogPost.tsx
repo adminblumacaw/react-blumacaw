@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
+import RelatedGuides from "@/components/RelatedGuides";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react";
@@ -3686,6 +3687,8 @@ const BlogPost = () => {
               </div>
             </section>
           )}
+
+          <RelatedGuides slug={slug} />
 
           <div className="mt-12 pt-8 border-t border-border/50 text-center">
             <p className="text-muted-foreground mb-4">Ready to grow your wholesale business?</p>

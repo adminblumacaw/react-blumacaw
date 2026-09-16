@@ -12,6 +12,9 @@
 //      invalid offers.shippingDetails block, undoing a Search Console fix.
 //   5. reverted files this repo owns — SEOHead.tsx, index.html's sameAs, and
 //      the Header/Footer logo — which were previously restored by hand.
+//   6. undone performance work in files exports regenerate: main.tsx
+//      hydration, the hero's fade and YouTube facade, and the article ->
+//      guide links in BlogPost.tsx (checks 14-18).
 //
 // Run `npm run check:export` after porting an export, before committing.
 
@@ -220,6 +223,85 @@ for (const f of codeFiles) {
   }
 }
 
+// ---------------------------------------------------------------- check 14
+// main.tsx must hydrate the prerendered markup. Exports ship createRoot, which
+// discards it and repaints once the JS arrives — measured on the emulator,
+// that alone took mobile LCP from 1.6s to 5.6s.
+const mainSrc = readFileSync(resolve(ROOT, "src/main.tsx"), "utf8");
+if (!mainSrc.includes("hydrateRoot") || !mainSrc.includes("ssrPath")) {
+  fail("hydration-removed", "src/main.tsx no longer hydrates prerendered pages (restore it from main)");
+}
+
+// ---------------------------------------------------------------- check 15
+// Hydration only works if entry-server.tsx renders the same component tree as
+// App.tsx outside <Routes>. A provider or widget added to App.tsx alone makes
+// React throw the server markup away — silently, with no visible breakage.
+const shellTags = (src) => {
+  const outside = src.replace(/<Routes>[\s\S]*?<\/Routes>/g, "");
+  return new Set(
+    [...outside.matchAll(/<([A-Z][A-Za-z0-9]*(?:\.[A-Za-z]+)?)[\s/>]/g)]
+      .map((m) => m[1])
+      .map((t) => (t === "BrowserRouter" || t === "StaticRouter" ? "Router" : t))
+      .filter((t) => !t.startsWith("SeoCollectorContext") && t !== "AppRoutes" && t !== "App" && t !== "PageFallback")
+  );
+};
+const appTags = shellTags(appSrc);
+const ssrTags = shellTags(readFileSync(resolve(ROOT, "src/entry-server.tsx"), "utf8"));
+for (const t of appTags) {
+  if (!ssrTags.has(t)) fail("ssr-tree-drift", `App.tsx renders <${t}> but src/entry-server.tsx does not — hydration will fall back to a full re-render`);
+}
+for (const t of ssrTags) {
+  if (!appTags.has(t)) fail("ssr-tree-drift", `src/entry-server.tsx renders <${t}> but App.tsx does not — hydration will fall back to a full re-render`);
+}
+
+// ---------------------------------------------------------------- check 16
+// Nothing above the fold may start invisible. The hero's fade-up animation
+// begins at opacity 0, which Chrome ignores for LCP — it held mobile LCP at
+// 4.3s. The hero video must also stay a click-to-load facade: a bare embed
+// fetched ~1 MB of YouTube scripts on every visit.
+const heroSrc = readFileSync(resolve(ROOT, "src/components/Hero.tsx"), "utf8");
+if (/animate-fade-up/.test(heroSrc)) {
+  fail("hero-fade", "src/components/Hero.tsx uses animate-fade-up* — above-the-fold content must not start at opacity 0");
+}
+for (const f of codeFiles) {
+  if (f.endsWith("/YouTubeFacade.tsx")) continue;
+  if (readFileSync(f, "utf8").includes("youtube.com/embed")) {
+    fail("youtube-embed", `${rel(f)} embeds YouTube directly — use <YouTubeFacade>`);
+  }
+}
+
+// ---------------------------------------------------------------- check 17
+// Metric-matched font fallbacks stop the web-font swap from reflowing the
+// page (it pushed CLS to 0.12 once the hero was visible from first paint).
+const tailwindSrc = readFileSync(resolve(ROOT, "tailwind.config.ts"), "utf8");
+for (const family of ["Montserrat Fallback", "Inter Fallback"]) {
+  if (!indexHtml.includes(`font-family: "${family}"`)) {
+    fail("font-fallback", `index.html lost the @font-face for "${family}"`);
+  }
+  if (!tailwindSrc.includes(family)) {
+    fail("font-fallback", `tailwind.config.ts fontFamily no longer lists "${family}"`);
+  }
+}
+
+// ---------------------------------------------------------------- check 18
+// Articles must keep linking to the setup guides — the guides were unindexed
+// with no referring page before this. Every mapped path must be a real route,
+// and every guide route must be linked from at least one article.
+const blogPostSrc = readFileSync(resolve(ROOT, "src/pages/BlogPost.tsx"), "utf8");
+if (!blogPostSrc.includes("<RelatedGuides")) {
+  fail("related-guides", "src/pages/BlogPost.tsx no longer renders <RelatedGuides slug={slug} />");
+}
+const relatedSrc = readFileSync(resolve(ROOT, "src/components/RelatedGuides.tsx"), "utf8");
+const linkedGuides = new Set([...relatedSrc.matchAll(/path:\s*"([^"]+)"/g)].map((m) => m[1]));
+for (const g of linkedGuides) {
+  if (!appRoutes.has(g)) fail("related-guides", `RelatedGuides links ${g}, which has no <Route> in App.tsx`);
+}
+for (const r of appRoutes) {
+  if (r.endsWith("-guide") && !linkedGuides.has(r)) {
+    fail("related-guides", `guide ${r} is not linked from any article — add it to src/components/RelatedGuides.tsx`);
+  }
+}
+
 // ---------------------------------------------------------------- report
 const checks = [
   "no .asset.json stubs (imports or files)",
@@ -236,6 +318,11 @@ const checks = [
   "SEOHead keeps static JSON-LD, head collector and normalizers",
   "index.html keeps the App Store sameAs",
   "no component renders the 1.1 MB logo",
+  "main.tsx hydrates prerendered pages",
+  "entry-server.tsx renders the same shell as App.tsx",
+  "hero has no fade-in and uses the YouTube facade",
+  "metric-matched font fallbacks are in place",
+  "articles link every setup guide",
 ];
 
 if (failures.length === 0) {
