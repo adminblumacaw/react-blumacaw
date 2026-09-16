@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 import { ArrowRight, Star } from "lucide-react";
 import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
+import YouTubeFacade from "@/components/YouTubeFacade";
 
 const Hero = () => {
   return (
@@ -14,7 +15,7 @@ const Hero = () => {
       <div className="container mx-auto relative">
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left — Copy */}
-          <div className="max-w-xl animate-fade-up">
+          <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-xs sm:text-sm text-primary font-medium mb-3 sm:mb-4">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
               Rated 5.0 ★ on the Shopify App Store
@@ -60,15 +61,12 @@ const Hero = () => {
           </div>
 
           {/* Right — Video */}
-          <div className="animate-fade-up-delay-2 flex items-center justify-center">
+          <div className="flex items-center justify-center">
             <div className="w-full max-w-lg aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
-              <iframe
-                src="https://www.youtube.com/embed/JQo9cGHlY_E?rel=0"
+              <YouTubeFacade
+                videoId="JQo9cGHlY_E"
                 title="BMT B2B Wholesale Pricing — Introductory App Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
                 className="w-full h-full"
-                loading="lazy"
               />
             </div>
           </div>

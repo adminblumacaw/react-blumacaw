@@ -23,8 +23,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'montserrat': ['Montserrat', 'sans-serif'],
-				'inter': ['Inter', 'sans-serif'],
+				'montserrat': ['Montserrat', '"Montserrat Fallback"', 'sans-serif'],
+				'inter': ['Inter', '"Inter Fallback"', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

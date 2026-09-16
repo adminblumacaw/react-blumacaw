@@ -4,14 +4,20 @@
 // empty SPA shell. Not shipped to the browser.
 //
 // Pages are imported statically (no React.lazy) so renderToString never
-// suspends. Analytics (usePageTracking), ScrollToTop, and toasters are
-// deliberately omitted — they are browser-only concerns.
+// suspends. Everything else mirrors src/App.tsx node for node — providers,
+// toasters, ScrollToTop and the Suspense boundary — because src/main.tsx
+// hydrates this markup, and any structural difference makes React discard it
+// and re-render from scratch. usePageTracking is effect-only, so it is omitted.
 
+import { Suspense } from "react";
 import { renderToString } from "react-dom/server";
 import { StaticRouter } from "react-router-dom/server";
 import { Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import ScrollToTop from "@/components/ScrollToTop";
 import { SeoCollectorContext, type SeoHead } from "@/components/SEOHead";
 
 import Index from "./pages/Index";
@@ -49,7 +55,11 @@ export function render(url: string): { html: string; head?: SeoHead } {
     <SeoCollectorContext.Provider value={collector}>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
+        <Toaster />
+        <Sonner />
         <StaticRouter location={url}>
+          <ScrollToTop />
+          <Suspense fallback={<div className="min-h-screen bg-background" aria-busy="true" />}>
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/pricing" element={<PricingPage />} />
@@ -78,6 +88,7 @@ export function render(url: string): { html: string; head?: SeoHead } {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
           </Routes>
+          </Suspense>
         </StaticRouter>
       </TooltipProvider>
     </QueryClientProvider>

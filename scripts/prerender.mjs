@@ -74,8 +74,13 @@ function renderHtml({ path: routePath, title, description, type = "website" }, a
 
   // Server-rendered content into the SPA mount point. Function replacement
   // avoids `$` sequences in the app HTML being treated as replace patterns.
+  // data-ssr-path tells src/main.tsx which route this markup was rendered
+  // for, so it only hydrates a matching page.
   if (appHtml) {
-    html = html.replace('<div id="root"></div>', () => `<div id="root">${appHtml}</div>`);
+    html = html.replace(
+      '<div id="root"></div>',
+      () => `<div id="root" data-ssr-path="${escape(routePath)}">${appHtml}</div>`
+    );
   }
 
   return html;
