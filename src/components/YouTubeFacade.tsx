@@ -3,6 +3,10 @@ import { useState } from "react";
 interface YouTubeFacadeProps {
   videoId: string;
   title: string;
+  // Self-hosted poster (an imported asset). On desktop the hero poster is the
+  // LCP element, so fetching it from i.ytimg.com added a third-party
+  // connection to LCP. Falls back to YouTube's thumbnail when omitted.
+  poster?: string;
   className?: string;
 }
 
@@ -10,7 +14,7 @@ interface YouTubeFacadeProps {
 // embedded player costs ~1 MB of YouTube scripts (plus ad and tracking
 // requests) on page load, and a lazy iframe does not help in the hero: it
 // sits inside Chrome's lazy-load distance, so it loaded on every mobile visit.
-const YouTubeFacade = ({ videoId, title, className = "" }: YouTubeFacadeProps) => {
+const YouTubeFacade = ({ videoId, title, poster, className = "" }: YouTubeFacadeProps) => {
   const [playing, setPlaying] = useState(false);
 
   if (playing) {
@@ -33,10 +37,10 @@ const YouTubeFacade = ({ videoId, title, className = "" }: YouTubeFacadeProps) =
       className={`group relative block bg-black ${className}`}
     >
       <img
-        src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
+        src={poster ?? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
         alt=""
-        width={480}
-        height={360}
+        width={poster ? 1024 : 480}
+        height={poster ? 576 : 360}
         decoding="async"
         className="h-full w-full object-cover"
       />

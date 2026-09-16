@@ -263,6 +263,11 @@ const heroSrc = readFileSync(resolve(ROOT, "src/components/Hero.tsx"), "utf8");
 if (/animate-fade-up/.test(heroSrc)) {
   fail("hero-fade", "src/components/Hero.tsx uses animate-fade-up* — above-the-fold content must not start at opacity 0");
 }
+// On desktop the hero poster is the LCP element; a YouTube-hosted thumbnail
+// put a third-party connection inside LCP.
+if (heroSrc.includes("<YouTubeFacade") && !/<YouTubeFacade[^>]*\bposter=/.test(heroSrc)) {
+  fail("hero-poster", "src/components/Hero.tsx <YouTubeFacade> has no self-hosted poster= (desktop LCP)");
+}
 for (const f of codeFiles) {
   if (f.endsWith("/YouTubeFacade.tsx")) continue;
   if (readFileSync(f, "utf8").includes("youtube.com/embed")) {
