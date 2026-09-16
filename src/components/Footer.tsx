@@ -4,6 +4,7 @@ import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
 import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
+import blumacawMark from "@/assets/blumacaw-mark-120.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,8 +17,10 @@ const Footer = () => {
           <div className="sm:col-span-2">
             <div className="flex items-center space-x-2.5 mb-4">
               <img
-                src="/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png"
+                src={blumacawMark}
                 alt="BlumacawTech Logo"
+                width={36}
+                height={36}
                 className="w-8 h-8 rounded-lg"
               />
               <span className="text-lg font-inter font-semibold">

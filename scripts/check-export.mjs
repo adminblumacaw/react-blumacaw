@@ -10,6 +10,8 @@
 //      an App.tsx that no longer routes them — checks 1-7 all passed on it.
 //   4. reinstated JSON-LD that was deliberately removed. Export 8 restored the
 //      invalid offers.shippingDetails block, undoing a Search Console fix.
+//   5. reverted files this repo owns — SEOHead.tsx, index.html's sameAs, and
+//      the Header/Footer logo — which were previously restored by hand.
 //
 // Run `npm run check:export` after porting an export, before committing.
 
@@ -181,6 +183,43 @@ for (const f of codeFiles) {
   }
 }
 
+// ---------------------------------------------------------------- check 11
+// SEOHead must stay this repo's version. Every export so far has reverted it
+// to one that injects JSON-LD from useEffect (invisible to non-JS crawlers)
+// and has no head collector (so the prerendered <title> drifts from the one
+// Google sees after rendering). Until now this was restored by hand each port.
+const seoHead = readFileSync(resolve(ROOT, "src/components/SEOHead.tsx"), "utf8");
+for (const [needle, why] of [
+  ["dangerouslySetInnerHTML", "JSON-LD must render in JSX so the prerender emits it statically"],
+  ["SeoCollectorContext", "the prerender reads each page's title/description from it"],
+  ["normalizeTitle", "strips the brand suffix that pushed titles past Google's display limit"],
+  ["normalizeDescription", "keeps meta descriptions within Google's ~160-character snippet"],
+]) {
+  if (!seoHead.includes(needle)) {
+    fail("seohead-reverted", `src/components/SEOHead.tsx lacks ${needle} — ${why} (restore it from main)`);
+  }
+}
+
+// ---------------------------------------------------------------- check 12
+// The Organization markup must keep its sameAs link to the Shopify App Store
+// listing — the third-party corroboration AI assistants weight. Exports drop it.
+const indexHtml = readFileSync(resolve(ROOT, "index.html"), "utf8");
+if (!indexHtml.includes("apps.shopify.com/blumacawtech")) {
+  fail("sameas-dropped", "index.html Organization JSON-LD lost sameAs -> https://apps.shopify.com/blumacawtech");
+}
+
+// ---------------------------------------------------------------- check 13
+// The 1024x1024 logo is 1.1 MB. It is fine inside JSON-LD (only crawlers
+// fetch it) but must not be an <img> — it rendered at 36px on every page.
+const BIG_LOGO = "/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png";
+const bigLogoAsImage = [`src="${BIG_LOGO}"`, `src={"${BIG_LOGO}"}`, "src={`" + BIG_LOGO + "`}"];
+for (const f of codeFiles) {
+  const src = readFileSync(f, "utf8");
+  if (bigLogoAsImage.some((form) => src.includes(form))) {
+    fail("oversized-logo", `${rel(f)} renders the 1.1 MB logo as an image — use @/assets/blumacaw-mark-120.png`);
+  }
+}
+
 // ---------------------------------------------------------------- report
 const checks = [
   "no .asset.json stubs (imports or files)",
@@ -194,6 +233,9 @@ const checks = [
   "every page file is imported by App.tsx",
   "every prerendered path has an App.tsx route",
   "no shippingDetails/doesNotShip in offer markup",
+  "SEOHead keeps static JSON-LD, head collector and normalizers",
+  "index.html keeps the App Store sameAs",
+  "no component renders the 1.1 MB logo",
 ];
 
 if (failures.length === 0) {
@@ -213,6 +255,7 @@ for (const [check, details] of Object.entries(byCheck)) {
 console.error(
   "\nThese are the regressions Lovable exports reintroduce. Re-run the port's\n" +
     "normalization step (rewrite .asset.json imports back to the real image\n" +
-    "files, drop the .url access, and keep this repo's scripts/prerender.mjs)."
+    "files, drop the .url access, keep this repo's scripts/prerender.mjs,\n" +
+    "SEOHead.tsx, App.tsx routes and index.html, and strip shippingDetails)."
 );
 process.exit(1);

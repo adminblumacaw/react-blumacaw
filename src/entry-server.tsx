@@ -12,6 +12,7 @@ import { StaticRouter } from "react-router-dom/server";
 import { Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { SeoCollectorContext, type SeoHead } from "@/components/SEOHead";
 
 import Index from "./pages/Index";
 import PricingPage from "./pages/PricingPage";
@@ -39,9 +40,13 @@ import Affiliate from "./pages/Affiliate";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 
-export function render(url: string): string {
+// Returns the page HTML plus the title/description/type its SEOHead chose,
+// which the prerender writes into the static <head>.
+export function render(url: string): { html: string; head?: SeoHead } {
   const queryClient = new QueryClient();
-  return renderToString(
+  const collector: { head?: SeoHead } = {};
+  const html = renderToString(
+    <SeoCollectorContext.Provider value={collector}>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <StaticRouter location={url}>
@@ -76,5 +81,7 @@ export function render(url: string): string {
         </StaticRouter>
       </TooltipProvider>
     </QueryClientProvider>
+    </SeoCollectorContext.Provider>
   );
+  return { html, head: collector.head };
 }

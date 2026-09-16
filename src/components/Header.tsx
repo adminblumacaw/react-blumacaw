@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import AnnouncementBar from "./AnnouncementBar";
+import blumacawMark from "@/assets/blumacaw-mark-120.png";
 
 interface HeaderProps {
   showAnnouncement?: boolean;
@@ -29,8 +30,10 @@ const Header = ({ showAnnouncement = false }: HeaderProps) => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2.5">
             <img
-              src="/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png"
+              src={blumacawMark}
               alt="BlumacawTech Logo"
+              width={36}
+              height={36}
               className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg"
             />
             <span className="text-lg sm:text-xl font-inter font-bold text-foreground tracking-tight">
