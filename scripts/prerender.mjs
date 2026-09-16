@@ -337,9 +337,12 @@ const blogPosts = [
   },
 ];
 
+// title/description in staticRoutes and blogPosts are FALLBACKS only. Each
+// page's SEOHead supplies the real values through render().head, so the static
+// <head> always matches what Google sees after rendering.
 const blogRoutes = blogPosts.map((p) => ({
   path: p.path ?? `/blog/${p.slug}`,
-  title: `${p.title} | BMT B2B Wholesale Pricing`,
+  title: p.title,
   description: p.description,
   type: "article",
   date: p.date,
@@ -357,10 +360,19 @@ const { render } = await import(serverEntry);
 
 const all = [...staticRoutes, ...blogRoutes];
 let emptyRoutes = [];
+const missingHead = [];
 for (const r of all) {
   let appHtml = "";
   try {
-    appHtml = render(r.path);
+    const out = render(r.path);
+    appHtml = out.html;
+    if (out.head) {
+      r.title = out.head.title;
+      r.description = out.head.description;
+      r.type = out.head.type;
+    } else {
+      missingHead.push(r.path);
+    }
   } catch (err) {
     console.error(`SSR failed for ${r.path}: ${err.message}`);
   }
@@ -368,6 +380,9 @@ for (const r of all) {
   // fail loudly rather than silently shipping an empty page to crawlers.
   if (appHtml.length < 500) emptyRoutes.push(`${r.path} (${appHtml.length} bytes)`);
   writeRoute(r, appHtml);
+}
+if (missingHead.length) {
+  console.warn(`no SEOHead rendered for (used prerender fallback):\n  ${missingHead.join("\n  ")}`);
 }
 if (emptyRoutes.length) {
   console.error(`SSR produced (near-)empty HTML for:\n  ${emptyRoutes.join("\n  ")}`);
@@ -412,7 +427,7 @@ const articleText = (html) => {
 
 const llmsHeader = readFileSync(resolve(DIST, "llms.txt"), "utf8");
 const fullSections = blogRoutes.map((r) => {
-  const html = render(r.path);
+  const { html } = render(r.path);
   return `## ${r.title}\n\nURL: ${BASE}${r.path}\nPublished: ${r.date ?? "n/a"}\n\n${articleText(html)}`;
 });
 writeFileSync(
