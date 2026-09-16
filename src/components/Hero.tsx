@@ -3,6 +3,7 @@ import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 import { ArrowRight, Star } from "lucide-react";
 import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
 import YouTubeFacade from "@/components/YouTubeFacade";
+import heroVideoPoster from "@/assets/hero-video-poster.webp";
 
 const Hero = () => {
   return (
@@ -65,6 +66,7 @@ const Hero = () => {
             <div className="w-full max-w-lg aspect-video rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10">
               <YouTubeFacade
                 videoId="JQo9cGHlY_E"
+                poster={heroVideoPoster}
                 title="BMT B2B Wholesale Pricing — Introductory App Video"
                 className="w-full h-full"
               />
