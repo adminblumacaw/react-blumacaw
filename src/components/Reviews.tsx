@@ -261,7 +261,7 @@ const Reviews = () => {
                   <button
                     key={i}
                     onClick={() => emblaApi?.scrollTo(i)}
-                    className="inline-flex items-center justify-center sm:mr-2"
+                    className="inline-flex h-6 min-w-6 items-center justify-center px-[9px]"
                     aria-label={`Go to review ${i + 1}`}
                     aria-current={i === selectedIndex}
                   >
