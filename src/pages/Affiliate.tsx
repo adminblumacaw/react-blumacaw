@@ -478,10 +478,11 @@ const Affiliate = () => {
               <Card className="border-border/60">
                 <CardContent className="p-6 sm:p-8">
                   <div className="flex items-center justify-between mb-4">
-                    <label className="text-sm font-medium text-foreground">Monthly paid referrals</label>
+                    <label id="referrals-label" className="text-sm font-medium text-foreground">Monthly paid referrals</label>
                     <span className="text-sm font-semibold text-primary">{referrals} referral{referrals === 1 ? "" : "s"}</span>
                   </div>
                   <Slider
+                    aria-labelledby="referrals-label"
                     value={[referrals]}
                     onValueChange={(v) => setReferrals(v[0])}
                     min={1}

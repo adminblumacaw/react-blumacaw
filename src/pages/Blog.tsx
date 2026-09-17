@@ -226,9 +226,9 @@ const Blog = () => {
                         {post.category}
                       </span>
                     </div>
-                    <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-smooth leading-snug">
+                    <h2 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-smooth leading-snug">
                       {post.title}
-                    </h3>
+                    </h2>
                     <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-1">
                       {post.excerpt}
                     </p>

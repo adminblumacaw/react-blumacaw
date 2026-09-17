@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-// Colour-contrast gate. Serves the built site (dist/) locally, opens every
-// sitemap URL in headless Chrome at a phone and a desktop width, and runs the
-// axe-core rules behind Lighthouse's "Contrast" audits: color-contrast (text
-// vs its background) and link-in-text-block (a link inside a sentence must
-// not be told apart by colour alone). Any failure fails the build.
+// Accessibility gate. Serves the built site (dist/) locally, opens every
+// sitemap URL in headless Chrome at a phone and a desktop width, and runs
+// every automated axe-core rule that Lighthouse's Accessibility category runs
+// (list below, from Lighthouse 12.8). Any failure fails the build, so the
+// score cannot quietly slip after a Lovable port.
 //
 // Run after `npm run build`:  npm run check:a11y
 // Chrome: set CHROME_PATH, or it tries the usual install locations (GitHub's
@@ -34,7 +34,26 @@ const VIEWPORTS = [
 // partly transparent and would be measured at the wrong colour.
 const SETTLE_MS = 1200;
 const CONCURRENCY = 4;
-const RULES = ["color-contrast", "link-in-text-block"];
+// Lighthouse 12.8 accessibility audits backed by axe-core (the manual audits
+// such as logical-tab-order cannot be automated and are not listed).
+const RULES = [
+  "accesskeys", "aria-allowed-attr", "aria-allowed-role", "aria-command-name",
+  "aria-conditional-attr", "aria-deprecated-role", "aria-dialog-name",
+  "aria-hidden-body", "aria-hidden-focus", "aria-input-field-name",
+  "aria-meter-name", "aria-progressbar-name", "aria-prohibited-attr",
+  "aria-required-attr", "aria-required-children", "aria-required-parent",
+  "aria-roles", "aria-text", "aria-toggle-field-name", "aria-tooltip-name",
+  "aria-treeitem-name", "aria-valid-attr-value", "aria-valid-attr", "button-name",
+  "bypass", "color-contrast", "definition-list", "dlitem", "document-title",
+  "duplicate-id-aria", "empty-heading", "form-field-multiple-labels", "frame-title",
+  "heading-order", "html-has-lang", "html-lang-valid", "html-xml-lang-mismatch",
+  "identical-links-same-purpose", "image-alt", "image-redundant-alt",
+  "input-button-name", "input-image-alt", "label", "label-content-name-mismatch",
+  "landmark-one-main", "link-in-text-block", "link-name", "list", "listitem",
+  "meta-refresh", "meta-viewport", "object-alt", "select-name", "skip-link",
+  "tabindex", "table-duplicate-name", "table-fake-caption", "target-size",
+  "td-has-header", "td-headers-attr", "th-has-data-cells", "valid-lang", "video-caption",
+];
 
 const CHROME_CANDIDATES = [
   process.env.CHROME_PATH,
@@ -162,7 +181,7 @@ async function main() {
   }
 
   if (failures.size === 0) {
-    console.log(`check:a11y passed: ${RULES.join(" + ")} clean on ${routes.length} pages x ${VIEWPORTS.length} viewports (${checked} checks).`);
+    console.log(`check:a11y passed: ${RULES.length} Lighthouse accessibility rules clean on ${routes.length} pages x ${VIEWPORTS.length} viewports (${checked} page loads).`);
     return;
   }
 
@@ -175,7 +194,7 @@ async function main() {
     console.error(`    on ${where.slice(0, 3).join(", ")}${where.length > 3 ? ` +${where.length - 3} more` : ""}\n`);
   }
   console.error(
-    "Fix colour failures with the tokens in src/index.css / tailwind.config.ts; underline links that sit inside a sentence.",
+    "Fix colour failures with the tokens in src/index.css / tailwind.config.ts; see https://dequeuniversity.com/rules/axe/4.10/<rule> for the others.",
   );
   process.exit(1);
 }
