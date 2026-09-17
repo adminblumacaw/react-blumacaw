@@ -73,7 +73,7 @@ const FAQ = () => {
             Everything you need to know about BMT B2B Wholesale Pricing.{" "}
             <a
               href="#support"
-              className="text-accent hover:underline"
+              className="font-medium text-accent underline underline-offset-4 hover:no-underline"
             >
               Contact us
             </a>{" "}

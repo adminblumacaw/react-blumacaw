@@ -15,6 +15,10 @@
 //   6. undone performance work in files exports regenerate: main.tsx
 //      hydration, the hero's fade and YouTube facade, and the article ->
 //      guide links in BlogPost.tsx (checks 14-18).
+//   7. brought back what Lovable's own copy still has: over-long search
+//      titles and colour tokens that fail WCAG contrast (checks 19-20). The
+//      build (title length) and `npm run check:a11y` (every rendered page)
+//      are the full gates; these are the fast static versions.
 //
 // Run `npm run check:export` after porting an export, before committing.
 
@@ -307,6 +311,91 @@ for (const r of appRoutes) {
   }
 }
 
+// ---------------------------------------------------------------- check 19
+// Search titles: SEOHead must prefer the short titles in src/lib/seoTitles.ts,
+// each of which must fit, and the prerender must keep failing the build on
+// any page whose title does not.
+const seoTitlesPath = resolve(ROOT, "src/lib/seoTitles.ts");
+if (!existsSync(seoTitlesPath)) {
+  fail("seo-titles", "src/lib/seoTitles.ts is missing (short search titles for long headlines)");
+} else {
+  const titlesSrc = readFileSync(seoTitlesPath, "utf8");
+  const max = Number(titlesSrc.match(/SEO_TITLE_MAX\s*=\s*(\d+)/)?.[1] ?? 60);
+  const knownPaths = new Set([...appRoutes, ...[...blogSlugs].map((slug) => `/blog/${slug}`)]);
+  for (const m of titlesSrc.matchAll(/^\s*"([^"]+)":\s*"([^"]+)",?\s*$/gm)) {
+    const [, path, title] = m;
+    if (title.length > max) fail("seo-titles", `seoTitles.ts title for ${path} is ${title.length} characters (max ${max})`);
+    if (!knownPaths.has(path)) fail("seo-titles", `seoTitles.ts has a title for ${path}, which is not a route or blog post`);
+  }
+}
+if (!seoHead.includes("SEO_TITLES[canonicalPath]")) {
+  fail("seo-titles", "src/components/SEOHead.tsx no longer applies SEO_TITLES (restore it from main)");
+}
+if (!readFileSync(resolve(ROOT, "src/entry-server.tsx"), "utf8").includes("SEO_TITLE_MAX")) {
+  fail("seo-titles", "src/entry-server.tsx no longer exports SEO_TITLE_MAX (the prerender's title-length gate reads it)");
+}
+if (!readFileSync(resolve(ROOT, "scripts/prerender.mjs"), "utf8").includes("longTitles")) {
+  fail("seo-titles", "scripts/prerender.mjs lost the title-length gate (restore it from main)");
+}
+
+// ---------------------------------------------------------------- check 20
+// Colour contrast of the design tokens (WCAG AA: 4.5:1 for body text).
+// Lighthouse flagged 72 elements before these were fixed; nearly all came
+// from four tokens, so checking the tokens catches a reverted index.css
+// without a browser. Markup-level problems are check:a11y's job.
+const indexCss = readFileSync(resolve(ROOT, "src/index.css"), "utf8");
+const tokensIn = (block) =>
+  Object.fromEntries(
+    [...(block ?? "").matchAll(/--([\w-]+):\s*([\d.]+)\s+([\d.]+)%\s+([\d.]+)%\s*;/g)].map((m) => [m[1], [+m[2], +m[3], +m[4]]])
+  );
+const hslToRgb = ([h, s, l]) => {
+  s /= 100;
+  l /= 100;
+  const k = (n) => (n + h / 30) % 12;
+  const a = s * Math.min(l, 1 - l);
+  const f = (n) => l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
+  return [f(0), f(8), f(4)];
+};
+const luminance = (hsl) =>
+  hslToRgb(hsl)
+    .map((c) => (c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4))
+    .reduce((sum, c, i) => sum + c * [0.2126, 0.7152, 0.0722][i], 0);
+const contrast = (a, b) => {
+  const [hi, lo] = [luminance(a), luminance(b)].sort((x, y) => y - x);
+  return (hi + 0.05) / (lo + 0.05);
+};
+const rootTokens = tokensIn(indexCss.match(/:root\s*\{([\s\S]*?)\n\s*\}/)?.[1]);
+const darkSection = tokensIn(indexCss.match(/\.section-dark\s*\{([\s\S]*?)\}/)?.[1]);
+const pairs = [
+  ["foreground", "background"], ["foreground", "card"],
+  ["muted-foreground", "background"], ["muted-foreground", "card"], ["muted-foreground", "muted"],
+  ["accent-text", "background"], ["accent-text", "card"], ["accent-text", "muted"],
+  ["primary", "background"], ["primary", "card"],
+  ["destructive", "background"], ["destructive", "card"],
+  ["primary-foreground", "primary"], ["secondary-foreground", "secondary"],
+  ["accent-foreground", "accent"], ["destructive-foreground", "destructive"],
+];
+const missingTokens = new Set(pairs.flat().filter((t) => !rootTokens[t]));
+for (const t of missingTokens) fail("contrast-tokens", `src/index.css :root is missing --${t}`);
+for (const [fg, bg] of pairs) {
+  if (missingTokens.has(fg) || missingTokens.has(bg)) continue;
+  const ratio = contrast(rootTokens[fg], rootTokens[bg]);
+  if (ratio < 4.5) fail("contrast-tokens", `--${fg} on --${bg} is ${ratio.toFixed(2)}:1 (needs 4.5:1) in src/index.css`);
+}
+if (!darkSection["accent-text"]) {
+  fail("contrast-tokens", "src/index.css .section-dark must set --accent-text (the light-mode teal is 3:1 on the dark footer)");
+} else if (rootTokens["dark-bg"] && contrast(darkSection["accent-text"], rootTokens["dark-bg"]) < 4.5) {
+  fail("contrast-tokens", "src/index.css .section-dark --accent-text is under 4.5:1 on --dark-bg");
+}
+for (const name of ["accent", "secondary"]) {
+  if (!new RegExp(`textColor:[\\s\\S]*?\\b${name}:\\s*\\{\\s*DEFAULT:\\s*['"]hsl\\(var\\(--accent-text\\)\\)['"]`).test(tailwindSrc)) {
+    fail("contrast-tokens", `tailwind.config.ts textColor.${name} must use --accent-text (bright teal text is 2.1:1)`);
+  }
+}
+if (!indexCss.includes(".prose blockquote")) {
+  fail("contrast-tokens", "src/index.css lost the .prose blockquote colour (muted text on the teal quote panel is 3.3:1)");
+}
+
 // ---------------------------------------------------------------- report
 const checks = [
   "no .asset.json stubs (imports or files)",
@@ -328,6 +417,8 @@ const checks = [
   "hero has no fade-in and uses the YouTube facade",
   "metric-matched font fallbacks are in place",
   "articles link every setup guide",
+  "long headlines have a short search title",
+  "colour tokens meet WCAG AA contrast",
 ];
 
 if (failures.length === 0) {

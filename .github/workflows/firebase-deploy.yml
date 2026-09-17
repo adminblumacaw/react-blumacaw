@@ -39,8 +39,13 @@ jobs:
       - name: Typecheck
         run: npx tsc --noEmit
 
-      - name: Build (verifies SSR prerender of every route)
+      - name: Build (verifies SSR prerender of every route and title lengths)
         run: npm run build
+
+      # Lighthouse's contrast audits (axe-core) on every sitemap page, phone
+      # and desktop width, using the runner's preinstalled Chrome.
+      - name: Check colour contrast
+        run: npm run check:a11y
 
   build-and-deploy:
     needs: validate

@@ -26,6 +26,14 @@ export default {
 				'montserrat': ['Montserrat', '"Montserrat Fallback"', 'sans-serif'],
 				'inter': ['Inter', '"Inter Fallback"', 'sans-serif'],
 			},
+			// The brand teal (--accent/--secondary) is 2.1:1 as text on the light
+			// backgrounds, so text-accent and text-secondary use a darker teal.
+			// bg-/border-/ring- utilities keep the bright one. Guarded by
+			// scripts/check-export.mjs.
+			textColor: {
+				accent: { DEFAULT: 'hsl(var(--accent-text))' },
+				secondary: { DEFAULT: 'hsl(var(--accent-text))' },
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
