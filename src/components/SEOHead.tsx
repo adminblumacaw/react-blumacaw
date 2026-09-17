@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect } from "react";
+import { SEO_TITLES } from "@/lib/seoTitles";
 
 interface SEOHeadProps {
   title: string;
@@ -31,7 +32,8 @@ const DESCRIPTION_MAX = 160;
 
 // Google truncates titles past ~60 characters and shows the site name
 // separately (from the WebSite structured data), so drop the brand suffix
-// only when it is what pushes a title over the limit.
+// only when it is what pushes a title over the limit. Headlines that are still
+// too long get a hand-written search title in src/lib/seoTitles.ts.
 export const normalizeTitle = (title: string) => {
   const trimmed = title.trim();
   return trimmed.length > TITLE_MAX ? trimmed.replace(BRAND_SUFFIX, "").trim() : trimmed;
@@ -65,7 +67,7 @@ const SEOHead = ({
   image = "https://blumacawtech.com/og-image.png",
   jsonLd,
 }: SEOHeadProps) => {
-  const title = normalizeTitle(rawTitle);
+  const title = normalizeTitle(SEO_TITLES[canonicalPath] ?? rawTitle);
   const description = normalizeDescription(rawDescription);
 
   const collector = useContext(SeoCollectorContext);

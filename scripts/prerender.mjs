@@ -97,7 +97,7 @@ function writeRoute(route, appHtml) {
 const staticRoutes = [
   {
     path: "/",
-    title: "BMT B2B Wholesale Pricing — Shopify Wholesale & Bulk Order App",
+    title: "BMT B2B Wholesale Pricing — Shopify Wholesale & Bulk Orders",
     description:
       "BMT B2B Wholesale Pricing App helps you grow wholesale revenue directly within your Shopify store—no extra setup needed. Tiered and volume pricing, customer-specific discounts, lock & hide prices, quick order page, bulk CSV/Excel ordering, registration forms, smart order limits, custom payment & shipping rules, and net terms like Net 15/Net 30. Free plan available.",
   },
@@ -109,7 +109,7 @@ const staticRoutes = [
   },
   {
     path: "/blog",
-    title: "BMT B2B Wholesale Pricing Blog — Shopify Wholesale Tips & Guides",
+    title: "Shopify Wholesale Tips & Guides | BMT B2B Blog",
     description:
       "Expert guides, merchant success stories, and product updates for Shopify wholesale. Learn how to set up B2B pricing, manage wholesale customers, and grow your bulk order business.",
   },
@@ -361,11 +361,12 @@ if (!existsSync(serverEntry)) {
   );
   process.exit(1);
 }
-const { render } = await import(serverEntry);
+const { render, SEO_TITLE_MAX } = await import(serverEntry);
 
 const all = [...staticRoutes, ...blogRoutes];
 let emptyRoutes = [];
 const missingHead = [];
+const longTitles = [];
 for (const r of all) {
   let appHtml = "";
   try {
@@ -384,6 +385,7 @@ for (const r of all) {
   // A route that renders almost nothing means the SSR router missed it —
   // fail loudly rather than silently shipping an empty page to crawlers.
   if (appHtml.length < 500) emptyRoutes.push(`${r.path} (${appHtml.length} bytes)`);
+  if (r.title.length > SEO_TITLE_MAX) longTitles.push(`${r.path} (${r.title.length}): ${r.title}`);
   writeRoute(r, appHtml);
 }
 if (missingHead.length) {
@@ -391,6 +393,15 @@ if (missingHead.length) {
 }
 if (emptyRoutes.length) {
   console.error(`SSR produced (near-)empty HTML for:\n  ${emptyRoutes.join("\n  ")}`);
+  process.exit(1);
+}
+// Google cuts longer titles off in search results. New articles usually
+// arrive from Lovable with a long headline: give them a search title in
+// src/lib/seoTitles.ts (the on-page headline stays as written).
+if (longTitles.length) {
+  console.error(
+    `page titles over ${SEO_TITLE_MAX} characters — add a short title for each path to src/lib/seoTitles.ts:\n  ${longTitles.join("\n  ")}`
+  );
   process.exit(1);
 }
 console.log(`prerendered ${all.length} routes with server-rendered content`);

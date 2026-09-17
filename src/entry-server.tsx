@@ -20,6 +20,9 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import ScrollToTop from "@/components/ScrollToTop";
 import { SeoCollectorContext, type SeoHead } from "@/components/SEOHead";
 
+// Read by scripts/prerender.mjs, which fails the build on longer titles.
+export { SEO_TITLE_MAX } from "@/lib/seoTitles";
+
 import Index from "./pages/Index";
 import PricingPage from "./pages/PricingPage";
 import Blog from "./pages/Blog";
