@@ -342,7 +342,7 @@ const CreatePricingRuleGuide = () => {
                   className="w-full h-full object-cover"
                   poster="/placeholder.svg"
                 >
-                  <source src="https://storage.googleapis.com/bmt-videos/wholesale_pricing_setup.mp4" type="video/mp4" />
+                  <source src="https://storage.googleapis.com/bmt-videos/Configuring%20B2B%20Pricing%20Rules.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>

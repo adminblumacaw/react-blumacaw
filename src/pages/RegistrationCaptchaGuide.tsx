@@ -323,7 +323,7 @@ const RegistrationCaptchaGuide = () => {
             <div className="max-w-4xl mx-auto">
               <div className="aspect-video rounded-lg overflow-hidden shadow-glow">
                 <video controls className="w-full h-full object-cover" poster="/placeholder.svg">
-                  <source src="https://storage.googleapis.com/bmt-videos/wholesale_registration.mp4" type="video/mp4" />
+                  <source src="https://storage.googleapis.com/bmt-videos/Configuring%20Captcha%20on%20Registration%20Forms.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
