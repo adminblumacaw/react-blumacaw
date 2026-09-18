@@ -31,3 +31,6 @@ dist-ssr
 
 # SSR build output (used only by scripts/prerender.mjs)
 dist-server
+
+# Firebase CLI deploy cache
+.firebase/

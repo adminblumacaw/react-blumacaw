@@ -10,6 +10,7 @@
     "lint": "eslint .",
     "check:export": "node scripts/check-export.mjs",
     "check:a11y": "node scripts/check-a11y.mjs",
+    "sync:lovable": "bash scripts/sync-to-lovable.sh",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -66,6 +67,8 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@lovable.dev/vite-plugin-dev-server-bridge": "^1.0.2",
+    "@lovable.dev/vite-plugin-hmr-gate": "^1.8.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.5.5",
     "@types/react": "^18.3.3",
