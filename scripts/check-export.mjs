@@ -22,6 +22,9 @@
 //   8. Lovable's repo commits its .env (Supabase and connector keys), so
 //      every ZIP contains one. This repo is public and supplies those values
 //      from CI secrets (check 21).
+//   9. (the other direction) broke Lovable's own build: Lovable installs with
+//      `bun install --frozen-lockfile`, so a package.json change without a
+//      matching bun.lock fails there even though npm CI here passes (check 22).
 //
 // Classes 1-7 came from Lovable editing a copy that never had this repo's
 // changes. Since 2026-09-18 scripts/sync-to-lovable.sh pushes this repo into
@@ -422,6 +425,32 @@ try {
   // Not a git checkout (e.g. a CI step without .git): .gitignore check above still applies.
 }
 
+// ---------------------------------------------------------------- check 22
+// bun.lock must list exactly package.json's dependencies. Lovable installs
+// with a frozen bun lockfile; the first sync (2026-09-18) failed Lovable's
+// build because axe-core and puppeteer-core were only in package-lock.json.
+// Fix: `npx bun@1 install` (not --frozen-lockfile) and commit bun.lock.
+const bunLockPath = resolve(ROOT, "bun.lock");
+if (existsSync(bunLockPath)) {
+  const pkg = JSON.parse(readFileSync(resolve(ROOT, "package.json"), "utf8"));
+  // bun.lock is JSON with trailing commas.
+  const lock = JSON.parse(readFileSync(bunLockPath, "utf8").replace(/,(\s*[}\]])/g, "$1"));
+  const ws = lock.workspaces?.[""] ?? {};
+  for (const field of ["dependencies", "devDependencies", "optionalDependencies", "peerDependencies"]) {
+    const want = pkg[field] ?? {};
+    const have = ws[field] ?? {};
+    for (const name of new Set([...Object.keys(want), ...Object.keys(have)])) {
+      if (want[name] !== have[name]) {
+        fail(
+          "bun-lock-drift",
+          `bun.lock ${field}.${name} is ${have[name] ?? "missing"}, package.json has ${want[name] ?? "nothing"} — ` +
+            "run `npx bun@1 install` and commit bun.lock (Lovable's build uses a frozen bun lockfile)"
+        );
+      }
+    }
+  }
+}
+
 // ---------------------------------------------------------------- report
 const checks = [
   "no .asset.json stubs (imports or files)",
@@ -446,6 +475,7 @@ const checks = [
   "long headlines have a short search title",
   "colour tokens meet WCAG AA contrast",
   ".env is ignored and not tracked",
+  "bun.lock matches package.json (Lovable's install)",
 ];
 
 if (failures.length === 0) {
