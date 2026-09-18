@@ -19,10 +19,19 @@
 //      titles and colour tokens that fail WCAG contrast (checks 19-20). The
 //      build (title length) and `npm run check:a11y` (every rendered page)
 //      are the full gates; these are the fast static versions.
+//   8. Lovable's repo commits its .env (Supabase and connector keys), so
+//      every ZIP contains one. This repo is public and supplies those values
+//      from CI secrets (check 21).
+//
+// Classes 1-7 came from Lovable editing a copy that never had this repo's
+// changes. Since 2026-09-18 scripts/sync-to-lovable.sh pushes this repo into
+// Lovable's (UtakarshBluMacawTech/macaw-bloom-renew), so exports start from
+// it; run that script after any change made here rather than in Lovable.
 //
 // Run `npm run check:export` after porting an export, before committing.
 
 import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
+import { execFileSync } from "node:child_process";
 import { dirname, resolve, extname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -396,6 +405,23 @@ if (!indexCss.includes(".prose blockquote")) {
   fail("contrast-tokens", "src/index.css lost the .prose blockquote colour (muted text on the teal quote panel is 3.3:1)");
 }
 
+// ---------------------------------------------------------------- check 21
+// .env must never be committed here: this repository is public. Lovable's
+// repo tracks its .env, so every ZIP export contains one; .gitignore is what
+// keeps it out when the export is copied over this tree.
+const gitignore = readFileSync(resolve(ROOT, ".gitignore"), "utf8");
+if (!/^\.env$/m.test(gitignore)) {
+  fail("env-committed", ".gitignore must list .env (Lovable exports include one; this repo is public)");
+}
+try {
+  const tracked = execFileSync("git", ["ls-files", "--", ".env", ".env.*"], { cwd: ROOT, encoding: "utf8" })
+    .split("\n")
+    .filter((f) => f && f !== ".env.example");
+  for (const f of tracked) fail("env-committed", `${f} is tracked by git — run: git rm --cached ${f}`);
+} catch {
+  // Not a git checkout (e.g. a CI step without .git): .gitignore check above still applies.
+}
+
 // ---------------------------------------------------------------- report
 const checks = [
   "no .asset.json stubs (imports or files)",
@@ -419,6 +445,7 @@ const checks = [
   "articles link every setup guide",
   "long headlines have a short search title",
   "colour tokens meet WCAG AA contrast",
+  ".env is ignored and not tracked",
 ];
 
 if (failures.length === 0) {

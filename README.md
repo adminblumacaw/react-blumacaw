@@ -1,5 +1,28 @@
 # Welcome to your Lovable project
 
+## How this site ships (read before editing)
+
+- **Production** is blumacawtech.com, deployed from
+  [adminblumacaw/react-blumacaw](https://github.com/adminblumacaw/react-blumacaw) `main`
+  (Firebase Hosting). Lovable's own publish is not the live site.
+- **Lovable** edits [UtakarshBluMacawTech/macaw-bloom-renew](https://github.com/UtakarshBluMacawTech/macaw-bloom-renew).
+  Updates move to production as ZIP exports of that repo, which are checked
+  (`npm run check:export`, the build, `npm run check:a11y`) before deploy.
+- **Changes made directly in react-blumacaw** are pushed back into Lovable's
+  repo with `npm run sync:lovable -- --push`, so Lovable always edits the live code.
+
+When editing in Lovable, keep what the live site depends on:
+
+- New pages need a route in `src/App.tsx` **and** `src/entry-server.tsx`, and an entry in
+  `scripts/prerender.mjs`. The build prerenders every route for search and AI crawlers.
+- Search titles are 60 characters at most. If a headline is longer, add a short one to
+  `src/lib/seoTitles.ts`; the build fails otherwise.
+- Keep `SEOHead`'s JSON-LD and head collector, `hydrateRoot` in `src/main.tsx`, the
+  click-to-load hero video (`YouTubeFacade`) and the hero without a fade-in animation.
+- Use the colour tokens in `src/index.css`. Teal (`--accent`) is a fill colour; teal text uses
+  `text-accent`, which maps to a darker teal that meets contrast rules.
+- Images must be real files in `src/assets` (not `.asset.json` placeholders).
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/75c72a9f-955d-44bc-afc1-0cd6e66333e9
