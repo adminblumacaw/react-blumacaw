@@ -332,7 +332,7 @@ const RegistrationFormGuide = () => {
                   className="w-full h-full object-cover"
                   poster="/placeholder.svg"
                 >
-                  <source src="https://storage.googleapis.com/bmt-videos/wholesale_registration.mp4" type="video/mp4" />
+                  <source src="https://storage.googleapis.com/bmt-videos/Configuring%20Wholesale%20Registration%20Forms.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
