@@ -1,6 +1,6 @@
 # BMT B2B Wholesale Pricing
 
-> Built for Shopify all-in-one B2B wholesale solution. Wholesale pricing, volume discounts, bulk CSV/Excel ordering, registration forms with auto-tagging, order limits, custom payment & shipping rules, net terms (Net 15/30/60), page lock, B2B login & hide price, quick order page, and Expert plan invoicing with Google Drive sync.
+> Built for Shopify all-in-one B2B wholesale solution. Customer-specific wholesale pricing, volume discounts, bulk CSV/Excel ordering, registration forms, order limits, custom payment and shipping rules, requests for quote, net terms, gated B2B catalogues, quick ordering, multi-language invoicing, and Shopify POS wholesale discounts.
 
 BMT B2B Wholesale Pricing is a Shopify app by BlumacawTech that enables merchants to run wholesale and retail from one Shopify store — no separate portal or duplicate products needed.
 
@@ -18,7 +18,9 @@ BMT B2B Wholesale Pricing is a Shopify app by BlumacawTech that enables merchant
 - **Shopify Markets Integration**: Multi-currency wholesale pricing across international markets
 - **Multi-Currency Support**: Wholesale buyers see localized pricing in their currency automatically
 - **Tax Inclusive/Exclusive Price Display (new)**: Choose whether wholesale prices are shown with or without tax, per customer group
-- **All Languages & Markets Supported**: Works with every language and market your Shopify store serves, with multi-currency wholesale pricing built in
+- **Request for Quote**: Let wholesale buyers request a quote before an order is finalized
+- **Shopify POS Wholesale Discounts**: Apply wholesale discounts to in-person sales on the Expert plan
+- **Languages & Markets**: Supports 20 listed languages, Shopify Markets, and multi-currency wholesale pricing
 - **Compatible with Shopify's New Customer Accounts**: Works with passwordless (OTP-based) login — no dependency on legacy customer accounts
 - **Built for Shopify**: Meets Shopify's highest standards for performance, design, and integration
 
@@ -26,15 +28,15 @@ BMT B2B Wholesale Pricing is a Shopify app by BlumacawTech that enables merchant
 
 - **Free Plan**: 1 active pricing rule, 1 active hide price and B2B login rule, set prices for unlimited SKUs, unlimited registration forms, manual and tag approve customers, 50 CSV/XLSX bulk uploads monthly, live chat and call support
 - **Standard Plan ($9.99/month or $99.90/year, save 17%)**: Unlimited active pricing rules, unlimited CSV/XLSX bulk uploads, min/max order limits by quantity and amount, multi-currency wholesale pricing, Shopify Markets support, and unlimited hide price and B2B login rules
-- **Advanced Plan ($29.99/month or $299.90/year, save 17%)**: All Standard features + custom shipping rates + NET 15/30/60 payment terms + display tax inclusive/exclusive prices + quick order page + quantity increments per product + draft order integration
-- **Expert Plan ($49.99/month or $499/year, save 17%)**: All Advanced features included + Invoice Generator + Automatic invoice emails + Google Drive sync + live chat and call support
+- **Advanced Plan ($29.99/month or $299.90/year, save 17%)**: All Standard features + custom shipping rates + NET 15/30/60 payment terms + Request for Quote + quick order page + quantity increments per product + draft order integration + tax inclusive/exclusive prices
+- **Expert Plan ($49.99/month or $499/year, save 17%)**: All Advanced features included + Shopify POS wholesale discounts + Invoice Generator + Automatic invoice emails + Google Drive sync + live chat and call support
 
 Paid plans include a free trial.
 
 
 ## Rating
 
-5.0 out of 5 stars on the Shopify App Store (18 reviews, 100% five-star)
+5.0 out of 5 stars on the Shopify App Store (20 reviews, 100% five-star)
 
 ## Company
 

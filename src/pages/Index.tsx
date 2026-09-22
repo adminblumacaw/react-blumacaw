@@ -17,7 +17,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="BMT B2B Wholesale Pricing — Shopify Wholesale & Bulk Order App"
-      description="Turn your Shopify store into a wholesale channel without a second site. Wholesale, fixed and volume pricing by tag, CSV/XLSX bulk ordering, quick order form, order minimums and case packs, tax inclusive/exclusive prices, lock pages & hide prices, NET 15/30/60 terms, and Expert plan invoicing with Google Drive sync. Built for Shopify. Free plan available."
+      description="Turn your Shopify store into a wholesale channel without a second site. Customer-specific wholesale pricing, CSV/XLSX and quick ordering, a gated B2B catalogue, order limits, Request for Quote, net terms, multi-language invoices, multi-currency, and Shopify POS discounts. Built for Shopify."
         canonicalPath="/"
         jsonLd={{
           "@context": "https://schema.org",
@@ -48,11 +48,11 @@ const Index = () => {
                 }
               })),
 
-              "description": "Turn your Shopify store into a wholesale channel without running a second site. Set wholesale, fixed or volume pricing by customer tag so approved buyers see their own prices. Let buyers order fast with CSV or XLSX purchase order uploads and a quick order form. Enforce minimum and maximum order quantities, order value minimums and case-pack multiples. Show ex-VAT prices to trade and inc-VAT to retail. Gate pages behind login or approval, hide shipping and payment methods by customer group, and offer NET 15/30/60 payment terms. Built for Shopify.",
+              "description": "Turn your Shopify store into a wholesale channel without running a second site. Set customer-specific wholesale, fixed or volume pricing; accept CSV or XLSX purchase order uploads; provide a quick order form; enforce order limits and case-pack multiples; gate pages behind login or approval; offer requests for quote and net terms; invoice in multiple languages and currencies; and enable wholesale discounts on Shopify POS. Built for Shopify.",
               "inLanguage": ["en","fr","nl","it","cs","es","ja","zh-Hans","zh-Hant","de","fi","nb","pt-PT","ro","sv","tr","da","el","he","ko"],
               "url": "https://blumacawtech.com",
               "publisher": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" },
-              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "18" }
+              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "20" }
             },
             {
               "@type": "FAQPage",

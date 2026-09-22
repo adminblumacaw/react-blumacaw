@@ -49,6 +49,12 @@ const ReviewAvatar = ({ review }: { review: { store: string; logo?: string; doma
 const Reviews = () => {
     const reviews = [
     {
+      text: "We use BMT B2B Wholesale to manage different wholesale prices for customers across various European countries. Each customer tier has its own wholesale prices, with different prices per Shopify Market, ensuring our customers see the right rates. Beyond pricing, we rely on the registration form, hiding wholesale-only products from retail shoppers, and pay-later draft orders. The app handles regional pricing and multi-currency logic effortlessly.",
+      store: "Kookut",
+      location: "Switzerland",
+      date: "September 2026",
+    },
+    {
       text: "Excellent customer service. Very helpful in troubleshooting. I had issues with my registration forms not working, but Utakarsh walked me through the process to fix it. I appreciate that I was able to talk to a human. Thanks so much!",
       store: "Lalashiba",
       location: "Australia",
@@ -204,7 +210,7 @@ const Reviews = () => {
               Loved by merchants worldwide.
             </h2>
             <p className="text-muted-foreground text-base mb-8">
-              5.0 on the Shopify App Store · 18 reviews · 100% five stars
+              5.0 on the Shopify App Store · 20 reviews · 100% five stars
             </p>
 
             <div ref={emblaRef} className="overflow-hidden">

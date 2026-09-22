@@ -30,13 +30,13 @@ const benefits = [
   },
   {
     icon: Globe,
-    title: "All Languages & Markets",
-    description: "Sell globally in any language with Shopify Markets and multi-currency support.",
+    title: "20 Languages & Shopify Markets",
+    description: "Sell globally with 20 supported languages, Shopify Markets, and multi-currency pricing.",
   },
   {
     icon: Clock,
     title: "Net Terms & Shipping Rules",
-    description: "Offer NET 15/30/60 terms, custom shipping rates, and hide payment methods by group.",
+    description: "Offer NET 15/30/60 terms, request for quote, custom shipping rates, and payment rules.",
   },
   {
     icon: Zap,
@@ -52,6 +52,11 @@ const benefits = [
     icon: Receipt,
     title: "Invoicing & Google Drive Sync",
     description: "Generate invoices, send them automatically, and sync invoice files to Google Drive on the Expert plan.",
+  },
+  {
+    icon: ShoppingCart,
+    title: "Shopify POS Wholesale Discounts",
+    description: "Apply wholesale discounts to in-person sales with Shopify POS on the Expert plan.",
   },
 ];
 
