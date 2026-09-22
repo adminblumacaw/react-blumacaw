@@ -16,7 +16,7 @@ const BookOnboarding = () => {
             Try the #1 Shopify Wholesale Pricing App
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg leading-relaxed max-w-xl mx-auto mb-8">
-            Join 100+ merchants using BMT B2B Wholesale Pricing for tiered pricing, bulk ordering, and B2B customer management.
+            Join 500+ merchants using BMT B2B Wholesale Pricing for tiered pricing, bulk ordering, and B2B customer management.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Button size="lg" className="gradient-primary shadow-glow text-base px-8 py-6 group" type="button" onClick={() => openExternalUrl(SHOPIFY_APP_URL)}>

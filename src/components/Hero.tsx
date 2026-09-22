@@ -41,7 +41,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-7 sm:mb-8 max-w-lg">
-              Turn your store into a wholesale channel without running a second site. Set wholesale, fixed or volume pricing by tag so approved buyers see their own prices, let them order by CSV/XLSX upload or quick order form, enforce order minimums and case-pack multiples, offer net payment terms, and automate invoicing with Google Drive sync on Expert — in any language.
+              Turn your store into a wholesale channel without running a second site. Set customer-specific wholesale, fixed or volume pricing, let buyers order by CSV/XLSX upload or quick order form, enforce order limits and case-pack multiples, gate your B2B catalogue, offer net terms and quotes, and invoice in multiple languages and currencies.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
@@ -82,7 +82,7 @@ const Hero = () => {
         </p>
         <div className="flex flex-wrap justify-center gap-8 sm:gap-16">
           <div className="text-center">
-            <p className="text-3xl sm:text-4xl font-bold text-foreground">100+</p>
+            <p className="text-3xl sm:text-4xl font-bold text-foreground">500+</p>
             <p className="text-sm text-muted-foreground mt-1">Shopify merchants</p>
           </div>
           <div className="hidden sm:block w-px h-14 bg-border/60 self-center" />
@@ -96,7 +96,7 @@ const Hero = () => {
               <p className="text-3xl sm:text-4xl font-bold text-foreground">5.0</p>
               <Star className="w-5 h-5 fill-yellow-400 text-yellow-400 mt-1" />
             </div>
-             <p className="text-sm text-muted-foreground mt-1">Star rating (18 reviews)</p>
+             <p className="text-sm text-muted-foreground mt-1">Star rating (20 reviews)</p>
           </div>
         </div>
       </div>

@@ -57,6 +57,7 @@ const Pricing = () => {
         "All Standard features included",
         "Set custom shipping rates",
         "Set NET 15/30/60 payment terms",
+        "Get Request for Quote",
         "Display tax inclusive/exclusive prices",
         "Setup quick order page",
         "Set qty increments for products",
@@ -73,6 +74,7 @@ const Pricing = () => {
       highlight: false,
       features: [
         "All Advanced features included",
+        "Enable wholesale discounts on Shopify POS",
         "Invoice Generator",
         "Automatic invoice emails",
         "Google Drive sync",

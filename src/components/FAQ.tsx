@@ -44,7 +44,7 @@ export const faqs = [
   },
   {
     q: "What languages are supported for my customers?",
-    a: "BMT works with all languages and markets your Shopify store supports, so you can sell wholesale globally without language barriers.",
+    a: "BMT supports English, French, Dutch, Italian, Czech, Spanish, Japanese, Simplified and Traditional Chinese, German, Finnish, Norwegian, Portuguese (Portugal), Romanian, Swedish, Turkish, Danish, Greek, Hebrew, and Korean.",
   },
   {
     q: "Is there a free plan?",
