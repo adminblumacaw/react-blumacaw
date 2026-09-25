@@ -9,6 +9,10 @@
 #
 #   npm run sync:lovable              # dry run: clone, apply, show what changes
 #   npm run sync:lovable -- --push    # also commit and push to Lovable's main
+#   npm run sync:lovable -- --push --ported=<lovable sha>
+#       after porting that export and changing some of the files it touched
+#       (e.g. restoring a publish date): pushes only if Lovable's main is
+#       still exactly <sha>, so nothing newer can be overwritten.
 #
 # It refuses to push while a file Lovable changed since the last sync differs
 # here, since replacing the tree would drop a Lovable edit nobody has ported
@@ -25,12 +29,13 @@ LOVABLE_ONLY=(.env)
 # would run on every Lovable commit in Utakarsh's account and fail to deploy.
 REACT_ONLY=(.github .firebaserc firebase.json)
 
-push=false force=false baseline=false
+push=false force=false baseline=false ported=""
 for arg in "$@"; do
   case "$arg" in
     --push) push=true ;;
     --force) force=true ;;
     --baseline) baseline=true ;;
+    --ported=*) ported="${arg#--ported=}" ;;
     *) echo "unknown option: $arg" >&2; exit 2 ;;
   esac
 done
@@ -62,7 +67,18 @@ skipped() {
 }
 
 last=$(git log --format=%H --grep="^$MARKER" -1)
-if [ -n "$last" ]; then
+if [ -n "$ported" ]; then
+  head=$(git rev-parse HEAD)
+  case "$head" in
+    "$ported"*) echo "Lovable's main is $ported, the export that was ported: its edits are all in this repo." ;;
+    *)
+      echo "Lovable's main has moved past $ported since that export:" >&2
+      git log --oneline "$ported"..HEAD 2>/dev/null | head -20 >&2 || git log --oneline -5 >&2
+      echo "Port the newer export first." >&2
+      exit 1
+      ;;
+  esac
+elif [ -n "$last" ]; then
   # A file Lovable changed since the last sync is safe to overwrite only if
   # this repo already has Lovable's version of it, i.e. the export was ported.
   unported=()

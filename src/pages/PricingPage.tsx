@@ -39,7 +39,7 @@ const PricingPage = () => {
               "@type": "Product",
               name: "BMT B2B Wholesale Pricing",
               description:
-                "Shopify B2B wholesale app with tiered pricing, volume discounts, registration forms, order limits, custom shipping and Net payment terms.",
+                "Shopify B2B wholesale app with tiered pricing, volume discounts, Request for Quote, registration forms, order limits, custom shipping and Net payment terms.",
               brand: { "@type": "Brand", name: "BlumacawTech" },
               url: "https://blumacawtech.com/pricing",
               image: [
@@ -48,7 +48,7 @@ const PricingPage = () => {
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "5",
-                reviewCount: "20",
+                reviewCount: "21",
               },
               offers: [
                 { name: "Free", price: "0" },

@@ -35,6 +35,10 @@ export const faqs = [
     a: "On the Advanced plan, you can offer NET 15, NET 30, or NET 60 payment terms — allowing wholesale buyers to purchase now and pay later. You can also set custom shipping rates and integrate draft orders.",
   },
   {
+    q: "How does Request for Quote work?",
+    a: "Request for Quote lets wholesale buyers submit a quote request before an order is finalized. You can review the requested products and quantities, confirm the final terms, and complete the order. This feature is available on the Advanced plan and above.",
+  },
+  {
     q: "Does it support Shopify Markets and multi-currency?",
     a: "Yes. The Standard, Advanced, and Expert plans support multi-currency wholesale pricing and Shopify Markets integration, so you can sell globally and manage international B2B buyers easily.",
   },

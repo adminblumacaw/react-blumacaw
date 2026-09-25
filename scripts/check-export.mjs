@@ -25,6 +25,9 @@
 //   9. (the other direction) broke Lovable's own build: Lovable installs with
 //      `bun install --frozen-lockfile`, so a package.json change without a
 //      matching bun.lock fails there even though npm CI here passes (check 22).
+//  10. moved every article's publish date months later to look fresh
+//      (export 13, 2026-09-25). Published dates are fixed; revisions go in
+//      updated/updatedIsoDate (check 23).
 //
 // Classes 1-7 came from Lovable editing a copy that never had this repo's
 // changes. Since 2026-09-18 scripts/sync-to-lovable.sh pushes this repo into
@@ -451,6 +454,91 @@ if (existsSync(bunLockPath)) {
   }
 }
 
+// ---------------------------------------------------------------- check 23
+// Blog dates. A published date records when the article first went out; it
+// never moves. A revision sets `updated`/`updatedIsoDate`, which the page
+// shows as "Updated …" and which feeds dateModified and the sitemap lastmod.
+// Google already indexed these articles with these dates, and says
+// datePublished must stay the original date. The four copies of each date
+// (BlogPost.tsx, Blog.tsx, BlogSection.tsx, prerender.mjs) must also agree.
+const PUBLISHED = {
+  "introducing-page-lock-hide-price": "2026-04-08",
+  "guide-creating-wholesale-store-shopify": "2026-03-15",
+  "bmt-perfect-for-d2c-brands-expanding-wholesale": "2026-03-08",
+  "bmt-smarter-choice-than-traditional-wholesale-apps": "2026-02-26",
+  "bmt-b2b-partner-established-us-shopify-store": "2026-02-26",
+  "merchant-increased-b2b-revenue-40-percent": "2026-02-12",
+  "shopify-wholesale-app-small-business": "2026-02-26",
+  "best-shopify-wholesale-apps-2026": "2026-03-14",
+  "shopify-b2b-build-complete-wholesale-store": "2026-03-19",
+  "best-shopify-wholesale-apps": "2026-05-04",
+  "shopify-wholesale-registration-form": "2026-05-20",
+  "wholesale-gorilla-alternatives": "2026-05-31",
+  "sparklayer-alternatives": "2026-06-15",
+  "shopify-revenue-leaks": "2026-08-02",
+  "bss-b2b-wholesale-pricing-alternatives": "2026-08-11",
+  "sami-b2b-wholesale-pricing-alternatives": "2026-08-11",
+};
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const displayDate = (iso) => {
+  const [y, m, d] = iso.split("-").map(Number);
+  return `${MONTHS[m - 1]} ${d}, ${y}`;
+};
+const field = (chunk, name) => chunk.match(new RegExp(`\\n\\s*${name}: "([^"]*)"`))?.[1];
+// slug -> the text of its record, for files that list posts as { slug: "…", … }
+const recordsBySlugField = (file) => {
+  const src = readFileSync(resolve(ROOT, file), "utf8");
+  const starts = [...src.matchAll(/\n\s*slug: "([^"]+)"/g)];
+  return new Map(starts.map((m, i) => [m[1], src.slice(m.index, starts[i + 1]?.index ?? src.length)]));
+};
+const postDates = (chunk) => ({
+  date: field(chunk, "date"),
+  isoDate: field(chunk, "isoDate"),
+  updated: field(chunk, "updated"),
+  updatedIsoDate: field(chunk, "updatedIsoDate"),
+});
+const blogPostRecords = (() => {
+  const src = readFileSync(resolve(ROOT, "src/pages/BlogPost.tsx"), "utf8");
+  const starts = [...src.matchAll(/\n  "([a-z0-9-]+)": \{\n/g)];
+  return new Map(starts.map((m, i) => {
+    const chunk = src.slice(m.index, starts[i + 1]?.index ?? src.length);
+    return [m[1], chunk.slice(0, chunk.search(/\n\s*content:/) >>> 0)];
+  }));
+})();
+const blogList = recordsBySlugField("src/pages/Blog.tsx");
+const homeCards = recordsBySlugField("src/components/BlogSection.tsx");
+const prerenderPosts = recordsBySlugField("scripts/prerender.mjs");
+const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
+const dateFail = (detail) => fail("blog-dates", detail);
+for (const [slug, listChunk] of blogList) {
+  const list = postDates(listChunk);
+  const post = postDates(blogPostRecords.get(slug) ?? "");
+  const pre = prerenderPosts.get(slug) ?? "";
+  if (!list.isoDate) { dateFail(`Blog.tsx ${slug} has no isoDate`); continue; }
+  if (PUBLISHED[slug] && list.isoDate !== PUBLISHED[slug]) {
+    dateFail(`${slug} publish date changed ${PUBLISHED[slug]} -> ${list.isoDate}. Keep the original; set updated/updatedIsoDate for a revision`);
+  }
+  if (list.date !== displayDate(list.isoDate)) dateFail(`Blog.tsx ${slug} date "${list.date}" does not match isoDate ${list.isoDate}`);
+  if (post.isoDate !== list.isoDate || post.date !== list.date) dateFail(`BlogPost.tsx ${slug} published date differs from Blog.tsx`);
+  if (field(pre, "date") !== list.isoDate) dateFail(`prerender.mjs ${slug} date ${field(pre, "date")} differs from Blog.tsx ${list.isoDate}`);
+  if (list.isoDate > tomorrow) dateFail(`${slug} is dated in the future (${list.isoDate})`);
+  if (list.updatedIsoDate || post.updatedIsoDate || field(pre, "updated")) {
+    const u = list.updatedIsoDate;
+    if (!u || u !== post.updatedIsoDate || u !== field(pre, "updated")) {
+      dateFail(`${slug} updated date differs: Blog.tsx ${u}, BlogPost.tsx ${post.updatedIsoDate}, prerender.mjs ${field(pre, "updated")}`);
+    } else {
+      if (list.updated !== displayDate(u) || post.updated !== list.updated) dateFail(`${slug} updated label does not match updatedIsoDate ${u}`);
+      if (u < list.isoDate) dateFail(`${slug} updated ${u} is before it was published ${list.isoDate}`);
+      if (u > tomorrow) dateFail(`${slug} updated date is in the future (${u})`);
+    }
+  }
+  const card = homeCards.get(slug);
+  if (card) {
+    const c = postDates(card);
+    if (c.date !== list.date || c.updated !== list.updated) dateFail(`BlogSection.tsx ${slug} dates differ from Blog.tsx`);
+  }
+}
+
 // ---------------------------------------------------------------- report
 const checks = [
   "no .asset.json stubs (imports or files)",
@@ -476,6 +564,7 @@ const checks = [
   "colour tokens meet WCAG AA contrast",
   ".env is ignored and not tracked",
   "bun.lock matches package.json (Lovable's install)",
+  "blog publish dates unchanged; updated dates consistent",
 ];
 
 if (failures.length === 0) {

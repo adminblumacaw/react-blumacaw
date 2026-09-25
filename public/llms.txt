@@ -36,7 +36,7 @@ Paid plans include a free trial.
 
 ## Rating
 
-5.0 out of 5 stars on the Shopify App Store (20 reviews, 100% five-star)
+5.0 out of 5 stars on the Shopify App Store (21 reviews, 100% five-star)
 
 ## Company
 
@@ -52,6 +52,7 @@ BlumacawTech, based in Bangalore, India. Launched June 2025.
 
 ## Latest Updates
 
+- **Request for Quote (September 2026)**: Wholesale buyers can submit a quote request before an order is finalized. Merchants can review the requested products and quantities, confirm terms, and complete the order. Available on the Advanced plan and above.
 - **Display Tax Inclusive/Exclusive Prices (August 2026)**: Merchants can now control whether wholesale prices display as tax inclusive or tax exclusive, per customer group, so B2B buyers see prices in the format they expect.
 - **Page Lock & Hide Price (April 2026)**: Modern access control for Shopify's new passwordless customer accounts. Lock pages, hide prices, and control visibility with rule-based access — beyond simple login gates. Read more: https://blumacawtech.com/blog/introducing-page-lock-hide-price
 
