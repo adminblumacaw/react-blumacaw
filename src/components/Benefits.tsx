@@ -1,4 +1,4 @@
-import { DollarSign, TrendingUp, Users, ShoppingCart, Globe, Clock, Lock, Zap, Receipt, ArrowRight } from "lucide-react";
+import { DollarSign, TrendingUp, Users, ShoppingCart, Globe, Clock, Lock, Zap, Receipt, FileQuestion, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 
@@ -36,7 +36,12 @@ const benefits = [
   {
     icon: Clock,
     title: "Net Terms & Shipping Rules",
-    description: "Offer NET 15/30/60 terms, request for quote, custom shipping rates, and payment rules.",
+    description: "Offer NET 15/30/60 terms, custom shipping rates, and payment rules for wholesale buyers.",
+  },
+  {
+    icon: FileQuestion,
+    title: "Request for Quote",
+    description: "Let wholesale buyers request a quote before ordering, then review the request and finalize the order.",
   },
   {
     icon: Zap,

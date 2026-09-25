@@ -49,10 +49,23 @@ const Index = () => {
               })),
 
               "description": "Turn your Shopify store into a wholesale channel without running a second site. Set customer-specific wholesale, fixed or volume pricing; accept CSV or XLSX purchase order uploads; provide a quick order form; enforce order limits and case-pack multiples; gate pages behind login or approval; offer requests for quote and net terms; invoice in multiple languages and currencies; and enable wholesale discounts on Shopify POS. Built for Shopify.",
+              "featureList": [
+                "Customer-specific wholesale pricing",
+                "Volume and tiered pricing",
+                "Request for Quote",
+                "CSV/XLSX bulk ordering",
+                "Quick order page",
+                "Wholesale registration forms",
+                "Order limits and case-pack multiples",
+                "Net payment terms",
+                "Shopify Markets and multi-currency pricing",
+                "Multi-language invoicing",
+                "Shopify POS wholesale discounts"
+              ],
               "inLanguage": ["en","fr","nl","it","cs","es","ja","zh-Hans","zh-Hant","de","fi","nb","pt-PT","ro","sv","tr","da","el","he","ko"],
               "url": "https://blumacawtech.com",
               "publisher": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" },
-              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "20" }
+              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "21" }
             },
             {
               "@type": "FAQPage",

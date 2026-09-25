@@ -22,6 +22,10 @@ When editing in Lovable, keep what the live site depends on:
 - Use the colour tokens in `src/index.css`. Teal (`--accent`) is a fill colour; teal text uses
   `text-accent`, which maps to a darker teal that meets contrast rules.
 - Images must be real files in `src/assets` (not `.asset.json` placeholders).
+- Never change an article's publish date (`date` / `isoDate`). When you revise an article, set
+  `updated` / `updatedIsoDate` in `src/pages/BlogPost.tsx`, `src/pages/Blog.tsx`,
+  `src/components/BlogSection.tsx` (if it is on the homepage) and `updated` in `scripts/prerender.mjs`.
+  The page then shows "Updated …", and search engines get it as the modified date.
 
 ## Project info
 

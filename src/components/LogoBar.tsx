@@ -4,7 +4,6 @@ import satyamFarmAsset from "@/assets/logos/satyam-farm.png";
 import lexiconAsset from "@/assets/logos/lexicon-medical-supply.png";
 import fanHubAsset from "@/assets/logos/fan-hub.png";
 import theGoodCheeseBoneAsset from "@/assets/logos/the-good-cheese-bone.png";
-import forsportsAsset from "@/assets/logos/forsports.png";
 import footaidAsset from "@/assets/logos/footaid.png";
 import kristallGrossistenAsset from "@/assets/logos/kristallgrossisten.png";
 import nikkoBtbStoreAsset from "@/assets/logos/nikko-btb-store.png";
@@ -17,7 +16,6 @@ type Brand = { name: string; domain?: string; logo?: string; wideLogo?: boolean 
 const brands: Brand[] = [
   { name: "Flambette", domain: "flambette.com" },
   { name: "thegoodcheesebonewholesale", logo: theGoodCheeseBoneAsset, wideLogo: true },
-  { name: "Forsports", logo: forsportsAsset, wideLogo: true },
   { name: "FootAid", logo: footaidAsset, wideLogo: true },
   { name: "KristallGrossisten", logo: kristallGrossistenAsset, wideLogo: true },
   { name: "Smoking Cat Distribution", domain: "smokingcatdistribution.ca" },

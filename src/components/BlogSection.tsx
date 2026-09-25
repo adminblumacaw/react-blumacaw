@@ -7,17 +7,19 @@ const blogPosts = [
     slug: "sami-b2b-wholesale-pricing-alternatives",
     category: "Guide",
     title: "7 “SAMI B2B Wholesale Pricing” Alternatives for Shopify Brands Running B2B and Retail Together",
-    excerpt: "Compare 7 SAMI B2B Wholesale Pricing alternatives for Shopify B2B pricing, wholesale registration, order limits, net terms, and quick ordering.",
+    excerpt: "Compare 7 SAMI B2B Wholesale Pricing alternatives for Shopify B2B pricing, Request for Quote, registration, order limits, and net terms.",
     readTime: "13 min read",
     date: "Aug 11, 2026",
+    updated: "Sep 25, 2026",
   },
   {
     slug: "bss-b2b-wholesale-pricing-alternatives",
     category: "Guide",
     title: "6 BSS B2B Wholesale Pricing Alternatives for Shopify Brands Running B2B and Retail Together",
-    excerpt: "Compare 6 BSS B2B Wholesale Pricing alternatives for Shopify B2B pricing, wholesale registration, order limits, net terms, and quick ordering.",
+    excerpt: "Compare 6 BSS B2B Wholesale Pricing alternatives for Shopify B2B pricing, Request for Quote, registration, order limits, and net terms.",
     readTime: "12 min read",
     date: "Aug 11, 2026",
+    updated: "Sep 25, 2026",
   },
   {
     slug: "shopify-revenue-leaks",
@@ -26,30 +28,34 @@ const blogPosts = [
     excerpt: "Find 5 Shopify revenue leaks in wholesale, lead capture, support, phone calls, and retention before spending more on traffic.",
     readTime: "10 min read",
     date: "Aug 2, 2026",
+    updated: "Sep 25, 2026",
   },
   {
     slug: "sparklayer-alternatives",
     category: "Guide",
     title: "7 SparkLayer Alternatives for Shopify Brands Running B2B and Retail Together",
-    excerpt: "Compare 7 SparkLayer alternatives for Shopify B2B pricing, wholesale forms, net terms, order limits, and quick orders.",
+    excerpt: "Compare 7 SparkLayer alternatives for Shopify B2B pricing, Request for Quote, wholesale forms, net terms, and quick orders.",
     readTime: "12 min read",
     date: "Jun 15, 2026",
+    updated: "Sep 24, 2026",
   },
   {
     slug: "shopify-b2b-build-complete-wholesale-store",
     category: "Guide",
     title: "Shopify B2B: How to Build a Complete Wholesale Store (2026 Guide)",
-    excerpt: "Complete guide to building a Shopify B2B wholesale store. Learn costs, setup options, and how to create a modern wholesale experience.",
+    excerpt: "Build a Shopify B2B wholesale store with pricing, Request for Quote, ordering, buyer access, and payment workflows.",
     readTime: "15 min read",
     date: "Mar 19, 2026",
+    updated: "Sep 23, 2026",
   },
   {
     slug: "guide-creating-wholesale-store-shopify",
     category: "Guide",
     title: "Guide to Creating a Wholesale Store on Shopify: D2C + B2B Step-by-Step",
-    excerpt: "A complete step-by-step guide to creating a D2C + B2B wholesale store on Shopify. Learn pricing, bulk ordering, access control, and scaling.",
+    excerpt: "Create a D2C + B2B Shopify store with wholesale pricing, Request for Quote, bulk ordering, access control, and scaling.",
     readTime: "14 min read",
     date: "Mar 15, 2026",
+    updated: "Sep 22, 2026",
   },
 ];
 
@@ -83,7 +89,7 @@ const BlogSection = () => {
                 <div className="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t border-border/30">
                   <span className="flex items-center gap-1.5">
                     <Calendar className="w-3.5 h-3.5" />
-                    {post.date}
+                    {post.updated ? `Updated ${post.updated}` : post.date}
                   </span>
                   <span className="flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5" />

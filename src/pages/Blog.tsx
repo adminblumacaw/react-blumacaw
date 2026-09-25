@@ -14,19 +14,23 @@ const allPosts = [
     slug: "sami-b2b-wholesale-pricing-alternatives",
     category: "Guide",
     title: "7 “SAMI B2B Wholesale Pricing” Alternatives for Shopify Brands Running B2B and Retail Together",
-    excerpt: "Compare 7 SAMI B2B Wholesale Pricing alternatives for Shopify B2B pricing, wholesale registration, order limits, net terms, and quick ordering.",
+    excerpt: "Compare 7 SAMI B2B Wholesale Pricing alternatives for Shopify B2B pricing, Request for Quote, registration, order limits, net terms, and quick ordering.",
     readTime: "13 min read",
     date: "Aug 11, 2026",
     isoDate: "2026-08-11",
+    updated: "Sep 25, 2026",
+    updatedIsoDate: "2026-09-25",
   },
   {
     slug: "bss-b2b-wholesale-pricing-alternatives",
     category: "Guide",
     title: "6 BSS B2B Wholesale Pricing Alternatives for Shopify Brands Running B2B and Retail Together",
-    excerpt: "Compare 6 BSS B2B Wholesale Pricing alternatives for Shopify B2B pricing, wholesale registration, order limits, net terms, and quick ordering.",
+    excerpt: "Compare 6 BSS B2B Wholesale Pricing alternatives for Shopify B2B pricing, Request for Quote, registration, order limits, net terms, and quick ordering.",
     readTime: "12 min read",
     date: "Aug 11, 2026",
     isoDate: "2026-08-11",
+    updated: "Sep 25, 2026",
+    updatedIsoDate: "2026-09-25",
   },
   {
     slug: "shopify-revenue-leaks",
@@ -36,15 +40,19 @@ const allPosts = [
     readTime: "10 min read",
     date: "Aug 2, 2026",
     isoDate: "2026-08-02",
+    updated: "Sep 25, 2026",
+    updatedIsoDate: "2026-09-25",
   },
   {
     slug: "sparklayer-alternatives",
     category: "Guide",
     title: "7 SparkLayer Alternatives for Shopify Brands Running B2B and Retail Together",
-    excerpt: "Compare 7 SparkLayer alternatives for Shopify B2B pricing, wholesale forms, net terms, order limits, quick orders, and pricing rules.",
+    excerpt: "Compare 7 SparkLayer alternatives for Shopify B2B pricing, Request for Quote, wholesale forms, net terms, order limits, and quick orders.",
     readTime: "12 min read",
     date: "Jun 15, 2026",
     isoDate: "2026-06-15",
+    updated: "Sep 24, 2026",
+    updatedIsoDate: "2026-09-24",
   },
   {
     slug: "wholesale-gorilla-alternatives",
@@ -54,6 +62,8 @@ const allPosts = [
     readTime: "12 min read",
     date: "May 31, 2026",
     isoDate: "2026-05-31",
+    updated: "Sep 24, 2026",
+    updatedIsoDate: "2026-09-24",
   },
   {
     slug: "shopify-wholesale-registration-form",
@@ -64,15 +74,19 @@ const allPosts = [
     readTime: "12 min read",
     date: "May 20, 2026",
     isoDate: "2026-05-20",
+    updated: "Sep 24, 2026",
+    updatedIsoDate: "2026-09-24",
   },
   {
     slug: "best-shopify-wholesale-apps",
     category: "Guide",
     title: "11 Best Shopify Wholesale Apps for B2B Pricing and Bulk Orders in 2026",
-    excerpt: "Compare the 11 best Shopify wholesale apps in 2026 for B2B pricing, bulk discounts, net terms, quick orders, price hiding, and wholesale buyer approvals.",
+    excerpt: "Compare the 11 best Shopify wholesale apps in 2026 for B2B pricing, Request for Quote, net terms, quick orders, price hiding, and buyer approvals.",
     readTime: "13 min read",
     date: "May 4, 2026",
     isoDate: "2026-05-04",
+    updated: "Sep 23, 2026",
+    updatedIsoDate: "2026-09-23",
   },
   {
     slug: "introducing-page-lock-hide-price",
@@ -82,6 +96,8 @@ const allPosts = [
     readTime: "8 min read",
     date: "Apr 8, 2026",
     isoDate: "2026-04-08",
+    updated: "Sep 23, 2026",
+    updatedIsoDate: "2026-09-23",
   },
   {
     slug: "shopify-b2b-build-complete-wholesale-store",
@@ -91,6 +107,8 @@ const allPosts = [
     readTime: "15 min read",
     date: "Mar 19, 2026",
     isoDate: "2026-03-19",
+    updated: "Sep 23, 2026",
+    updatedIsoDate: "2026-09-23",
   },
   {
     slug: "guide-creating-wholesale-store-shopify",
@@ -100,6 +118,8 @@ const allPosts = [
     readTime: "14 min read",
     date: "Mar 15, 2026",
     isoDate: "2026-03-15",
+    updated: "Sep 22, 2026",
+    updatedIsoDate: "2026-09-22",
   },
   {
     slug: "best-shopify-wholesale-apps-2026",
@@ -109,6 +129,8 @@ const allPosts = [
     readTime: "12 min read",
     date: "Mar 14, 2026",
     isoDate: "2026-03-14",
+    updated: "Sep 22, 2026",
+    updatedIsoDate: "2026-09-22",
   },
   {
     slug: "bmt-perfect-for-d2c-brands-expanding-wholesale",
@@ -118,6 +140,8 @@ const allPosts = [
     readTime: "9 min read",
     date: "Mar 8, 2026",
     isoDate: "2026-03-08",
+    updated: "Sep 22, 2026",
+    updatedIsoDate: "2026-09-22",
   },
   {
     slug: "bmt-smarter-choice-than-traditional-wholesale-apps",
@@ -127,6 +151,8 @@ const allPosts = [
     readTime: "7 min read",
     date: "Feb 26, 2026",
     isoDate: "2026-02-26",
+    updated: "Sep 21, 2026",
+    updatedIsoDate: "2026-09-21",
   },
   {
     slug: "bmt-b2b-partner-established-us-shopify-store",
@@ -136,6 +162,8 @@ const allPosts = [
     readTime: "8 min read",
     date: "Feb 26, 2026",
     isoDate: "2026-02-26",
+    updated: "Sep 21, 2026",
+    updatedIsoDate: "2026-09-21",
   },
   {
     slug: "merchant-increased-b2b-revenue-40-percent",
@@ -145,6 +173,8 @@ const allPosts = [
     readTime: "4 min read",
     date: "Feb 12, 2026",
     isoDate: "2026-02-12",
+    updated: "Sep 21, 2026",
+    updatedIsoDate: "2026-09-21",
   },
   {
     slug: "shopify-wholesale-app-small-business",
@@ -154,6 +184,8 @@ const allPosts = [
     readTime: "7 min read",
     date: "Feb 26, 2026",
     isoDate: "2026-02-26",
+    updated: "Sep 21, 2026",
+    updatedIsoDate: "2026-09-21",
   },
 ];
 
@@ -168,13 +200,13 @@ const Blog = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="BMT B2B Wholesale Pricing Blog — Shopify Wholesale Tips & Guides"
-        description="Expert guides, merchant success stories, and product updates for Shopify wholesale. Learn how to set up B2B pricing, manage wholesale customers, and grow your bulk order business."
+        description="Expert Shopify wholesale guides covering B2B pricing, Request for Quote, buyer approvals, net terms, bulk ordering, and wholesale growth."
         canonicalPath="/blog"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Blog",
           "name": "BMT B2B Wholesale Pricing Blog",
-          "description": "Expert guides and tips for Shopify wholesale, B2B pricing, bulk ordering, and wholesale customer management.",
+          "description": "Expert guides and tips for Shopify wholesale, B2B pricing, Request for Quote, bulk ordering, and wholesale customer management.",
           "url": "https://blumacawtech.com/blog",
           "publisher": {
             "@type": "Organization",
@@ -188,6 +220,7 @@ const Blog = () => {
             "description": p.excerpt,
             "url": `https://blumacawtech.com${(p as any).url ?? `/blog/${p.slug}`}`,
             "datePublished": p.isoDate,
+            "dateModified": p.updatedIsoDate ?? p.isoDate,
             "author": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" }
           }))
         }}
@@ -235,7 +268,7 @@ const Blog = () => {
                     <div className="flex items-center justify-between text-xs text-muted-foreground pt-4 border-t border-border/50">
                       <span className="flex items-center gap-1.5">
                         <Calendar className="w-3.5 h-3.5" />
-                        {post.date}
+                        {post.updated ? `Updated ${post.updated}` : post.date}
                       </span>
                       <span className="flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5" />

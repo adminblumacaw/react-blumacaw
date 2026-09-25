@@ -4,7 +4,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import reviewsHeroImg from "@/assets/reviews-hero.webp";
 import bpckwLogo from "@/assets/logos/bpckw.png";
 import satyamFarmAsset from "@/assets/logos/satyam-farm.png";
-import lexiconAsset from "@/assets/logos/lexicon-medical-supply.png";
 import fanHubAsset from "@/assets/logos/fan-hub.png";
 import nikkoAsset from "@/assets/logos/nikko-btb-store.png";
 
@@ -48,6 +47,12 @@ const ReviewAvatar = ({ review }: { review: { store: string; logo?: string; doma
 
 const Reviews = () => {
     const reviews = [
+    {
+      text: "BMT B2B Wholesale Pricing has been a huge help for our business. We tested many other apps and found BMT most useful. What I appreciate most is how easy it is to get support. The built-in chat is quick and convenient, and the team is very helpful. A big thank-you to the BMT team for building such a reliable and useful app.",
+      store: "JustCreamery",
+      location: "United States",
+      date: "September 2026",
+    },
     {
       text: "We use BMT B2B Wholesale to manage different wholesale prices for customers across various European countries. Each customer tier has its own wholesale prices, with different prices per Shopify Market, ensuring our customers see the right rates. Beyond pricing, we rely on the registration form, hiding wholesale-only products from retail shoppers, and pay-later draft orders. The app handles regional pricing and multi-currency logic effortlessly.",
       store: "Kookut",
@@ -122,24 +127,10 @@ const Reviews = () => {
       date: "March 2026",
     },
     {
-      text: "Very responsive customer support. Easy to implement.",
-      store: "Lexicon Medical Supply",
-      logo: lexiconAsset,
-      location: "United States",
-      date: "April 2026",
-    },
-    {
       text: "This app completely solved my wholesale pricing issues. The team is very professional, responds quickly, and is always helpful — highly recommended!",
       store: "Fan Hub",
       logo: fanHubAsset,
       location: "Lebanon",
-      date: "February 2026",
-    },
-    {
-      text: "We struggled with several wholesale apps before finding this one — most were very confusing or didn't display pricing correctly. BMT wholesale pricing app solved those pain points instantly. We can easily set different discounts, created a wholesale registration form, and manage customer tiers, while everything integrates smoothly with Shopify.",
-      store: "VRD MASALE",
-      domain: "vrdmasale.com",
-      location: "India",
       date: "February 2026",
     },
     {
@@ -148,12 +139,6 @@ const Reviews = () => {
       domain: "mithilashri.com",
       location: "India",
       date: "February 2026",
-    },
-    {
-      text: "Finally a FREE Wholesale B2B price app! The assistance is really nice and helpful. It's in process so they will add function step by step. If there's any error they can help you well.",
-      store: "THCUISINE",
-      location: "France",
-      date: "January 2026",
     },
     {
       text: "Great experience using BMT Wholesale Pricing — smooth setup and reliable performance for our B2B store.",
@@ -210,7 +195,7 @@ const Reviews = () => {
               Loved by merchants worldwide.
             </h2>
             <p className="text-muted-foreground text-base mb-8">
-              5.0 on the Shopify App Store · 20 reviews · 100% five stars
+              5.0 on the Shopify App Store · 21 reviews · 100% five stars
             </p>
 
             <div ref={emblaRef} className="overflow-hidden">

@@ -111,7 +111,7 @@ const staticRoutes = [
     path: "/blog",
     title: "Shopify Wholesale Tips & Guides | BMT B2B Blog",
     description:
-      "Expert guides, merchant success stories, and product updates for Shopify wholesale. Learn how to set up B2B pricing, manage wholesale customers, and grow your bulk order business.",
+      "Expert Shopify wholesale guides covering B2B pricing, Request for Quote, buyer approvals, net terms, bulk ordering, and wholesale growth.",
   },
   {
     path: "/documentation",
@@ -246,66 +246,77 @@ const blogPosts = [
   {
     slug: "introducing-page-lock-hide-price",
     date: "2026-04-08",
+    updated: "2026-09-23",
     title: "Introducing Page Lock & Hide Price — Built for the Future of Shopify Customer Accounts",
     description: "Shopify is transitioning to passwordless login. Learn how Page Lock & Hide Price from BMT B2B Wholesale Pricing gives you modern, rule-based access control to protect pricing, restrict pages, and manage B2B visibility on Shopify.",
   },
   {
     slug: "guide-creating-wholesale-store-shopify",
     date: "2026-03-15",
+    updated: "2026-09-22",
     title: "Guide to Creating a Wholesale Store on Shopify: D2C + B2B Step-by-Step",
     description: "A complete step-by-step guide to creating a D2C + B2B wholesale store on Shopify. Learn pricing, bulk ordering, access control, global selling, and scaling your wholesale channel.",
   },
   {
     slug: "bmt-perfect-for-d2c-brands-expanding-wholesale",
     date: "2026-03-08",
+    updated: "2026-09-22",
     title: "Why BMT B2B Wholesale Pricing App Is Perfect for D2C Brands Expanding Into Wholesale",
     description: "For D2C brands on Shopify, wholesale is the next natural growth step. Learn how BMT lets you launch B2B on top of your existing retail store — without marketplaces or separate storefronts.",
   },
   {
     slug: "bmt-smarter-choice-than-traditional-wholesale-apps",
     date: "2026-02-26",
+    updated: "2026-09-21",
     title: "Why BMT B2B Wholesale Pricing App Is a Smarter Choice Than Traditional Shopify Wholesale Apps",
     description: "Older doesn't always mean better. Here's why a modern, lean wholesale app outperforms legacy systems for growing Shopify brands.",
   },
   {
     slug: "bmt-b2b-partner-established-us-shopify-store",
     date: "2026-02-26",
+    updated: "2026-09-21",
     title: "How BMT B2B Wholesale Pricing App Can Partner With an Established US Shopify Store to Unlock B2B Growth",
     description: "For established Shopify brands, wholesale is the next logical growth channel. Here's how BMT enables structured B2B expansion without disrupting DTC operations.",
   },
   {
     slug: "merchant-increased-b2b-revenue-40-percent",
     date: "2026-02-12",
+    updated: "2026-09-21",
     title: "How One Merchant Increased B2B Revenue by 40%",
     description: "Learn how a home goods brand used customer groups and volume discounts to grow their wholesale channel in just 3 months.",
   },
   {
     slug: "shopify-wholesale-app-small-business",
     date: "2026-02-26",
+    updated: "2026-09-21",
     title: "Shopify Wholesale App for Small Business: The Best Affordable Solution in 2026",
     description: "Most wholesale apps are built for enterprises. Here's the most affordable, simple, and effective option for small Shopify stores in 2026.",
   },
   {
     slug: "best-shopify-wholesale-apps-2026",
     date: "2026-03-14",
+    updated: "2026-09-22",
     title: "Best Shopify Wholesale Apps in 2026 (Top 6 B2B Apps Compared)",
     description: "Compare the 6 best Shopify wholesale apps in 2026. See which B2B app is right for your store — from flexible pricing to marketplace wholesale and enterprise portals.",
   },
   {
     slug: "shopify-b2b-build-complete-wholesale-store",
     date: "2026-03-19",
+    updated: "2026-09-23",
     title: "Shopify B2B: How to Build a Complete Wholesale Store (2026 Guide)",
     description: "Complete guide to building a Shopify B2B wholesale store. Learn costs, setup options, and how to create a modern wholesale experience — without Shopify Plus.",
   },
   {
     slug: "best-shopify-wholesale-apps",
     date: "2026-05-04",
+    updated: "2026-09-23",
     title: "11 Best Shopify Wholesale Apps for B2B Pricing and Bulk Orders in 2026",
     description: "Compare the 11 best Shopify wholesale apps in 2026 for B2B pricing, bulk discounts, net terms, quick orders, price hiding, and wholesale buyer approvals.",
   },
   {
     slug: "shopify-wholesale-registration-form",
     date: "2026-05-20",
+    updated: "2026-09-24",
     path: "/shopify-wholesale-registration-form",
     title: "How to Create a Shopify Wholesale Registration Form & Approve B2B Customers",
     description: "Learn how to build a wholesale registration form in Shopify, tag and approve B2B customers, and streamline your onboarding process — with credible market data and a practical step-by-step workflow.",
@@ -313,30 +324,35 @@ const blogPosts = [
   {
     slug: "wholesale-gorilla-alternatives",
     date: "2026-05-31",
+    updated: "2026-09-24",
     title: "11 Wholesale Gorilla Alternatives for Shopify B2B Pricing",
     description: "Compare Wholesale Gorilla alternatives for Shopify B2B pricing, wholesale forms, bulk discounts, buyer approval, and price hiding.",
   },
   {
     slug: "sparklayer-alternatives",
     date: "2026-06-15",
+    updated: "2026-09-24",
     title: "7 SparkLayer Alternatives for Shopify Brands Running B2B and Retail Together",
     description: "Compare 7 SparkLayer alternatives for Shopify B2B pricing, wholesale forms, net terms, order limits, quick orders, and pricing rules.",
   },
   {
     slug: "shopify-revenue-leaks",
     date: "2026-08-02",
+    updated: "2026-09-25",
     title: "5 Shopify Revenue Leaks Growing Stores Should Fix Before Buying More Traffic",
     description: "Find 5 Shopify revenue leaks in wholesale, lead capture, support, phone calls, and retention before spending more on traffic.",
   },
   {
     slug: "bss-b2b-wholesale-pricing-alternatives",
     date: "2026-08-11",
+    updated: "2026-09-25",
     title: "6 BSS B2B Wholesale Pricing Alternatives for Shopify Brands Running B2B and Retail Together",
     description: "Compare 6 BSS B2B Wholesale Pricing alternatives for Shopify B2B pricing, wholesale registration, order limits, net terms, and quick ordering.",
   },
   {
     slug: "sami-b2b-wholesale-pricing-alternatives",
     date: "2026-08-11",
+    updated: "2026-09-25",
     title: "7 SAMI B2B Wholesale Pricing Alternatives for Shopify Brands Running B2B and Retail Together",
     description: "Compare 7 SAMI B2B Wholesale Pricing alternatives for Shopify B2B pricing, wholesale registration, order limits, net terms, and quick ordering.",
   },
@@ -351,6 +367,7 @@ const blogRoutes = blogPosts.map((p) => ({
   description: p.description,
   type: "article",
   date: p.date,
+  updated: p.updated,
 }));
 
 // ---------------------------------------------------------------- SSR
@@ -412,7 +429,8 @@ console.log(`prerendered ${all.length} routes with server-rendered content`);
 // we have a real date (blog posts) — fake freshness is worse than none.
 const sitemapEntries = all
   .map((r) => {
-    const lastmod = r.date ? `\n    <lastmod>${r.date}</lastmod>` : "";
+    const modified = r.updated ?? r.date;
+    const lastmod = modified ? `\n    <lastmod>${modified}</lastmod>` : "";
     return `  <url>\n    <loc>${BASE}${r.path}</loc>${lastmod}\n  </url>`;
   })
   .join("\n");
@@ -444,7 +462,8 @@ const articleText = (html) => {
 const llmsHeader = readFileSync(resolve(DIST, "llms.txt"), "utf8");
 const fullSections = blogRoutes.map((r) => {
   const { html } = render(r.path);
-  return `## ${r.title}\n\nURL: ${BASE}${r.path}\nPublished: ${r.date ?? "n/a"}\n\n${articleText(html)}`;
+  const updated = r.updated ? `\nUpdated: ${r.updated}` : "";
+  return `## ${r.title}\n\nURL: ${BASE}${r.path}\nPublished: ${r.date ?? "n/a"}${updated}\n\n${articleText(html)}`;
 });
 writeFileSync(
   resolve(DIST, "llms-full.txt"),
