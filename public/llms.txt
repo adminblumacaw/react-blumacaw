@@ -58,6 +58,7 @@ BlumacawTech, based in Bangalore, India. Launched June 2025.
 
 ## Blog Posts
 
+- [How BMT Helped a European DTC Brand Replace Multiple B2B Apps](https://blumacawtech.com/blog/bmt-european-dtc-brand-replaced-multiple-b2b-apps) — Case study on consolidating pricing, registration, approvals, visibility, and order rules into one BMT workflow
 - [Introducing Page Lock & Hide Price](https://blumacawtech.com/blog/introducing-page-lock-hide-price) — Feature launch: modern access control for Shopify's passwordless future
 - [Shopify B2B: How to Build a Complete Wholesale Store (2026 Guide)](https://blumacawtech.com/blog/shopify-b2b-build-complete-wholesale-store)
 - [Guide to Creating a Wholesale Store on Shopify](https://blumacawtech.com/blog/guide-creating-wholesale-store-shopify)

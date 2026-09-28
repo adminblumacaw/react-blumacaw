@@ -1,4 +1,4 @@
-import { DollarSign, TrendingUp, Users, ShoppingCart, Globe, Clock, Lock, Zap, Receipt, FileQuestion, ArrowRight } from "lucide-react";
+import { DollarSign, TrendingUp, Users, ShoppingCart, Globe, Clock, Lock, Zap, Receipt, FileQuestion, ArrowRight, Tags, Workflow, Plug } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
 
@@ -62,6 +62,21 @@ const benefits = [
     icon: ShoppingCart,
     title: "Shopify POS Wholesale Discounts",
     description: "Apply wholesale discounts to in-person sales with Shopify POS on the Expert plan.",
+  },
+  {
+    icon: Tags,
+    title: "Pricing & Customer Controls",
+    description: "Import or export pricing, bulk-edit rules, tag customer groups, and support tax-exempt buyers.",
+  },
+  {
+    icon: Workflow,
+    title: "Flexible Order Workflows",
+    description: "Manage manual and draft orders, control available shipping and payment methods, and automate rules.",
+  },
+  {
+    icon: Plug,
+    title: "Connected B2B Operations",
+    description: "Use API access and webhooks, with support for Klaviyo, bundle, search, filter, and page builder apps.",
   },
 ];
 

@@ -99,6 +99,146 @@ interface BlogPostData {
 }
 
 const posts: Record<string, BlogPostData> = {
+  "bmt-european-dtc-brand-replaced-multiple-b2b-apps": {
+    category: "Success Story",
+    title: "How BMT Helped a European DTC Brand Replace Multiple B2B Apps With One Unified Solution",
+    date: "Sep 28, 2026",
+    isoDate: "2026-09-28",
+    readTime: "9 min read",
+    metaDescription: "See how a European DTC brand replaced multiple Shopify B2B apps with BMT to unify pricing, registration, approvals, visibility, and order rules.",
+    keywords: ["Shopify B2B app consolidation", "European DTC brand wholesale", "replace multiple Shopify apps", "unified Shopify B2B solution", "BMT B2B Wholesale Pricing", "Shopify wholesale workflow"],
+    content: (
+      <>
+        <p>Running B2B and DTC operations from the same Shopify store can become complicated very quickly.</p>
+        <p>For one of our European clients, the challenge wasn’t the lack of functionality. They already had most of the B2B capabilities they needed.</p>
+        <p>The problem was that those capabilities were spread across several different Shopify apps.</p>
+        <p>One app controlled price visibility. Another managed wholesale pricing and minimum order quantities. A third handled B2B registration and customer approvals.</p>
+        <p>Individually, each app solved a specific problem. Together, however, they created an increasingly difficult system to operate.</p>
+        <p>That is where <strong>BMT B2B Wholesale Pricing</strong> came in.</p>
+
+        <h2>The Problem: Too Many Apps Managing One B2B Customer Journey</h2>
+        <p>The client is a European DTC brand that also serves wholesale and B2B customers through its Shopify store.</p>
+        <p>Over time, the company had added different apps whenever a new B2B requirement appeared.</p>
+        <p>Their setup looked something like this:</p>
+        <ul>
+          <li>One app was used to <strong>hide prices and products from unauthorized customers</strong></li>
+          <li>Another app controlled <strong>B2B pricing, discounts and minimum order quantities</strong></li>
+          <li>A third app managed the <strong>wholesale registration form and customer approval process</strong></li>
+        </ul>
+        <p>On paper, this setup provided the required functionality.</p>
+        <p>In practice, however, the customer journey depended on three separate applications working perfectly together.</p>
+        <p>That created several operational challenges.</p>
+
+        <h2>The Challenge: Integration Gaps and Edge Cases</h2>
+        <p>The biggest issue was not any individual application. It was the interaction between them.</p>
+        <p>Because different apps controlled different parts of the B2B experience, changes in one system could affect another.</p>
+        <p>For example, when a new wholesale customer registered, multiple things needed to happen correctly:</p>
+        <ol>
+          <li>The customer had to submit the appropriate registration form.</li>
+          <li>The customer had to be reviewed or approved.</li>
+          <li>The correct customer tag or status had to be assigned.</li>
+          <li>Wholesale prices had to become available.</li>
+          <li>Product or price visibility rules had to change.</li>
+          <li>Minimum order requirements needed to apply correctly.</li>
+        </ol>
+        <p>When several apps are involved in this workflow, even a small synchronization issue can create an unexpected customer experience.</p>
+        <p>The client encountered edge cases where pricing, customer approval and price visibility did not always behave consistently.</p>
+        <p>The result was a B2B journey that felt fragmented rather than seamless.</p>
+        <p>It also increased the amount of configuration and troubleshooting required from the client's team.</p>
+        <p>Instead of managing their B2B strategy, they were spending time managing the connections between applications.</p>
+
+        <h2>What the Client Was Looking For</h2>
+        <p>The client did not simply want another Shopify app.</p>
+        <p>They wanted to rethink their B2B technology stack.</p>
+        <p>Their objective was to find a solution that could consolidate the core B2B functionality they were already using while also supporting the features they expected to need in the future.</p>
+        <p>The immediate requirements included:</p>
+        <ul>
+          <li>B2B and wholesale registration</li>
+          <li>Customer approval workflows</li>
+          <li>Wholesale customer segmentation</li>
+          <li>Price visibility controls</li>
+          <li>Customer-specific or wholesale pricing</li>
+          <li>Volume pricing</li>
+          <li>Minimum order quantities</li>
+        </ul>
+        <p>But the client was also thinking about where its B2B business was heading.</p>
+        <p>Future requirements included capabilities such as:</p>
+        <ul>
+          <li><strong>Payment terms</strong></li>
+          <li><strong>B2B invoicing</strong></li>
+          <li><strong>Request for Quote workflows</strong></li>
+          <li>Additional B2B purchasing and account-management functionality</li>
+        </ul>
+        <p>This made the choice of technology partner particularly important.</p>
+        <p>The client wasn't only evaluating what an application could do today.</p>
+        <p>They were evaluating whether the platform and the team behind it could support their B2B roadmap.</p>
+
+        <h2>The Solution: Consolidating the B2B Workflow With BMT</h2>
+        <p>The client decided to migrate its B2B workflows to <strong>BMT B2B Wholesale Pricing</strong>.</p>
+        <p>Instead of maintaining separate applications for pricing, access control and registration, BMT allowed the client to manage these workflows from a more unified B2B setup.</p>
+        <p>The goal of the migration was straightforward:</p>
+        <p><strong>Reduce the number of moving parts involved in the B2B customer journey.</strong></p>
+        <p>Registration, approval, customer segmentation, wholesale pricing, visibility rules and ordering requirements could now be designed as parts of the same workflow rather than as independent processes controlled by different applications.</p>
+        <p>This significantly simplified the overall architecture.</p>
+
+        <h2>A More Connected Customer Journey</h2>
+        <p>With a unified setup, the client's B2B customer journey could be structured much more clearly.</p>
+        <p>A prospective wholesale customer could submit a B2B registration form.</p>
+        <p>Once the customer was approved, the appropriate customer classification could determine what the customer was allowed to see, what pricing they received and what purchasing rules applied to them.</p>
+        <p>This created a more logical flow:</p>
+        <p><strong>Registration → Approval → Customer Classification → Price Visibility → B2B Pricing → Ordering Rules</strong></p>
+        <p>Instead of relying on several applications to coordinate these steps, the workflow could be managed within a single B2B solution.</p>
+        <p>For the merchant, this also meant fewer configurations to maintain and fewer potential integration points to troubleshoot.</p>
+
+        <h2>More Than App Consolidation</h2>
+        <p>One of the most important parts of the project was that the client was not simply looking to reduce its Shopify app count.</p>
+        <p>They were looking for a long-term B2B technology partner.</p>
+        <p>B2B commerce requirements continue to evolve as businesses grow.</p>
+        <p>A merchant that initially needs wholesale pricing and minimum quantities may later require payment terms, quotation workflows, advanced invoicing, quick ordering or more sophisticated customer-specific rules.</p>
+        <p>Because of this, the client wanted a platform that could evolve alongside its B2B business.</p>
+        <p>Our conversations therefore went beyond the immediate migration.</p>
+        <p>We discussed upcoming requirements including <strong>payment terms, invoicing and Request for Quote capabilities</strong>, as well as how the B2B buying experience could continue to improve over time.</p>
+        <p>This forward-looking approach was an important part of the partnership.</p>
+
+        <h2>The Result: A Simpler B2B Technology Stack</h2>
+        <p>By consolidating several B2B functions into BMT, the client was able to move toward a simpler and more manageable Shopify B2B architecture.</p>
+        <p>Instead of having separate applications controlling different parts of the customer journey, the merchant could manage the core B2B experience through one solution.</p>
+        <p>This helps reduce:</p>
+        <ul>
+          <li>Integration dependencies</li>
+          <li>Conflicting configurations</li>
+          <li>Workflow inconsistencies</li>
+          <li>Time spent troubleshooting multiple apps</li>
+          <li>Complexity when introducing new B2B functionality</li>
+        </ul>
+        <p>More importantly, it provides a stronger foundation for the client's future B2B roadmap.</p>
+
+        <h2>Why App Consolidation Matters for Shopify B2B</h2>
+        <p>It is common for Shopify merchants to build their B2B technology stack gradually.</p>
+        <p>A merchant might start with a wholesale pricing app.</p>
+        <p>Later, they add a registration app.</p>
+        <p>Then they add an app to hide prices.</p>
+        <p>Then another solution for minimum quantities, quotations or payment terms.</p>
+        <p>Over time, the merchant may end up with several applications participating in a single customer journey.</p>
+        <p>While this can work, every additional integration introduces another dependency.</p>
+        <p>For growing B2B businesses, the better question is often not:</p>
+        <p><strong>“Which app can solve this individual requirement?”</strong></p>
+        <p>It is:</p>
+        <p><strong>“How can we create a connected B2B workflow that will continue to work as our business becomes more sophisticated?”</strong></p>
+        <p>That was the objective of this migration.</p>
+
+        <h2>Building for the Next Stage of B2B Commerce</h2>
+        <p>For this European DTC brand, moving to BMT was not simply about replacing three applications with one.</p>
+        <p>It was about creating a cleaner foundation for the next stage of its B2B business.</p>
+        <p>The immediate benefit was a more unified workflow for registration, approval, pricing, price visibility and ordering rules.</p>
+        <p>The longer-term objective is to continue expanding that experience with capabilities such as payment terms, invoicing, quotation workflows and other advanced B2B functionality.</p>
+        <p>At <strong>BMT</strong>, our goal is not only to solve today's B2B requirements.</p>
+        <p>We want to work with Shopify merchants as their wholesale businesses evolve — helping them simplify their technology stack while continuously improving the buying experience for their B2B customers.</p>
+        <p>If you're currently using multiple Shopify apps to manage wholesale pricing, B2B registration, customer approvals, minimum quantities or price visibility, consolidating those workflows may be worth considering.</p>
+        <p><strong>BMT B2B Wholesale Pricing is built to help Shopify merchants manage B2B and DTC customers from the same Shopify store — without needing a fragmented collection of apps.</strong></p>
+      </>
+    ),
+  },
   "introducing-page-lock-hide-price": {
     category: "Product Update",
     title: "Introducing Page Lock & Hide Price — Built for the Future of Shopify Customer Accounts",

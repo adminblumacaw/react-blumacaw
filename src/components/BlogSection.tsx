@@ -4,6 +4,14 @@ import { Link } from "react-router-dom";
 
 const blogPosts = [
   {
+    slug: "bmt-european-dtc-brand-replaced-multiple-b2b-apps",
+    category: "Success Story",
+    title: "How BMT Helped a European DTC Brand Replace Multiple B2B Apps With One Unified Solution",
+    excerpt: "See how a European DTC brand consolidated pricing, registration, approvals, visibility, and order rules into one BMT workflow.",
+    readTime: "9 min read",
+    date: "Sep 28, 2026",
+  },
+  {
     slug: "sami-b2b-wholesale-pricing-alternatives",
     category: "Guide",
     title: "7 “SAMI B2B Wholesale Pricing” Alternatives for Shopify Brands Running B2B and Retail Together",
@@ -48,15 +56,6 @@ const blogPosts = [
     date: "Mar 19, 2026",
     updated: "Sep 23, 2026",
   },
-  {
-    slug: "guide-creating-wholesale-store-shopify",
-    category: "Guide",
-    title: "Guide to Creating a Wholesale Store on Shopify: D2C + B2B Step-by-Step",
-    excerpt: "Create a D2C + B2B Shopify store with wholesale pricing, Request for Quote, bulk ordering, access control, and scaling.",
-    readTime: "14 min read",
-    date: "Mar 15, 2026",
-    updated: "Sep 22, 2026",
-  },
 ];
 
 const BlogSection = () => {
@@ -74,7 +73,9 @@ const BlogSection = () => {
         </div>
 
         <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto mb-10">
-          {blogPosts.map((post) => (
+          {/* Three columns: keep a multiple of 3 so no card sits alone on a row.
+              Newest first; everything is still listed on /blog. */}
+          {blogPosts.slice(0, 6).map((post) => (
             <Link key={post.slug} to={`/blog/${post.slug}`} className="group">
               <div className="h-full rounded-2xl border border-border/50 bg-card p-6 hover:shadow-elevated hover:-translate-y-0.5 transition-all duration-300 flex flex-col">
                 <span className="text-xs font-medium text-accent mb-3 uppercase tracking-wide">

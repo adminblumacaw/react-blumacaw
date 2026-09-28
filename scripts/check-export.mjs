@@ -462,6 +462,7 @@ if (existsSync(bunLockPath)) {
 // datePublished must stay the original date. The four copies of each date
 // (BlogPost.tsx, Blog.tsx, BlogSection.tsx, prerender.mjs) must also agree.
 const PUBLISHED = {
+  "bmt-european-dtc-brand-replaced-multiple-b2b-apps": "2026-09-28",
   "introducing-page-lock-hide-price": "2026-04-08",
   "guide-creating-wholesale-store-shopify": "2026-03-15",
   "bmt-perfect-for-d2c-brands-expanding-wholesale": "2026-03-08",
