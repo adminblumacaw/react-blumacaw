@@ -11,6 +11,15 @@ import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
 
 const allPosts = [
   {
+    slug: "bmt-european-dtc-brand-replaced-multiple-b2b-apps",
+    category: "Success Story",
+    title: "How BMT Helped a European DTC Brand Replace Multiple B2B Apps With One Unified Solution",
+    excerpt: "See how a European DTC brand consolidated pricing, registration, approvals, visibility, and order rules into one BMT workflow.",
+    readTime: "9 min read",
+    date: "Sep 28, 2026",
+    isoDate: "2026-09-28",
+  },
+  {
     slug: "sami-b2b-wholesale-pricing-alternatives",
     category: "Guide",
     title: "7 “SAMI B2B Wholesale Pricing” Alternatives for Shopify Brands Running B2B and Retail Together",

@@ -48,6 +48,12 @@ const ReviewAvatar = ({ review }: { review: { store: string; logo?: string; doma
 const Reviews = () => {
     const reviews = [
     {
+      text: "The best app ever so helpful. I give this a A+++++++++ Great app and great people, best thing I did regarding apps. Thank you.",
+      store: "NDNLadiesBeadSupply",
+      location: "United States",
+      date: "September 2026",
+    },
+    {
       text: "BMT B2B Wholesale Pricing has been a huge help for our business. We tested many other apps and found BMT most useful. What I appreciate most is how easy it is to get support. The built-in chat is quick and convenient, and the team is very helpful. A big thank-you to the BMT team for building such a reliable and useful app.",
       store: "JustCreamery",
       location: "United States",
@@ -195,7 +201,7 @@ const Reviews = () => {
               Loved by merchants worldwide.
             </h2>
             <p className="text-muted-foreground text-base mb-8">
-              5.0 on the Shopify App Store · 21 reviews · 100% five stars
+              5.0 on the Shopify App Store · 22 reviews · 100% five stars
             </p>
 
             <div ref={emblaRef} className="overflow-hidden">

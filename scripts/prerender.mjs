@@ -244,6 +244,12 @@ const staticRoutes = [
 // Blog posts — keep in sync with src/pages/BlogPost.tsx `posts` map.
 const blogPosts = [
   {
+    slug: "bmt-european-dtc-brand-replaced-multiple-b2b-apps",
+    date: "2026-09-28",
+    title: "How BMT Helped a European DTC Brand Replace Multiple B2B Apps With One Unified Solution",
+    description: "See how a European DTC brand replaced multiple Shopify B2B apps with BMT to unify pricing, registration, approvals, visibility, and order rules.",
+  },
+  {
     slug: "introducing-page-lock-hide-price",
     date: "2026-04-08",
     updated: "2026-09-23",
