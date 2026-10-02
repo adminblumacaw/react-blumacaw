@@ -39,155 +39,220 @@ const LockPageHidePriceGuide = () => {
     {
       step: 1,
       title: "Go to Page Locks",
-      description: "Navigate to the Page Locks section under BMT B2B Wholesale Pricing.",
+      description: "Open BMT B2B Wholesale Pricing and navigate to Page Locks.",
       details: [
         "Open your Shopify admin and go to BMT B2B Wholesale Pricing app",
-        "Click on 'Page Locks' in the navigation menu"
+        "Select Page Locks from the app navigation"
       ],
       icon: Settings
     },
     {
       step: 2,
-      title: "Click Add Page Lock Rule",
-      description: "Start creating a new page lock rule to restrict access.",
+      title: "Open the Page Locks Dashboard",
+      description: "Click Page Locks to open the rule configuration dashboard.",
       details: [
-        "Click the 'Add Page Lock Rule' button to open the configuration form"
-      ],
-      icon: PlusCircle
-    },
-    {
-      step: 3,
-      title: "Configure General Settings",
-      description: "Enter a name for your lock rule and set the priority.",
-      details: [
-        "Enter a descriptive name (e.g., 'Sample Lock')",
-        "Set the priority — lower numbers take precedence over higher ones"
-      ],
-      icon: FileText
-    },
-    {
-      step: 4,
-      title: "Select Resources to Lock",
-      description: "Choose what to lock — whole website, specific products, collections, pages, or URLs.",
-      details: [
-        "Under Resource Selection, pick what you want to lock",
-        "Options include: Whole Website, Specific Products, Collections, Pages, or URLs",
-        "For a broad lock, select 'Whole Website'"
-      ],
-      icon: Globe
-    },
-    {
-      step: 5,
-      title: "Set Phone Access",
-      description: "Decide if phone users should be allowed access.",
-      details: [
-        "Set phone access to 'No' if you don't want phone users to have access",
-        "Set to 'Yes' if mobile users should bypass the lock"
-      ],
-      icon: MonitorSmartphone
-    },
-    {
-      step: 6,
-      title: "Configure Exclude URLs",
-      description: "Paste any URLs that should remain accessible to guest users.",
-      details: [
-        "In the Exclude URLs field, paste paths that guests can still access",
-        "Remove 'https://' from URLs and use the correct path format",
-        "This is useful for keeping pages like your contact or about page accessible"
-      ],
-      icon: Shield
-    },
-    {
-      step: 7,
-      title: "Set Access Condition",
-      description: "Choose who can access the locked content — logged-in customers, specific tags, or passcode.",
-      details: [
-        "Choose between: Logged-in Customers, Specific Customer Tags, or Passcode",
-        "For tag-based access, select 'Specific Customer Tags' and enter the tag (e.g., 'wholesale')",
-        "Only customers matching the condition will be able to access the locked content"
-      ],
-      icon: Tag
-    },
-    {
-      step: 8,
-      title: "Choose Denied Access Action",
-      description: "Decide what happens when access is denied — redirect to login, show a modal, or hide elements.",
-      details: [
-        "Options include: Redirect to Login, Show Modal, or Hide Elements (like price and Add to Cart)",
-        "Select 'Show Modal' to display a custom popup prompting users to register or log in",
-        "Select 'Hide Elements' to hide prices and Add to Cart buttons from restricted users"
-      ],
-      icon: EyeOff
-    },
-    {
-      step: 9,
-      title: "Set Up Your Modal",
-      description: "Customize the modal with a title and button labels for registration and login.",
-      details: [
-        "Add a descriptive modal title",
-        "Set button labels for the Registration action",
-        "Set button labels for the Login action"
-      ],
-      icon: MousePointerClick
-    },
-    {
-      step: 10,
-      title: "Create the Lock Rule",
-      description: "Click 'Create Block Tool' to activate your page lock rule.",
-      details: [
-        "Click 'Create Block Tool' to save and activate the lock rule",
-        "Your rule is now live and will start restricting access based on your configuration"
+        "The dashboard lists your page lock rules and their current status",
+        "You can create, edit, duplicate, delete, or switch rules on and off here"
       ],
       icon: Lock
     },
     {
-      step: 11,
-      title: "Enable App Embed in Theme",
-      description: "Make sure the app embed is switched on in your Shopify theme.",
+      step: 3,
+      title: "Start a New Page Lock",
+      description: "Select the Add Page Lock call-to-action on the dashboard.",
       details: [
-        "Go to your Shopify admin → Online Store → Themes",
-        "Click 'Customize' on your active theme",
-        "Navigate to App Embeds and activate the BMT B2B app embed",
-        "Save your changes"
+        "If this is your first rule, select Add page lock rule",
+        "The setup screen opens with all available configuration sections"
+      ],
+      icon: PlusCircle
+    },
+    {
+      step: 4,
+      title: "Enable the App Embed",
+      description: "Make sure the BMT app embed is switched on so page lock rules can appear on your storefront.",
+      details: [
+        "Use Go to App Embeds from the Page Locks dashboard",
+        "Turn on the BMT B2B app embed in your active theme and save the theme settings",
+        "Return to Page Locks after the embed is enabled"
       ],
       icon: ToggleRight
     },
     {
-      step: 12,
-      title: "Test Your Lock Rule",
-      description: "Visit your online store as a first-time user to verify the lock is working.",
+      step: 5,
+      title: "Click Add Page Lock",
+      description: "Select Add Page Lock to begin configuring the new rule.",
       details: [
-        "Open your store in an incognito/private browser window",
-        "You should see the modal prompting you to register or log in",
-        "Verify that the correct content is locked based on your settings"
+        "The Set up lock rule screen opens",
+        "Complete each section before saving the rule"
+      ],
+      icon: PlusCircle
+    },
+    {
+      step: 6,
+      title: "Configure General Settings",
+      description: "Enter a clear rule name and assign its priority.",
+      details: [
+        "Use a descriptive name, such as 'Sample' or 'Wholesale Catalogue Lock'",
+        "Set the priority; a lower number has higher priority",
+        "Rules are evaluated in ascending priority order"
+      ],
+      icon: FileText
+    },
+    {
+      step: 7,
+      title: "Choose the Resources to Lock",
+      description: "Select which storefront content this rule should restrict.",
+      details: [
+        "Whole website — lock every storefront page",
+        "Specific products — choose individual products",
+        "Specific collections — lock everything inside selected collections",
+        "Specific pages or URLs — target selected pages or matching paths, including wildcards",
+        "Blogs — lock blog articles and listings"
+      ],
+      icon: Globe
+    },
+    {
+      step: 8,
+      title: "Configure Whole-Website Access",
+      description: "For a whole-site lock, choose whether visitors can browse until checkout or access the home page.",
+      details: [
+        "Allow access till checkout lets visitors browse and applies the restriction when they try to check out",
+        "Allow home page access keeps the home page open while the rest of the selected content remains protected",
+        "Use exclusions when certain URLs, products, or collections should remain public"
+      ],
+      icon: Shield
+    },
+    {
+      step: 9,
+      title: "Review Resource-Specific Options",
+      description: "Additional controls appear when you select products, collections, pages, URLs, or blogs.",
+      details: [
+        "Browse and select the exact products or collections to protect",
+        "For selected products, choose whether to hide them from storefront listings and recommendations",
+        "Add excluded products or collections that must stay open even when the broader rule matches",
+        "Choose the options that fit your storefront access requirements"
+      ],
+      icon: EyeOff
+    },
+    {
+      step: 10,
+      title: "Set Access and Exclusions",
+      description: "For the whole-website example, configure the available access and exclusion settings.",
+      details: [
+        "Enable Allow access till checkout or Allow home page access only if needed",
+        "Add excluded URLs, products, or collections that everyone should still be able to open",
+        "Review your choices before moving to the customer condition"
+      ],
+      icon: Shield
+    },
+    {
+      step: 11,
+      title: "Choose Who Can Access the Content",
+      description: "Set the condition that determines which visitors can view the locked content.",
+      details: [
+        "All customers — everyone can view the content except customers included in your exclusions",
+        "Logged-in customers — anyone with a customer account can view the content",
+        "Specific customer tags — only customers carrying an allowed tag get access",
+        "Passcode — visitors enter a shared code to unlock the content",
+        "Use excluded customer tags or specific customer exclusions when required"
+      ],
+      icon: Users
+    },
+    {
+      step: 12,
+      title: "Choose the Denied-Access Action",
+      description: "Decide what visitors see when they do not have permission to access the content.",
+      details: [
+        "Redirect to Login sends the visitor to /account/login or another store path you provide",
+        "Show Modal displays a configurable login and registration prompt",
+        "Hide Elements removes selected storefront elements, such as prices and Add to Cart controls",
+        "The document's example uses Show Modal"
+      ],
+      icon: MousePointerClick
+    },
+    {
+      step: 13,
+      title: "Configure the Access Modal",
+      description: "Customize the modal that restricted visitors see.",
+      details: [
+        "Enter a modal title, such as 'Restricted Content'",
+        "Add a message explaining that the visitor must log in to view the content",
+        "Set the login button text and destination",
+        "Set the registration button text and registration page URL",
+        "First-time visitors see both Login and Register; logged-in visitors without access see only Register"
+      ],
+      icon: MousePointerClick
+    },
+    {
+      step: 14,
+      title: "Save the Page Lock Rule",
+      description: "Click Save to create the rule with your selected resources, conditions, and action.",
+      details: [
+        "Review the rule name, priority, targeting, exclusions, condition, and denied-access action",
+        "Click Save to create the page lock",
+        "Return to the Page Locks dashboard after the rule is saved"
+      ],
+      icon: CheckCircle
+    },
+    {
+      step: 15,
+      title: "Confirm the Rule Is Active",
+      description: "Check that the new page lock appears in the list and its status is switched on.",
+      details: [
+        "Confirm the correct name, priority, resource type, and condition appear in the list",
+        "Make sure the status is Active",
+        "Use the dashboard actions later to edit, duplicate, or delete the rule"
+      ],
+      icon: ToggleRight
+    },
+    {
+      step: 16,
+      title: "Test While Access Is Allowed",
+      description: "Visit the storefront while logged in as a customer who meets the rule condition.",
+      details: [
+        "Open the storefront and navigate through the content covered by the rule",
+        "A qualifying logged-in customer should be able to access the content normally",
+        "Confirm that allowed pages and products open without the restriction prompt"
       ],
       icon: Eye
     },
     {
-      step: 13,
-      title: "Verify Login and Registration Links",
-      description: "Test the Login and Register buttons to ensure they redirect correctly.",
+      step: 17,
+      title: "Test as a Restricted Visitor",
+      description: "Log out and visit a locked page to confirm the denied-access experience.",
       details: [
-        "Click the 'Login' button — it should redirect to the Shopify login page",
-        "Click the 'Register' button — it should redirect to the registration page",
-        "Confirm that logged-in users with the correct tags can access the locked content"
+        "Open the storefront as a logged-out visitor or in a private browser window",
+        "Attempt to open content covered by the rule",
+        "Confirm that the configured redirect, modal, or hidden elements appear",
+        "For the modal example, verify both Login and Register actions"
       ],
-      icon: Users
+      icon: Lock
+    },
+    {
+      step: 18,
+      title: "Verify Other Restricted Pages",
+      description: "Test additional protected pages or products to make sure the rule works consistently.",
+      details: [
+        "Try another selected product, page, catalogue area, URL, or blog",
+        "Confirm exclusions remain available to visitors who would otherwise be restricted",
+        "Repeat the test for each customer condition your store uses"
+      ],
+      icon: MonitorSmartphone
     },
   ];
 
   const previewSteps = [
     {
       step: 1,
-      description: "Visit your store as a guest — you should see the modal or hidden elements based on your configuration."
+      description: "Visit the selected content as an allowed customer — the page should open normally."
     },
     {
       step: 2,
-      description: "Log in as a customer with the correct tag — you should have full access to the locked content."
+      description: "Log out or use a private window — the configured redirect, modal, or hidden elements should appear."
     },
     {
       step: 3,
-      description: "Test excluded URLs — they should remain accessible to guest users."
+      description: "Test excluded URLs, products, collections, and customers — each exclusion should bypass the rule as configured."
     }
   ];
 
@@ -198,7 +263,7 @@ const LockPageHidePriceGuide = () => {
         "Ensure the app embed is enabled in your Shopify theme customizer",
         "Check that the lock rule status is active",
         "Clear your browser cache and try in an incognito window",
-        "Verify the resource selection matches the pages you want to lock"
+        "Verify the resource selection and customer condition match the content and visitor you are testing"
       ]
     },
     {
@@ -207,7 +272,8 @@ const LockPageHidePriceGuide = () => {
         "Verify the customer tag matches exactly (case-sensitive)",
         "Ensure the customer is logged in before accessing the locked content",
         "Check that no higher-priority rule is overriding access",
-        "Confirm the tag is applied to the customer in Shopify admin"
+        "Confirm the tag is applied to the customer in Shopify admin",
+        "Check that the customer is not included in an exclusion"
       ]
     },
     {
@@ -216,7 +282,8 @@ const LockPageHidePriceGuide = () => {
         "Check your modal title and button label settings",
         "Ensure the app embed is enabled in your theme",
         "Test in a different browser to rule out browser-specific issues",
-        "Verify the denied access action is set to 'Show Modal'"
+        "Verify the denied access action is set to 'Show Modal'",
+        "Check the modal title, message, button text, and registration URL"
       ]
     }
   ];
@@ -224,7 +291,7 @@ const LockPageHidePriceGuide = () => {
   const faqs = [
     {
       question: "What can I lock with Page Lock rules?",
-      answer: "You can lock your entire website, specific products, collections, pages, or custom URLs. This gives you full control over which content is restricted to certain customer groups."
+      answer: "You can lock your entire website, specific products, collections, pages, custom URLs with wildcard matching, or blogs and article listings. Resource-specific options appear after you make a selection."
     },
     {
       question: "Can I hide prices and Add to Cart buttons instead of showing a modal?",
@@ -236,11 +303,11 @@ const LockPageHidePriceGuide = () => {
     },
     {
       question: "Can I exclude certain pages from the lock?",
-      answer: "Yes. Use the Exclude URLs field to add any paths that should remain accessible to guest users, such as your contact page or about page. Make sure to remove 'https://' and use the correct path format."
+      answer: "Yes. Depending on the selected resource, you can exclude URLs, products, or collections so they remain available even when the broader rule matches. Each rule keeps its own exclusions."
     },
     {
-      question: "Does the page lock work on mobile devices?",
-      answer: "Yes, you can control mobile access separately. In the configuration, you can set whether phone users are allowed access or should also be restricted."
+      question: "Can I exclude selected customers from a rule?",
+      answer: "Yes. You can add excluded customer tags or specific customers. Anyone matching a customer exclusion is not subject to that rule, regardless of the selected access condition."
     },
     {
       question: "Can I use a passcode instead of customer tags?",
@@ -252,9 +319,9 @@ const LockPageHidePriceGuide = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="Configure Lock Page & Hide Price Rules — BMT B2B Wholesale Pricing"
-        description="Step-by-step guide to setting up page locks and hiding prices on your Shopify store. Control access to products, collections, and pages with BMT B2B Wholesale Pricing."
+        description="Configure page locks and hidden storefront content by customer login, tag, passcode, product, collection, page, URL, or blog with BMT B2B Wholesale Pricing."
         canonicalPath="/lock-page-hide-price-guide"
-        jsonLd={buildGuideJsonLd({ title: "Configure Lock Page & Hide Price Rules — BMT B2B Wholesale Pricing", description: "Step-by-step guide to setting up page locks and hiding prices on your Shopify store. Control access to products, collections, and pages with BMT B2B Wholesale Pricing.", path: "/lock-page-hide-price-guide", steps, faqs, })}
+        jsonLd={buildGuideJsonLd({ title: "Configure Lock Page & Hide Price Rules — BMT B2B Wholesale Pricing", description: "Configure page locks and hidden storefront content by customer login, tag, passcode, product, collection, page, URL, or blog with BMT B2B Wholesale Pricing.", path: "/lock-page-hide-price-guide", steps, faqs, })}
       />
       <Header />
       <main className="pt-20">
@@ -279,7 +346,7 @@ const LockPageHidePriceGuide = () => {
                 Configure <span className="font-semibold text-primary">Lock Page & Hide Price</span> Rules
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Page locks let you restrict pages or sections to specific customer groups, or hide key shopping functions like prices and Add to Cart buttons from selected users. Here's a step-by-step guide to setting up these powerful controls.
+                 Page locks control who can access selected storefront content by login status, customer tag, exclusions, or passcode. Follow this guide to protect your whole site, products, collections, pages, URLs, or blogs and choose what restricted visitors see.
               </p>
               <Button size="lg" className="gradient-primary" asChild>
                 <a href="#setup-guide">
@@ -311,7 +378,7 @@ const LockPageHidePriceGuide = () => {
                 Step-by-Step Configuration
               </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Follow these steps to create and configure a page lock rule on your Shopify store
+                 Follow these steps to create, activate, and test a page lock rule on your Shopify store
               </p>
             </div>
 
@@ -469,8 +536,8 @@ const LockPageHidePriceGuide = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="gradient-primary" asChild>
-                <a href="mailto:support@blumacawtech.com">
-                  Contact Support
+                <a href="https://calendar.app.google/kxiwZQ9QCWjve2rn7" target="_blank" rel="noopener noreferrer">
+                  Book Onboarding Session
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>

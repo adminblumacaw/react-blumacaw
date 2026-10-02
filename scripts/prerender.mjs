@@ -231,7 +231,7 @@ const staticRoutes = [
     path: "/lock-page-hide-price-guide",
     title: "Configure Lock Page & Hide Price Rules — BMT B2B Wholesale Pricing",
     description:
-      "Step-by-step guide to setting up page locks and hiding prices on your Shopify store. Control access to products, collections, and pages with BMT B2B Wholesale Pricing.",
+      "Configure page locks and hidden storefront content by customer login, tag, passcode, product, collection, page, URL, or blog with BMT B2B Wholesale Pricing.",
   },
   {
     path: "/quick-order-form-guide",
