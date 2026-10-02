@@ -48,7 +48,7 @@ const PricingPage = () => {
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "5",
-                reviewCount: "21",
+                reviewCount: "22",
               },
               offers: [
                 { name: "Free", price: "0" },
