@@ -12,7 +12,7 @@ import SEOHead from "@/components/SEOHead";
  * use are disclosed. Change it carefully, and keep the effective date honest.
  */
 
-const EFFECTIVE_DATE = "26 August 2026";
+const EFFECTIVE_DATE = "2 October 2026";
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <section className="mb-10">
@@ -64,6 +64,13 @@ const Privacy = () => {
               run the features the merchant configures.
             </li>
             <li>
+              <strong>Merchant contact details</strong> — the store&rsquo;s email,
+              customer-facing email, owner name and phone number from Shopify, and
+              the name, email address and Shopify admin language of each staff
+              member who opens the app, which Shopify provides when they do. We use
+              these to send the merchant our own service emails, described below.
+            </li>
+            <li>
               <strong>Customer data</strong> — customer records Shopify sends us
               (such as name, email, tags and default address), used for
               customer-specific pricing, customer groups and approval workflows.
@@ -101,6 +108,15 @@ const Privacy = () => {
             SMTP/email API account — in which case that provider processes the
             recipient addresses and message content under the merchant&rsquo;s
             agreement with them.
+          </p>
+          <p>
+            We also send the merchant two emails of our own: a welcome email when
+            the app is installed, and a single follow-up when it is uninstalled.
+            They go to the store&rsquo;s email and to the staff members who have
+            used the app, in the language they use Shopify in where we can, through
+            our built-in sender, and never count against the store&rsquo;s email
+            allowance. Each one says how to opt out: reply &ldquo;unsubscribe&rdquo;
+            and we will not contact you again.
           </p>
         </Section>
 
@@ -202,12 +218,19 @@ const Privacy = () => {
             <li>
               <strong>Uninstalling the app</strong> triggers an automated deletion
               of the data we store for that store, including uploaded files and
-              stored credentials.
+              stored credentials. The one exception is the merchant contact details
+              described above: we keep them for 4 weeks after the uninstall, so we
+              can send the follow-up email and answer the merchant if they reply,
+              and they are then deleted automatically. Reinstalling the app within
+              those 4 weeks keeps them.
             </li>
             <li>
               <strong>Shopify data erasure requests</strong> — we honour
               Shopify&rsquo;s customer and shop redaction webhooks automatically,
               deleting the relevant personal data when Shopify instructs us to.
+              Merchant contact details are the exception for a shop redaction: they
+              are deleted at the end of the 4-week period above, within the 30 days
+              Shopify allows.
             </li>
             <li>
               <strong>Operational logs</strong> are retained for a short, fixed
