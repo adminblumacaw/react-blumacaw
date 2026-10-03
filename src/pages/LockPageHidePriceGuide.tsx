@@ -370,6 +370,32 @@ const LockPageHidePriceGuide = () => {
           </div>
         </section>
 
+        {/* Video Tutorial */}
+        <section className="py-12 px-4">
+          <div className="container mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                Video Tutorial
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+                Watch this video guide to configure page locks for your store
+              </p>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <div className="aspect-video rounded-lg overflow-hidden shadow-glow">
+                <video 
+                  controls 
+                  className="w-full h-full object-cover"
+                  poster="/placeholder.svg"
+                >
+                  <source src="https://storage.googleapis.com/bmt-videos/Configuring%20Page%20Lock%20Functionality.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Step-by-Step Guide */}
         <section id="setup-guide" className="py-16 px-4">
           <div className="container mx-auto">
