@@ -122,6 +122,25 @@ const LogoBar = () => {
           ))}
         </div>
       </div>
+
+      <div className="mt-8 sm:mt-10 flex justify-center">
+        <a
+          href="https://letsmetrix.com/app/blumacawtech"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="View BMT B2B Wholesale Pricing's verified Best Support award on Letsmetrix"
+          className="inline-flex transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-4"
+        >
+          <img
+            src="https://api.letsmetrix.com/badge/blumacawtech/best_support.svg"
+            alt="BEST SUPPORT, Verified by Letsmetrix"
+            width={160}
+            height={202}
+            loading="lazy"
+            className="h-auto w-32 sm:w-40"
+          />
+        </a>
+      </div>
     </section>
   );
 };

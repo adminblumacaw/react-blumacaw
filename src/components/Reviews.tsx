@@ -201,7 +201,7 @@ const Reviews = () => {
               Loved by merchants worldwide.
             </h2>
             <p className="text-muted-foreground text-base mb-8">
-              5.0 on the Shopify App Store · 22 reviews · 100% five stars
+              5.0 on the Shopify App Store · 23 reviews · 100% five stars
             </p>
 
             <div ref={emblaRef} className="overflow-hidden">
