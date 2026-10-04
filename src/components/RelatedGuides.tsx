@@ -35,6 +35,8 @@ const GUIDES = {
 const G = GUIDES;
 
 export const RELATED_GUIDES: Record<string, Guide[]> = {
+  "faire-alternative-vs-shopify-wholesale": [G.pricingRules, G.customerGroups, G.registrationForm, G.shippingRules, G.paymentTerms],
+  "from-faire-to-shopify-independent-wholesale-channel": [G.pricingRules, G.customerGroups, G.registrationForm, G.paymentTerms, G.shippingRules],
   "bmt-european-dtc-brand-replaced-multiple-b2b-apps": [G.registrationForm, G.approveCustomers, G.pricingRules, G.lockHidePrice, G.orderLimits],
   "sami-b2b-wholesale-pricing-alternatives": [G.pricingRules, G.registrationForm, G.orderLimits, G.quickOrder],
   "bss-b2b-wholesale-pricing-alternatives": [G.pricingRules, G.registrationForm, G.paymentTerms, G.quickOrder],

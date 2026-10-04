@@ -21,6 +21,7 @@ const Header = ({ showAnnouncement = false }: HeaderProps) => {
     { label: "Documentation", href: "/documentation" },
     { label: "Blog", href: "/blog" },
     { label: "Affiliate", href: "/affiliate" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (

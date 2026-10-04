@@ -58,6 +58,8 @@ BlumacawTech, based in Bangalore, India. Launched June 2025.
 
 ## Blog Posts
 
+- [Faire Alternative: Faire vs Shopify Wholesale for Growing B2B Businesses](https://blumacawtech.com/blogs/b2b-wholesale/faire-alternative-shopify) — Top-of-funnel comparison of Faire and Shopify wholesale, including when an owned Shopify B2B channel with BMT makes sense without Shopify Plus
+- [From Faire to Shopify: How to Build Your Own Wholesale Channel](https://blumacawtech.com/blogs/b2b-wholesale/faire-to-shopify-wholesale) — Success story on moving beyond marketplace dependency with a flexible B2B and B2C Shopify channel
 - [How BMT Helped a European DTC Brand Replace Multiple B2B Apps](https://blumacawtech.com/blog/bmt-european-dtc-brand-replaced-multiple-b2b-apps) — Case study on consolidating pricing, registration, approvals, visibility, and order rules into one BMT workflow
 - [Introducing Page Lock & Hide Price](https://blumacawtech.com/blog/introducing-page-lock-hide-price) — Feature launch: modern access control for Shopify's passwordless future
 - [Shopify B2B: How to Build a Complete Wholesale Store (2026 Guide)](https://blumacawtech.com/blog/shopify-b2b-build-complete-wholesale-store)

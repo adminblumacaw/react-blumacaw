@@ -14,18 +14,21 @@
 When editing in Lovable, keep what the live site depends on:
 
 - New pages need a route in `src/App.tsx` **and** `src/entry-server.tsx`, and an entry in
-  `scripts/prerender.mjs`. The build prerenders every route for search and AI crawlers.
+  `scripts/prerender.mjs` (blog posts: a record in `src/data/blogManifest.js`). The build prerenders every route for search and AI crawlers.
 - Search titles are 60 characters at most. If a headline is longer, add a short one to
-  `src/lib/seoTitles.ts`; the build fails otherwise.
+  `src/lib/seoTitles.ts` (never raise `SEO_TITLE_MAX`); the build fails otherwise.
 - Keep `SEOHead`'s JSON-LD and head collector, `hydrateRoot` in `src/main.tsx`, the
   click-to-load hero video (`YouTubeFacade`) and the hero without a fade-in animation.
 - Use the colour tokens in `src/index.css`. Teal (`--accent`) is a fill colour; teal text uses
   `text-accent`, which maps to a darker teal that meets contrast rules.
 - Images must be real files in `src/assets` (not `.asset.json` placeholders).
+- Every URL the site publishes uses `https://blumacawtech.com`: canonical links, og:url, the
+  sitemap, `robots.txt`, `llms.txt` and JSON-LD. Never the `lovable.app` preview address.
+- Blog titles, dates, descriptions and URLs live once, in `src/data/blogManifest.js`; the article,
+  `/blog`, the homepage cards and the prerender all read it.
 - Never change an article's publish date (`date` / `isoDate`). When you revise an article, set
-  `updated` / `updatedIsoDate` in `src/pages/BlogPost.tsx`, `src/pages/Blog.tsx`,
-  `src/components/BlogSection.tsx` (if it is on the homepage) and `updated` in `scripts/prerender.mjs`.
-  The page then shows "Updated …", and search engines get it as the modified date.
+  `updated` / `updatedIsoDate` on its record in `src/data/blogManifest.js`. The page then shows
+  "Updated …", and search engines get it as the modified date.
 
 ## Project info
 

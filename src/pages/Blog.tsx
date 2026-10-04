@@ -8,195 +8,9 @@ import { Clock, Calendar, ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import builtForShopifyBadge from "@/assets/badge-built-for-shopify-light.png";
+import { blogPosts } from "@/data/blogManifest.js";
 
-const allPosts = [
-  {
-    slug: "bmt-european-dtc-brand-replaced-multiple-b2b-apps",
-    category: "Success Story",
-    title: "How BMT Helped a European DTC Brand Replace Multiple B2B Apps With One Unified Solution",
-    excerpt: "See how a European DTC brand consolidated pricing, registration, approvals, visibility, and order rules into one BMT workflow.",
-    readTime: "9 min read",
-    date: "Sep 28, 2026",
-    isoDate: "2026-09-28",
-  },
-  {
-    slug: "sami-b2b-wholesale-pricing-alternatives",
-    category: "Guide",
-    title: "7 “SAMI B2B Wholesale Pricing” Alternatives for Shopify Brands Running B2B and Retail Together",
-    excerpt: "Compare 7 SAMI B2B Wholesale Pricing alternatives for Shopify B2B pricing, Request for Quote, registration, order limits, net terms, and quick ordering.",
-    readTime: "13 min read",
-    date: "Aug 11, 2026",
-    isoDate: "2026-08-11",
-    updated: "Sep 25, 2026",
-    updatedIsoDate: "2026-09-25",
-  },
-  {
-    slug: "bss-b2b-wholesale-pricing-alternatives",
-    category: "Guide",
-    title: "6 BSS B2B Wholesale Pricing Alternatives for Shopify Brands Running B2B and Retail Together",
-    excerpt: "Compare 6 BSS B2B Wholesale Pricing alternatives for Shopify B2B pricing, Request for Quote, registration, order limits, net terms, and quick ordering.",
-    readTime: "12 min read",
-    date: "Aug 11, 2026",
-    isoDate: "2026-08-11",
-    updated: "Sep 25, 2026",
-    updatedIsoDate: "2026-09-25",
-  },
-  {
-    slug: "shopify-revenue-leaks",
-    category: "Guide",
-    title: "5 Shopify Revenue Leaks Growing Stores Should Fix Before Buying More Traffic",
-    excerpt: "Find 5 Shopify revenue leaks in wholesale, lead capture, support, phone calls, and retention before spending more on traffic.",
-    readTime: "10 min read",
-    date: "Aug 2, 2026",
-    isoDate: "2026-08-02",
-    updated: "Sep 25, 2026",
-    updatedIsoDate: "2026-09-25",
-  },
-  {
-    slug: "sparklayer-alternatives",
-    category: "Guide",
-    title: "7 SparkLayer Alternatives for Shopify Brands Running B2B and Retail Together",
-    excerpt: "Compare 7 SparkLayer alternatives for Shopify B2B pricing, Request for Quote, wholesale forms, net terms, order limits, and quick orders.",
-    readTime: "12 min read",
-    date: "Jun 15, 2026",
-    isoDate: "2026-06-15",
-    updated: "Sep 24, 2026",
-    updatedIsoDate: "2026-09-24",
-  },
-  {
-    slug: "wholesale-gorilla-alternatives",
-    category: "Guide",
-    title: "11 Wholesale Gorilla Alternatives for Shopify B2B Pricing",
-    excerpt: "Compare Wholesale Gorilla alternatives for Shopify B2B pricing, wholesale forms, bulk discounts, buyer approval, and price hiding.",
-    readTime: "12 min read",
-    date: "May 31, 2026",
-    isoDate: "2026-05-31",
-    updated: "Sep 24, 2026",
-    updatedIsoDate: "2026-09-24",
-  },
-  {
-    slug: "shopify-wholesale-registration-form",
-    url: "/shopify-wholesale-registration-form",
-    category: "Guide",
-    title: "How to Create a Shopify Wholesale Registration Form & Approve B2B Customers",
-    excerpt: "Learn how to build a wholesale registration form in Shopify, tag and approve B2B customers, and streamline your onboarding process — with credible market data and a practical step-by-step workflow.",
-    readTime: "12 min read",
-    date: "May 20, 2026",
-    isoDate: "2026-05-20",
-    updated: "Sep 24, 2026",
-    updatedIsoDate: "2026-09-24",
-  },
-  {
-    slug: "best-shopify-wholesale-apps",
-    category: "Guide",
-    title: "11 Best Shopify Wholesale Apps for B2B Pricing and Bulk Orders in 2026",
-    excerpt: "Compare the 11 best Shopify wholesale apps in 2026 for B2B pricing, Request for Quote, net terms, quick orders, price hiding, and buyer approvals.",
-    readTime: "13 min read",
-    date: "May 4, 2026",
-    isoDate: "2026-05-04",
-    updated: "Sep 23, 2026",
-    updatedIsoDate: "2026-09-23",
-  },
-  {
-    slug: "introducing-page-lock-hide-price",
-    category: "Product Update",
-    title: "Introducing Page Lock & Hide Price — Built for the Future of Shopify Customer Accounts",
-    excerpt: "Shopify is moving to passwordless login. Learn how Page Lock & Hide Price gives you modern, rule-based access control to protect pricing and restrict store access.",
-    readTime: "8 min read",
-    date: "Apr 8, 2026",
-    isoDate: "2026-04-08",
-    updated: "Sep 23, 2026",
-    updatedIsoDate: "2026-09-23",
-  },
-  {
-    slug: "shopify-b2b-build-complete-wholesale-store",
-    category: "Guide",
-    title: "Shopify B2B: How to Build a Complete Wholesale Store (2026 Guide)",
-    excerpt: "Complete guide to building a Shopify B2B wholesale store. Learn costs, setup options, and how to create a modern wholesale experience — without Shopify Plus.",
-    readTime: "15 min read",
-    date: "Mar 19, 2026",
-    isoDate: "2026-03-19",
-    updated: "Sep 23, 2026",
-    updatedIsoDate: "2026-09-23",
-  },
-  {
-    slug: "guide-creating-wholesale-store-shopify",
-    category: "Guide",
-    title: "Guide to Creating a Wholesale Store on Shopify: D2C + B2B Step-by-Step",
-    excerpt: "A complete step-by-step guide to creating a D2C + B2B wholesale store on Shopify. Learn pricing, bulk ordering, access control, global selling, and scaling your wholesale channel.",
-    readTime: "14 min read",
-    date: "Mar 15, 2026",
-    isoDate: "2026-03-15",
-    updated: "Sep 22, 2026",
-    updatedIsoDate: "2026-09-22",
-  },
-  {
-    slug: "best-shopify-wholesale-apps-2026",
-    category: "Guide",
-    title: "Best Shopify Wholesale Apps in 2026 (Top 6 B2B Apps Compared)",
-    excerpt: "Compare the 6 best Shopify wholesale apps in 2026. See which B2B app is right for your store — from flexible pricing to marketplace wholesale and enterprise portals.",
-    readTime: "12 min read",
-    date: "Mar 14, 2026",
-    isoDate: "2026-03-14",
-    updated: "Sep 22, 2026",
-    updatedIsoDate: "2026-09-22",
-  },
-  {
-    slug: "bmt-perfect-for-d2c-brands-expanding-wholesale",
-    category: "Guide",
-    title: "Why BMT B2B Wholesale Pricing App Is Perfect for D2C Brands Expanding Into Wholesale",
-    excerpt: "For D2C brands on Shopify, wholesale is the next natural growth step. Learn how BMT lets you launch B2B on top of your existing retail store — without marketplaces or separate storefronts.",
-    readTime: "9 min read",
-    date: "Mar 8, 2026",
-    isoDate: "2026-03-08",
-    updated: "Sep 22, 2026",
-    updatedIsoDate: "2026-09-22",
-  },
-  {
-    slug: "bmt-smarter-choice-than-traditional-wholesale-apps",
-    category: "Guide",
-    title: "Why BMT B2B Wholesale Pricing App Is a Smarter Choice Than Traditional Shopify Wholesale Apps",
-    excerpt: "Older doesn't always mean better. Here's why a modern, lean wholesale app outperforms legacy systems for growing Shopify brands.",
-    readTime: "7 min read",
-    date: "Feb 26, 2026",
-    isoDate: "2026-02-26",
-    updated: "Sep 21, 2026",
-    updatedIsoDate: "2026-09-21",
-  },
-  {
-    slug: "bmt-b2b-partner-established-us-shopify-store",
-    category: "Guide",
-    title: "How BMT B2B Wholesale Pricing App Can Partner With an Established US Shopify Store to Unlock B2B Growth",
-    excerpt: "For established Shopify brands, wholesale is the next logical growth channel. Here's how BMT enables structured B2B expansion without disrupting DTC operations.",
-    readTime: "8 min read",
-    date: "Feb 26, 2026",
-    isoDate: "2026-02-26",
-    updated: "Sep 21, 2026",
-    updatedIsoDate: "2026-09-21",
-  },
-  {
-    slug: "merchant-increased-b2b-revenue-40-percent",
-    category: "Success Story",
-    title: "How One Merchant Increased B2B Revenue by 40%",
-    excerpt: "Learn how a home goods brand used customer groups and volume discounts to grow their wholesale channel in just 3 months.",
-    readTime: "4 min read",
-    date: "Feb 12, 2026",
-    isoDate: "2026-02-12",
-    updated: "Sep 21, 2026",
-    updatedIsoDate: "2026-09-21",
-  },
-  {
-    slug: "shopify-wholesale-app-small-business",
-    category: "Guide",
-    title: "Shopify Wholesale App for Small Business: The Best Affordable Solution in 2026",
-    excerpt: "Most wholesale apps are built for enterprises. Here's the most affordable, simple, and effective option for small Shopify stores in 2026.",
-    readTime: "7 min read",
-    date: "Feb 26, 2026",
-    isoDate: "2026-02-26",
-    updated: "Sep 21, 2026",
-    updatedIsoDate: "2026-09-21",
-  },
-];
+const allPosts = blogPosts;
 
 const categoryColors: Record<string, string> = {
   Guide: "bg-primary/10 text-primary border-primary/20",
@@ -227,7 +41,7 @@ const Blog = () => {
             "@type": "BlogPosting",
             "headline": p.title,
             "description": p.excerpt,
-            "url": `https://blumacawtech.com${(p as any).url ?? `/blog/${p.slug}`}`,
+            "url": `https://blumacawtech.com${p.path}`,
             "datePublished": p.isoDate,
             "dateModified": p.updatedIsoDate ?? p.isoDate,
             "author": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" }
@@ -252,7 +66,8 @@ const Blog = () => {
                 width={830}
                 height={220}
                 className="h-8 w-auto rounded-md border border-border/50 shadow-sm"
-                loading="lazy"
+                loading="eager"
+                decoding="async"
               />
               <span className="text-sm text-muted-foreground">Official Shopify Partner</span>
             </div>
@@ -260,7 +75,7 @@ const Blog = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {allPosts.map((post) => (
-              <Link key={post.slug} to={(post as any).url ?? `/blog/${post.slug}`} className="group">
+              <Link key={post.slug} to={post.path} className="group">
                 <Card className="h-full border-border/60 hover:border-primary/40 hover:shadow-card transition-smooth overflow-hidden">
                   <CardContent className="p-6 flex flex-col h-full">
                     <div className="flex items-center gap-3 mb-4">

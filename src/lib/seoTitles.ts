@@ -15,6 +15,8 @@ export const SEO_TITLE_MAX = 60;
 export const SEO_TITLES: Record<string, string> = {
   "/": "BMT B2B Wholesale Pricing — Shopify Wholesale & Bulk Orders",
   "/blog": "Shopify Wholesale Tips & Guides | BMT B2B Blog",
+  "/blogs/b2b-wholesale/faire-alternative-shopify": "Faire vs Shopify Wholesale: Best Faire Alternative?",
+  "/blogs/b2b-wholesale/faire-to-shopify-wholesale": "Faire Alternative: Build a Shopify Wholesale Store | BMT",
   "/blog/bmt-european-dtc-brand-replaced-multiple-b2b-apps": "How BMT Unified a European DTC Brand’s B2B Apps",
   "/shopify-wholesale-registration-form": "How to Create a Shopify Wholesale Registration Form",
   "/blog/bmt-b2b-partner-established-us-shopify-store": "How BMT Helps Established US Shopify Stores Grow B2B",

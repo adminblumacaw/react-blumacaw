@@ -321,7 +321,7 @@ const EnableRegistrationFormGuide = () => {
                       </CardDescription>
                       <ul className="space-y-2">
                         {step.details.map((detail, detailIndex) => (
-                          <li key={detailIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <li key={detailIndex} className="flex items-start gap-2 text-sm text-muted-foreground [overflow-wrap:anywhere]">
                             <ArrowRight className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
                             {detail}
                           </li>
@@ -363,7 +363,7 @@ const EnableRegistrationFormGuide = () => {
                       <p className="font-medium text-sm mb-3">Solutions:</p>
                       <ul className="space-y-2">
                         {item.solutions.map((solution, solutionIndex) => (
-                          <li key={solutionIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
+                          <li key={solutionIndex} className="flex items-start gap-2 text-sm text-muted-foreground [overflow-wrap:anywhere]">
                             <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />
                             {solution}
                           </li>

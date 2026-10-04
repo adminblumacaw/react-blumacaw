@@ -48,6 +48,7 @@ import QuickOrderFormGuide from "./pages/QuickOrderFormGuide";
 import Affiliate from "./pages/Affiliate";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import Contact from "./pages/Contact";
 
 // Returns the page HTML plus the title/description/type its SEOHead chose,
 // which the prerender writes into the static <head>.
@@ -68,6 +69,8 @@ export function render(url: string): { html: string; head?: SeoHead } {
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/blogs/b2b-wholesale/faire-alternative-shopify" element={<BlogPost />} />
+            <Route path="/blogs/b2b-wholesale/faire-to-shopify-wholesale" element={<BlogPost />} />
             <Route path="/shopify-wholesale-registration-form" element={<BlogPost />} />
             <Route path="/documentation" element={<Documentation />} />
             <Route path="/wholesale-pricing-guide" element={<WholesalePricingGuide />} />
@@ -90,6 +93,7 @@ export function render(url: string): { html: string; head?: SeoHead } {
             <Route path="/affiliate" element={<Affiliate />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
           </Suspense>
         </StaticRouter>

@@ -3,7 +3,9 @@
 // sitemap URL in headless Chrome at a phone and a desktop width, and runs
 // every automated axe-core rule that Lighthouse's Accessibility category runs
 // (list below, from Lighthouse 12.8). Any failure fails the build, so the
-// score cannot quietly slip after a Lovable port.
+// score cannot quietly slip after a Lovable port. It also fails a page that is
+// wider than the viewport (Lighthouse's "content-width"): on a phone the whole
+// page then zooms out or scrolls sideways.
 //
 // Run after `npm run build`:  npm run check:a11y
 // Chrome: set CHROME_PATH, or it tries the usual install locations (GitHub's
@@ -165,6 +167,27 @@ async function main() {
         RULES,
       );
       record(viewport, route, result.violations);
+      const overflow = await page.evaluate((width) => {
+        if (document.documentElement.scrollWidth <= width) return null;
+        // The innermost element whose content is wider than its own box.
+        const wide = [...document.querySelectorAll("body *")].filter(
+          (e) => e.scrollWidth > e.clientWidth + 1 && getComputedStyle(e).overflowX === "visible",
+        );
+        const culprit = wide.filter((e) => !wide.some((o) => o !== e && e.contains(o)))[0];
+        return { scrollWidth: document.documentElement.scrollWidth, html: culprit?.outerHTML ?? "" };
+      }, viewport.width);
+      if (overflow) {
+        const key = `content-width|${route}`;
+        const entry = failures.get(key) ?? {
+          rule: "content-width",
+          summary: `page is ${overflow.scrollWidth}px wide at a ${viewport.width}px viewport (long unbroken text or a fixed-width element)`,
+          html: overflow.html.replace(/\s+/g, " ").slice(0, 160),
+          target: "html",
+          where: new Set(),
+        };
+        entry.where.add(`${viewport.name} ${route}`);
+        failures.set(key, entry);
+      }
       checked++;
     }
     await page.close();
@@ -181,7 +204,7 @@ async function main() {
   }
 
   if (failures.size === 0) {
-    console.log(`check:a11y passed: ${RULES.length} Lighthouse accessibility rules clean on ${routes.length} pages x ${VIEWPORTS.length} viewports (${checked} page loads).`);
+    console.log(`check:a11y passed: ${RULES.length} Lighthouse accessibility rules clean and no horizontal overflow on ${routes.length} pages x ${VIEWPORTS.length} viewports (${checked} page loads).`);
     return;
   }
 
