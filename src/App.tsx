@@ -32,6 +32,7 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Affiliate = lazy(() => import("./pages/Affiliate"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
+const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -52,6 +53,8 @@ const AppRoutes = () => {
           <Route path="/pricing" element={<PricingPage />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
+          <Route path="/blogs/b2b-wholesale/faire-alternative-shopify" element={<BlogPost />} />
+          <Route path="/blogs/b2b-wholesale/faire-to-shopify-wholesale" element={<BlogPost />} />
           <Route path="/documentation" element={<Documentation />} />
           <Route path="/wholesale-pricing-guide" element={<WholesalePricingGuide />} />
           <Route path="/create-pricing-rule-guide" element={<CreatePricingRuleGuide />} />
@@ -72,6 +75,7 @@ const AppRoutes = () => {
           <Route path="/quick-order-form-guide" element={<QuickOrderFormGuide />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/affiliate/apply" element={<Navigate to="/affiliate#apply" replace />} />
           <Route path="/shopify-wholesale-registration-form" element={<BlogPost />} />

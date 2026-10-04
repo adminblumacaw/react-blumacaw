@@ -1,62 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Calendar } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const blogPosts = [
-  {
-    slug: "bmt-european-dtc-brand-replaced-multiple-b2b-apps",
-    category: "Success Story",
-    title: "How BMT Helped a European DTC Brand Replace Multiple B2B Apps With One Unified Solution",
-    excerpt: "See how a European DTC brand consolidated pricing, registration, approvals, visibility, and order rules into one BMT workflow.",
-    readTime: "9 min read",
-    date: "Sep 28, 2026",
-  },
-  {
-    slug: "sami-b2b-wholesale-pricing-alternatives",
-    category: "Guide",
-    title: "7 “SAMI B2B Wholesale Pricing” Alternatives for Shopify Brands Running B2B and Retail Together",
-    excerpt: "Compare 7 SAMI B2B Wholesale Pricing alternatives for Shopify B2B pricing, Request for Quote, registration, order limits, and net terms.",
-    readTime: "13 min read",
-    date: "Aug 11, 2026",
-    updated: "Sep 25, 2026",
-  },
-  {
-    slug: "bss-b2b-wholesale-pricing-alternatives",
-    category: "Guide",
-    title: "6 BSS B2B Wholesale Pricing Alternatives for Shopify Brands Running B2B and Retail Together",
-    excerpt: "Compare 6 BSS B2B Wholesale Pricing alternatives for Shopify B2B pricing, Request for Quote, registration, order limits, and net terms.",
-    readTime: "12 min read",
-    date: "Aug 11, 2026",
-    updated: "Sep 25, 2026",
-  },
-  {
-    slug: "shopify-revenue-leaks",
-    category: "Guide",
-    title: "5 Shopify Revenue Leaks Growing Stores Should Fix Before Buying More Traffic",
-    excerpt: "Find 5 Shopify revenue leaks in wholesale, lead capture, support, phone calls, and retention before spending more on traffic.",
-    readTime: "10 min read",
-    date: "Aug 2, 2026",
-    updated: "Sep 25, 2026",
-  },
-  {
-    slug: "sparklayer-alternatives",
-    category: "Guide",
-    title: "7 SparkLayer Alternatives for Shopify Brands Running B2B and Retail Together",
-    excerpt: "Compare 7 SparkLayer alternatives for Shopify B2B pricing, Request for Quote, wholesale forms, net terms, and quick orders.",
-    readTime: "12 min read",
-    date: "Jun 15, 2026",
-    updated: "Sep 24, 2026",
-  },
-  {
-    slug: "shopify-b2b-build-complete-wholesale-store",
-    category: "Guide",
-    title: "Shopify B2B: How to Build a Complete Wholesale Store (2026 Guide)",
-    excerpt: "Build a Shopify B2B wholesale store with pricing, Request for Quote, ordering, buyer access, and payment workflows.",
-    readTime: "15 min read",
-    date: "Mar 19, 2026",
-    updated: "Sep 23, 2026",
-  },
-];
+import { blogPosts } from "@/data/blogManifest.js";
 
 const BlogSection = () => {
   return (
@@ -76,7 +21,7 @@ const BlogSection = () => {
           {/* Three columns: keep a multiple of 3 so no card sits alone on a row.
               Newest first; everything is still listed on /blog. */}
           {blogPosts.slice(0, 6).map((post) => (
-            <Link key={post.slug} to={`/blog/${post.slug}`} className="group">
+            <Link key={post.slug} to={post.path} className="group">
               <div className="h-full rounded-2xl border border-border/50 bg-card p-6 hover:shadow-elevated hover:-translate-y-0.5 transition-all duration-300 flex flex-col">
                 <span className="text-xs font-medium text-accent mb-3 uppercase tracking-wide">
                   {post.category}

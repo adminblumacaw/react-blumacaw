@@ -59,9 +59,18 @@ import refreshGatedCatalog from "@/assets/blog/refresh/gated-catalog.jpg";
 import refreshUnifiedStore from "@/assets/blog/refresh/unified-store.jpg";
 import refreshAppComparison from "@/assets/blog/refresh/app-comparison.jpg";
 import refreshGrowthAnalytics from "@/assets/blog/refresh/growth-analytics.jpg";
+import faireToShopifyChannel from "@/assets/blog/faire-to-shopify-channel.jpg";
+import faireAlternativeShopify from "@/assets/blog/faire-alternative-shopify.jpg";
+import europeanDtcUnifiedB2b from "@/assets/blog/european-dtc-unified-b2b.jpg";
+import faireOwnedChannelTransition from "@/assets/blog/faire-owned-channel-transition.jpg";
+import faireUnifiedB2bB2cStore from "@/assets/blog/faire-unified-b2b-b2c-store.jpg";
 
+import { blogPosts as blogManifest } from "@/data/blogManifest.js";
 
 const articleRefreshes: Record<string, { image: string; alt: string; update: string }> = {
+  "faire-alternative-vs-shopify-wholesale": { image: faireAlternativeShopify, alt: "A wholesale merchant comparing a marketplace with an independent Shopify store", update: "BMT helps merchants build an owned wholesale channel with customer-specific pricing, product visibility, registration and approval, shipping rules, payment terms, Request for Quote, and B2B plus B2C selling from one Shopify store." },
+  "from-faire-to-shopify-independent-wholesale-channel": { image: faireToShopifyChannel, alt: "A wholesale business owner building an independent ecommerce channel", update: "BMT brings customer-specific pricing, product and variant visibility, registration and approval, custom shipping, draft-order workflows, and net payment terms into one Shopify store for independent B2B and B2C selling." },
+  "bmt-european-dtc-brand-replaced-multiple-b2b-apps": { image: europeanDtcUnifiedB2b, alt: "A European DTC merchant managing wholesale operations from one unified ecommerce workspace", update: "BMT replaced the merchant’s disconnected pricing, registration, approval, visibility, and order-rule apps with one coordinated B2B workflow inside their existing Shopify store." },
   "sami-b2b-wholesale-pricing-alternatives": { image: refreshAppComparison, alt: "A wholesale team comparing ecommerce app options", update: "BMT’s current toolkit also includes Request for Quote, quick ordering, order limits, net terms, multi-language invoices, multi-currency pricing, and Shopify POS wholesale discounts, so merchants can evaluate alternatives against a complete B2B workflow." },
   "bss-b2b-wholesale-pricing-alternatives": { image: refreshPricingRfq, alt: "A merchant reviewing B2B pricing and a quote request", update: "When comparing B2B apps, include the full buying journey: customer-specific pricing, Request for Quote, quick ordering, order controls, net terms, localized invoices, multi-currency, and Shopify POS wholesale discounts." },
   "shopify-revenue-leaks": { image: refreshGrowthAnalytics, alt: "A Shopify merchant reviewing store revenue analytics", update: "A connected wholesale workflow can close several of these gaps at once. BMT now combines customer-specific pricing, Request for Quote, quick ordering, order limits, net terms, multi-language invoices, and multi-currency support in one Shopify store." },
@@ -81,31 +90,674 @@ const articleRefreshes: Record<string, { image: string; alt: string; update: str
 };
 
 interface BlogPostData {
-  category: string;
-  title: string;
-  // date/isoDate: first published — never move these. When an article is
-  // revised, set updated/updatedIsoDate instead (shown on the page, and used
-  // for dateModified and the sitemap's lastmod). scripts/check-export.mjs
-  // fails if a published date changes.
-  date: string;
-  isoDate: string;
-  updated?: string;
-  updatedIsoDate?: string;
-  readTime: string;
-  metaDescription: string;
   keywords: string[];
   faq?: { question: string; answer: string }[];
   content: React.ReactNode;
 }
 
 const posts: Record<string, BlogPostData> = {
+  "faire-alternative-vs-shopify-wholesale": {
+    keywords: ["Faire alternative", "Faire vs Shopify", "Faire vs Shopify wholesale", "Shopify wholesale", "Shopify B2B", "Shopify B2B without Plus", "wholesale marketplace alternative"],
+    faq: [
+      { question: "What is the best alternative to Faire for wholesale?", answer: "There is no universal best alternative. Businesses seeking another marketplace should compare wholesale marketplaces, while merchants with their own customers can use Shopify and BMT to build a direct wholesale channel they control." },
+      { question: "Can Shopify replace Faire?", answer: "Shopify can replace the ecommerce and ordering side of a wholesale business, but it does not replace Faire's buyer marketplace. Shopify provides the infrastructure to sell directly to customers you already have or acquire yourself." },
+      { question: "Can I use Faire and Shopify together?", answer: "Yes. Faire can support marketplace discovery while Shopify and BMT support direct relationships, repeat wholesale orders, custom pricing, controlled product visibility, and retail sales." },
+      { question: "Is Shopify B2B available without Shopify Plus?", answer: "Yes. In 2026, Shopify offers foundational B2B functionality on Basic, Grow, and Advanced plans, although those plans currently limit merchants to three active B2B catalogs." },
+      { question: "Why use BMT instead of Shopify native B2B?", answer: "BMT can suit merchants who need flexible customer-specific pricing, multiple pricing groups, detailed product visibility, wholesale shipping, registration and approval, and B2B plus B2C selling without upgrading solely for added B2B flexibility." },
+    ],
+    content: (
+      <>
+        <p>If you&apos;ve built a successful wholesale business on Faire, there often comes a point when you start asking a different question:</p>
+        <p><strong>Should Faire remain my main wholesale channel, or should I build my own wholesale store on Shopify?</strong></p>
+        <p>Faire can be an excellent platform for discovering brands, connecting with retailers, and getting a wholesale business started.</p>
+        <p>But once your business has stable customers and repeat orders, marketplace fees, limited control over the buying experience, and dependence on a third-party platform can become bigger considerations.</p>
+        <p>That&apos;s why more growing businesses start looking for a <strong>Faire alternative</strong>—or, more accurately, an additional wholesale channel they own.</p>
+        <p>For many merchants, that alternative is <strong>Shopify combined with a dedicated B2B solution such as BMT B2B Wholesale Pricing</strong>.</p>
+        <p>So how does <strong>Faire vs Shopify wholesale</strong> actually compare?</p>
+        <p>And when does it make sense to move some of your wholesale business to Shopify?</p>
+        <h2>Faire vs Shopify Wholesale: What&apos;s the Main Difference?</h2>
+        <p>The biggest difference is simple.</p>
+        <p><strong>Faire is a marketplace. Shopify is your own ecommerce infrastructure.</strong></p>
+        <p>Faire connects brands and wholesale buyers within Faire&apos;s marketplace.</p>
+        <p>Shopify lets you create your own storefront, customer experience, pricing strategy, and sales process.</p>
+        <p>That means the two platforms solve slightly different problems.</p>
+        <p>Faire is especially strong for:</p>
+        <ul>
+          <li>Marketplace discovery</li>
+          <li>Connecting with new wholesale buyers</li>
+          <li>Finding brands and suppliers</li>
+          <li>Simplifying wholesale purchasing</li>
+          <li>Providing an established marketplace experience</li>
+        </ul>
+        <p>Shopify is stronger when you want:</p>
+        <ul>
+          <li>Your own branded storefront</li>
+          <li>Direct customer relationships</li>
+          <li>Flexible pricing</li>
+          <li>Greater control over products</li>
+          <li>Custom shipping rules</li>
+          <li>B2B and B2C from the same store</li>
+          <li>Your own marketing and customer acquisition</li>
+          <li>Less dependence on one marketplace</li>
+        </ul>
+        <p>For many growing businesses, the answer doesn&apos;t necessarily need to be <strong>Faire or Shopify</strong>.</p>
+        <p>It can be <strong>Faire + Shopify</strong>.</p>
+        <h2>Why Businesses Start Searching for a Faire Alternative</h2>
+        <p>Consider a typical growing wholesale business.</p>
+        <p>The company starts sourcing products through Faire and gradually builds strong relationships with four or five important vendors.</p>
+        <p>Sales grow steadily.</p>
+        <p>Eventually, monthly revenue exceeds <strong>$5,000</strong>.</p>
+        <p>At that stage, the owner starts thinking beyond simply placing orders through a marketplace.</p>
+        <p>They may want to:</p>
+        <ul>
+          <li>Increase margins</li>
+          <li>Reduce platform dependency</li>
+          <li>Own more of the customer experience</li>
+          <li>Create custom pricing</li>
+          <li>Build direct relationships</li>
+          <li>Sell retail as well as wholesale</li>
+          <li>Create their own brand</li>
+        </ul>
+        <p>Marketplace economics can also become more noticeable as volume increases.</p>
+        <p>For sellers, Faire can charge marketplace commission on orders it generates. Shopify&apos;s 2026 overview notes that, for North American brands, standard marketplace sales can carry a 15% commission, while Faire Direct can provide zero-commission ordering for customers the brand brings itself.</p>
+        <p>That makes an important distinction:</p>
+        <p><strong>Faire can be extremely valuable for discovery.</strong></p>
+        <p>But once you already have established customers, building a channel that you control becomes increasingly attractive.</p>
+        <h2>Is Shopify a Faire Alternative?</h2>
+        <p>Yes—but not in exactly the same way.</p>
+        <p>Shopify doesn&apos;t replace Faire&apos;s marketplace.</p>
+        <p>Shopify doesn&apos;t automatically bring wholesale customers to you.</p>
+        <p>Instead, it gives you the infrastructure to <strong>build your own wholesale channel</strong>.</p>
+        <p>That distinction matters.</p>
+        <p>With Faire:</p>
+        <p><strong>Marketplace → Buyer discovers you → Order happens through Faire</strong></p>
+        <p>With Shopify:</p>
+        <p><strong>You attract the buyer → Buyer visits your store → You control the relationship and buying experience</strong></p>
+        <p>So Shopify is best thought of as an <strong>owned-channel alternative to Faire</strong>, rather than another wholesale marketplace.</p>
+        <h2>Why This Merchant Chose Shopify</h2>
+        <p>For one growing wholesale business, the decision came after building a stable operation through Faire.</p>
+        <p>The business already had relationships with several vendors and more than $5,000 in monthly recurring revenue.</p>
+        <p>The merchant wanted to reduce dependency on Faire and create its own ecommerce channel.</p>
+        <p>Shopify was the logical platform.</p>
+        <p>But there was another requirement.</p>
+        <p>The business didn&apos;t only want a wholesale site.</p>
+        <p>It also wanted to start selling directly to retail customers.</p>
+        <p>That meant one store needed to handle both:</p>
+        <p><strong>B2B wholesale customers</strong></p>
+        <p>and</p>
+        <p><strong>B2C retail customers</strong></p>
+        <p>Shopify was well suited to that model.</p>
+        <p>The challenge was implementing the merchant&apos;s more specific B2B requirements.</p>
+        <h2>Why Shopify Native B2B Wasn&apos;t Enough for This Business</h2>
+        <p>Shopify&apos;s native B2B offering became significantly stronger in 2026.</p>
+        <p>Basic, Grow and Advanced merchants can now use features such as company profiles, payment terms, quantity rules, volume pricing and up to three active B2B catalogs.</p>
+        <p>For many businesses, that&apos;s enough.</p>
+        <p>But this merchant needed more flexibility.</p>
+        <p>The biggest limitation was the merchant&apos;s pricing structure.</p>
+        <p>They already wanted different arrangements for more than four wholesale customers.</p>
+        <p>On Shopify Basic, Grow and Advanced, merchants can assign up to <strong>three active B2B catalogs</strong> across their B2B markets. Unlimited catalogs and direct catalog assignments to individual companies and company locations remain Shopify Plus capabilities.</p>
+        <p>For a business at this stage, moving to Shopify Plus simply to unlock more B2B flexibility didn&apos;t make financial sense.</p>
+        <p>That&apos;s where <strong>BMT B2B Wholesale Pricing</strong> became useful.</p>
+        <h2>Faire vs Shopify + BMT Wholesale</h2>
+        <p>The merchant wasn&apos;t looking for another marketplace.</p>
+        <p>They wanted to reproduce their existing wholesale business on infrastructure they controlled.</p>
+        <p>BMT added the B2B layer required to make Shopify work for their specific business model.</p>
+        <h3>1. More Flexible Wholesale Pricing</h3>
+        <p>Different wholesale customers had different commercial relationships.</p>
+        <p>Some customers required standard wholesale discounts.</p>
+        <p>Others might receive negotiated pricing.</p>
+        <p>Larger customers could receive better pricing based on volume.</p>
+        <p>The merchant therefore needed pricing that could vary across multiple customer groups.</p>
+        <p>BMT allowed the merchant to configure customer-specific and group-specific pricing without making Shopify Plus a prerequisite.</p>
+        <p>This was particularly important as the number of wholesale customers increased.</p>
+        <h2>2. Customer and Variant-Level Product Visibility</h2>
+        <p>Not every customer needed access to every product.</p>
+        <p>In some cases, customers also needed different access at the product variant level.</p>
+        <p>For example:</p>
+        <p><strong>Wholesale Customer A</strong></p>
+        <p>Can buy:</p>
+        <ul>
+          <li>Product 1</li>
+          <li>Product 2</li>
+          <li>Variant A of Product 3</li>
+        </ul>
+        <p><strong>Wholesale Customer B</strong></p>
+        <p>Can buy:</p>
+        <ul>
+          <li>Product 2</li>
+          <li>Product 4</li>
+          <li>Variant B of Product 3</li>
+        </ul>
+        <p>This level of visibility was important to the business.</p>
+        <p>BMT gave the merchant more granular control over which products and variants specific wholesale customers could access.</p>
+        <p>That made the Shopify store behave more like a personalized B2B portal.</p>
+        <h2>3. Customer-Specific Shipping</h2>
+        <p>Wholesale shipping is often more complicated than retail shipping.</p>
+        <p>One customer might receive free shipping.</p>
+        <p>Another might pay a negotiated flat rate.</p>
+        <p>A third customer may have different terms based on geography or order value.</p>
+        <p>The merchant therefore wanted:</p>
+        <p><strong>Wholesale customer-specific shipping rules.</strong></p>
+        <p>BMT enabled the business to configure different shipping experiences for different wholesale customer segments.</p>
+        <h2>4. Wholesale Registration and Approval</h2>
+        <p>The merchant also wanted Shopify to become a channel for acquiring new wholesale buyers.</p>
+        <p>That required more than simply having a login button.</p>
+        <p>New wholesale customers needed to apply.</p>
+        <p>The merchant wanted a process such as:</p>
+        <p><strong>Visit website</strong></p>
+        <p>↓</p>
+        <p><strong>Submit wholesale registration form</strong></p>
+        <p>↓</p>
+        <p><strong>Merchant reviews application</strong></p>
+        <p>↓</p>
+        <p><strong>Customer approved</strong></p>
+        <p>↓</p>
+        <p><strong>Wholesale pricing and products become available</strong></p>
+        <p>BMT&apos;s registration and approval features allowed the merchant to build this workflow directly into Shopify.</p>
+        <p>Instead of depending entirely on marketplace discovery, the business could start converting visitors into its own wholesale customers.</p>
+        <h2>5. Net Payment Terms and Draft Orders</h2>
+        <p>Wholesale transactions don&apos;t always work like retail transactions.</p>
+        <p>Trusted buyers often expect payment terms such as:</p>
+        <ul>
+          <li>Net 15</li>
+          <li>Net 30</li>
+          <li>Net 60</li>
+        </ul>
+        <p>The merchant wanted to support these relationships without forcing every customer to pay immediately at checkout.</p>
+        <p>Using BMT&apos;s B2B workflows and draft-order capabilities, the merchant could create orders that better reflected traditional wholesale buying processes.</p>
+        <p>Shopify also supports payment terms natively across its B2B plans, so the choice here wasn&apos;t simply about whether payment terms existed. It was about combining them with the merchant&apos;s broader pricing, visibility and workflow requirements.</p>
+        <h2>6. B2B and B2C on the Same Shopify Store</h2>
+        <p>This was one of the biggest advantages of the Shopify approach.</p>
+        <p>The merchant didn&apos;t want separate systems for wholesale and retail.</p>
+        <p>Instead:</p>
+        <h3>A retail shopper could:</h3>
+        <p>Visit the site → See normal retail prices → Add products to cart → Check out normally</p>
+        <h3>A wholesale buyer could:</h3>
+        <p>Log in → Receive their applicable wholesale pricing → See relevant wholesale products → Receive their shipping rules → Order using the applicable B2B terms</p>
+        <p>That allowed the merchant to operate two revenue channels from the same Shopify foundation.</p>
+        <h2>Faire vs Shopify Wholesale: Comparison</h2>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-full text-sm border border-border/60 rounded-lg">
+            <thead><tr className="bg-muted/50"><th className="text-left p-3 font-semibold text-foreground border-b border-border/60">Feature</th><th className="text-left p-3 font-semibold text-foreground border-b border-border/60">Faire</th><th className="text-left p-3 font-semibold text-foreground border-b border-border/60">Shopify Native B2B</th><th className="text-left p-3 font-semibold text-foreground border-b border-border/60">Shopify + BMT</th></tr></thead>
+            <tbody>
+              <tr className="border-b border-border/40"><td className="p-3 text-foreground/80">Wholesale marketplace discovery</td><td className="p-3 text-foreground/80">Strong</td><td className="p-3 text-foreground/80">No</td><td className="p-3 text-foreground/80">No</td></tr>
+              <tr className="border-b border-border/40 bg-muted/20"><td className="p-3 text-foreground/80">Owned website</td><td className="p-3 text-foreground/80">Limited marketplace presence</td><td className="p-3 text-foreground/80">Yes</td><td className="p-3 text-foreground/80">Yes</td></tr>
+              <tr className="border-b border-border/40"><td className="p-3 text-foreground/80">Direct customer relationship</td><td className="p-3 text-foreground/80">Partial</td><td className="p-3 text-foreground/80">Yes</td><td className="p-3 text-foreground/80">Yes</td></tr>
+              <tr className="border-b border-border/40 bg-muted/20"><td className="p-3 text-foreground/80">B2B + B2C on one site</td><td className="p-3 text-foreground/80">Not the core model</td><td className="p-3 text-foreground/80">Yes</td><td className="p-3 text-foreground/80">Yes</td></tr>
+              <tr className="border-b border-border/40"><td className="p-3 text-foreground/80">Wholesale pricing</td><td className="p-3 text-foreground/80">Yes</td><td className="p-3 text-foreground/80">Yes</td><td className="p-3 text-foreground/80">Yes</td></tr>
+              <tr className="border-b border-border/40 bg-muted/20"><td className="p-3 text-foreground/80">More than 3 flexible pricing structures on non-Plus</td><td className="p-3 text-foreground/80">Marketplace-driven</td><td className="p-3 text-foreground/80">Limited by catalog structure</td><td className="p-3 text-foreground/80">More flexible</td></tr>
+              <tr className="border-b border-border/40"><td className="p-3 text-foreground/80">Customer-specific pricing</td><td className="p-3 text-foreground/80">Supported within Faire marketplace model</td><td className="p-3 text-foreground/80">Direct catalog assignment requires Plus</td><td className="p-3 text-foreground/80">Supported through BMT rules</td></tr>
+              <tr className="border-b border-border/40 bg-muted/20"><td className="p-3 text-foreground/80">Product visibility</td><td className="p-3 text-foreground/80">Marketplace structure</td><td className="p-3 text-foreground/80">Catalog based</td><td className="p-3 text-foreground/80">Flexible customer/group rules</td></tr>
+              <tr className="border-b border-border/40"><td className="p-3 text-foreground/80">Variant/customer-level visibility</td><td className="p-3 text-foreground/80">Limited by marketplace model</td><td className="p-3 text-foreground/80">Depends on catalog configuration</td><td className="p-3 text-foreground/80">More granular BMT rules</td></tr>
+              <tr className="border-b border-border/40 bg-muted/20"><td className="p-3 text-foreground/80">Registration and approval</td><td className="p-3 text-foreground/80">Marketplace account model</td><td className="p-3 text-foreground/80">Native B2B onboarding options</td><td className="p-3 text-foreground/80">BMT registration workflow</td></tr>
+              <tr className="border-b border-border/40"><td className="p-3 text-foreground/80">Customer-specific shipping</td><td className="p-3 text-foreground/80">Marketplace shipping structure</td><td className="p-3 text-foreground/80">Native B2B shipping capabilities</td><td className="p-3 text-foreground/80">Flexible BMT shipping configuration</td></tr>
+              <tr className="border-b border-border/40 bg-muted/20"><td className="p-3 text-foreground/80">Net payment terms</td><td className="p-3 text-foreground/80">Faire offers payment terms</td><td className="p-3 text-foreground/80">Yes</td><td className="p-3 text-foreground/80">Yes</td></tr>
+              <tr className="border-b border-border/40"><td className="p-3 text-foreground/80">Shopify Plus required for advanced catalog flexibility</td><td className="p-3 text-foreground/80">N/A</td><td className="p-3 text-foreground/80">Sometimes</td><td className="p-3 text-foreground/80">No</td></tr>
+              <tr className="border-b border-border/40 bg-muted/20"><td className="p-3 text-foreground/80">Marketplace commission</td><td className="p-3 text-foreground/80">Can apply</td><td className="p-3 text-foreground/80">No marketplace commission</td><td className="p-3 text-foreground/80">No marketplace commission from BMT</td></tr>
+              <tr className="border-b border-border/40"><td className="p-3 text-foreground/80">Customer acquisition included</td><td className="p-3 text-foreground/80">Yes</td><td className="p-3 text-foreground/80">No</td><td className="p-3 text-foreground/80">No</td></tr>
+              <tr className="border-b border-border/40 bg-muted/20"><td className="p-3 text-foreground/80">Best for</td><td className="p-3 text-foreground/80">Marketplace discovery</td><td className="p-3 text-foreground/80">Native Shopify B2B</td><td className="p-3 text-foreground/80">Flexible owned B2B workflows</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <h2>Is Shopify Cheaper Than Faire for Wholesale?</h2>
+        <p>It depends on how customers find you.</p>
+        <p>This is one of the most important things to understand when comparing <strong>Faire vs Shopify wholesale</strong>.</p>
+        <p>Faire can justify its marketplace fees when it is actually acquiring customers for you.</p>
+        <p>You&apos;re effectively paying for:</p>
+        <ul>
+          <li>Discovery</li>
+          <li>Marketplace infrastructure</li>
+          <li>Trust</li>
+          <li>Buyer network</li>
+          <li>Transaction convenience</li>
+        </ul>
+        <p>But if you&apos;re bringing customers yourself, the economics change.</p>
+        <p>Faire Direct already addresses some of this by allowing qualifying direct customers to order without marketplace commission.</p>
+        <p>Shopify goes one step further by giving you an independent store.</p>
+        <p>Your costs shift away from marketplace commission and toward:</p>
+        <ul>
+          <li>Shopify subscription</li>
+          <li>Apps</li>
+          <li>Payment processing</li>
+          <li>Marketing</li>
+          <li>Customer acquisition</li>
+          <li>Store operations</li>
+        </ul>
+        <p>That means Shopify isn&apos;t automatically cheaper.</p>
+        <p>But as direct sales grow, the economics of an owned channel can become increasingly attractive.</p>
+        <h2>Shopify B2B Without Shopify Plus</h2>
+        <p>This is another reason Shopify has become a more realistic Faire alternative.</p>
+        <p>Historically, Shopify&apos;s native B2B functionality was closely associated with Shopify Plus.</p>
+        <p>That changed in April 2026.</p>
+        <p>Shopify extended foundational B2B capabilities to Basic, Grow and Advanced plans.</p>
+        <p>That means smaller businesses can now access:</p>
+        <ul>
+          <li>Company profiles</li>
+          <li>B2B catalogs</li>
+          <li>Volume pricing</li>
+          <li>Quantity rules</li>
+          <li>Payment terms</li>
+          <li>B2B ordering</li>
+        </ul>
+        <p>without immediately upgrading to Plus.</p>
+        <p>However, there are still limitations.</p>
+        <p>Basic, Grow and Advanced currently support up to three active B2B catalogs.</p>
+        <p>Shopify Plus provides unlimited catalogs and lets merchants assign catalogs directly to specific companies and locations.</p>
+        <p>This creates an interesting middle ground.</p>
+        <p>If Shopify&apos;s standard B2B features cover your business, use them.</p>
+        <p>If you need more flexibility but aren&apos;t ready for Shopify Plus, a B2B app such as BMT can help fill those gaps.</p>
+        <h2>When Is BMT a Good Faire Alternative?</h2>
+        <p>BMT isn&apos;t a replacement for Faire&apos;s marketplace discovery.</p>
+        <p>It&apos;s better suited to businesses that have already started building their own wholesale relationships.</p>
+        <p>Consider Shopify + BMT when you find yourself saying:</p>
+        <p><strong>"I already have repeat wholesale customers."</strong></p>
+        <p><strong>"I want customers ordering directly from my website."</strong></p>
+        <p><strong>"I need different pricing for different buyers."</strong></p>
+        <p><strong>"I need more than three B2B pricing structures."</strong></p>
+        <p><strong>"Certain customers should only see certain products or variants."</strong></p>
+        <p><strong>"I want different shipping rules for wholesale customers."</strong></p>
+        <p><strong>"I want customers to apply for wholesale access."</strong></p>
+        <p><strong>"I want B2B and retail customers using the same Shopify store."</strong></p>
+        <p><strong>"I don&apos;t want to upgrade to Shopify Plus yet."</strong></p>
+        <p>If those requirements sound familiar, building your own B2B channel can make sense.</p>
+        <h2>Should You Leave Faire Completely?</h2>
+        <p>Not necessarily.</p>
+        <p>In fact, for many businesses that would be the wrong strategy.</p>
+        <p>Faire and Shopify can serve different purposes.</p>
+        <p>A more balanced approach is:</p>
+        <h3>Use Faire for:</h3>
+        <ul>
+          <li>Brand discovery</li>
+          <li>Supplier discovery</li>
+          <li>New wholesale relationships</li>
+          <li>Marketplace-generated business</li>
+        </ul>
+        <h3>Use Shopify + BMT for:</h3>
+        <ul>
+          <li>Direct relationships</li>
+          <li>Repeat wholesale buyers</li>
+          <li>Custom pricing</li>
+          <li>Customer-specific catalogs</li>
+          <li>Controlled product visibility</li>
+          <li>Custom B2B workflows</li>
+          <li>Retail sales</li>
+          <li>Building your own brand</li>
+        </ul>
+        <p>This avoids treating the decision as:</p>
+        <p><strong>Faire vs Shopify</strong></p>
+        <p>and instead turns it into:</p>
+        <p><strong>Faire for discovery + Shopify for ownership.</strong></p>
+        <h2>The Real Advantage of Building Your Own Wholesale Store</h2>
+        <p>The biggest reason to create your own Shopify wholesale channel isn&apos;t simply saving commission.</p>
+        <p>It&apos;s ownership.</p>
+        <p>You own:</p>
+        <p><strong>The website.</strong></p>
+        <p><strong>The customer journey.</strong></p>
+        <p><strong>The customer relationship.</strong></p>
+        <p><strong>The pricing strategy.</strong></p>
+        <p><strong>The merchandising.</strong></p>
+        <p><strong>The marketing funnel.</strong></p>
+        <p><strong>The B2B experience.</strong></p>
+        <p>And potentially most importantly:</p>
+        <p><strong>You aren&apos;t dependent on a single marketplace for your entire wholesale business.</strong></p>
+        <h2>Faire Alternative FAQ</h2>
+        <h3>What is the best alternative to Faire for wholesale?</h3>
+        <p>There isn&apos;t one universal best alternative.</p>
+        <p>If you want another marketplace, you should evaluate alternative wholesale marketplaces.</p>
+        <p>If you already have customers and want your own direct wholesale channel, Shopify can be a stronger option because you own the storefront and customer relationship.</p>
+        <p>Adding a B2B app such as BMT can provide additional wholesale flexibility.</p>
+        <h3>Can Shopify replace Faire?</h3>
+        <p>Shopify can replace the ecommerce and ordering side of your wholesale business, but it doesn&apos;t replace Faire&apos;s buyer marketplace.</p>
+        <p>Faire helps merchants discover each other.</p>
+        <p>Shopify gives you the infrastructure to sell directly once you have—or can acquire—your own customers.</p>
+        <h3>Can I use Faire and Shopify together?</h3>
+        <p>Yes.</p>
+        <p>Shopify offers Faire integrations for both brands and retailers. Products, inventory and orders can sync between Shopify and Faire depending on how you use the platform.</p>
+        <p>This makes a hybrid strategy possible.</p>
+        <h3>Is Shopify B2B available without Shopify Plus?</h3>
+        <p>Yes.</p>
+        <p>As of 2026, Shopify offers foundational B2B functionality on Basic, Grow and Advanced plans.</p>
+        <p>However, those plans currently have a limit of three active B2B catalogs, while Shopify Plus supports unlimited catalogs and direct catalog assignments to companies and company locations.</p>
+        <h3>Why use BMT instead of Shopify native B2B?</h3>
+        <p>BMT can make sense when your wholesale requirements go beyond what Shopify&apos;s non-Plus native B2B configuration comfortably supports.</p>
+        <p>Examples include:</p>
+        <ul>
+          <li>More flexible customer-specific pricing</li>
+          <li>Multiple customer pricing groups</li>
+          <li>Customer-specific product visibility</li>
+          <li>Variant-level visibility requirements</li>
+          <li>Wholesale-specific shipping</li>
+          <li>Registration and approval workflows</li>
+          <li>Running B2B and B2C together</li>
+          <li>Avoiding a Shopify Plus upgrade solely for additional B2B flexibility</li>
+        </ul>
+        <p>The best option depends on your business structure.</p>
+        <h2>Final Verdict: Faire vs Shopify Wholesale</h2>
+        <p>Faire is excellent at something Shopify isn&apos;t designed to do:</p>
+        <p><strong>Help wholesale buyers and sellers discover each other inside a marketplace.</strong></p>
+        <p>Shopify is excellent at something Faire isn&apos;t designed to fully replace:</p>
+        <p><strong>Helping you build an ecommerce business that you control.</strong></p>
+        <p>For a new wholesale business, Faire can be an excellent starting point.</p>
+        <p>But once you&apos;ve built predictable revenue, repeat customers and established relationships, relying on one marketplace becomes less attractive.</p>
+        <p>That&apos;s when creating your own Shopify wholesale channel starts making sense.</p>
+        <p>And if your requirements exceed Shopify&apos;s standard B2B capabilities—but your business isn&apos;t ready for Shopify Plus—<strong>BMT B2B Wholesale Pricing can provide the flexibility needed to make Shopify work around your wholesale business rather than forcing your wholesale business to work around Shopify.</strong></p>
+        <p><strong>Use Faire to find opportunities. Use Shopify + BMT to build the channel you own.</strong></p>
+      </>
+    ),
+  },
+  "from-faire-to-shopify-independent-wholesale-channel": {
+    keywords: ["Faire alternative", "Faire vs Shopify wholesale", "Shopify wholesale", "Shopify B2B without Plus", "move from Faire to Shopify"],
+    content: (
+      <>
+        <p>Wholesale marketplaces such as Faire can be a great way to start and grow a wholesale business.</p>
+        <p>They help businesses discover suppliers, build relationships with brands, and simplify wholesale purchasing.</p>
+        <p>But as a business becomes established, a different question often appears:</p>
+        <p><strong>Should we continue depending heavily on a marketplace, or should we start building a sales channel that we control ourselves?</strong></p>
+        <p>That was the situation faced by one growing wholesale business.</p>
+        <h2>The Situation: A Successful Business Built Through Faire</h2>
+        <p>The business had built its wholesale operation using the Faire marketplace.</p>
+        <p>Over time, it established relationships with around <strong>four to five important vendors</strong> and grew the business to more than <strong>$5,000 in monthly recurring revenue</strong>.</p>
+        <p>Faire had helped the company get started, but as the business became more stable, the owner wanted greater control over the future.</p>
+        <p>Marketplace commissions were one consideration, but there were broader concerns as well.</p>
+        <p>The merchant wanted to reduce dependency on a third-party platform and start owning more of the customer relationship.</p>
+        <p>They wanted control over:</p>
+        <ul>
+          <li>Wholesale pricing</li>
+          <li>Customer relationships</li>
+          <li>Product availability</li>
+          <li>Shipping rules</li>
+          <li>Payment terms</li>
+          <li>Customer onboarding</li>
+          <li>Future B2B growth</li>
+          <li>Retail sales</li>
+        </ul>
+        <p>The next step was clear:</p>
+        <p><strong>Build an independent ecommerce channel.</strong></p>
+        <img
+          src={faireOwnedChannelTransition}
+          alt="A wholesale merchant planning the move from marketplace dependence to an owned ecommerce channel"
+          loading="lazy"
+          decoding="async"
+          width={1408}
+          height={848}
+        />
+        <h2>The Decision: Move the Wholesale Business to Shopify</h2>
+        <p>Shopify was the natural platform.</p>
+        <p>The merchant wanted to build a website where both wholesale buyers and regular retail customers could purchase products.</p>
+        <p>Instead of operating separate systems, the goal was to run:</p>
+        <p><strong>B2B wholesale + B2C retail from the same Shopify store.</strong></p>
+        <p>Shopify already provided the ecommerce infrastructure.</p>
+        <p>The challenge was finding the right way to implement the wholesale workflows.</p>
+        <h2>Why Shopify Native B2B Wasn't the Best Fit</h2>
+        <p>Shopify has invested heavily in its native B2B capabilities.</p>
+        <p>Today, Shopify's Basic, Grow and Advanced plans include several important B2B features such as company profiles, payment terms, volume pricing and B2B catalogs.</p>
+        <p>For many merchants, these features may be sufficient.</p>
+        <p>But this merchant needed considerably more flexibility.</p>
+        <h3>The Three-Catalog Limitation</h3>
+        <p>On Shopify Basic, Grow and Advanced plans, merchants can currently use <strong>up to three active B2B catalogs</strong>.</p>
+        <p>For this business, that quickly became restrictive.</p>
+        <p>The merchant already had more than four customer relationships that could require different pricing and product access.</p>
+        <p>As the wholesale operation grew, the number of pricing arrangements was expected to increase further.</p>
+        <p>Shopify Plus provides much greater catalog flexibility, including unlimited catalogs and direct catalog assignment to companies and locations.</p>
+        <p>But upgrading the entire store to Shopify Plus purely to obtain those capabilities wasn't economically attractive for a business doing roughly $5,000+ in monthly recurring revenue.</p>
+        <p>BMT offered another approach.</p>
+        <p>The merchant could maintain their existing Shopify plan while using <strong>BMT B2B Wholesale Pricing to create more flexible customer-specific pricing rules.</strong></p>
+        <h2>Why BMT Was a Better Fit</h2>
+        <p>The decision wasn't that Shopify B2B was a bad solution.</p>
+        <p>It was simply that <strong>BMT matched this merchant's requirements more closely.</strong></p>
+        <p>Several requirements made the difference.</p>
+        <h2>1. More Flexible Customer-Specific Pricing</h2>
+        <p>Wholesale businesses rarely have one universal wholesale price.</p>
+        <p>One customer might receive a 10% discount.</p>
+        <p>Another might have negotiated fixed prices for specific products.</p>
+        <p>A larger customer might receive volume pricing.</p>
+        <p>Another group might have completely different pricing.</p>
+        <p>The merchant therefore needed the flexibility to create pricing rules for more than just a few customer segments.</p>
+        <p>BMT allowed the business to create <strong>customer and customer-group-specific wholesale pricing</strong> without making Shopify Plus a prerequisite.</p>
+        <p>That gave the merchant room to grow its wholesale customer base without redesigning the pricing system every time a new customer agreement was created.</p>
+        <h2>2. More Granular Product and Variant Visibility</h2>
+        <p>Another requirement was product access.</p>
+        <p>Not every wholesale customer should necessarily see every product—or every variant.</p>
+        <p>The merchant wanted to control product visibility depending on the customer.</p>
+        <p>For example:</p>
+        <p><strong>Customer A</strong></p>
+        <p>Can purchase Products A, B and C.</p>
+        <p><strong>Customer B</strong></p>
+        <p>Can purchase Products B, C and D.</p>
+        <p>And even within the same product, certain variants might only be available to specific wholesale customers.</p>
+        <p>The merchant therefore needed more granular <strong>customer-level and variant-level visibility controls</strong>.</p>
+        <p>BMT gave the merchant more flexibility to build those types of controlled wholesale experiences.</p>
+        <p>Instead of every B2B customer seeing the same storefront, the Shopify store could behave more like a personalized wholesale portal.</p>
+        <h2>3. Customer-Specific Wholesale Shipping</h2>
+        <p>Shipping was another important requirement.</p>
+        <p>Wholesale shipping doesn't always behave like consumer ecommerce.</p>
+        <p>Different wholesale customers may have:</p>
+        <ul>
+          <li>Negotiated shipping rates</li>
+          <li>Free shipping agreements</li>
+          <li>Different minimum order thresholds</li>
+          <li>Location-specific arrangements</li>
+          <li>Special fulfilment terms</li>
+        </ul>
+        <p>The merchant wanted to configure shipping specifically for certain wholesale customers.</p>
+        <p>BMT provided a way to incorporate those B2B shipping rules into the overall Shopify setup without forcing the merchant to restructure the entire business around Shopify's native B2B model.</p>
+        <h2>4. Wholesale Registration and Approval</h2>
+        <p>The business also wanted to continue acquiring new wholesale customers directly through its website.</p>
+        <p>But wholesale access shouldn't automatically be given to everyone.</p>
+        <p>A prospective buyer should first apply.</p>
+        <p>The merchant therefore needed a workflow such as:</p>
+        <p><strong>Visit website → Apply for wholesale → Merchant reviews application → Customer approved → Wholesale access provided</strong></p>
+        <p>Using BMT's B2B registration and approval functionality, the business could create that onboarding process directly on the Shopify store.</p>
+        <p>This gave the merchant control over who became a wholesale customer.</p>
+        <p>It also helped transform the website from simply being an ordering portal into a <strong>customer acquisition channel.</strong></p>
+        <h2>5. Existing Shopify Customers Could Be Segmented Using Tags</h2>
+        <p>Another advantage was operational simplicity.</p>
+        <p>Instead of rebuilding the entire customer structure around a new system, BMT could use Shopify customer information and customer tags to determine which wholesale rules should apply.</p>
+        <p>That made it easier to create different experiences for different customer groups.</p>
+        <p>For example:</p>
+        <p><strong>Tag: Distributor</strong></p>
+        <p>Receives Distributor pricing.</p>
+        <p><strong>Tag: Wholesale</strong></p>
+        <p>Receives standard wholesale pricing.</p>
+        <p><strong>Tag: VIP Wholesale</strong></p>
+        <p>Receives negotiated pricing and specific shipping rules.</p>
+        <p>For a growing business, this can be easier to manage than introducing a more complex company-location structure before the business actually needs it.</p>
+        <h2>6. Draft Orders and Net Payment Terms</h2>
+        <p>Established B2B customers don't always pay immediately.</p>
+        <p>Some buyers expect arrangements such as:</p>
+        <ul>
+          <li>Net 15</li>
+          <li>Net 30</li>
+          <li>Net 60</li>
+        </ul>
+        <p>The merchant therefore wanted the ability to support B2B ordering workflows where an order could become a draft order and appropriate payment terms could be applied.</p>
+        <p>BMT helped support that type of workflow.</p>
+        <p>This allowed trusted customers to purchase using commercial terms that more closely resembled traditional B2B transactions.</p>
+        <h2>7. B2B and B2C From One Shopify Store</h2>
+        <p>Perhaps one of the most important requirements was that the merchant didn't want to create two separate ecommerce businesses.</p>
+        <p>Wholesale was already working.</p>
+        <p>But the business also saw an opportunity to sell directly to consumers.</p>
+        <p>The ideal setup was therefore:</p>
+        <h3>Retail Customer</h3>
+        <p>Visits the Shopify store ↓ Sees retail products and retail prices ↓ Checks out normally</p>
+        <h3>Wholesale Customer</h3>
+        <p>Logs into the same Shopify store ↓ BMT identifies the customer's wholesale rules ↓ Customer sees relevant products and wholesale prices ↓ Wholesale shipping/payment conditions are applied ↓ Customer places the order</p>
+        <p>This allowed the merchant to use the same product catalog, inventory and Shopify infrastructure for both sides of the business.</p>
+        <img
+          src={faireUnifiedB2bB2cStore}
+          alt="One Shopify operation coordinating bulk wholesale orders and individual retail orders"
+          loading="lazy"
+          decoding="async"
+          width={1408}
+          height={848}
+        />
+        <h2>8. No Need to Upgrade to Shopify Plus Just for Advanced B2B Requirements</h2>
+        <p>This was one of the biggest factors in the decision.</p>
+        <p>Shopify native B2B has become significantly more accessible.</p>
+        <p>Basic, Grow and Advanced merchants can now use foundational features including company profiles, payment terms, volume pricing and up to three active B2B catalogs.</p>
+        <p>However, Shopify reserves several more advanced capabilities—including <strong>unlimited catalogs and direct catalog assignment to individual companies and company locations—for Shopify Plus.</strong></p>
+        <p>For a much larger B2B operation, Shopify Plus may make perfect sense.</p>
+        <p>But this merchant was still at a stage where keeping software costs proportional to revenue mattered.</p>
+        <p>They didn't want to make a major platform upgrade simply because their wholesale pricing structure required more flexibility.</p>
+        <p>BMT allowed the business to stay on its preferred Shopify plan while adding the wholesale functionality it needed.</p>
+        <h2>Shopify Native B2B vs BMT for This Merchant</h2>
+        <p>The choice became clearer when the merchant compared the two approaches.</p>
+        <div className="overflow-x-auto mb-6">
+          <table className="w-full text-sm border border-border/60 rounded-lg">
+            <thead>
+              <tr className="bg-muted/50">
+                <th className="text-left p-3 font-semibold text-foreground border-b border-border/60">Requirement</th>
+                <th className="text-left p-3 font-semibold text-foreground border-b border-border/60">Shopify Native B2B on non-Plus plans</th>
+                <th className="text-left p-3 font-semibold text-foreground border-b border-border/60">BMT B2B Wholesale Pricing</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-border/40">
+                <td className="p-3 text-foreground/80">Run B2B + B2C together</td>
+                <td className="p-3 text-foreground/80">Yes</td>
+                <td className="p-3 text-foreground/80">Yes</td>
+              </tr>
+              <tr className="border-b border-border/40 bg-muted/20">
+                <td className="p-3 text-foreground/80">Company/customer management</td>
+                <td className="p-3 text-foreground/80">Strong native company model</td>
+                <td className="p-3 text-foreground/80">Shopify customer/tag-based workflows</td>
+              </tr>
+              <tr className="border-b border-border/40">
+                <td className="p-3 text-foreground/80">Custom wholesale pricing</td>
+                <td className="p-3 text-foreground/80">Yes</td>
+                <td className="p-3 text-foreground/80">Yes</td>
+              </tr>
+              <tr className="border-b border-border/40 bg-muted/20">
+                <td className="p-3 text-foreground/80">Active B2B catalogs</td>
+                <td className="p-3 text-foreground/80">Up to 3</td>
+                <td className="p-3 text-foreground/80">More flexible pricing-rule approach</td>
+              </tr>
+              <tr className="border-b border-border/40">
+                <td className="p-3 text-foreground/80">Customer-specific pricing beyond a few groups</td>
+                <td className="p-3 text-foreground/80">May require Plus depending on structure</td>
+                <td className="p-3 text-foreground/80">Designed for granular customer/group pricing</td>
+              </tr>
+              <tr className="border-b border-border/40 bg-muted/20">
+                <td className="p-3 text-foreground/80">Direct catalog assignment to companies</td>
+                <td className="p-3 text-foreground/80">Shopify Plus</td>
+                <td className="p-3 text-foreground/80">Rules can be configured through BMT</td>
+              </tr>
+              <tr className="border-b border-border/40">
+                <td className="p-3 text-foreground/80">Variant/customer-specific visibility</td>
+                <td className="p-3 text-foreground/80">More dependent on catalog/store configuration</td>
+                <td className="p-3 text-foreground/80">More granular BMT visibility rules</td>
+              </tr>
+              <tr className="border-b border-border/40 bg-muted/20">
+                <td className="p-3 text-foreground/80">Wholesale registration</td>
+                <td className="p-3 text-foreground/80">Available through Shopify B2B workflows</td>
+                <td className="p-3 text-foreground/80">Built into BMT workflow</td>
+              </tr>
+              <tr className="border-b border-border/40">
+                <td className="p-3 text-foreground/80">Customer approval</td>
+                <td className="p-3 text-foreground/80">Supported</td>
+                <td className="p-3 text-foreground/80">Supported</td>
+              </tr>
+              <tr className="border-b border-border/40 bg-muted/20">
+                <td className="p-3 text-foreground/80">Customer-specific shipping</td>
+                <td className="p-3 text-foreground/80">Native B2B delivery options available</td>
+                <td className="p-3 text-foreground/80">Flexible BMT shipping rules</td>
+              </tr>
+              <tr className="border-b border-border/40">
+                <td className="p-3 text-foreground/80">Net payment workflows</td>
+                <td className="p-3 text-foreground/80">Supported</td>
+                <td className="p-3 text-foreground/80">Supported</td>
+              </tr>
+              <tr className="border-b border-border/40 bg-muted/20">
+                <td className="p-3 text-foreground/80">Draft-order workflows</td>
+                <td className="p-3 text-foreground/80">Supported</td>
+                <td className="p-3 text-foreground/80">Supported</td>
+              </tr>
+              <tr className="border-b border-border/40">
+                <td className="p-3 text-foreground/80">Shopify Plus required</td>
+                <td className="p-3 text-foreground/80">No for foundational B2B</td>
+                <td className="p-3 text-foreground/80">No</td>
+              </tr>
+              <tr className="border-b border-border/40 bg-muted/20">
+                <td className="p-3 text-foreground/80">Best suited for</td>
+                <td className="p-3 text-foreground/80">Native company-centric B2B operations</td>
+                <td className="p-3 text-foreground/80">Merchants wanting flexible B2B rules without moving to Plus</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The important distinction wasn't simply <strong>features versus features</strong>.</p>
+        <p>It was the operating model.</p>
+        <p>Shopify native B2B is increasingly designed around a structured <strong>Company → Company Location → Catalog</strong> model.</p>
+        <p>That is powerful, especially for larger organizations.</p>
+        <p>BMT gave this merchant another model:</p>
+        <p><strong>Customer → Customer Tag/Group → Pricing + Products + Shipping + Payment Rules</strong></p>
+        <p>For their stage of growth, that was simpler and more flexible.</p>
+        <h2>From Marketplace Dependency to an Owned Wholesale Channel</h2>
+        <p>The biggest benefit wasn't any individual BMT feature.</p>
+        <p>It was <strong>control</strong>.</p>
+        <p>The merchant could start moving from:</p>
+        <p><strong>Marketplace → Customer</strong></p>
+        <p>toward:</p>
+        <p><strong>Merchant's own brand → Customer</strong></p>
+        <p>That meant greater ownership over:</p>
+        <ul>
+          <li>Customer relationships</li>
+          <li>Pricing</li>
+          <li>Customer data</li>
+          <li>Store experience</li>
+          <li>Product merchandising</li>
+          <li>Wholesale onboarding</li>
+          <li>Marketing</li>
+          <li>Repeat purchases</li>
+        </ul>
+        <p>Faire could still be useful.</p>
+        <p>It could continue functioning as a discovery or supplier marketplace.</p>
+        <p>But the merchant's own Shopify website could become an increasingly important part of the business.</p>
+        <p>In other words:</p>
+        <p><strong>Faire could remain a channel without remaining the entire business.</strong></p>
+        <h2>One Shopify Store. Two Revenue Channels.</h2>
+        <p>By combining Shopify with BMT B2B Wholesale Pricing, the merchant could build an infrastructure capable of supporting:</p>
+        <ul>
+          <li>B2B wholesale customers</li>
+          <li>B2C retail customers</li>
+          <li>Customer-specific pricing</li>
+          <li>Volume pricing</li>
+          <li>Fixed wholesale pricing</li>
+          <li>Customer and variant-specific product visibility</li>
+          <li>Wholesale registration</li>
+          <li>Customer approval</li>
+          <li>Customer-specific shipping rules</li>
+          <li>Draft-order workflows</li>
+          <li>Net payment terms</li>
+          <li>Multiple wholesale customer groups</li>
+        </ul>
+        <p>All while continuing to use Shopify as the core ecommerce platform.</p>
+        <h2>When Does BMT Make Sense Compared With Shopify Native B2B?</h2>
+        <p>Shopify's native B2B solution is becoming increasingly powerful and may be the right choice for many merchants.</p>
+        <p>BMT becomes particularly interesting when a merchant says:</p>
+        <p><strong>"I need more than three wholesale pricing groups."</strong></p>
+        <p><strong>"Different customers need different prices."</strong></p>
+        <p><strong>"Certain customers shouldn't see certain products or variants."</strong></p>
+        <p><strong>"I need special shipping rules for some wholesale customers."</strong></p>
+        <p><strong>"I want wholesale registration and approval."</strong></p>
+        <p><strong>"I want to sell B2B and B2C from the same Shopify store."</strong></p>
+        <p><strong>"I don't want to move to Shopify Plus just to get additional B2B flexibility."</strong></p>
+        <p>Those are exactly the types of requirements BMT B2B Wholesale Pricing is designed to solve.</p>
+        <h2>The Bigger Lesson</h2>
+        <p>Marketplaces can be incredibly valuable when starting a wholesale business.</p>
+        <p>But as the business matures, building an owned sales channel becomes increasingly important.</p>
+        <p>The goal doesn't have to be:</p>
+        <p><strong>Faire OR Shopify.</strong></p>
+        <p>A better strategy can be:</p>
+        <p><strong>Faire for discovery and relationships.</strong></p>
+        <p><strong>Shopify + BMT for your owned wholesale channel.</strong></p>
+        <p>That gives merchants the freedom to diversify where revenue comes from while building a customer experience and B2B infrastructure they control.</p>
+        <p>For this merchant, BMT wasn't simply another Shopify app.</p>
+        <p>It was the layer that helped turn a standard Shopify store into a flexible <strong>B2B + B2C commerce platform—without requiring Shopify Plus.</strong></p>
+      </>
+    ),
+  },
   "bmt-european-dtc-brand-replaced-multiple-b2b-apps": {
-    category: "Success Story",
-    title: "How BMT Helped a European DTC Brand Replace Multiple B2B Apps With One Unified Solution",
-    date: "Sep 28, 2026",
-    isoDate: "2026-09-28",
-    readTime: "9 min read",
-    metaDescription: "See how a European DTC brand replaced multiple Shopify B2B apps with BMT to unify pricing, registration, approvals, visibility, and order rules.",
     keywords: ["Shopify B2B app consolidation", "European DTC brand wholesale", "replace multiple Shopify apps", "unified Shopify B2B solution", "BMT B2B Wholesale Pricing", "Shopify wholesale workflow"],
     content: (
       <>
@@ -240,14 +892,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "introducing-page-lock-hide-price": {
-    category: "Product Update",
-    title: "Introducing Page Lock & Hide Price — Built for the Future of Shopify Customer Accounts",
-    date: "Apr 8, 2026",
-    isoDate: "2026-04-08",
-    updated: "Sep 23, 2026",
-    updatedIsoDate: "2026-09-23",
-    readTime: "8 min read",
-    metaDescription: "Shopify is transitioning to passwordless login. Learn how Page Lock & Hide Price from BMT B2B Wholesale Pricing gives you modern, rule-based access control to protect pricing, restrict pages, and manage B2B visibility on Shopify.",
     keywords: ["shopify page lock", "hide price shopify", "shopify passwordless login", "shopify customer accounts", "B2B access control shopify", "lock page shopify app", "hide add to cart shopify", "BMT B2B wholesale pricing", "shopify OTP login"],
     faq: [
       { question: "What is Page Lock & Hide Price?", answer: "Page Lock & Hide Price is a feature in BMT B2B Wholesale Pricing that lets you restrict access to pages, products, collections, or your entire store — and hide prices or Add to Cart buttons from specific users based on login status, customer tags, or passcodes." },
@@ -366,14 +1010,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "guide-creating-wholesale-store-shopify": {
-    category: "Guide",
-    title: "Guide to Creating a Wholesale Store on Shopify: D2C + B2B Step-by-Step",
-    date: "Mar 15, 2026",
-    isoDate: "2026-03-15",
-    updated: "Sep 22, 2026",
-    updatedIsoDate: "2026-09-22",
-    readTime: "14 min read",
-    metaDescription: "Create a D2C + B2B wholesale store on Shopify with wholesale pricing, Request for Quote, bulk ordering, access control, and global selling using BMT.",
     keywords: ["shopify wholesale store", "how to create wholesale store shopify", "request for quote shopify", "d2c b2b shopify", "wholesale pricing shopify", "bulk ordering shopify", "shopify wholesale guide", "BMT B2B wholesale pricing", "shopify markets wholesale", "quick order page shopify"],
     faq: [
       { question: "How do I set up a wholesale store on Shopify?", answer: "You can set up wholesale on Shopify by using a wholesale app like BMT B2B Wholesale Pricing. Install the app, create customer groups for wholesale buyers, set wholesale pricing rules, and activate. No separate store needed — run D2C and B2B from one Shopify storefront." },
@@ -563,14 +1199,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "bmt-perfect-for-d2c-brands-expanding-wholesale": {
-    category: "Guide",
-    title: "Why BMT B2B Wholesale Pricing App Is Perfect for D2C Brands Expanding Into Wholesale",
-    date: "Mar 8, 2026",
-    isoDate: "2026-03-08",
-    updated: "Sep 22, 2026",
-    updatedIsoDate: "2026-09-22",
-    readTime: "9 min read",
-    metaDescription: "Learn why BMT helps D2C Shopify brands add wholesale pricing, Request for Quote, bulk ordering, and buyer approvals without a separate store.",
     keywords: ["d2c wholesale shopify", "d2c to b2b shopify", "wholesale app for d2c brands", "shopify wholesale without marketplace", "BMT B2B wholesale pricing", "faire alternative shopify"],
     faq: [
       { question: "Can a D2C Shopify brand sell wholesale from the same store?", answer: "Yes. BMT B2B Wholesale Pricing App lets you layer wholesale pricing on top of your existing retail store. Retail customers see retail prices, and approved wholesale buyers see wholesale prices — all from one storefront with one inventory." },
@@ -737,14 +1365,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "bmt-smarter-choice-than-traditional-wholesale-apps": {
-    category: "Guide",
-    title: "Why BMT B2B Wholesale Pricing App Is a Smarter Choice Than Traditional Shopify Wholesale Apps",
-    date: "Feb 26, 2026",
-    isoDate: "2026-02-26",
-    updated: "Sep 21, 2026",
-    updatedIsoDate: "2026-09-21",
-    readTime: "7 min read",
-    metaDescription: "Discover why BMT B2B Wholesale Pricing App outperforms legacy Shopify wholesale apps. Modern architecture, 5-minute setup, high performance, and no downtime risk for growing brands.",
     keywords: ["shopify wholesale app", "B2B wholesale pricing", "shopify B2B app", "wholesale pricing shopify", "best wholesale app shopify"],
     faq: [
       { question: "What is the best wholesale app for Shopify?", answer: "BMT B2B Wholesale Pricing App is a modern, lightweight Shopify wholesale app that offers tiered pricing, customer groups, Request for Quote, bulk CSV ordering, registration forms, custom payment and shipping rules, and Shopify Markets integration for multi-currency wholesale." },
@@ -807,14 +1427,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "bmt-b2b-partner-established-us-shopify-store": {
-    category: "Guide",
-    title: "How BMT B2B Wholesale Pricing App Can Partner With an Established US Shopify Store to Unlock B2B Growth",
-    date: "Feb 26, 2026",
-    isoDate: "2026-02-26",
-    updated: "Sep 21, 2026",
-    updatedIsoDate: "2026-09-21",
-    readTime: "8 min read",
-    metaDescription: "Learn how established US Shopify stores can use BMT B2B Wholesale Pricing App to add structured wholesale pricing, custom payment terms, and shipping rules without disrupting DTC operations.",
     keywords: ["shopify wholesale for established brands", "B2B growth shopify", "wholesale pricing US shopify store", "custom payment terms shopify"],
     faq: [
       { question: "Can I run wholesale and retail on the same Shopify store?", answer: "Yes. BMT B2B Wholesale Pricing App lets you run B2C retail and B2B wholesale from a single Shopify storefront using customer-tag based pricing, without duplicating products or catalogs." },
@@ -891,14 +1503,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "merchant-increased-b2b-revenue-40-percent": {
-    category: "Success Story",
-    title: "How One Merchant Increased B2B Revenue by 40%",
-    date: "Feb 12, 2026",
-    isoDate: "2026-02-12",
-    updated: "Sep 21, 2026",
-    updatedIsoDate: "2026-09-21",
-    readTime: "4 min read",
-    metaDescription: "Real merchant success story: how a home goods brand used BMT B2B Wholesale Pricing App's customer groups and volume discounts to increase B2B revenue by 40% in 3 months.",
     keywords: ["shopify wholesale success story", "increase B2B revenue shopify", "wholesale customer groups"],
     content: (
       <>
@@ -931,14 +1535,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "shopify-wholesale-app-small-business": {
-    category: "Guide",
-    title: "Shopify Wholesale App for Small Business: The Best Affordable Solution in 2026",
-    date: "Feb 26, 2026",
-    isoDate: "2026-02-26",
-    updated: "Sep 21, 2026",
-    updatedIsoDate: "2026-09-21",
-    readTime: "7 min read",
-    metaDescription: "Looking for an affordable Shopify wholesale app for small business? BMT B2B Wholesale Pricing offers a free plan, easy setup, tiered pricing, registration forms, and order limits — perfect for small stores in 2026.",
     keywords: ["shopify wholesale app small business", "affordable wholesale app shopify", "best wholesale app 2026", "cheap B2B app shopify"],
     faq: [
       { question: "What is the cheapest wholesale app for Shopify?", answer: "BMT B2B Wholesale Pricing App offers a free plan with 1 active pricing rule and unlimited registration forms. The Standard plan is just $9.99/month — significantly cheaper than most wholesale apps that start at $25-$99/month." },
@@ -1020,14 +1616,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "best-shopify-wholesale-apps-2026": {
-    category: "Guide",
-    title: "Best Shopify Wholesale Apps in 2026 (Top 6 B2B Apps Compared)",
-    date: "Mar 14, 2026",
-    isoDate: "2026-03-14",
-    updated: "Sep 22, 2026",
-    updatedIsoDate: "2026-09-22",
-    readTime: "12 min read",
-    metaDescription: "Compare the 6 best Shopify wholesale apps in 2026. See which B2B app is right for your store — from flexible pricing and bulk ordering to marketplace wholesale and enterprise B2B portals.",
     keywords: ["best shopify wholesale apps", "shopify wholesale app comparison", "B2B shopify apps 2026", "wholesale pricing app shopify", "shopify B2B apps compared"],
     faq: [
       { question: "What is the best wholesale app for Shopify in 2026?", answer: "BMT B2B Wholesale Pricing is the best overall Shopify wholesale app for brands that want flexible pricing, simple setup, and a unified B2C/B2B storefront. For marketplace exposure, Faire is a strong option, and for enterprise B2B portals, SparkLayer is ideal." },
@@ -1072,7 +1660,7 @@ const posts: Record<string, BlogPostData> = {
 
         <h2>1. BMT B2B Wholesale Pricing</h2>
         <p><em>Best Shopify wholesale app for flexible B2B pricing</em></p>
-        <img src="/assets/app-bmt-wholesale.png" alt="BMT B2B Wholesale Pricing App on Shopify App Store showing tiered pricing, registration forms, and wholesale features" className="rounded-lg border border-border/60 mb-4 w-full" loading="lazy" />
+        <img src="/assets/app-bmt-wholesale.png" alt="BMT B2B Wholesale Pricing App on Shopify App Store showing tiered pricing, registration forms, and wholesale features" className="rounded-lg border border-border/60 mb-4 w-full" loading="lazy" decoding="async" />
         <p>For merchants who want to launch wholesale quickly while continuing to run their retail store on the same Shopify storefront, <strong>BMT B2B Wholesale Pricing</strong> is one of the best solutions available.</p>
         <p>The app allows Shopify merchants to create custom wholesale pricing structures without duplicating stores or products.</p>
         <p><strong>Key features:</strong></p>
@@ -1106,7 +1694,7 @@ const posts: Record<string, BlogPostData> = {
 
         <h2>2. Wholesale Gorilla</h2>
         <p><em>Best for established Shopify wholesale operations</em></p>
-        <img src="/assets/app-wholesale-gorilla.png" alt="Wholesale Gorilla app on Shopify App Store showing B2B pricing and wholesale management features" className="rounded-lg border border-border/60 mb-4 w-full" loading="lazy" />
+        <img src="/assets/app-wholesale-gorilla.png" alt="Wholesale Gorilla app on Shopify App Store showing B2B pricing and wholesale management features" className="rounded-lg border border-border/60 mb-4 w-full" loading="lazy" decoding="async" />
         <p>Wholesale Gorilla is one of the longest-running wholesale apps in the Shopify ecosystem and is used by thousands of merchants.</p>
         <p><strong>Key features:</strong></p>
         <ul>
@@ -1120,7 +1708,7 @@ const posts: Record<string, BlogPostData> = {
 
         <h2>3. Wholesale ‑ All in One</h2>
         <p><em>Best for advanced wholesale rule configuration</em></p>
-        <img src="/assets/app-wholesale-allinone.png" alt="Wholesale All in One app on Shopify App Store showing pricing rules and discount configuration" className="rounded-lg border border-border/60 mb-4 w-full" loading="lazy" />
+        <img src="/assets/app-wholesale-allinone.png" alt="Wholesale All in One app on Shopify App Store showing pricing rules and discount configuration" className="rounded-lg border border-border/60 mb-4 w-full" loading="lazy" decoding="async" />
         <p>Wholesale ‑ All in One offers a wide range of wholesale pricing options and visibility controls.</p>
         <p><strong>Features include:</strong></p>
         <ul>
@@ -1134,7 +1722,7 @@ const posts: Record<string, BlogPostData> = {
 
         <h2>4. Wholesale Price & B2B Solution</h2>
         <p><em>Best lightweight Shopify wholesale pricing app</em></p>
-        <img src="/assets/app-wholesale-price-b2b.png" alt="Wholesale Price and B2B Solution app on Shopify App Store showing tiered discounts and bulk pricing" className="rounded-lg border border-border/60 mb-4 w-full" loading="lazy" />
+        <img src="/assets/app-wholesale-price-b2b.png" alt="Wholesale Price and B2B Solution app on Shopify App Store showing tiered discounts and bulk pricing" className="rounded-lg border border-border/60 mb-4 w-full" loading="lazy" decoding="async" />
         <p>Wholesale Price & B2B Solution focuses mainly on pricing functionality rather than a full wholesale portal.</p>
         <p><strong>Key capabilities:</strong></p>
         <ul>
@@ -1147,7 +1735,7 @@ const posts: Record<string, BlogPostData> = {
 
         <h2>5. Faire: Sell Wholesale</h2>
         <p><em>Best for reaching new wholesale retailers</em></p>
-        <img src="/assets/app-faire-wholesale.png" alt="Faire Sell Wholesale app on Shopify App Store showing marketplace integration for independent retailers" className="rounded-lg border border-border/60 mb-4 w-full" loading="lazy" />
+        <img src="/assets/app-faire-wholesale.png" alt="Faire Sell Wholesale app on Shopify App Store showing marketplace integration for independent retailers" className="rounded-lg border border-border/60 mb-4 w-full" loading="lazy" decoding="async" />
         <p>Faire: Sell Wholesale connects Shopify brands with a large marketplace of retailers looking for products to sell.</p>
         <p><strong>Key advantages:</strong></p>
         <ul>
@@ -1160,7 +1748,7 @@ const posts: Record<string, BlogPostData> = {
 
         <h2>6. SparkLayer B2B & Wholesale</h2>
         <p><em>Best for enterprise B2B storefronts</em></p>
-        <img src="/assets/app-sparklayer-b2b.png" alt="SparkLayer B2B and Wholesale app on Shopify App Store showing B2B storefront and pricing features" className="rounded-lg border border-border/60 mb-4 w-full" loading="lazy" />
+        <img src="/assets/app-sparklayer-b2b.png" alt="SparkLayer B2B and Wholesale app on Shopify App Store showing B2B storefront and pricing features" className="rounded-lg border border-border/60 mb-4 w-full" loading="lazy" decoding="async" />
         <p>SparkLayer B2B & Wholesale transforms a Shopify store into a full B2B purchasing portal.</p>
         <p><strong>Key features:</strong></p>
         <ul>
@@ -1220,14 +1808,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "shopify-b2b-build-complete-wholesale-store": {
-    category: "Guide",
-    title: "Shopify B2B: How to Build a Complete Wholesale Store (2026 Guide)",
-    date: "Mar 19, 2026",
-    isoDate: "2026-03-19",
-    updated: "Sep 23, 2026",
-    updatedIsoDate: "2026-09-23",
-    readTime: "15 min read",
-    metaDescription: "Complete 2026 guide to building a Shopify B2B wholesale store. Learn costs, setup options, and how to create a modern wholesale experience with BMT B2B Wholesale Pricing App.",
     keywords: ["shopify b2b", "shopify wholesale store", "shopify b2b setup", "wholesale store shopify 2026", "BMT B2B wholesale pricing", "shopify plus alternative", "b2b wholesale app shopify", "bulk ordering shopify"],
     faq: [
       { question: "Is Shopify good for B2B wholesale?", answer: "Yes — Shopify is a strong platform for B2B. However, most real-world wholesale functionality comes from either Shopify Plus (expensive at $2,000+/month) or third-party apps like BMT B2B Wholesale Pricing, which work on any Shopify plan." },
@@ -1496,14 +2076,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "best-shopify-wholesale-apps": {
-    category: "Guide",
-    title: "11 Best Shopify Wholesale Apps for B2B Pricing and Bulk Orders in 2026",
-    date: "May 4, 2026",
-    isoDate: "2026-05-04",
-    updated: "Sep 23, 2026",
-    updatedIsoDate: "2026-09-23",
-    readTime: "13 min read",
-    metaDescription: "Compare the 11 best Shopify wholesale apps in 2026 for B2B pricing, Request for Quote, net terms, quick orders, price hiding, and buyer approvals.",
     keywords: ["best shopify wholesale apps", "shopify B2B apps 2026", "wholesale pricing app", "bulk order shopify", "net terms shopify", "hide price shopify", "B2B shopify comparison"],
     faq: [
       { question: "What is the best wholesale app for Shopify in 2026?", answer: "BMT B2B Wholesale Pricing is the best overall pick for most merchants in 2026. It combines tiered pricing, customer groups, quick order forms, registration approvals, and price hiding in a single affordable app — and works on every Shopify plan, not just Plus." },
@@ -1516,7 +2088,7 @@ const posts: Record<string, BlogPostData> = {
     ],
     content: (
       <>
-        <img src={wholesaleAppsBanner} alt="11 Best Shopify Wholesale Apps for B2B Pricing and Bulk Orders in 2026" className="w-full rounded-lg mb-8 shadow-lg" loading="eager" />
+        <img src={wholesaleAppsBanner} alt="11 Best Shopify Wholesale Apps for B2B Pricing and Bulk Orders in 2026" className="w-full rounded-lg mb-8 shadow-lg" loading="eager" decoding="async" />
 
         <p>Selling wholesale on Shopify is more than slapping a coupon code on your catalog. As a merchant I quickly discovered that real B2B buyers expect customised price lists, volume breaks, net terms and a way to reorder hundreds of SKUs in minutes. Shopify introduced company profiles, net terms and quantity rules to its Basic, Grow and Advanced plans in 2025, although those tiers only allow three active catalogs while Plus offers unlimited. Even with these improvements you still need an app to handle registration, price hiding and flexible discounts.</p>
         <p>When evaluating apps for my own store, I focused on tools that tackle the messy parts of wholesale - customer-specific pricing, tiered discounts, hidden pricing, order minimums, net terms and quick ordering - while keeping the setup simple. The apps below reflect what I learned from testing and from fact-checking their capabilities on the Shopify App Store.</p>
@@ -1544,7 +2116,7 @@ const posts: Record<string, BlogPostData> = {
         <p className="text-sm text-muted-foreground italic">Note: Pricing reflects entry-level paid plans as of May 2026 and may change. Always verify current pricing on the app listing.</p>
 
         <h2>1. <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline">BMT B2B Wholesale Pricing</a></h2>
-        <img src={imgBmt} alt="BMT B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgBmt} alt="BMT B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>BMT B2B Wholesale Pricing is built for Shopify merchants who want to run wholesale and retail from one store without stacking multiple apps. Instead of using one app for pricing, another for registration, another for locked pages, and another for order rules, BMT brings the core wholesale workflow into one setup.</p>
         <p>The app supports customer-specific pricing, tiered pricing, volume discounts, hide-price rules, locked content, B2B login access, and wholesale registration forms with manual or tag-based approval. It also supports Request for Quote, CSV/XLSX bulk uploads, min/max order limits, multi-currency wholesale pricing, Shopify Markets, custom shipping rates, net payment terms, hidden payment methods, and a quick order page depending on the plan.</p>
         <p>BMT is meant replace 3 to 4 separate apps merchants often use for wholesale pricing, registration forms, access control, order limits, and buyer management. That makes it especially useful for price-sensitive merchants who do not want to spend $60 to $100/month across multiple apps.</p>
@@ -1572,12 +2144,12 @@ const posts: Record<string, BlogPostData> = {
 
         <div className="my-8 rounded-xl overflow-hidden shadow-lg">
           <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="block">
-            <img src={wholesaleAppsCta} alt="Install BMT B2B Wholesale Pricing on Shopify" className="w-full hover:opacity-95 transition-opacity" loading="lazy" />
+            <img src={wholesaleAppsCta} alt="Install BMT B2B Wholesale Pricing on Shopify" className="w-full hover:opacity-95 transition-opacity" loading="lazy" decoding="async" />
           </a>
         </div>
 
         <h2>2. <a href="https://apps.shopify.com/wholesale-pricing-now" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">Wholesale Pricing Now (WOD)</a></h2>
-        <img src={imgWpn} alt="Wholesale Pricing Now Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgWpn} alt="Wholesale Pricing Now Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>If you want to encourage bulk orders with tiered pricing and avoid managing duplicate variants, Wholesale Pricing Now is a strong contender. The app embeds discount tables on product pages, automatically applies quantity breaks at checkout and removes the need for discount codes.</p>
         <p>It supports overriding shipping and tax charges for wholesale orders and offers Net 15/30 terms so select customers can place orders without immediate payment. The quick-order form lets buyers add multiple items to their cart on one page, which streamlines large orders.</p>
         <h3>Best for</h3>
@@ -1586,7 +2158,7 @@ const posts: Record<string, BlogPostData> = {
         <p>The app has a free tier with basic functionality. Paid plans start around $14.95/month and scale with features such as unlimited discount groups and net terms. A 14-day trial lets you test the fit before committing.</p>
 
         <h2>3. <a href="https://apps.shopify.com/wholesale-all-in-one" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">Wholesale – All in One</a></h2>
-        <img src={imgAllInOne} alt="Wholesale All in One Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgAllInOne} alt="Wholesale All in One Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>Wholesale - All in One acts like a Swiss-army knife for B2B pricing. It allows you to create separate price lists and discount rules for different customer groups, using percentage off, price off or fixed-price methods.</p>
         <p>You can apply quantity breaks (volume pricing) and enforce minimum or maximum order limits. The app also includes add-ons such as Net Terms, Quick Order Form, Re-Order Form, MOQ and login-to-view pricing, making it highly customizable. A customizable wholesale signup form ensures only approved buyers see the special pricing.</p>
         <h3>Best for</h3>
@@ -1595,7 +2167,7 @@ const posts: Record<string, BlogPostData> = {
         <p>Pricing starts around $24/month after a 14-day trial and increases with add-on modules. The base plan includes core pricing and discount features; net terms and quick-order functionality require higher tiers.</p>
 
         <h2>4. <a href="https://apps.shopify.com/wholesale-gorilla" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">Wholesale Gorilla</a></h2>
-        <img src={imgGorilla} alt="Wholesale Gorilla Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgGorilla} alt="Wholesale Gorilla Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>Wholesale Gorilla positions itself as a complete suite for growing B2B brands. Approved customers simply log in to see their special pricing. The app lets you set rules for prices by product, variant, collection or entire catalog; hide products from retail shoppers; offer quantity breaks; set order minimums and limits; and apply net terms. It also supports custom shipping rules, product exclusions and quick order forms.</p>
         <h3>Best for</h3>
         <p>Brands looking for a mature, supported wholesale platform with a 21-day trial. It's ideal if you need advanced B2B features like custom shipping and inventory rules but don't want to build a separate store or upgrade to Plus.</p>
@@ -1603,7 +2175,7 @@ const posts: Record<string, BlogPostData> = {
         <p>The Lite plan starts at about $34.95/month with unlimited price rules and a basic registration form. Higher tiers add advanced features such as custom shipping, net terms and inventory management.</p>
 
         <h2>5. <a href="https://apps.shopify.com/sparklayer" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">SparkLayer B2B & Wholesale</a></h2>
-        <img src={imgSparkLayer} alt="SparkLayer B2B Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgSparkLayer} alt="SparkLayer B2B Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>SparkLayer is more than a discount plugin. It's a full B2B e-commerce platform layered over Shopify. Built for teams that manage serious wholesale volumes, it provides a sales-rep portal, quoting engine, built-in registration forms and approval workflows, unlimited price lists, and customer-specific price tiers. Buyers get a self-serve portal with net payment terms, order history, reordering and quick order lists; sales reps can place orders on behalf of customers. The app also supports API access, multi-currency, PDF invoices and integrations with systems like Xero and QuickBooks.</p>
         <h3>Best for</h3>
         <p>Large or rapidly growing B2B operations that need enterprise-grade features without migrating off Shopify. If you handle complex quoting, sales-rep workflows or want to integrate your ERP and accounting tools, SparkLayer is worth the investment.</p>
@@ -1611,7 +2183,7 @@ const posts: Record<string, BlogPostData> = {
         <p>SparkLayer's Basic plan is free but limited to three price lists and five B2B orders per month. The Starter plan (around $49/month) unlocks unlimited price lists and includes one sales agent. The higher tiers start around $149/month and add PDF invoices, advanced discounts, multiple sales agents and API integrations.</p>
 
         <h2>6. <a href="https://apps.shopify.com/wholesale-hub" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">B2B Wholesale Hub</a></h2>
-        <img src={imgHub} alt="B2B Wholesale Hub Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgHub} alt="B2B Wholesale Hub Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>Formerly known as Wholesale Club, B2B Wholesale Hub lets you run B2B and B2C from one store by tagging customers. You can assign percentage discounts or custom prices per customer group, enforce order minimums and quantity breaks, and hide products from retail shoppers. Net payment terms, quick order forms and extra fees or free shipping are available, and the app integrates with Shopify Forms for account registration and approval.</p>
         <h3>Best for</h3>
         <p>Stores that need granular control over who sees what. It's well-suited to merchants with multiple B2B customer groups, including international markets, because you can tailor pricing down to the variant level.</p>
@@ -1620,12 +2192,12 @@ const posts: Record<string, BlogPostData> = {
 
         <div className="my-8 rounded-xl overflow-hidden shadow-lg">
           <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="block">
-            <img src={wholesaleAppsCta} alt="Install BMT B2B Wholesale Pricing on Shopify" className="w-full hover:opacity-95 transition-opacity" loading="lazy" />
+            <img src={wholesaleAppsCta} alt="Install BMT B2B Wholesale Pricing on Shopify" className="w-full hover:opacity-95 transition-opacity" loading="lazy" decoding="async" />
           </a>
         </div>
 
         <h2>7. <a href="https://apps.shopify.com/personalized-every-customer" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">Wholesale Hero B2B Pricing</a></h2>
-        <img src={imgHero} alt="Wholesale Hero B2B Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgHero} alt="Wholesale Hero B2B Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>Wholesale Hero centralizes B2C and B2B pricing by letting you set multiple structures such as tiered pricing, custom prices and flat-rate or percentage-based discounts. The app supports order limits (minimum or maximum order value or quantity) and includes a wholesale registration form for customer approval. You can create catalogs with different offers for wholesale versus direct-to-consumer buyers and show pricing tables to encourage larger orders.</p>
         <h3>Best for</h3>
         <p>Merchants who want to display tiered pricing tables on product pages and manage both wholesale and retail offers from one dashboard. It's a good fit for stores with smaller product lines where visual pricing tables are important.</p>
@@ -1633,7 +2205,7 @@ const posts: Record<string, BlogPostData> = {
         <p>Wholesale Hero offers a free plan, and its paid plan costs about $9.99/month after a 14-day trial. Features such as unlimited tiered pricing and company-level pricing may require higher tiers.</p>
 
         <h2>8. <a href="https://apps.shopify.com/password-protected-pages" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">MagicPass Wholesale</a></h2>
-        <img src={imgMagicPass} alt="MagicPass Wholesale Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgMagicPass} alt="MagicPass Wholesale Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>Sometimes the simplest solution is just gating pages. MagicPass Wholesale lets you add a password or customer-tag restriction to individual products, pages or collections so only approved buyers can see them. You can apply discount codes automatically when customers log in, making it useful for member-only or VIP stores. It's less about pricing logic and more about content access control.</p>
         <h3>Best for</h3>
         <p>Stores that want to hide certain collections or exclusive products from the public without a full-fledged wholesale pricing engine. It also suits creators offering gated content or membership perks.</p>
@@ -1641,7 +2213,7 @@ const posts: Record<string, BlogPostData> = {
         <p>Plans start at $5/month for Basic and $19/month for the standard Shopify plan, with a generous 30-day trial.</p>
 
         <h2>9. <a href="https://apps.shopify.com/wholesale-lock-manager" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">Wholesale Lock Manager (WLM)</a></h2>
-        <img src={imgWlm} alt="Wholesale Lock Manager Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgWlm} alt="Wholesale Lock Manager Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>Wholesale Lock Manager focuses on hiding products, prices and pages. It allows you to set up locks for specific products, collections or your entire storefront based on customer tags, and you can hide the add-to-cart button for certain users. The app also supports password-protected pages and secret links and lets you test locks on unpublished themes.</p>
         <h3>Best for</h3>
         <p>Merchants who run both retail and wholesale operations and need strict control over what visitors see. It's ideal when you want to gate entire collections or hide prices from guests without altering product data.</p>
@@ -1649,7 +2221,7 @@ const posts: Record<string, BlogPostData> = {
         <p>Wholesale Lock Manager has a free tier and paid plans starting around $9.99/month. Higher tiers provide advanced locking options and support for more pages.</p>
 
         <h2>10. <a href="https://apps.shopify.com/wholesale-simplified" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">Wholesale Simplified</a></h2>
-        <img src={imgSimplified} alt="Wholesale Simplified Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgSimplified} alt="Wholesale Simplified Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>Wholesale Simplified is all about straightforward discount rules. You can create unlimited discount rules tied to customer groups, set minimum quantities and apply discounts to specific products or collections. The app integrates with Quick Order forms and other volume pricing tools, making it easy to offer group-specific promotions.</p>
         <h3>Best for</h3>
         <p>Small shops that need group-based wholesale pricing without the complexity of multi-tiered catalogs. It's great if you already use separate apps for order forms or tiered pricing and just need a discount engine.</p>
@@ -1657,7 +2229,7 @@ const posts: Record<string, BlogPostData> = {
         <p>The free plan includes flexible discount rules; the Premium plan costs about $19.99/month and adds tag-based customer groups and priority support.</p>
 
         <h2>11. <a href="https://apps.shopify.com/b2b-customer-portal-quick-order" target="_blank" rel="nofollow noopener noreferrer" className="text-primary hover:underline">BSS B2B Order & Request a Quote</a></h2>
-        <img src={imgBss} alt="BSS B2B Order and Request a Quote Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgBss} alt="BSS B2B Order and Request a Quote Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>Quoting is a huge pain point in wholesale. BSS B2B Order & Request a Quote adds a "Request a Quote" button so buyers can ask for pricing before ordering. The app hides prices or add-to-cart buttons from guests, captures RFQs with custom forms, lets you edit and send quotes in the admin and then converts accepted quotes into draft orders. For reorders, it provides bulk order forms with CSV upload and syncs product prices with Shopify Plus catalogs.</p>
         <h3>Best for</h3>
         <p>Stores that need quote management alongside quick ordering. It's particularly handy if your wholesale customers often ask for bespoke pricing or if you want to hide prices until after negotiation.</p>
@@ -1682,14 +2254,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "shopify-wholesale-registration-form": {
-    category: "Guide",
-    title: "How to Create a Shopify Wholesale Registration Form and Approve B2B Customers",
-    date: "May 20, 2026",
-    isoDate: "2026-05-20",
-    updated: "Sep 24, 2026",
-    updatedIsoDate: "2026-09-24",
-    readTime: "13 min read",
-    metaDescription: "Create a Shopify wholesale registration form, approve B2B buyers, tag customers, and hide prices before approval.",
     keywords: ["shopify wholesale registration form", "approve b2b customers shopify", "shopify b2b onboarding", "wholesale signup form shopify", "shopify forms wholesale", "BMT B2B Wholesale Pricing", "shopify wholesale app", "b2b approval workflow shopify", "company account request shopify"],
     faq: [
       { question: "Can I create a Shopify wholesale registration form without Shopify Plus?", answer: "Yes. You can use Shopify Forms to collect wholesale applications, and you can also use a wholesale app like BMT B2B Wholesale Pricing to create registration forms and manage B2B approval, pricing, and access control. Shopify's native B2B features and limits vary by plan, so check your Shopify plan before choosing the native method." },
@@ -1966,7 +2530,7 @@ const posts: Record<string, BlogPostData> = {
 
         <div className="my-8 rounded-xl overflow-hidden shadow-lg">
           <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="block">
-            <img src={wholesaleAppsCta} alt="Install BMT B2B Wholesale Pricing on Shopify" className="w-full hover:opacity-95 transition-opacity" loading="lazy" />
+            <img src={wholesaleAppsCta} alt="Install BMT B2B Wholesale Pricing on Shopify" className="w-full hover:opacity-95 transition-opacity" loading="lazy" decoding="async" />
           </a>
         </div>
 
@@ -2207,14 +2771,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "wholesale-gorilla-alternatives": {
-    category: "Guide",
-    title: "11 Wholesale Gorilla Alternatives for Shopify B2B Pricing",
-    date: "May 31, 2026",
-    isoDate: "2026-05-31",
-    updated: "Sep 24, 2026",
-    updatedIsoDate: "2026-09-24",
-    readTime: "12 min read",
-    metaDescription: "Compare Wholesale Gorilla alternatives for Shopify B2B pricing, Request for Quote, wholesale forms, bulk discounts, buyer approval, and price hiding.",
     keywords: ["wholesale gorilla alternatives", "shopify wholesale apps", "shopify b2b pricing", "wholesale registration form", "hide price shopify", "net terms shopify", "BMT B2B Wholesale Pricing", "sparklayer alternative"],
     faq: [
       { question: "What is the best Wholesale Gorilla alternative for Shopify?", answer: "The best Wholesale Gorilla alternative depends on your store. BMT B2B Wholesale Pricing is a strong fit for simple wholesale pricing, buyer approval, hidden prices, order limits, and quick order workflows. SparkLayer is better for advanced B2B portals and sales rep workflows. Wholesale Pricing Discount B2B is a good fit for mature stores that need POS, Shopify Markets, tax controls, and bulk pricing tools." },
@@ -2226,7 +2782,7 @@ const posts: Record<string, BlogPostData> = {
     ],
     content: (
       <>
-        <img src={gaBanner} alt="11 Wholesale Gorilla Alternatives for Shopify B2B Pricing" className="w-full rounded-lg mb-8 shadow-lg" loading="eager" />
+        <img src={gaBanner} alt="11 Wholesale Gorilla Alternatives for Shopify B2B Pricing" className="w-full rounded-lg mb-8 shadow-lg" loading="eager" decoding="async" />
 
         <p>Wholesale Gorilla is one of the better-known Shopify wholesale apps, but it is not the only option for running B2B pricing on Shopify.</p>
         <p>Some merchants look for Wholesale Gorilla alternatives because they want a lower starting price, a simpler setup, better buyer approval workflows, customer-specific pricing, price hiding, quick order pages, net terms, or a more modern B2B buying experience.</p>
@@ -2255,7 +2811,7 @@ const posts: Record<string, BlogPostData> = {
         </div>
 
         <h2>1. SparkLayer</h2>
-        <img src={ga01} alt="SparkLayer Shopify B2B app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={ga01} alt="SparkLayer Shopify B2B app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Brands that need a more advanced B2B portal, sales rep workflows, quoting, and customer self-service ordering.</p>
         <p>SparkLayer is one of the strongest alternatives to Wholesale Gorilla for merchants who want a fuller B2B buying experience, not just wholesale discounts. It supports B2B price lists, sales rep ordering, quoting, registration forms with approval workflows, customer-specific pricing, tiers, volume rules, net terms, multi-currency, quick order, and integrations with tools like Xero, QuickBooks Online, Cin7, Katana, Linnworks, and Unleashed.</p>
         <p>This makes SparkLayer a better fit for brands with serious wholesale operations, larger catalogs, sales teams, or buyers who expect a polished B2B portal.</p>
@@ -2278,7 +2834,7 @@ const posts: Record<string, BlogPostData> = {
         <p>SparkLayer is strong when you want a more complete B2B portal and a better ordering experience for wholesale buyers. It may be more than a small merchant needs if the main requirement is simple wholesale pricing, registration, and price hiding.</p>
 
         <h2>2. <a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline">BMT B2B Wholesale Pricing</a></h2>
-        <img src={ga02} alt="BMT B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={ga02} alt="BMT B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Shopify merchants who want a simple, cost-conscious way to manage wholesale pricing, buyer approval, price hiding, and B2B order rules inside Shopify.</p>
         <p>BMT B2B Wholesale Pricing is a strong Wholesale Gorilla alternative for merchants who want core wholesale features without overcomplicating the setup. It supports customer-specific wholesale pricing, tiered pricing, Request for Quote, wholesale registration forms, approval workflows, auto-tagging, hidden prices, B2B login access, order limits, quick order pages, net terms, shipping terms, Shopify Markets, and multi-currency wholesale pricing.</p>
         <p>The biggest reason BMT belongs high on this list is the pricing-to-feature fit. It has a free plan, and the paid plans start at $9.99/month. That makes it practical for Shopify merchants who are just starting wholesale or moving from a manual B2B process into a proper app-based setup.</p>
@@ -2306,7 +2862,7 @@ const posts: Record<string, BlogPostData> = {
         <p>BMT is a good fit if you want wholesale pricing, registration, approval, price hiding, order limits, and quick order workflows in one place. It is also easier to justify for newer wholesale programs because the entry price is lower than many established wholesale apps. BMT is newer than long-established apps like Wholesale Gorilla, SparkLayer, and Wholesale Pricing Discount B2B. If you have complex enterprise B2B workflows, test the setup carefully before switching.</p>
 
         <h2>3. Wholesale Pricing Discount B2B</h2>
-        <img src={ga03} alt="Wholesale Pricing Discount B2B Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={ga03} alt="Wholesale Pricing Discount B2B Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Shopify stores that want a mature B2B pricing app with strong pricing controls, POS support, Shopify Markets support, and tax options.</p>
         <p>Wholesale Pricing Discount B2B is a well-rounded Wholesale Gorilla alternative for stores that sell retail and wholesale from one Shopify store. It supports custom pricing, tiered pricing, quantity breaks, wholesale signup forms, net terms, wholesale shipping rates, VAT control, multi-currency, Shopify Markets, and Shopify POS.</p>
         <h3>Key features</h3>
@@ -2325,7 +2881,7 @@ const posts: Record<string, BlogPostData> = {
         <p>Plans start at $24.99/month. Higher plans unlock features like variant-level custom pricing, signup form customization, net terms, manual orders, volume discounts, quantity breaks, and bulk import/export.</p>
 
         <h2>4. B2B Wholesale Hub</h2>
-        <img src={ga04} alt="B2B Wholesale Hub Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={ga04} alt="B2B Wholesale Hub Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Stores that want customer tag-based wholesale pricing, quick order forms, order minimums, and POS compatibility.</p>
         <p>B2B Wholesale Hub, formerly Wholesale Club, helps merchants offer wholesale pricing to tagged B2B customers while still running retail and wholesale from one Shopify store. It supports percentage discounts, custom prices per customer group, variant-level custom pricing, net terms, volume discounts, quantity breaks, quick order forms, order minimums, product locking, Markets, and POS.</p>
         <h3>Key features</h3>
@@ -2343,7 +2899,7 @@ const posts: Record<string, BlogPostData> = {
         <p>Plans start at $39/month. Higher plans add custom prices per variant, net terms, volume discounts, order minimums, product visibility/locking, and priority support.</p>
 
         <h2>5. BSS B2B Wholesale Pricing</h2>
-        <img src={ga05} alt="BSS B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={ga05} alt="BSS B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Growing B2B stores that need advanced pricing controls, registration forms, approval workflows, tax controls, MOQ, and POS support.</p>
         <p>BSS B2B Wholesale Pricing is built for stores with more complex B2B needs. It supports custom price lists, tiered discounts, bulk pricing rules, dedicated B2B registration forms, approval workflows, auto-tagging, quantity breaks, minimum quantity, MOQ, order limits, tax-exempt rules, VAT support, net terms, manual orders, multi-currency, and Shopify POS.</p>
         <h3>Key features</h3>
@@ -2359,42 +2915,42 @@ const posts: Record<string, BlogPostData> = {
         <p>BSS has a free development store option. Paid plans start at $25/month, with advanced plans at $50/month and $100/month. Because it has many controls, setup may take more planning than simpler wholesale pricing apps.</p>
 
         <h2>6. Sami B2B Wholesale Pricing</h2>
-        <img src={ga06} alt="Sami B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={ga06} alt="Sami B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Merchants who want an all-in-one B2B wholesale app with a usable free plan and affordable paid tiers.</p>
         <p>B2B Wholesale Pricing Discount by Sami includes wholesale pricing rules, volume discounts, customer-based pricing, variant pricing, B2B login, registration forms, quick order forms, Shopify Markets support, tax display controls, tax exemption, net terms, order limits, MOQs, shipping rules, POS support, and API support depending on plan.</p>
         <h3>Pricing</h3>
         <p>There is a free plan. Paid plans start at $24.90/month. The Gold plan is $49.90/month. Compare the free plan carefully if you have a larger product catalog. Some clients have reported wrong prices in the product catalog.</p>
 
         <h2>7. Wholesale - All In One</h2>
-        <img src={ga07} alt="Wholesale All In One Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={ga07} alt="Wholesale All In One Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Merchants who want a traditional wholesale app with customer approval, custom pricing, order limits, and optional add-ons.</p>
         <p>Wholesale All In One supports discounts, custom pricing, separate prices for customer groups, wholesale signup forms, customer account approval, manual wholesale orders, volume pricing, quantity breaks, minimum/maximum order limits, and wholesale shipping management. It also offers optional add-ons for net terms, quick order forms, bulk import, lock management, login-to-view-price, and MOQ.</p>
         <h3>Pricing</h3>
         <p>Plans start at $24/month. Professional is $29/month, and Business is $39/month. Important features may require add-ons, so the listed base price may not reflect the final setup cost.</p>
 
         <h2>8. OSCP B2B Wholesale Pricing</h2>
-        <img src={ga08} alt="OSCP B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={ga08} alt="OSCP B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Budget-conscious stores that need volume pricing, registration forms, order limits, import/export, and Shopify Markets support.</p>
         <p>OSCP B2B Wholesale Pricing is a cost-friendly option for Shopify stores that need wholesale pricing rules without a high monthly commitment. It supports volume pricing by customer tag, discounts by product, variant, or collection, B2B registration forms, min/max order limits, Shopify Markets pricing, import/export, quick order form by SKU, manual orders, multi-currency, and Shopify discounts compatibility.</p>
         <h3>Pricing</h3>
         <p>OSCP has a free plan. Paid plans start at $5/month, with higher plans at $15/month and $30/month. The interface, support depth, and advanced workflow fit should be tested before using it for a complex wholesale program.</p>
 
         <h2>9. Wholesale Bear</h2>
-        <img src={ga09} alt="Wholesale Bear Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={ga09} alt="Wholesale Bear Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Merchants who mainly need wholesale pricing, bulk discounts, tiered pricing, and net terms in a simple app.</p>
         <p>Wholesale Bear focuses on wholesale pricing, customer tag-based discounts, net terms, volume discounts, custom B2B price lists, and minimum line item quantity or multiples for tiered pricing. It is a simpler option compared with full B2B portal tools.</p>
         <h3>Pricing</h3>
         <p>Wholesale Bear has one plan at $39.99/month with a 14-day free trial. It may not be the best fit if you need a full wholesale registration and approval workflow.</p>
 
         <h2>10. Wholesale Pricing Now: B2B</h2>
-        <img src={ga10} alt="Wholesale Pricing Now B2B Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={ga10} alt="Wholesale Pricing Now B2B Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Stores that want wholesale pricing, order forms, net terms, and custom pricing inside the main Shopify store.</p>
         <p>Wholesale Pricing Now supports tiered pricing, custom pricing, volume discounts, net terms, order forms, individual product pricing, auto-tag rules, custom shipping rates, and tax-exempt wholesale orders.</p>
         <h3>Pricing</h3>
         <p>There is a free plan. Paid pricing depends on the Shopify subscription level, starting at $14.95/month for Shopify Basic stores. Recent reviews show mixed feedback, so test the app carefully on your theme and checkout flow before relying on it.</p>
 
         <h2>11. Process Wholesale: B2B Pricing</h2>
-        <img src={ga11} alt="Process Wholesale B2B Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={ga11} alt="Process Wholesale B2B Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Merchants who want wholesale pricing, signup forms, quick buy tables, MOQ, net terms, and content locking.</p>
         <p>Process Wholesale helps Shopify merchants manage wholesale pricing in an existing store without creating a separate wholesale site. It supports customizable wholesale signup forms, quick buy tables, wholesale prices on product pages, minimum order amount, MOQ, net terms, flat and tier discounts, content locking, B2B shipping, hide prices, and product/page locks.</p>
         <h3>Pricing</h3>
@@ -2438,14 +2994,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "sparklayer-alternatives": {
-    category: "Guide",
-    title: "7 SparkLayer Alternatives for Shopify Brands Running B2B and Retail Together",
-    date: "Jun 15, 2026",
-    isoDate: "2026-06-15",
-    updated: "Sep 24, 2026",
-    updatedIsoDate: "2026-09-24",
-    readTime: "12 min read",
-    metaDescription: "Compare 7 SparkLayer alternatives for Shopify B2B pricing, wholesale forms, net terms, order limits, quick orders, and pricing rules.",
     keywords: ["sparklayer alternatives", "shopify b2b apps", "shopify wholesale apps", "BMT B2B wholesale pricing", "wholesale gorilla", "BSS B2B wholesale", "wholesale pricing discount", "sami b2b", "clay wholesale", "b2bridge"],
     faq: [
       { question: "What is the best SparkLayer alternative for Shopify?", answer: "There is no single best alternative for every Shopify store. BMT B2B Wholesale Pricing is a strong fit for practical wholesale pricing, registration approvals, hidden prices, order limits, net terms, and quick ordering. Wholesale Gorilla is good for a traditional wholesale setup. BSS works well for deeper B2B workflows. B2Bridge is better for larger stores with company accounts, quote workflows, and ERP/API needs." },
@@ -2458,7 +3006,7 @@ const posts: Record<string, BlogPostData> = {
     ],
     content: (
       <>
-        <img src={slBanner} alt="7 SparkLayer Alternatives for Shopify" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={slBanner} alt="7 SparkLayer Alternatives for Shopify" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>SparkLayer is one of the most recognized Shopify B2B and wholesale apps. It is built for serious wholesale workflows and includes features like a self-service B2B portal, sales rep ordering, quote management, registration forms, customer-specific price lists, volume pricing, net terms, multi-currency support, and integrations with tools like QuickBooks Online and Xero.</p>
         <p>But SparkLayer is not the only option.</p>
         <p>I went through the current Shopify App Store listings, pricing tiers, feature sets, review patterns, and setup flows where available. I did not rank these apps only by ratings or review count. For a Shopify wholesale app, that is usually not enough.</p>
@@ -2514,7 +3062,7 @@ const posts: Record<string, BlogPostData> = {
         </div>
 
         <h2>1. Wholesale Gorilla</h2>
-        <img src={sl01} alt="Wholesale Gorilla Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={sl01} alt="Wholesale Gorilla Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <h3>Best for</h3>
         <p>Wholesale Gorilla is best for Shopify merchants who want to add a dedicated wholesale experience to their existing store without rebuilding the store or creating a separate B2B site.</p>
         <h3>Quick summary</h3>
@@ -2554,7 +3102,7 @@ const posts: Record<string, BlogPostData> = {
         <p>Also read our guide: <Link to="/blog/wholesale-gorilla-alternatives" className="text-primary hover:underline">11 Best Wholesale Gorilla Alternatives for Shopify B2B Stores</Link></p>
 
         <h2>2. BMT B2B Wholesale Pricing</h2>
-        <img src={sl02} alt="BMT B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={sl02} alt="BMT B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <h3>Best for</h3>
         <p>BMT B2B Wholesale Pricing is best for Shopify merchants who need flexible wholesale pricing, buyer approval, hidden prices, order limits, and quick ordering without moving into a heavy enterprise B2B system.</p>
         <h3>Quick summary</h3>
@@ -2597,7 +3145,7 @@ const posts: Record<string, BlogPostData> = {
         <p>BMT is still an early-stage app compared to older names like Wholesale Gorilla, BSS, or Wholesale Pricing Discount. The review count is smaller.</p>
 
         <h2>3. BSS B2B Wholesale Pricing</h2>
-        <img src={sl03} alt="BSS B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={sl03} alt="BSS B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <h3>Best for</h3>
         <p>BSS B2B Wholesale Pricing is best for Shopify merchants who need a broad B2B toolkit with pricing rules, registration forms, tax control, order limits, multi-currency, and API access.</p>
         <h3>Quick summary</h3>
@@ -2636,7 +3184,7 @@ const posts: Record<string, BlogPostData> = {
         <p>Some important features, such as advanced tax controls, net terms, custom shipping, bulk import/export, and API access, require paid tiers.</p>
 
         <h2>4. Wholesale Pricing Discount B2B</h2>
-        <img src={sl04} alt="Wholesale Pricing Discount B2B Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={sl04} alt="Wholesale Pricing Discount B2B Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <h3>Best for</h3>
         <p>Wholesale Pricing Discount B2B is best for Shopify merchants who care most about discount rules, custom pricing, quantity breaks, and selling retail and wholesale from one store.</p>
         <h3>Quick summary</h3>
@@ -2676,7 +3224,7 @@ const posts: Record<string, BlogPostData> = {
         <p>Also, because WPD is primarily pricing and discount-led, merchants who want a more complete B2B portal or deeper company account workflows may need something broader.</p>
 
         <h2>5. Sami B2B Wholesale Pricing</h2>
-        <img src={sl05} alt="Sami B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={sl05} alt="Sami B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <h3>Best for</h3>
         <p>Sami B2B Wholesale Pricing is best for Shopify merchants who want a broad set of wholesale features at relatively accessible pricing.</p>
         <h3>Quick summary</h3>
@@ -2715,7 +3263,7 @@ const posts: Record<string, BlogPostData> = {
         <p>The app also covers a lot of functionality, so merchants who only need simple customer-specific pricing may find it more feature-heavy than necessary.</p>
 
         <h2>6. Clay B2B Wholesale Pricing</h2>
-        <img src={sl06} alt="Clay B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={sl06} alt="Clay B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <h3>Best for</h3>
         <p>Clay B2B Wholesale Pricing is best for merchants who want a flexible wholesale pricing app with strong CSV pricing, order controls, multi-currency, POS discounts, and API access on higher plans.</p>
         <h3>Quick summary</h3>
@@ -2756,7 +3304,7 @@ const posts: Record<string, BlogPostData> = {
         <p>If you only need a simple percentage discount for tagged wholesale customers, Clay may be more than required.</p>
 
         <h2>7. B2Bridge B2B Wholesale Pricing</h2>
-        <img src={sl07} alt="B2Bridge B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={sl07} alt="B2Bridge B2B Wholesale Pricing Shopify app" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <h3>Best for</h3>
         <p>B2Bridge B2B Wholesale Pricing is best for larger Shopify B2B stores that need company accounts, quote workflows, credit limits, ERP/API integration, and more advanced B2B ordering.</p>
         <h3>Quick summary</h3>
@@ -2815,14 +3363,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "shopify-revenue-leaks": {
-    category: "Guide",
-    title: "5 Shopify Revenue Leaks Growing Stores Should Fix Before Buying More Traffic",
-    date: "Aug 2, 2026",
-    isoDate: "2026-08-02",
-    updated: "Sep 25, 2026",
-    updatedIsoDate: "2026-09-25",
-    readTime: "10 min read",
-    metaDescription: "Find 5 Shopify revenue leaks in wholesale, lead capture, support, phone calls, and retention before spending more on traffic.",
     keywords: ["shopify revenue leaks", "shopify conversion optimization", "shopify wholesale app", "shopify lead capture", "shopify live chat", "shopify retention apps", "BMT B2B wholesale pricing", "shopify b2b pricing"],
     faq: [
       { question: "What are Shopify revenue leaks?", answer: "Shopify revenue leaks are gaps in your store's workflow that lose revenue you have already earned or attracted. Common leaks include wholesale buyers handled manually, visitors leaving without becoming leads, product and order questions going unanswered, missed phone calls, and customers who buy once and never return." },
@@ -2965,14 +3505,6 @@ const posts: Record<string, BlogPostData> = {
     ),
   },
   "sami-b2b-wholesale-pricing-alternatives": {
-    category: "Guide",
-    title: "7 \u201CSAMI B2B Wholesale Pricing\u201D Alternatives for Shopify Brands Running B2B and Retail Together",
-    date: "Aug 11, 2026",
-    isoDate: "2026-08-11",
-    updated: "Sep 25, 2026",
-    updatedIsoDate: "2026-09-25",
-    readTime: "13 min read",
-    metaDescription: "Compare 7 SAMI B2B Wholesale Pricing alternatives for Shopify B2B pricing, Request for Quote, registration, order limits, net terms, and quick ordering.",
     keywords: ["sami b2b wholesale pricing alternatives", "shopify wholesale apps", "shopify b2b pricing app", "BMT B2B wholesale pricing", "bss b2b wholesale pricing", "wholesale all in one", "wholesale pricing discount b2b", "wholesale gorilla", "b2b wholesale hub", "sparklayer"],
     faq: [
       { question: "What is the best SAMI B2B Wholesale Pricing alternative for Shopify?", answer: "For Shopify brands running B2B and retail together in one storefront, BMT B2B Wholesale Pricing is our top pick. It combines customer-specific pricing, volume and tiered pricing, advanced pricing rules with customer, product, and collection exclusions, registration and approval, hidden prices, order limits, and Net 15/30/45/60 payment terms." },
@@ -2984,7 +3516,7 @@ const posts: Record<string, BlogPostData> = {
     ],
     content: (
       <>
-        <img src={samiBanner} width={1536} height={864} alt="7 SAMI B2B Wholesale Pricing alternatives for Shopify" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={samiBanner} width={1536} height={864} alt="7 SAMI B2B Wholesale Pricing alternatives for Shopify" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>Running B2B and retail from the same Shopify store sounds straightforward — until you need to manage different prices, customer groups, volume discounts, wholesale approvals, order limits, payment terms, and product access without disrupting your DTC experience.</p>
         <p>That is exactly where wholesale apps come in.</p>
         <p>SAMI B2B Wholesale Pricing is a popular Shopify solution for merchants that want to sell B2B and retail from one store. It supports custom pricing by customer, product, variant, market, or quantity, along with volume discounts, registration forms, quick ordering, tax controls, net terms, shipping rules, order limits, and Shopify POS.</p>
@@ -3052,7 +3584,7 @@ const posts: Record<string, BlogPostData> = {
         <p className="text-sm text-muted-foreground">Pricing and features can change. Check each Shopify App Store listing for the latest plan details.</p>
 
         <h2>1. BMT B2B Wholesale Pricing — Best Overall SAMI Alternative</h2>
-        <img src={samiBmtBest} width={1536} height={864} alt="BMT B2B Wholesale Pricing dashboard showing wholesale pricing rules, customer tags, and order limits as the best overall SAMI alternative" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={samiBmtBest} width={1536} height={864} alt="BMT B2B Wholesale Pricing dashboard showing wholesale pricing rules, customer tags, and order limits as the best overall SAMI alternative" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Shopify brands that want to run B2B and retail together in one storefront.</p>
         <p>If you're looking for a SAMI alternative that combines wholesale pricing, customer management, advanced pricing rules, access controls, order management, and payment terms, BMT B2B Wholesale Pricing is our top choice.</p>
         <p>BMT is built around a simple model: <strong>one store, one catalog, one inventory, two customer types.</strong></p>
@@ -3108,7 +3640,7 @@ const posts: Record<string, BlogPostData> = {
         <p><a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline font-semibold">Try BMT B2B Wholesale Pricing on Shopify</a></p>
 
         <h2>2. BSS B2B Wholesale Pricing — Best for Comprehensive B2B Operations</h2>
-        <img src={imgBss} alt="BSS B2B Wholesale Pricing Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgBss} alt="BSS B2B Wholesale Pricing Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Merchants that need a broad B2B feature set and more advanced operational controls.</p>
         <p>BSS B2B Wholesale Pricing is designed as an all-in-one B2B solution for Shopify merchants managing wholesale and hybrid B2B/DTC stores.</p>
         <p>The app supports custom pricing, volume discounts, price lists, customer groups, registration and approval workflows, order limits, quantity rules, net terms, tax controls, APIs, and Shopify POS.</p>
@@ -3139,7 +3671,7 @@ const posts: Record<string, BlogPostData> = {
         <p><strong>Our verdict:</strong> BSS is a strong alternative for merchants looking for a comprehensive B2B platform rather than a simple wholesale discount app.</p>
 
         <h2>3. Wholesale – All in One — Best for an All-in-One Wholesale Suite</h2>
-        <img src={imgAllInOne} alt="Wholesale All in One Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgAllInOne} alt="Wholesale All in One Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Merchants that want a broad collection of wholesale tools in one application.</p>
         <p>Wholesale – All in One is designed for Shopify merchants selling to both wholesale and retail customers.</p>
         <p>The app allows merchants to create separate price lists, discounts, and quantity-based pricing for different customer groups. It also provides additional wholesale tools such as MOQ, quick ordering, reordering, bulk imports, and login-to-view-price functionality.</p>
@@ -3171,7 +3703,7 @@ const posts: Record<string, BlogPostData> = {
         <p><strong>Our verdict:</strong> A good choice for merchants looking for a broad wholesale toolkit with optional add-ons.</p>
 
         <h2>4. Wholesale Pricing Discount B2B — Best for Flexible Wholesale Pricing</h2>
-        <img src={imgWpn} alt="Wholesale Pricing Discount B2B Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgWpn} alt="Wholesale Pricing Discount B2B Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Merchants that prioritize flexible pricing and quantity-based discounts.</p>
         <p>Wholesale Pricing Discount B2B from Wholesale Helper focuses heavily on giving merchants control over wholesale pricing while keeping their retail pricing intact.</p>
         <p>It supports custom prices, quantity breaks, tiered pricing, wholesale shipping, registration forms, net payment terms, Shopify Markets, VAT controls, and multi-currency. It can also support B2B and B2C together in one store or a dedicated wholesale storefront.</p>
@@ -3198,7 +3730,7 @@ const posts: Record<string, BlogPostData> = {
         <p><strong>Our verdict:</strong> A strong choice for merchants whose wholesale strategy revolves around flexible pricing and quantity-based discounts.</p>
 
         <h2>5. Wholesale Gorilla — Best for Established Wholesale Workflows</h2>
-        <img src={imgGorilla} alt="Wholesale Gorilla Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgGorilla} alt="Wholesale Gorilla Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Established Shopify brands that want a dedicated wholesale pricing solution.</p>
         <p>Wholesale Gorilla is one of the more established wholesale apps in the Shopify ecosystem.</p>
         <p>Its core functionality focuses on letting merchants create separate pricing for B2B customers while maintaining their regular retail storefront. Merchants can configure pricing across the store, collections, products, and variants, as well as control which products wholesale and retail customers can see.</p>
@@ -3228,7 +3760,7 @@ const posts: Record<string, BlogPostData> = {
         <p><strong>Our verdict:</strong> A mature option for merchants that want an established wholesale pricing and customer-group workflow.</p>
 
         <h2>6. B2B Wholesale Hub — Best for Simple Customer-Group Wholesale</h2>
-        <img src={imgHub} alt="B2B Wholesale Hub Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgHub} alt="B2B Wholesale Hub Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Merchants looking for a straightforward way to offer wholesale pricing to tagged customers.</p>
         <p>B2B Wholesale Hub, formerly Wholesale Club, takes a relatively simple approach to B2B pricing.</p>
         <p>Tag customers into a wholesale group, assign discounts or custom prices, and the appropriate wholesale pricing can appear automatically for those customers while retail customers continue seeing retail pricing.</p>
@@ -3256,7 +3788,7 @@ const posts: Record<string, BlogPostData> = {
         <p><strong>Our verdict:</strong> A straightforward solution for merchants that want customer-tag-based wholesale pricing without a complicated B2B setup.</p>
 
         <h2>7. SparkLayer B2B &amp; Wholesale — Best for Advanced B2B Buying Experiences</h2>
-        <img src={imgSparkLayer} alt="SparkLayer B2B and Wholesale Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgSparkLayer} alt="SparkLayer B2B and Wholesale Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Brands with sophisticated wholesale operations, sales teams, and B2B buyers.</p>
         <p>SparkLayer takes a broader approach to B2B than a traditional wholesale pricing app.</p>
         <p>It focuses on creating a dedicated B2B buying experience, including self-service ordering, sales agent functionality, price lists, B2B discounts, and more advanced workflows. Its paid plans include unlimited B2B price lists and Sales Rep Portal functionality.</p>
@@ -3374,20 +3906,12 @@ const posts: Record<string, BlogPostData> = {
         <p>That matters when you're managing negotiated pricing, different margins, VIP customers, special products, or multiple wholesale segments.</p>
         <p>And the model remains simple: <strong>one store, one catalog, one inventory, two customer types.</strong> Retail customers get the normal shopping experience. Approved B2B customers get their own pricing, discounts, access controls, ordering rules, and payment terms.</p>
         <p>If that's the Shopify B2B model you're building, BMT B2B Wholesale Pricing is the SAMI alternative we'd recommend trying first.</p>
-        <img src={wholesaleAppsCta} alt="Try BMT B2B Wholesale Pricing free on Shopify" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={wholesaleAppsCta} alt="Try BMT B2B Wholesale Pricing free on Shopify" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline font-semibold">Try BMT B2B Wholesale Pricing Free on Shopify</a></p>
       </>
     ),
   },
   "bss-b2b-wholesale-pricing-alternatives": {
-    category: "Guide",
-    title: "6 BSS B2B Wholesale Pricing Alternatives for Shopify Brands Running B2B and Retail Together",
-    date: "Aug 11, 2026",
-    isoDate: "2026-08-11",
-    updated: "Sep 25, 2026",
-    updatedIsoDate: "2026-09-25",
-    readTime: "12 min read",
-    metaDescription: "Compare 6 BSS B2B Wholesale Pricing alternatives for Shopify B2B pricing, Request for Quote, registration, order limits, net terms, and quick ordering.",
     keywords: ["bss b2b wholesale pricing alternatives", "bss commerce alternatives", "shopify wholesale apps", "shopify b2b pricing app", "BMT B2B wholesale pricing", "wholesale all in one", "wholesale pricing discount b2b", "wholesale gorilla", "b2b wholesale hub", "sparklayer"],
     faq: [
       { question: "What is the best BSS B2B Wholesale Pricing alternative for Shopify?", answer: "For Shopify brands running B2B and retail together in one storefront, BMT B2B Wholesale Pricing is our top pick because it combines customer-specific pricing, volume and tiered pricing, advanced pricing rules with customer, product, and collection exclusions, registration and approval, hidden prices, order limits, and Net 15/30/45 payment terms. Wholesale – All in One, Wholesale Pricing Discount B2B, Wholesale Gorilla, B2B Wholesale Hub, and SparkLayer are also strong depending on your workflow." },
@@ -3399,7 +3923,7 @@ const posts: Record<string, BlogPostData> = {
     ],
     content: (
       <>
-        <img src={bssBanner} width={1536} height={864} alt="6 BSS B2B Wholesale Pricing alternatives for Shopify B2B and retail stores" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={bssBanner} width={1536} height={864} alt="6 BSS B2B Wholesale Pricing alternatives for Shopify B2B and retail stores" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p>Running B2B and B2C from the same Shopify store can be a powerful way to grow your business.</p>
         <p>You can keep one product catalog, one inventory system, and one storefront while offering different pricing and purchasing experiences to retail customers, wholesalers, distributors, and other business buyers.</p>
         <p>But managing wholesale pricing isn't always straightforward.</p>
@@ -3462,7 +3986,7 @@ const posts: Record<string, BlogPostData> = {
         <p className="text-sm text-muted-foreground">Pricing and features can change. Check the respective Shopify App Store listing for the latest information.</p>
 
         <h2>1. BMT B2B Wholesale Pricing — Best Overall BSS Alternative</h2>
-        <img src={bssBmtBest} width={1536} height={864} alt="BMT B2B Wholesale Pricing dashboard showing wholesale pricing rules, customer tags, and order limits as the best overall BSS alternative" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={bssBmtBest} width={1536} height={864} alt="BMT B2B Wholesale Pricing dashboard showing wholesale pricing rules, customer tags, and order limits as the best overall BSS alternative" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Shopify brands that want to run B2B and retail together in one storefront.</p>
         <p>If your goal is to manage wholesale customers directly inside your existing Shopify storefront, BMT B2B Wholesale Pricing is our top choice.</p>
         <p>BMT is built around a simple idea: run B2B and B2C together without needing a separate wholesale storefront.</p>
@@ -3524,7 +4048,7 @@ const posts: Record<string, BlogPostData> = {
         <p><a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline font-semibold">Try BMT B2B Wholesale Pricing on Shopify</a></p>
 
         <h2>2. Wholesale – All in One — Best for an All-in-One Wholesale Suite</h2>
-        <img src={imgAllInOne} alt="Wholesale All in One Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgAllInOne} alt="Wholesale All in One Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Merchants that want a broad collection of wholesale tools in a single app.</p>
         <p>Wholesale – All in One is designed for Shopify businesses that sell to both wholesale and retail customers and need multiple tools to manage their wholesale operation.</p>
         <p>The app supports separate price lists, discounts, and volume pricing for different customer groups. It also offers functionality for net terms, quick ordering, reordering, minimum order quantities, bulk imports, and login-to-view-prices functionality.</p>
@@ -3557,7 +4081,7 @@ const posts: Record<string, BlogPostData> = {
         <p><strong>Our verdict:</strong> A strong all-in-one choice for Shopify merchants who want a broad set of wholesale tools and add-ons under one roof.</p>
 
         <h2>3. Wholesale Pricing Discount B2B — Best for Flexible Wholesale Pricing</h2>
-        <img src={imgWpn} alt="Wholesale Pricing Discount B2B Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgWpn} alt="Wholesale Pricing Discount B2B Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Merchants that want extensive control over wholesale discounts and pricing rules.</p>
         <p>Wholesale Pricing Discount B2B is designed for Shopify merchants that want to offer different prices and discounts to wholesale customers while continuing to operate a retail storefront.</p>
         <p>The app supports customer and tag-based pricing, percentage discounts, custom pricing, quantity breaks, tiered pricing, order minimums, wholesale shipping, registration forms, net terms, multi-currency, and Shopify Markets.</p>
@@ -3585,7 +4109,7 @@ const posts: Record<string, BlogPostData> = {
         <p><strong>Our verdict:</strong> A solid choice for merchants whose primary requirement is flexible wholesale discounting and pricing management.</p>
 
         <h2>4. Wholesale Gorilla — Best for Established Wholesale Stores</h2>
-        <img src={imgGorilla} alt="Wholesale Gorilla Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgGorilla} alt="Wholesale Gorilla Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Established Shopify brands that need a dedicated wholesale layer alongside their retail business.</p>
         <p>Wholesale Gorilla is a well-known Shopify wholesale solution focused on helping merchants sell to both retail and wholesale customers from the same store.</p>
         <p>One of its strengths is the ability to create wholesale pricing at different levels, including store-wide, collection, product, and variant pricing. Merchants can also control product visibility for different customer groups.</p>
@@ -3610,7 +4134,7 @@ const posts: Record<string, BlogPostData> = {
         <p>Also read: <Link to="/blog/wholesale-gorilla-alternatives" className="text-primary hover:underline">11 Wholesale Gorilla Alternatives for Shopify B2B Pricing</Link></p>
 
         <h2>5. B2B Wholesale Hub — Best for Straightforward Wholesale Management</h2>
-        <img src={imgHub} alt="B2B Wholesale Hub Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgHub} alt="B2B Wholesale Hub Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Shopify merchants looking for straightforward customer-group-based wholesale pricing.</p>
         <p>B2B Wholesale Hub is built around a relatively simple concept: organize customers into wholesale groups and show those customers the appropriate pricing and purchasing experience.</p>
         <p>This makes it particularly useful for merchants that don't want their wholesale setup to become overly complicated.</p>
@@ -3637,7 +4161,7 @@ const posts: Record<string, BlogPostData> = {
         <p><strong>Our verdict:</strong> B2B Wholesale Hub is a good fit for merchants that want established wholesale functionality without building a completely separate B2B storefront.</p>
 
         <h2>6. SparkLayer B2B &amp; Wholesale — Best for Advanced B2B Buying Experiences</h2>
-        <img src={imgSparkLayer} alt="SparkLayer B2B and Wholesale Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={imgSparkLayer} alt="SparkLayer B2B and Wholesale Shopify app listing" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><strong>Best for:</strong> Larger B2B operations that need a sophisticated wholesale purchasing experience.</p>
         <p>SparkLayer takes a broader approach to B2B than a traditional wholesale pricing app.</p>
         <p>Rather than focusing primarily on changing prices for wholesale customers, SparkLayer provides a more extensive B2B buying experience with tools for price lists, self-service ordering, sales representatives, and other wholesale workflows.</p>
@@ -3739,7 +4263,7 @@ const posts: Record<string, BlogPostData> = {
         <p>Retail customers can continue shopping normally, while approved B2B customers get the pricing, access controls, and purchasing experience designed for them.</p>
         <p>And when your wholesale pricing gets more complicated, BMT gives you the control to determine exactly which customers, products, and collections a pricing rule should — or shouldn't — apply to.</p>
         <p>If that's what you're trying to build, BMT B2B Wholesale Pricing is the BSS alternative we'd recommend trying first.</p>
-        <img src={wholesaleAppsCta} alt="Try BMT B2B Wholesale Pricing free on Shopify" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" />
+        <img src={wholesaleAppsCta} alt="Try BMT B2B Wholesale Pricing free on Shopify" className="w-full rounded-lg my-6 border border-border/50" loading="lazy" decoding="async" />
         <p><a href={SHOPIFY_APP_URL} onClick={(e) => { e.preventDefault(); openExternalUrl(SHOPIFY_APP_URL); }} className="text-primary hover:underline font-semibold">Try BMT B2B Wholesale Pricing Free on Shopify</a></p>
       </>
     ),
@@ -3747,18 +4271,29 @@ const posts: Record<string, BlogPostData> = {
 };
 
 // Map slugs that have a custom (non-/blog) public URL
-const customSlugPaths: Record<string, string> = {
-  "shopify-wholesale-registration-form": "/shopify-wholesale-registration-form",
-};
+const customSlugPaths: Record<string, string> = Object.fromEntries(
+  blogManifest
+    .filter((entry) => entry.path !== `/blog/${entry.slug}`)
+    .map((entry) => [entry.slug, entry.path])
+);
 
 // 301-style redirects from old URLs to new ones (client-side replace)
 const slugRedirects: Record<string, string> = {
   "shopify-wholesale-registration-form-approve-b2b-customers": "/shopify-wholesale-registration-form",
 };
 
+const pathRedirects: Record<string, string> = {
+  "/blog/faire-alternative-vs-shopify-wholesale": "/blogs/b2b-wholesale/faire-alternative-shopify",
+  "/blog/from-faire-to-shopify-independent-wholesale-channel": "/blogs/b2b-wholesale/faire-to-shopify-wholesale",
+};
+
 const BlogPost = () => {
   const params = useParams<{ slug: string }>();
   const location = useLocation();
+
+  if (pathRedirects[location.pathname]) {
+    return <Navigate to={pathRedirects[location.pathname]} replace />;
+  }
 
   // Derive slug either from /blog/:slug route or from a custom top-level route
   let slug = params.slug;
@@ -3774,10 +4309,22 @@ const BlogPost = () => {
     return <Navigate to={slugRedirects[slug]} replace />;
   }
 
-  const post = slug ? posts[slug] : undefined;
-  if (!post || !slug) return <Navigate to="/blog" replace />;
+  const article = slug ? posts[slug] : undefined;
+  const metadata = slug ? blogManifest.find((entry) => entry.slug === slug) : undefined;
+  if (!article || !metadata || !slug) return <Navigate to="/blog" replace />;
 
-  const canonicalPath = customSlugPaths[slug] ?? `/blog/${slug}`;
+  const post = {
+    ...article,
+    category: metadata.category,
+    title: metadata.title,
+    date: metadata.date,
+    isoDate: metadata.isoDate,
+    updated: metadata.updated,
+    updatedIsoDate: metadata.updatedIsoDate,
+    readTime: metadata.readTime,
+    metaDescription: metadata.metaDescription,
+  };
+  const canonicalPath = metadata.path;
   const refresh = articleRefreshes[slug];
   const canonicalUrl = `https://blumacawtech.com${canonicalPath}`;
 
@@ -3868,6 +4415,7 @@ const BlogPost = () => {
               height={220}
               className="h-8 w-auto rounded-md border border-border/50 shadow-sm"
               loading="lazy"
+              decoding="async"
             />
             <span className="text-sm text-muted-foreground">Official Shopify Partner</span>
           </div>
@@ -3897,7 +4445,7 @@ const BlogPost = () => {
               <section className="mt-12 border-t border-border/50 pt-8" aria-label="Latest BMT feature update">
                 <h2>Current BMT capabilities</h2>
                 <p>{refresh.update}</p>
-                <img src={refresh.image} alt={refresh.alt} className="w-full object-cover" loading="lazy" width={1408} height={848} />
+                <img src={refresh.image} alt={refresh.alt} className="w-full object-cover" loading="lazy" decoding="async" width={1408} height={848} />
               </section>
             )}
           </div>

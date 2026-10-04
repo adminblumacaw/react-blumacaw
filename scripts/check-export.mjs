@@ -28,6 +28,11 @@
 //  10. moved every article's publish date months later to look fresh
 //      (export 13, 2026-09-25). Published dates are fixed; revisions go in
 //      updated/updatedIsoDate (check 23).
+//  11. replaced https://blumacawtech.com with the Lovable preview domain
+//      (macaw-bloom-renew.lovable.app) in every canonical URL, og:url, the
+//      sitemap, robots.txt, llms.txt and the JSON-LD (export 17, 2026-10-04),
+//      which would have told Google the real pages are duplicates of the
+//      preview. The same export raised SEO_TITLE_MAX to 72 (checks 19, 24).
 //
 // Classes 1-7 came from Lovable editing a copy that never had this repo's
 // changes. Since 2026-09-18 scripts/sync-to-lovable.sh pushes this repo into
@@ -40,6 +45,7 @@ import { readFileSync, existsSync, readdirSync, statSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { dirname, resolve, extname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { blogPosts as blogManifest } from "../src/data/blogManifest.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -91,29 +97,23 @@ for (const f of codeFiles) {
   }
 }
 
-// ---------------------------------------------------------------- check 3
-// Every blog slug rendered by the app must be prerendered, or it silently
-// falls back to the generic SPA shell (no per-page title/canonical).
-const slugsIn = (file) => {
-  const src = readFileSync(resolve(ROOT, file), "utf8");
-  return new Set([...src.matchAll(/slug:\s*["']([^"']+)["']/g)].map((m) => m[1]));
-};
-const blogSlugs = slugsIn("src/pages/Blog.tsx");
-const prerenderSlugs = slugsIn("scripts/prerender.mjs");
-
-for (const slug of blogSlugs) {
-  if (!prerenderSlugs.has(slug)) {
-    fail("unprerendered-post", `"${slug}" is in Blog.tsx but missing from scripts/prerender.mjs`);
-  }
+// ---------------------------------------------------------------- checks 3-4
+// Every article body needs one shared manifest record, and every canonical
+// manifest path must be advertised in the sitemap.
+const blogPostSource = readFileSync(resolve(ROOT, "src/pages/BlogPost.tsx"), "utf8");
+const articleSlugs = new Set(
+  [...blogPostSource.matchAll(/\n  "([a-z0-9-]+)": \{\n/g)].map((m) => m[1])
+);
+const manifestSlugs = new Set(blogManifest.map((post) => post.slug));
+for (const slug of articleSlugs) {
+  if (!manifestSlugs.has(slug)) fail("missing-blog-manifest", `"${slug}" has article content but no shared manifest record`);
 }
-
-// ---------------------------------------------------------------- check 4
-// The sitemap should advertise every prerendered blog post.
+for (const post of blogManifest) {
+  if (!articleSlugs.has(post.slug)) fail("missing-blog-content", `"${post.slug}" is in the shared manifest but has no article content`);
+}
 const sitemap = readFileSync(resolve(ROOT, "public/sitemap.xml"), "utf8");
-for (const slug of prerenderSlugs) {
-  if (!sitemap.includes(slug)) {
-    fail("missing-from-sitemap", `"${slug}" is prerendered but absent from public/sitemap.xml`);
-  }
+for (const post of blogManifest) {
+  if (!sitemap.includes(post.path)) fail("missing-from-sitemap", `"${post.path}" is absent from public/sitemap.xml`);
 }
 
 // ---------------------------------------------------------------- check 5
@@ -135,14 +135,10 @@ for (const r of appRoutes) {
 }
 
 // ---------------------------------------------------------------- check 6
-// Every blog post in prerender.mjs needs a date (drives sitemap lastmod).
+// Every blog record needs a page-specific publication date.
 const prerenderSrc = readFileSync(resolve(ROOT, "scripts/prerender.mjs"), "utf8");
-const blogSection = prerenderSrc.slice(prerenderSrc.indexOf("const blogPosts"));
-for (const m of blogSection.matchAll(/\{([^{}]*?)\}/gs)) {
-  const slug = m[1].match(/slug:\s*"([^"]+)"/);
-  if (slug && !/date:\s*"/.test(m[1])) {
-    fail("post-missing-date", `"${slug[1]}" in prerender.mjs has no date: (sitemap lastmod needs it)`);
-  }
+for (const post of blogManifest) {
+  if (!post.isoDate) fail("post-missing-date", `"${post.slug}" has no isoDate in the shared manifest`);
 }
 
 // ---------------------------------------------------------------- check 7
@@ -173,8 +169,8 @@ for (const f of allFiles) {
 // Every literal path prerendered must be routable by the SPA. A prerendered
 // page whose App.tsx route disappeared still serves static HTML, then breaks
 // on hydration and falls through to NotFound — invisible without checking.
-// (Blog posts are generated as /blog/<slug> from the :slug route, so only
-// literal `path:` values appear here.)
+// Blog posts are prerendered at their manifest path: /blog/<slug> is served
+// by the :slug route, anything else needs its own <Route>.
 for (const m of prerenderSrc.matchAll(/path:\s*"([^"]+)"/g)) {
   const path = m[1];
   if (!appRoutes.has(path)) {
@@ -183,6 +179,10 @@ for (const m of prerenderSrc.matchAll(/path:\s*"([^"]+)"/g)) {
       `"${path}" is prerendered but has no <Route> in src/App.tsx (breaks on hydration)`
     );
   }
+}
+for (const post of blogManifest) {
+  const routed = post.path === `/blog/${post.slug}` ? appRoutes.has("/blog/:slug") : appRoutes.has(post.path);
+  if (!routed) fail("prerendered-route-missing", `blog path "${post.path}" has no <Route> in src/App.tsx (breaks on hydration)`);
 }
 
 // ---------------------------------------------------------------- check 10
@@ -335,8 +335,12 @@ if (!existsSync(seoTitlesPath)) {
   fail("seo-titles", "src/lib/seoTitles.ts is missing (short search titles for long headlines)");
 } else {
   const titlesSrc = readFileSync(seoTitlesPath, "utf8");
-  const max = Number(titlesSrc.match(/SEO_TITLE_MAX\s*=\s*(\d+)/)?.[1] ?? 60);
-  const knownPaths = new Set([...appRoutes, ...[...blogSlugs].map((slug) => `/blog/${slug}`)]);
+  // Fixed here, not read from the file: export 17 raised SEO_TITLE_MAX to 72
+  // to fit one headline instead of adding a short title for it.
+  const max = 60;
+  const declared = Number(titlesSrc.match(/SEO_TITLE_MAX\s*=\s*(\d+)/)?.[1]);
+  if (declared !== max) fail("seo-titles", `seoTitles.ts SEO_TITLE_MAX is ${declared}; keep it ${max} and add a short title for the page instead`);
+  const knownPaths = new Set([...appRoutes, ...blogManifest.map((post) => post.path)]);
   for (const m of titlesSrc.matchAll(/^\s*"([^"]+)":\s*"([^"]+)",?\s*$/gm)) {
     const [, path, title] = m;
     if (title.length > max) fail("seo-titles", `seoTitles.ts title for ${path} is ${title.length} characters (max ${max})`);
@@ -459,9 +463,12 @@ if (existsSync(bunLockPath)) {
 // never moves. A revision sets `updated`/`updatedIsoDate`, which the page
 // shows as "Updated …" and which feeds dateModified and the sitemap lastmod.
 // Google already indexed these articles with these dates, and says
-// datePublished must stay the original date. The four copies of each date
-// (BlogPost.tsx, Blog.tsx, BlogSection.tsx, prerender.mjs) must also agree.
+// datePublished must stay the original date. Since export 17 each date is
+// stored once, in src/data/blogManifest.js, which the article page, /blog,
+// the homepage cards and the prerender all read.
 const PUBLISHED = {
+  "faire-alternative-vs-shopify-wholesale": "2026-10-04",
+  "from-faire-to-shopify-independent-wholesale-channel": "2026-10-04",
   "bmt-european-dtc-brand-replaced-multiple-b2b-apps": "2026-09-28",
   "introducing-page-lock-hide-price": "2026-04-08",
   "guide-creating-wholesale-store-shopify": "2026-03-15",
@@ -485,73 +492,55 @@ const displayDate = (iso) => {
   const [y, m, d] = iso.split("-").map(Number);
   return `${MONTHS[m - 1]} ${d}, ${y}`;
 };
-const field = (chunk, name) => chunk.match(new RegExp(`\\n\\s*${name}: "([^"]*)"`))?.[1];
-// slug -> the text of its record, for files that list posts as { slug: "…", … }
-const recordsBySlugField = (file) => {
-  const src = readFileSync(resolve(ROOT, file), "utf8");
-  const starts = [...src.matchAll(/\n\s*slug: "([^"]+)"/g)];
-  return new Map(starts.map((m, i) => [m[1], src.slice(m.index, starts[i + 1]?.index ?? src.length)]));
-};
-const postDates = (chunk) => ({
-  date: field(chunk, "date"),
-  isoDate: field(chunk, "isoDate"),
-  updated: field(chunk, "updated"),
-  updatedIsoDate: field(chunk, "updatedIsoDate"),
-});
-const blogPostRecords = (() => {
-  const src = readFileSync(resolve(ROOT, "src/pages/BlogPost.tsx"), "utf8");
-  const starts = [...src.matchAll(/\n  "([a-z0-9-]+)": \{\n/g)];
-  return new Map(starts.map((m, i) => {
-    const chunk = src.slice(m.index, starts[i + 1]?.index ?? src.length);
-    return [m[1], chunk.slice(0, chunk.search(/\n\s*content:/) >>> 0)];
-  }));
-})();
-const blogList = recordsBySlugField("src/pages/Blog.tsx");
-const homeCards = recordsBySlugField("src/components/BlogSection.tsx");
-const prerenderPosts = recordsBySlugField("scripts/prerender.mjs");
 const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 10);
 const dateFail = (detail) => fail("blog-dates", detail);
-for (const [slug, listChunk] of blogList) {
-  const list = postDates(listChunk);
-  const post = postDates(blogPostRecords.get(slug) ?? "");
-  const pre = prerenderPosts.get(slug) ?? "";
-  if (!list.isoDate) { dateFail(`Blog.tsx ${slug} has no isoDate`); continue; }
-  if (PUBLISHED[slug] && list.isoDate !== PUBLISHED[slug]) {
-    dateFail(`${slug} publish date changed ${PUBLISHED[slug]} -> ${list.isoDate}. Keep the original; set updated/updatedIsoDate for a revision`);
+for (const post of blogManifest) {
+  if (!post.isoDate) { dateFail(`${post.slug} has no isoDate`); continue; }
+  if (PUBLISHED[post.slug] && post.isoDate !== PUBLISHED[post.slug]) {
+    dateFail(`${post.slug} publish date changed ${PUBLISHED[post.slug]} -> ${post.isoDate}. Keep the original; set updated/updatedIsoDate for a revision`);
   }
-  if (list.date !== displayDate(list.isoDate)) dateFail(`Blog.tsx ${slug} date "${list.date}" does not match isoDate ${list.isoDate}`);
-  if (post.isoDate !== list.isoDate || post.date !== list.date) dateFail(`BlogPost.tsx ${slug} published date differs from Blog.tsx`);
-  if (field(pre, "date") !== list.isoDate) dateFail(`prerender.mjs ${slug} date ${field(pre, "date")} differs from Blog.tsx ${list.isoDate}`);
-  if (list.isoDate > tomorrow) dateFail(`${slug} is dated in the future (${list.isoDate})`);
-  if (list.updatedIsoDate || post.updatedIsoDate || field(pre, "updated")) {
-    const u = list.updatedIsoDate;
-    if (!u || u !== post.updatedIsoDate || u !== field(pre, "updated")) {
-      dateFail(`${slug} updated date differs: Blog.tsx ${u}, BlogPost.tsx ${post.updatedIsoDate}, prerender.mjs ${field(pre, "updated")}`);
-    } else {
-      if (list.updated !== displayDate(u) || post.updated !== list.updated) dateFail(`${slug} updated label does not match updatedIsoDate ${u}`);
-      if (u < list.isoDate) dateFail(`${slug} updated ${u} is before it was published ${list.isoDate}`);
-      if (u > tomorrow) dateFail(`${slug} updated date is in the future (${u})`);
-    }
-  }
-  const card = homeCards.get(slug);
-  if (card) {
-    const c = postDates(card);
-    if (c.date !== list.date || c.updated !== list.updated) dateFail(`BlogSection.tsx ${slug} dates differ from Blog.tsx`);
+  if (post.date !== displayDate(post.isoDate)) dateFail(`${post.slug} date "${post.date}" does not match isoDate ${post.isoDate}`);
+  if (post.isoDate > tomorrow) dateFail(`${post.slug} is dated in the future (${post.isoDate})`);
+  if (post.updatedIsoDate) {
+    if (post.updated !== displayDate(post.updatedIsoDate)) dateFail(`${post.slug} updated label does not match updatedIsoDate ${post.updatedIsoDate}`);
+    if (post.updatedIsoDate < post.isoDate) dateFail(`${post.slug} updated ${post.updatedIsoDate} is before it was published ${post.isoDate}`);
+    if (post.updatedIsoDate > tomorrow) dateFail(`${post.slug} updated date is in the future (${post.updatedIsoDate})`);
   }
 }
+
+// ---------------------------------------------------------------- check 24
+// Every absolute URL the site publishes must use the real domain. Export 17
+// rewrote them all to the Lovable preview host.
+const SITE = "https://blumacawtech.com";
+const PREVIEW_HOST = /https?:\/\/[\w.-]*(lovable\.app|lovableproject(-dev)?\.com|gptengineer\.run|gpt-eng\.com)\b/;
+const published = [
+  "index.html", "public/robots.txt", "public/sitemap.xml", "public/llms.txt", "scripts/prerender.mjs",
+  ...codeFiles.map(rel).filter((f) => f !== "src/integrations/supabase/previewAuthStorage.ts"),
+];
+for (const f of published) {
+  const path = resolve(ROOT, f);
+  if (!existsSync(path)) continue;
+  const lines = readFileSync(path, "utf8").split("\n");
+  lines.forEach((line, i) => {
+    const m = line.match(PREVIEW_HOST);
+    if (m) fail("site-domain", `${f}:${i + 1} uses ${m[0]} — published URLs must use ${SITE}`);
+  });
+}
+if (!seoHead.includes(`BASE_URL = "${SITE}"`)) fail("site-domain", `src/components/SEOHead.tsx BASE_URL must be "${SITE}"`);
+if (!prerenderSrc.includes(`BASE = "${SITE}"`)) fail("site-domain", `scripts/prerender.mjs BASE must be "${SITE}"`);
 
 // ---------------------------------------------------------------- report
 const checks = [
   "no .asset.json stubs (imports or files)",
   "no /__l5e/ references",
   "every imported image exists on disk",
-  "every Blog.tsx slug is prerendered",
-  "every prerendered slug is in the sitemap",
+  "every article has a blog manifest record, and every record an article",
+  "every blog manifest path is in the sitemap",
   "every App.tsx route exists in entry-server.tsx",
-  "every prerender blog post has a date",
+  "every blog manifest record has a date",
   "public/og-image.png exists",
   "every page file is imported by App.tsx",
-  "every prerendered path has an App.tsx route",
+  "every prerendered page and blog path has an App.tsx route",
   "no shippingDetails/doesNotShip in offer markup",
   "SEOHead keeps static JSON-LD, head collector and normalizers",
   "index.html keeps the App Store sameAs",
@@ -566,12 +555,13 @@ const checks = [
   ".env is ignored and not tracked",
   "bun.lock matches package.json (Lovable's install)",
   "blog publish dates unchanged; updated dates consistent",
+  "published URLs use https://blumacawtech.com",
 ];
 
 if (failures.length === 0) {
   console.log("check:export passed");
   for (const c of checks) console.log(`  ok  ${c}`);
-  console.log(`\n  ${blogSlugs.size} blog posts, ${prerenderSlugs.size} prerendered slugs`);
+  console.log(`\n  ${blogManifest.length} blog posts sourced from the shared manifest`);
   process.exit(0);
 }
 
