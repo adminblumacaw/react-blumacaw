@@ -6,3 +6,4 @@
 - Search titles are 60 characters at most. For a longer headline, add a short title for its path in src/lib/seoTitles.ts; never raise SEO_TITLE_MAX.
 - Never change a published article's date or isoDate. When an article is revised, set updated and updatedIsoDate on its record in src/data/blogManifest.js.
 - More rules for keeping the live site intact are in README.md under "How this site ships".
+- `public/developers/api/` is a private, standalone page (the BMT app's API reference). Never add it to the router, the prerender list, the sitemap, llms.txt or any menu. See README.md, "Private pages".

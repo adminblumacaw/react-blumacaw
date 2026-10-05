@@ -30,6 +30,17 @@ When editing in Lovable, keep what the live site depends on:
   `updated` / `updatedIsoDate` on its record in `src/data/blogManifest.js`. The page then shows
   "Updated …", and search engines get it as the modified date.
 
+### Private pages
+
+`public/developers/api/` is the BMT app's Public API reference: a standalone static
+page, not a React route. It holds no reference content (this repository is public);
+it asks the BMT app for it with the signed link a store's Settings → Public API page
+opens, and shows a "get a link" notice otherwise. Keep it out of `src/App.tsx`,
+`src/entry-server.tsx`, `scripts/prerender.mjs`, the sitemap, `llms.txt` and every
+menu; `firebase.json` sends it `noindex`. The app side is `app/routes/api.public.reference.tsx`
+in bulkcsvorder. If you change the app hosts it may ask (`APPS` in `reference.js`), change
+the page's `connect-src` with them.
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/75c72a9f-955d-44bc-afc1-0cd6e66333e9
