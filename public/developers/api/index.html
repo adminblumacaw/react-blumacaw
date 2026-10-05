@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    The BMT Public API reference. Private: the reference itself is not in this
+    repository (which is public) or on this site. This page is a frame that
+    asks the BMT app for it, with the signed link a store's Settings → Public
+    API page opens. Not a React route, and deliberately absent from the
+    sitemap, llms.txt and every menu. See README.md, "Private pages".
+  -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://app.blumacawtech.com https://staging-shopify-app-cr-808779870972.us-central1.run.app; base-uri 'none'; form-action 'none'">
+  <title>Public API reference · BMT</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="/developers/api/reference.css">
+</head>
+<body>
+  <header class="bar">
+    <a class="brand" href="/">BMT</a>
+    <span class="bar-title">Public API reference</span>
+    <span class="bar-meta" id="meta" hidden></span>
+  </header>
+
+  <main id="main" class="layout" aria-busy="true">
+    <section class="notice" id="notice">
+      <h1 id="notice-title">Loading the reference…</h1>
+      <p id="notice-body"></p>
+      <p id="notice-action" hidden><button type="button" id="reload">Try again</button></p>
+    </section>
+
+    <nav class="toc" id="toc" aria-label="On this page" hidden></nav>
+    <article class="reference" id="reference" hidden></article>
+  </main>
+
+  <script src="/developers/api/reference.js"></script>
+</body>
+</html>
