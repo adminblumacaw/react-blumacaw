@@ -127,6 +127,12 @@ const staticRoutes = [
       "How BlumacawTech collects, uses, stores and deletes data for the BMT B2B Wholesale Pricing Shopify app and this website, including our subprocessors, Google Drive data handling, and your rights.",
   },
   {
+    path: "/privacy/customer-accounts-portal",
+    title: "Privacy Policy — BMT Customer Accounts Portal",
+    description:
+      "How BlumacawTech processes, stores and deletes data for the BMT Customer Accounts Portal Shopify app, including where data is kept, our subprocessors and your rights.",
+  },
+  {
     path: "/terms",
     title: "Terms of Service — BMT B2B Wholesale Pricing",
     description:

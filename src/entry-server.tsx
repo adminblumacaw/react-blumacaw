@@ -47,6 +47,7 @@ import LockPageHidePriceGuide from "./pages/LockPageHidePriceGuide";
 import QuickOrderFormGuide from "./pages/QuickOrderFormGuide";
 import Affiliate from "./pages/Affiliate";
 import Privacy from "./pages/Privacy";
+import PrivacyCustomerAccountsPortal from "./pages/PrivacyCustomerAccountsPortal";
 import Terms from "./pages/Terms";
 import Contact from "./pages/Contact";
 
@@ -92,6 +93,7 @@ export function render(url: string): { html: string; head?: SeoHead } {
             <Route path="/quick-order-form-guide" element={<QuickOrderFormGuide />} />
             <Route path="/affiliate" element={<Affiliate />} />
             <Route path="/privacy" element={<Privacy />} />
+            <Route path="/privacy/customer-accounts-portal" element={<PrivacyCustomerAccountsPortal />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

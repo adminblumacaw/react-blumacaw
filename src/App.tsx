@@ -31,6 +31,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Affiliate = lazy(() => import("./pages/Affiliate"));
 const Privacy = lazy(() => import("./pages/Privacy"));
+const PrivacyCustomerAccountsPortal = lazy(() => import("./pages/PrivacyCustomerAccountsPortal"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Contact = lazy(() => import("./pages/Contact"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -74,6 +75,7 @@ const AppRoutes = () => {
           <Route path="/lock-page-hide-price-guide" element={<LockPageHidePriceGuide />} />
           <Route path="/quick-order-form-guide" element={<QuickOrderFormGuide />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/privacy/customer-accounts-portal" element={<PrivacyCustomerAccountsPortal />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/affiliate" element={<Affiliate />} />
