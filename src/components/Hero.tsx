@@ -41,7 +41,7 @@ const Hero = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-7 sm:mb-8 max-w-lg">
-              Turn your store into a wholesale channel without running a second site. Set customer-specific wholesale, fixed or volume pricing, let buyers order by CSV/XLSX upload or quick order form, enforce order limits and case-pack multiples, gate your B2B catalogue, offer net terms and quotes, and invoice in multiple languages and currencies.
+              Turn your store into a B2B wholesale channel without running a second site. Set customer-specific price lists, tiered pricing and volume discounts by tag, product, collection, variant or market. Approve buyers, simplify bulk orders with quick forms or CSV/XLSX uploads, set minimum quantities and order values, and offer quotes, net terms, tax controls and invoicing across currencies and languages.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
@@ -96,7 +96,7 @@ const Hero = () => {
               <p className="text-3xl sm:text-4xl font-bold text-foreground">5.0</p>
               <Star className="w-5 h-5 fill-yellow-400 text-yellow-400 mt-1" />
             </div>
-             <p className="text-sm text-muted-foreground mt-1">Star rating (23 reviews)</p>
+             <p className="text-sm text-muted-foreground mt-1">Star rating (25 reviews)</p>
           </div>
         </div>
       </div>

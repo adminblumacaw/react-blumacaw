@@ -48,6 +48,12 @@ const ReviewAvatar = ({ review }: { review: { store: string; logo?: string; doma
 const Reviews = () => {
     const reviews = [
     {
+      text: "This app is everything we've been looking for. We've tried MANY wholesale apps for our website and they fell short every time. They were too much money and too confusing to navigate. BMT is a game changer. It is full of appropriate features for Wholesale businesses at an affordable price. No need to create your B2B side on a sub domain or create duplicate listings for each customer profile. The pricing and shipping rules are tailored to every group and are amazing. Easy install, easy navigation and EXCELLENT customer service! Utakarsh is so helpful and very fast to reply. We are very pleased with this app! Thank you!",
+      store: "Nature’s Scent Co.",
+      location: "United States",
+      date: "September 2026",
+    },
+    {
       text: "The best app ever so helpful. I give this a A+++++++++ Great app and great people, best thing I did regarding apps. Thank you.",
       store: "NDNLadiesBeadSupply",
       location: "United States",
@@ -201,7 +207,7 @@ const Reviews = () => {
               Loved by merchants worldwide.
             </h2>
             <p className="text-muted-foreground text-base mb-8">
-              5.0 on the Shopify App Store · 23 reviews · 100% five stars
+              5.0 on the Shopify App Store · 25 reviews · 100% five stars
             </p>
 
             <div ref={emblaRef} className="overflow-hidden">

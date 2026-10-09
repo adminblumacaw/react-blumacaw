@@ -86,8 +86,8 @@ export const blogPosts = [
     "readTime": "12 min read",
     "date": "Jun 15, 2026",
     "isoDate": "2026-06-15",
-    "updated": "Sep 24, 2026",
-    "updatedIsoDate": "2026-09-24",
+    "updated": "Oct 9, 2026",
+    "updatedIsoDate": "2026-10-09",
     "path": "/blog/sparklayer-alternatives",
     "metaDescription": "Compare 7 SparkLayer alternatives for Shopify B2B pricing, wholesale forms, net terms, order limits, quick orders, and pricing rules."
   },
@@ -126,8 +126,8 @@ export const blogPosts = [
     "readTime": "13 min read",
     "date": "May 4, 2026",
     "isoDate": "2026-05-04",
-    "updated": "Sep 23, 2026",
-    "updatedIsoDate": "2026-09-23",
+    "updated": "Oct 9, 2026",
+    "updatedIsoDate": "2026-10-09",
     "path": "/blog/best-shopify-wholesale-apps",
     "metaDescription": "Compare the 11 best Shopify wholesale apps in 2026 for B2B pricing, Request for Quote, net terms, quick orders, price hiding, and buyer approvals."
   },
