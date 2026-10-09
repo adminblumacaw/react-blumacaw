@@ -13,7 +13,7 @@ const included = [
   "Set prices for unlimited SKUs",
   "Wholesale registration form with approval workflow",
   "Lock pages, hide prices and require B2B login",
-  "Bulk CSV/XLSX price uploads",
+  "Bulk ordering via CSV/XLSX uploads",
   "Min/max order limits by quantity or amount",
   "Quick order page and quantity increments per product",
   "Request for Quote",
@@ -22,6 +22,7 @@ const included = [
   "Expert plan: wholesale discounts on Shopify POS",
   "Expert plan: invoice generator and automatic invoice emails",
   "Expert plan: Google Drive sync",
+  "Expert plan: Pricing APIs",
   "Live chat and call support on the Free and Expert plans",
 ];
 
@@ -48,7 +49,7 @@ const PricingPage = () => {
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "5",
-                reviewCount: "23",
+                reviewCount: "25",
               },
               offers: [
                 { name: "Free", price: "0" },

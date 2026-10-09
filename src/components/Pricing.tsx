@@ -78,6 +78,7 @@ const Pricing = () => {
         "Invoice Generator",
         "Automatic invoice emails",
         "Google Drive sync",
+        "Pricing APIs",
         "Get live chat and call support",
       ],
     },

@@ -2082,7 +2082,7 @@ const posts: Record<string, BlogPostData> = {
       { question: "Do I need Shopify Plus to run wholesale?", answer: "No. While Shopify Plus offers native B2B at $2,000+/month, apps like BMT, Wholesale Pricing Now, and Wholesale Gorilla add complete wholesale workflows — pricing, approvals, net terms, quick orders — to any Shopify plan." },
       { question: "Can I run B2B and D2C on the same Shopify store?", answer: "Yes. Most apps in this guide (BMT, WPN, All-in-One B2B, Wholesale Hero, etc.) layer wholesale pricing on top of your existing storefront using customer tags or groups, so retail and wholesale buyers see different prices from one catalog." },
       { question: "Which apps offer net payment terms (Net 30, Net 60)?", answer: "BMT B2B Wholesale Pricing, Wholesale Gorilla, SparkLayer, and BSS B2B Wholesale Solution all support custom payment terms like Net 15/30/60, draft orders, and PO-based checkout." },
-      { question: "What is the cheapest Shopify wholesale app?", answer: "BMT B2B Wholesale Pricing, Wholesale Pricing Now, Wholesale Lock Manager, and Wholesale Simplified all offer free plans. BMT's free tier includes core pricing rules, customer groups, and quick orders." },
+      { question: "What is the cheapest Shopify wholesale app?", answer: "BMT B2B Wholesale Pricing, Wholesale Pricing Now, Wholesale Lock Manager, and Wholesale Simplified all offer free plans. BMT's free tier includes one active pricing rule, one hide-price/B2B-login rule, unlimited registration forms, manual and tag-based approval, and 50 CSV/XLSX bulk uploads per month. The quick order page is available on Advanced and Expert." },
       { question: "Do these apps support Shopify Markets and multi-currency?", answer: "Yes. BMT, SparkLayer, and B2B/Wholesale Hub work with Shopify Markets, multiple currencies, and international tax/shipping settings — important for global B2B operations." },
       { question: "How do I hide wholesale prices from retail customers?", answer: "Apps like BMT, Wholesale Lock Manager, and MagicPass let you hide prices, hide Add to Cart, or lock entire pages until customers log in or are tagged as approved wholesale buyers." }
     ],
@@ -2120,7 +2120,8 @@ const posts: Record<string, BlogPostData> = {
         <p>BMT B2B Wholesale Pricing is built for Shopify merchants who want to run wholesale and retail from one store without stacking multiple apps. Instead of using one app for pricing, another for registration, another for locked pages, and another for order rules, BMT brings the core wholesale workflow into one setup.</p>
         <p>The app supports customer-specific pricing, tiered pricing, volume discounts, hide-price rules, locked content, B2B login access, and wholesale registration forms with manual or tag-based approval. It also supports Request for Quote, CSV/XLSX bulk uploads, min/max order limits, multi-currency wholesale pricing, Shopify Markets, custom shipping rates, net payment terms, hidden payment methods, and a quick order page depending on the plan.</p>
         <p>BMT is meant replace 3 to 4 separate apps merchants often use for wholesale pricing, registration forms, access control, order limits, and buyer management. That makes it especially useful for price-sensitive merchants who do not want to spend $60 to $100/month across multiple apps.</p>
-        <p>The trade-off is that BMT is still early compared with older apps like Wholesale Gorilla or B2B Wholesale Hub. It has fewer public reviews, but the Shopify App Store listing currently shows a 5.0 rating from 23 reviews, with every rating at five stars. Reviews mention ease of setup, strong support, and solving issues that other wholesale apps did not handle cleanly.</p>
+        <p>The trade-off is that BMT is still early compared with older apps like Wholesale Gorilla or B2B Wholesale Hub. It has fewer public reviews, but the Shopify App Store listing currently shows a 5.0 rating from 25 reviews, with every rating at five stars. Reviews mention ease of setup, strong support, and solving issues that other wholesale apps did not handle cleanly.</p>
+        <p>For more advanced operations, the Expert plan is $49.99/month or $499/year and includes all Advanced features, Shopify POS wholesale discounts, invoice generation, automatic invoice emails, Google Drive sync, Pricing APIs, and live chat and call support. Paid plans include a 60-day free trial.</p>
 
         <h3>Best for</h3>
         <p>BMT is best for Shopify merchants who want an affordable, all-in-one wholesale setup without upgrading to Shopify Plus.</p>
@@ -3130,11 +3131,12 @@ const posts: Record<string, BlogPostData> = {
           <li>Live chat and call support</li>
         </ul>
         <h3>Pricing</h3>
-        <p>BMT has three plans:</p>
+        <p>BMT has four plans:</p>
         <ul>
           <li>Free: 1 active pricing rule, 1 active hide price and B2B login rule, unlimited registration forms, manual and tag approval, 50 CSV/XLSX bulk uploads per month</li>
           <li>Standard: $9.99/month, with unlimited active pricing rules, unlimited CSV/XLSX uploads, min/max order limits, multi-currency wholesale pricing, Shopify Markets support, and unlimited hide price/B2B login rules</li>
           <li>Advanced: $29.99/month, with custom shipping rates, NET 15/30/60 payment terms, Request for Quote, payment method controls, and quick order page</li>
+          <li>Expert: $49.99/month or $499/year, with all Advanced features, Shopify POS wholesale discounts, invoice generation, automatic invoice emails, Google Drive sync, Pricing APIs, and live chat and call support</li>
         </ul>
         <p>There is a 60-day free trial on paid plans.</p>
         <h3>Pros</h3>

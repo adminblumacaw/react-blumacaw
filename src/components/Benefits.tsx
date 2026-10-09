@@ -6,7 +6,7 @@ const benefits = [
   {
     icon: DollarSign,
     title: "Wholesale & Fixed Pricing",
-    description: "Set wholesale, fixed or custom prices by customer tag — applied automatically at checkout.",
+    description: "Set customer-specific price lists and wholesale or fixed prices by tag, product, collection, variant or market.",
   },
   {
     icon: TrendingUp,
@@ -46,7 +46,7 @@ const benefits = [
   {
     icon: Zap,
     title: "Order Limits & Case Packs",
-    description: "Minimum and maximum order quantities, order value minimums, and case-pack multiples.",
+    description: "Set minimum order quantities (MOQ), minimum order values (MOV), maximum limits and case-pack multiples.",
   },
   {
     icon: Receipt,
@@ -76,7 +76,7 @@ const benefits = [
   {
     icon: Plug,
     title: "Connected B2B Operations",
-    description: "Use API access and webhooks, with support for Klaviyo, bundle, search, filter, and page builder apps.",
+    description: "Connect B2B workflows with Pricing APIs on Expert, plus compatibility with Klaviyo, bundle, search, filter and page builder apps.",
   },
 ];
 
