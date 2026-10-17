@@ -5,6 +5,7 @@ import Benefits from "@/components/Benefits";
 
 
 import Reviews from "@/components/Reviews";
+import FAQ, { faqs } from "@/components/FAQ";
 import BlogSection from "@/components/BlogSection";
 import BookOnboarding from "@/components/BookOnboarding";
 import Support from "@/components/Support";
@@ -73,6 +74,14 @@ const Index = () => {
               "publisher": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" },
               "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "25" }
             },
+            {
+              "@type": "FAQPage",
+              "mainEntity": faqs.map((f) => ({
+                "@type": "Question",
+                "name": f.q,
+                "acceptedAnswer": { "@type": "Answer", "text": f.a }
+              }))
+            }
           ]
         }}
       />
@@ -84,6 +93,7 @@ const Index = () => {
         <Benefits />
         <BlogSection />
         <Support />
+        <FAQ />
       </main>
       <Footer />
     </div>

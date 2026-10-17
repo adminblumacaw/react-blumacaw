@@ -25,6 +25,7 @@ const Header = ({ showAnnouncement = false }: HeaderProps) => {
   ];
 
   const navItems = [
+    { label: "Pricing", href: "/pricing" },
     { label: "Documentation", href: "/documentation" },
     { label: "Blog", href: "/blog" },
     { label: "Affiliate", href: "/affiliate" },

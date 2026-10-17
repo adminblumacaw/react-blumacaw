@@ -39,6 +39,7 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-sm mb-4">Product</h3>
             <ul className="space-y-2.5 text-sm">
+              <li><Link to="/pricing" className="text-muted-foreground hover:text-accent transition-smooth">Pricing</Link></li>
               <li>
                 <a href="https://apps.shopify.com/blumacawtech" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-accent transition-smooth inline-flex items-center gap-1">
                   Shopify App Store <ExternalLink className="w-3 h-3" />
@@ -66,6 +67,7 @@ const Footer = () => {
           <div className="flex items-center flex-wrap justify-center gap-x-4 gap-y-2">
             <span>&copy; {currentYear} BlumacawTech</span>
             <a href="https://blumacawtech.com/privacy" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-smooth">Privacy</a>
+            <Link to="/#faq" className="hover:text-accent transition-smooth">FAQ</Link>
           </div>
           <div className="flex items-center gap-2">
             <img

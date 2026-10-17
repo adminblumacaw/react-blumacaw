@@ -6,7 +6,8 @@ import { openExternalUrl } from "@/lib/navigation";
 import { Check, EyeOff, FileText, Lock, Mail, MessageSquareQuote, Bell, Palette } from "lucide-react";
 
 const APP_URL = "https://apps.shopify.com/bmt-request-quote-hide-price";
-const DEMO_URL = "https://bmt-request-quote-demo.myshopify.com/";
+// No demo store link: the demo is a development store, so its storefront asks for a
+// password. Only the App Store's own "View demo store" link carries a (one-hour) bypass.
 const IMG = "https://cdn.shopify.com/app-store/listing_images/54286e1dce09a4e71ff1f25ae7d285d0";
 
 const highlights = [
@@ -73,9 +74,6 @@ const RequestQuoteHidePrice = () => (
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button size="lg" className="gradient-primary shadow-glow min-h-[44px]" onClick={() => openExternalUrl(APP_URL)}>
                 Install free on Shopify
-              </Button>
-              <Button size="lg" variant="outline" className="min-h-[44px]" onClick={() => openExternalUrl(DEMO_URL)}>
-                View demo store
               </Button>
             </div>
           </div>
