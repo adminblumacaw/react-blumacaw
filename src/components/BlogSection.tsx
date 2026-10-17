@@ -10,17 +10,17 @@ const BlogSection = () => {
         <div className="text-center mb-12 max-w-2xl mx-auto">
           <p className="text-sm font-medium text-accent mb-3 tracking-wide uppercase">Blog</p>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight">
-            Tips & Stories for Merchants
+            Case Studies
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg">
-            Practical advice and success stories to grow your wholesale business
+            Successful case studies from wholesale teams growing with BMT
           </p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto mb-10">
-          {/* Three columns: keep a multiple of 3 so no card sits alone on a row.
-              Newest first; everything is still listed on /blog. */}
-          {blogPosts.slice(0, 6).map((post) => (
+          {/* Only the real case studies (category "Success Story"), newest first.
+              Everything else stays on /blog. */}
+          {blogPosts.filter((post) => post.category === "Success Story").map((post) => (
             <Link key={post.slug} to={post.path} className="group">
               <div className="h-full rounded-2xl border border-border/50 bg-card p-6 hover:shadow-elevated hover:-translate-y-0.5 transition-all duration-300 flex flex-col">
                 <span className="text-xs font-medium text-accent mb-3 uppercase tracking-wide">

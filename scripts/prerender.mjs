@@ -139,6 +139,12 @@ const staticRoutes = [
       "The terms governing use of the BMT B2B Wholesale Pricing Shopify app and blumacawtech.com — plans and billing, merchant responsibilities, acceptable use, connected accounts, liability and termination.",
   },
   {
+    path: "/products/bmt-request-quote-hide-price",
+    title: "BMT Request Quote, Hide Price — Shopify App",
+    description:
+      "Hide prices, products and pages from guests on Shopify, and let buyers request a quote where the price was. Send PDF proposals and convert accepted quotes to draft orders.",
+  },
+  {
     path: "/contact",
     title: "Contact BlumacawTech",
     description:

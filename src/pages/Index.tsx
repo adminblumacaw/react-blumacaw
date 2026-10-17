@@ -89,8 +89,8 @@ const Index = () => {
       <main>
         <Hero />
         <LogoBar />
-        <Benefits />
         <Reviews />
+        <Benefits />
         <BlogSection />
         <Support />
         <FAQ />

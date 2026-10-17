@@ -1,9 +1,12 @@
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Button } from "@/components/ui/button";
 
 export const faqs = [
   {
@@ -64,16 +67,26 @@ export const faqs = [
   },
 ];
 
+// Compact on purpose: plain divided rows instead of separate cards, two columns
+// on wide screens, and only the first INITIAL questions until "Show all". Every
+// question stays in the FAQPage JSON-LD on the pages that render this section.
+const INITIAL = 6;
+
 const FAQ = () => {
+  const [showAll, setShowAll] = useState(false);
+  const shown = showAll ? faqs : faqs.slice(0, INITIAL);
+  const half = Math.ceil(shown.length / 2);
+  const columns = [shown.slice(0, half), shown.slice(half)];
+
   return (
-    <section id="faq" className="py-16 sm:py-20 px-4 bg-muted/30">
-      <div className="container mx-auto">
-        <div className="text-center mb-12 max-w-2xl mx-auto">
-          <p className="text-sm font-medium text-accent mb-3 tracking-wide uppercase">FAQ</p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 tracking-tight">
+    <section id="faq" className="py-12 sm:py-16 px-4 bg-muted/30">
+      <div className="container mx-auto max-w-5xl">
+        <div className="text-center mb-8 max-w-2xl mx-auto">
+          <p className="text-sm font-medium text-accent mb-2 tracking-wide uppercase">FAQ</p>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-3 tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="text-muted-foreground text-base sm:text-lg">
+          <p className="text-muted-foreground text-base">
             Everything you need to know about BMT B2B Wholesale Pricing.{" "}
             <a
               href="#support"
@@ -85,24 +98,39 @@ const FAQ = () => {
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((faq, i) => (
-              <AccordionItem
-                key={i}
-                value={`faq-${i}`}
-                className="rounded-2xl border border-border/50 bg-card px-6 data-[state=open]:shadow-card transition-shadow"
+        <div className="rounded-2xl border border-border/50 bg-card px-5 sm:px-6">
+          <Accordion type="single" collapsible className="grid lg:grid-cols-2 lg:gap-x-10">
+            {columns.map((column, c) => (
+              <div
+                key={c}
+                className={`divide-y divide-border/60 ${c === 1 ? "border-t border-border/60 lg:border-t-0" : ""}`}
               >
-                <AccordionTrigger className="text-left text-sm sm:text-base font-semibold py-5 hover:no-underline">
-                  {faq.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
-                  {faq.a}
-                </AccordionContent>
-              </AccordionItem>
+                {column.map((faq) => {
+                  const i = faqs.indexOf(faq);
+                  return (
+                    <AccordionItem key={i} value={`faq-${i}`} className="border-b-0">
+                      <AccordionTrigger className="py-3.5 gap-3 text-left text-sm sm:text-[0.9375rem] font-semibold hover:no-underline">
+                        {faq.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="pb-4 text-sm text-muted-foreground leading-relaxed">
+                        {faq.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  );
+                })}
+              </div>
             ))}
           </Accordion>
         </div>
+
+        {faqs.length > INITIAL && (
+          <div className="text-center mt-5">
+            <Button variant="outline" size="sm" aria-expanded={showAll} onClick={() => setShowAll((v) => !v)}>
+              {showAll ? "Show fewer questions" : `Show all ${faqs.length} questions`}
+              <ChevronDown className={`ml-1.5 h-4 w-4 transition-transform ${showAll ? "rotate-180" : ""}`} aria-hidden />
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

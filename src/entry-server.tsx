@@ -50,6 +50,7 @@ import Privacy from "./pages/Privacy";
 import PrivacyCustomerAccountsPortal from "./pages/PrivacyCustomerAccountsPortal";
 import Terms from "./pages/Terms";
 import Contact from "./pages/Contact";
+import RequestQuoteHidePrice from "./pages/RequestQuoteHidePrice";
 
 // Returns the page HTML plus the title/description/type its SEOHead chose,
 // which the prerender writes into the static <head>.
@@ -96,6 +97,7 @@ export function render(url: string): { html: string; head?: SeoHead } {
             <Route path="/privacy/customer-accounts-portal" element={<PrivacyCustomerAccountsPortal />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/products/bmt-request-quote-hide-price" element={<RequestQuoteHidePrice />} />
           </Routes>
           </Suspense>
         </StaticRouter>
