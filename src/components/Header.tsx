@@ -1,6 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { SHOPIFY_APP_URL, openExternalUrl } from "@/lib/navigation";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import AnnouncementBar from "./AnnouncementBar";
@@ -14,10 +20,11 @@ const Header = ({ showAnnouncement = false }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { pathname } = useLocation();
 
+  const products = [
+    { label: "BMT Request Quote, Hide Price", href: "/products/bmt-request-quote-hide-price" },
+  ];
+
   const navItems = [
-    { label: "Features", href: "/#features" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Reviews", href: "/#reviews" },
     { label: "Documentation", href: "/documentation" },
     { label: "Blog", href: "/blog" },
     { label: "Affiliate", href: "/affiliate" },
@@ -43,6 +50,24 @@ const Header = ({ showAnnouncement = false }: HeaderProps) => {
           </Link>
 
           <nav className="hidden lg:flex items-center space-x-1">
+            <DropdownMenu>
+              <DropdownMenuTrigger
+                className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-smooth outline-none ${
+                  pathname.startsWith("/products")
+                    ? "text-primary bg-primary/5"
+                    : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                }`}
+              >
+                Products <ChevronDown className="h-4 w-4" aria-hidden />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="z-[60] min-w-[240px]">
+                {products.map((p) => (
+                  <DropdownMenuItem key={p.href} asChild>
+                    <Link to={p.href} className="cursor-pointer">{p.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
             {navItems.map((item) => (
               <Link
                 key={item.label}
@@ -75,6 +100,18 @@ const Header = ({ showAnnouncement = false }: HeaderProps) => {
         {isMenuOpen && (
           <nav className="lg:hidden mt-4 py-4 border-t border-border/30">
             <div className="flex flex-col space-y-1">
+              <p className="px-4 pt-1 text-xs font-bold uppercase tracking-wider text-accent">Products</p>
+              {products.map((p) => (
+                <Link
+                  key={p.href}
+                  to={p.href}
+                  className="px-4 py-3 text-sm font-medium text-foreground hover:bg-muted/50 rounded-lg min-h-[44px] flex items-center"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {p.label}
+                </Link>
+              ))}
+              <div className="mx-4 my-1 border-t border-border/30" />
               {navItems.map((item) => (
                 <Link
                   key={item.label}

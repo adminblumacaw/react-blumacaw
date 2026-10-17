@@ -34,6 +34,7 @@ const Privacy = lazy(() => import("./pages/Privacy"));
 const PrivacyCustomerAccountsPortal = lazy(() => import("./pages/PrivacyCustomerAccountsPortal"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Contact = lazy(() => import("./pages/Contact"));
+const RequestQuoteHidePrice = lazy(() => import("./pages/RequestQuoteHidePrice"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -78,6 +79,7 @@ const AppRoutes = () => {
           <Route path="/privacy/customer-accounts-portal" element={<PrivacyCustomerAccountsPortal />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/products/bmt-request-quote-hide-price" element={<RequestQuoteHidePrice />} />
           <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/affiliate/apply" element={<Navigate to="/affiliate#apply" replace />} />
           <Route path="/shopify-wholesale-registration-form" element={<BlogPost />} />

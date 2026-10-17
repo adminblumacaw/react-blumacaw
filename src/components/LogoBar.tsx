@@ -10,6 +10,7 @@ import nikkoBtbStoreAsset from "@/assets/logos/nikko-btb-store.png";
 
 import magicgooAsset from "@/assets/logos/magicgoo.png";
 import hamiltonSinklerAsset from "@/assets/logos/hamilton-sinkler.png";
+import naturesScentCoAsset from "@/assets/logos/natures-scent-co.png";
 
 type Brand = { name: string; domain?: string; logo?: string; wideLogo?: boolean };
 
@@ -27,6 +28,7 @@ const brands: Brand[] = [
   { name: "NIKKO BtB STORE", logo: nikkoBtbStoreAsset, wideLogo: true },
   { name: "Magicgoo", logo: magicgooAsset, wideLogo: true },
   { name: "Hamilton Sinkler", logo: hamiltonSinklerAsset, wideLogo: true },
+  { name: "Nature's Scent Co.", logo: naturesScentCoAsset, wideLogo: true },
 ];
 
 

@@ -1,6 +1,5 @@
 import Header from "@/components/Header";
 import Pricing from "@/components/Pricing";
-import FAQ, { faqs } from "@/components/FAQ";
 import Support from "@/components/Support";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -72,15 +71,6 @@ const PricingPage = () => {
                 },
               })),
             },
-
-            {
-              "@type": "FAQPage",
-              mainEntity: faqs.map((f) => ({
-                "@type": "Question",
-                name: f.q,
-                acceptedAnswer: { "@type": "Answer", text: f.a },
-              })),
-            },
           ],
         }}
       />
@@ -131,7 +121,6 @@ const PricingPage = () => {
         </section>
 
         <Support />
-        <FAQ />
       </main>
       <Footer />
     </div>
