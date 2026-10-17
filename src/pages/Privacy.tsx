@@ -12,7 +12,7 @@ import SEOHead from "@/components/SEOHead";
  * use are disclosed. Change it carefully, and keep the effective date honest.
  */
 
-const EFFECTIVE_DATE = "18 October 2026";
+const EFFECTIVE_DATE = "2 October 2026";
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <section className="mb-10">
@@ -270,11 +270,9 @@ const Privacy = () => {
           <p>
             blumacawtech.com uses Google Analytics to understand aggregate site
             usage. We do not sell personal data, and we do not use it for
-            third-party advertising. Forms on this site (the affiliate
-            application and the demo request form) collect only what they ask
-            for, used to respond to your request. For the demo request that is
-            your name, email address and message. Both forms send what you enter
-            to our team through Google Apps Script, a Google service.
+            third-party advertising. Forms on this site (such as the affiliate
+            application) collect only what they ask for, used to respond to your
+            request.
           </p>
         </Section>
 
