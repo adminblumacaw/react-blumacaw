@@ -35,6 +35,12 @@ const PrivacyCustomerAccountsPortal = lazy(() => import("./pages/PrivacyCustomer
 const Terms = lazy(() => import("./pages/Terms"));
 const Contact = lazy(() => import("./pages/Contact"));
 const RequestQuoteHidePrice = lazy(() => import("./pages/RequestQuoteHidePrice"));
+const RequestQuoteHidePriceGuide = lazy(() => import("./pages/RequestQuoteHidePriceGuide"));
+const RequestQuoteAppEmbedGuide = lazy(() => import("./pages/RequestQuoteAppEmbedGuide"));
+const RequestQuoteButtonGuide = lazy(() => import("./pages/RequestQuoteButtonGuide"));
+const RequestQuoteProposalTemplateGuide = lazy(() => import("./pages/RequestQuoteProposalTemplateGuide"));
+const RequestQuoteApprovalProcessGuide = lazy(() => import("./pages/RequestQuoteApprovalProcessGuide"));
+const RequestQuoteCreateProposalGuide = lazy(() => import("./pages/RequestQuoteCreateProposalGuide"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
@@ -80,6 +86,12 @@ const AppRoutes = () => {
           <Route path="/terms" element={<Terms />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/products/bmt-request-quote-hide-price" element={<RequestQuoteHidePrice />} />
+          <Route path="/request-quote-hide-price-guide" element={<RequestQuoteHidePriceGuide />} />
+          <Route path="/request-quote-app-embed-guide" element={<RequestQuoteAppEmbedGuide />} />
+          <Route path="/request-quote-button-guide" element={<RequestQuoteButtonGuide />} />
+          <Route path="/request-quote-proposal-template-guide" element={<RequestQuoteProposalTemplateGuide />} />
+          <Route path="/request-quote-approval-process-guide" element={<RequestQuoteApprovalProcessGuide />} />
+          <Route path="/request-quote-create-proposal-guide" element={<RequestQuoteCreateProposalGuide />} />
           <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/affiliate/apply" element={<Navigate to="/affiliate#apply" replace />} />
           <Route path="/shopify-wholesale-registration-form" element={<BlogPost />} />

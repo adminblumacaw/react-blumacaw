@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { openExternalUrl } from "@/lib/navigation";
 import { Check, EyeOff, FileText, Lock, Mail, MessageSquareQuote, Bell, Palette } from "lucide-react";
 
@@ -15,7 +16,7 @@ const highlights = [
   "Lock products, collections, pages or the whole store with sign-in or a passcode",
   "Show a Request a quote button in place of a hidden price",
   "Requests priced automatically at what each buyer pays at checkout",
-  "Send proposals with a PDF; buyers accept online and you get a draft order",
+  "Send proposals with a PDF; buyers accept online and you convert the quote to a draft order",
 ];
 
 const screenshots = [
@@ -74,6 +75,9 @@ const RequestQuoteHidePrice = () => (
             <div className="flex flex-col gap-3 sm:flex-row">
               <Button size="lg" className="gradient-primary shadow-glow min-h-[44px]" onClick={() => openExternalUrl(APP_URL)}>
                 Install free on Shopify
+              </Button>
+              <Button size="lg" variant="outline" className="min-h-[44px]" asChild>
+                <Link to="/request-quote-hide-price-guide">Documentation</Link>
               </Button>
             </div>
           </div>
