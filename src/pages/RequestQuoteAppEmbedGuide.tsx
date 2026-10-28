@@ -15,11 +15,12 @@ const path = "/request-quote-app-embed-guide";
 const description = "Switch on the BMT Request Quote, Hide Price app embed in your Shopify theme, save your changes and confirm the green storefront status in the app dashboard.";
 const steps = [
   { step: 1, title: "Check the storefront status", description: "On the app’s home page, check the storefront status to see whether the app embed is currently switched off." },
-  { step: 2, title: "Select Enable app embed", description: "On the storefront status card, select Enable app embed. (Add to theme, on the same card, adds the separate Request a quote theme block, not the app embed.)" },
-  { step: 3, title: "Check the app embed in the theme editor", description: "Shopify opens your theme editor with the BMT Request Quote, Hide Price app embed already switched on under App embeds. If you opened the theme editor yourself, switch the toggle on there." },
-  { step: 4, title: "Save your changes", description: "Click Save in the theme editor. The app embed is not active until you save." },
-  { step: 5, title: "Return to the app dashboard", description: "Return to your app’s dashboard to verify the storefront status." },
-  { step: 6, title: "Confirm the green status indicator", description: "Check that the status indicator shows green and confirms that the app embed is switched on. The app’s features are now active in your theme." },
+  { step: 2, title: "Open the theme editor with Add to theme", description: "Under Theme app blocks, select Add to theme next to Request a quote button. Your theme editor opens with the Request a quote block added to your product page. Shortcut: Enable app embed (in the setup guide’s Turn on the app embed step, or on the storefront status card) opens the editor with the app embed already on, so you can go straight to step 5." },
+  { step: 3, title: "Go to App embeds", description: "In the theme editor’s left sidebar, open App embeds." },
+  { step: 4, title: "Switch on the app embed", description: "Find Request Quote, Hide Price and switch its toggle on." },
+  { step: 5, title: "Save your changes", description: "Click Save in the theme editor. Neither the app embed nor the block is live until you save." },
+  { step: 6, title: "Return to the app dashboard", description: "Return to your app’s dashboard to verify the storefront status." },
+  { step: 7, title: "Confirm the green status indicator", description: "Check that the storefront status shows App embed: On in green. The Request a quote button block shows Added to theme, and the app’s features are now active in your theme." },
 ];
 const faqs = [
   { question: "Why do I need to switch on the app embed?", answer: "Enabling the app embed integrates and activates the app’s functionalities directly within your store’s theme." },
