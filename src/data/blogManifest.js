@@ -1,5 +1,5 @@
 // Shared source of truth for blog cards, canonical URLs, and prerender metadata.
-// date/isoDate: first published — never change them. When an article is revised,
+// date/isoDate: publication date — refreshed when articles get new information. When an article is revised,
 // set updated/updatedIsoDate instead (shown as "Updated …", and used for
 // dateModified and the sitemap's lastmod). scripts/check-export.mjs fails if a
 // published date moves.
@@ -13,6 +13,8 @@ export const blogPosts = [
     "readTime": "15 min read",
     "date": "Oct 4, 2026",
     "isoDate": "2026-10-04",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blogs/b2b-wholesale/faire-alternative-shopify",
     "metaDescription": "Looking for a Faire alternative? Compare Faire vs Shopify wholesale and see when building your own B2B channel with Shopify + BMT makes sense."
   },
@@ -25,6 +27,8 @@ export const blogPosts = [
     "readTime": "14 min read",
     "date": "Oct 4, 2026",
     "isoDate": "2026-10-04",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blogs/b2b-wholesale/faire-to-shopify-wholesale",
     "metaDescription": "Moving from Faire to Shopify? See how a growing wholesaler built its own B2B + B2C channel with flexible pricing, shipping and payment terms."
   },
@@ -36,6 +40,8 @@ export const blogPosts = [
     "readTime": "9 min read",
     "date": "Sep 28, 2026",
     "isoDate": "2026-09-28",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/bmt-european-dtc-brand-replaced-multiple-b2b-apps",
     "metaDescription": "See how a European DTC brand replaced multiple Shopify B2B apps with BMT to unify pricing, registration, approvals, visibility, and order rules."
   },
@@ -47,8 +53,8 @@ export const blogPosts = [
     "readTime": "13 min read",
     "date": "Aug 11, 2026",
     "isoDate": "2026-08-11",
-    "updated": "Sep 25, 2026",
-    "updatedIsoDate": "2026-09-25",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/sami-b2b-wholesale-pricing-alternatives",
     "metaDescription": "Compare 7 SAMI B2B Wholesale Pricing alternatives for Shopify B2B pricing, Request for Quote, registration, order limits, net terms, and quick ordering."
   },
@@ -60,8 +66,8 @@ export const blogPosts = [
     "readTime": "12 min read",
     "date": "Aug 11, 2026",
     "isoDate": "2026-08-11",
-    "updated": "Sep 25, 2026",
-    "updatedIsoDate": "2026-09-25",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/bss-b2b-wholesale-pricing-alternatives",
     "metaDescription": "Compare 6 BSS B2B Wholesale Pricing alternatives for Shopify B2B pricing, Request for Quote, registration, order limits, net terms, and quick ordering."
   },
@@ -73,8 +79,8 @@ export const blogPosts = [
     "readTime": "10 min read",
     "date": "Aug 2, 2026",
     "isoDate": "2026-08-02",
-    "updated": "Sep 25, 2026",
-    "updatedIsoDate": "2026-09-25",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/shopify-revenue-leaks",
     "metaDescription": "Find 5 Shopify revenue leaks in wholesale, lead capture, support, phone calls, and retention before spending more on traffic."
   },
@@ -86,8 +92,8 @@ export const blogPosts = [
     "readTime": "12 min read",
     "date": "Jun 15, 2026",
     "isoDate": "2026-06-15",
-    "updated": "Oct 9, 2026",
-    "updatedIsoDate": "2026-10-09",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/sparklayer-alternatives",
     "metaDescription": "Compare 7 SparkLayer alternatives for Shopify B2B pricing, wholesale forms, net terms, order limits, quick orders, and pricing rules."
   },
@@ -99,8 +105,8 @@ export const blogPosts = [
     "readTime": "12 min read",
     "date": "May 31, 2026",
     "isoDate": "2026-05-31",
-    "updated": "Sep 24, 2026",
-    "updatedIsoDate": "2026-09-24",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/wholesale-gorilla-alternatives",
     "metaDescription": "Compare Wholesale Gorilla alternatives for Shopify B2B pricing, Request for Quote, wholesale forms, bulk discounts, buyer approval, and price hiding."
   },
@@ -113,8 +119,8 @@ export const blogPosts = [
     "readTime": "13 min read",
     "date": "May 20, 2026",
     "isoDate": "2026-05-20",
-    "updated": "Sep 24, 2026",
-    "updatedIsoDate": "2026-09-24",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/shopify-wholesale-registration-form",
     "metaDescription": "Create a Shopify wholesale registration form, approve B2B buyers, tag customers, and hide prices before approval."
   },
@@ -126,8 +132,8 @@ export const blogPosts = [
     "readTime": "13 min read",
     "date": "May 4, 2026",
     "isoDate": "2026-05-04",
-    "updated": "Oct 9, 2026",
-    "updatedIsoDate": "2026-10-09",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/best-shopify-wholesale-apps",
     "metaDescription": "Compare the 11 best Shopify wholesale apps in 2026 for B2B pricing, Request for Quote, net terms, quick orders, price hiding, and buyer approvals."
   },
@@ -139,8 +145,8 @@ export const blogPosts = [
     "readTime": "8 min read",
     "date": "Apr 8, 2026",
     "isoDate": "2026-04-08",
-    "updated": "Sep 23, 2026",
-    "updatedIsoDate": "2026-09-23",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/introducing-page-lock-hide-price",
     "metaDescription": "Shopify is transitioning to passwordless login. Learn how Page Lock & Hide Price from BMT B2B Wholesale Pricing gives you modern, rule-based access control to protect pricing, restrict pages, and manage B2B visibility on Shopify."
   },
@@ -152,8 +158,8 @@ export const blogPosts = [
     "readTime": "15 min read",
     "date": "Mar 19, 2026",
     "isoDate": "2026-03-19",
-    "updated": "Sep 23, 2026",
-    "updatedIsoDate": "2026-09-23",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/shopify-b2b-build-complete-wholesale-store",
     "metaDescription": "Complete 2026 guide to building a Shopify B2B wholesale store. Learn costs, setup options, and how to create a modern wholesale experience with BMT B2B Wholesale Pricing App."
   },
@@ -165,8 +171,8 @@ export const blogPosts = [
     "readTime": "14 min read",
     "date": "Mar 15, 2026",
     "isoDate": "2026-03-15",
-    "updated": "Sep 22, 2026",
-    "updatedIsoDate": "2026-09-22",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/guide-creating-wholesale-store-shopify",
     "metaDescription": "Create a D2C + B2B wholesale store on Shopify with wholesale pricing, Request for Quote, bulk ordering, access control, and global selling using BMT."
   },
@@ -178,8 +184,8 @@ export const blogPosts = [
     "readTime": "12 min read",
     "date": "Mar 14, 2026",
     "isoDate": "2026-03-14",
-    "updated": "Sep 22, 2026",
-    "updatedIsoDate": "2026-09-22",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/best-shopify-wholesale-apps-2026",
     "metaDescription": "Compare the 6 best Shopify wholesale apps in 2026. See which B2B app is right for your store — from flexible pricing and bulk ordering to marketplace wholesale and enterprise B2B portals."
   },
@@ -191,8 +197,8 @@ export const blogPosts = [
     "readTime": "9 min read",
     "date": "Mar 8, 2026",
     "isoDate": "2026-03-08",
-    "updated": "Sep 22, 2026",
-    "updatedIsoDate": "2026-09-22",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/bmt-perfect-for-d2c-brands-expanding-wholesale",
     "metaDescription": "Learn why BMT helps D2C Shopify brands add wholesale pricing, Request for Quote, bulk ordering, and buyer approvals without a separate store."
   },
@@ -204,8 +210,8 @@ export const blogPosts = [
     "readTime": "7 min read",
     "date": "Feb 26, 2026",
     "isoDate": "2026-02-26",
-    "updated": "Sep 21, 2026",
-    "updatedIsoDate": "2026-09-21",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/bmt-smarter-choice-than-traditional-wholesale-apps",
     "metaDescription": "See why BMT gives growing Shopify brands a faster, more flexible wholesale workflow than traditional apps, without adding unnecessary complexity."
   },
@@ -217,8 +223,8 @@ export const blogPosts = [
     "readTime": "8 min read",
     "date": "Feb 26, 2026",
     "isoDate": "2026-02-26",
-    "updated": "Sep 21, 2026",
-    "updatedIsoDate": "2026-09-21",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/bmt-b2b-partner-established-us-shopify-store",
     "metaDescription": "Learn how established US Shopify stores can use BMT B2B Wholesale Pricing App to add structured wholesale pricing, custom payment terms, and shipping rules without disrupting DTC operations."
   },
@@ -230,8 +236,8 @@ export const blogPosts = [
     "readTime": "4 min read",
     "date": "Feb 12, 2026",
     "isoDate": "2026-02-12",
-    "updated": "Sep 21, 2026",
-    "updatedIsoDate": "2026-09-21",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/merchant-increased-b2b-revenue-40-percent",
     "metaDescription": "Real merchant success story: how a home goods brand used BMT B2B Wholesale Pricing App's customer groups and volume discounts to increase B2B revenue by 40% in 3 months."
   },
@@ -243,8 +249,8 @@ export const blogPosts = [
     "readTime": "7 min read",
     "date": "Feb 26, 2026",
     "isoDate": "2026-02-26",
-    "updated": "Sep 21, 2026",
-    "updatedIsoDate": "2026-09-21",
+    "updated": "Oct 27, 2026",
+    "updatedIsoDate": "2026-10-27",
     "path": "/blog/shopify-wholesale-app-small-business",
     "metaDescription": "Looking for an affordable Shopify wholesale app for small business? BMT B2B Wholesale Pricing offers a free plan, easy setup, tiered pricing, registration forms, and order limits — perfect for small stores in 2026."
   }

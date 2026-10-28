@@ -41,7 +41,7 @@ Paid plans include a 60-day free trial. All charges are billed in USD.
 
 ## Rating
 
-5.0 out of 5 stars on the Shopify App Store (25 reviews, 100% five-star)
+5.0 out of 5 stars on the Shopify App Store (26 reviews, 100% five-star)
 
 ## Company
 
@@ -94,6 +94,12 @@ BlumacawTech, based in Bangalore, India. Launched June 2025.
 - [Custom Payment Terms Guide](https://blumacawtech.com/custom-payment-terms-guide)
 - [Custom Shipping Rules Guide](https://blumacawtech.com/custom-shipping-rules-guide)
 - [Quick Order Form Guide](https://blumacawtech.com/quick-order-form-guide)
+- [Request Quote, Hide Price Guide](https://blumacawtech.com/request-quote-hide-price-guide)
+- [Switch on the app embed — Request Quote, Hide Price](https://blumacawtech.com/request-quote-app-embed-guide)
+- [Configuring request for quote button on the store](https://blumacawtech.com/request-quote-button-guide) — Rule settings, customer and market visibility, products, button styling, emails, quote forms, and the customer quote-request workflow
+- [Configuring proposal template](https://blumacawtech.com/request-quote-proposal-template-guide) — Customize the quote proposal logo, fonts, colors, layout, content sections, and footer with a live preview
+- [Configuring quote approval process](https://blumacawtech.com/request-quote-approval-process-guide) — Follow the quote approval workflow from buyer request to merchant response, buyer approval, and conversion into a draft order
+- [Creating quote proposal](https://blumacawtech.com/request-quote-create-proposal-guide) — Select a customer, set quote expiration, add products and pricing, adjust payment and shipping, then email the proposal or convert it to a draft order
 
 ## Why Choose BMT B2B Wholesale Pricing?
 

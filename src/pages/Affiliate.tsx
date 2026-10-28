@@ -90,7 +90,7 @@ const stats = [
   },
   {
     icon: Cookie,
-    title: "60-Day Cookies",
+    title: "30-Day Cookies",
     desc: "Extended attribution window so referrals stick",
   },
   {
@@ -190,7 +190,7 @@ const programSteps = [
 
 const programStats = [
   { value: "25%", label: "Recurring commission" },
-  { value: "60", label: "Day cookie window" },
+  { value: "30", label: "Day cookie window" },
   { value: "5.0", label: "Rating on Shopify App Store" },
   { value: "$50", label: "Minimum monthly payout" },
 ];
@@ -207,7 +207,7 @@ const faqs = [
   },
   {
     q: "How long are my referral cookies valid?",
-    a: "Our cookies last 60 days. If a merchant clicks your link and installs BMT B2B Wholesale Pricing within 60 days, the referral is credited to you.",
+    a: "Our cookies last 30 days. If a merchant clicks your link and installs BMT B2B Wholesale Pricing within 30 days, the referral is credited to you.",
   },
   {
     q: "How do I track my referrals?",
@@ -564,9 +564,9 @@ const Affiliate = () => {
                     <Cookie className="w-5 h-5 text-primary" />
                   </div>
                   <Badge variant="secondary" className="mb-3">Affiliate Cookie Duration</Badge>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">60-Day Attribution Window</h3>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">30-Day Attribution Window</h3>
                   <p className="text-sm text-muted-foreground">
-                    If a merchant installs BMT within 60 days of clicking your referral link, the referral is credited to you.
+                    If a merchant installs BMT within 30 days of clicking your referral link, the referral is credited to you.
                   </p>
                 </CardContent>
               </Card>
@@ -699,7 +699,7 @@ const Affiliate = () => {
                     body: (
                       <ul className="space-y-1.5">
                         <li className="flex gap-2"><span className="text-primary mt-1">•</span><span>25% recurring commission on all referred customers</span></li>
-                        <li className="flex gap-2"><span className="text-primary mt-1">•</span><span>60-day cookie duration</span></li>
+                        <li className="flex gap-2"><span className="text-primary mt-1">•</span><span>30-day cookie duration</span></li>
                         <li className="flex gap-2"><span className="text-primary mt-1">•</span><span>Monthly payouts</span></li>
                         <li className="flex gap-2"><span className="text-primary mt-1">•</span><span>Minimum payout threshold: $50</span></li>
                         <li className="flex gap-2"><span className="text-primary mt-1">•</span><span>Commission tracking through unique affiliate links</span></li>

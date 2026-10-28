@@ -100,7 +100,7 @@ const staticRoutes = [
     path: "/",
     title: "BMT B2B Wholesale Pricing — Shopify Wholesale & Bulk Orders",
     description:
-      "BMT B2B Wholesale Pricing turns one Shopify store into a wholesale channel with customer-specific pricing, a gated B2B catalogue, CSV/Excel and quick ordering, order limits, requests for quote, net terms, multi-language invoicing, multi-currency, and Shopify POS discounts. Free plan available.",
+      "Turn your Shopify store into a wholesale channel with customer-specific pricing, registration, a gated B2B catalogue, CSV/XLSX bulk orders, Request for Quote, net terms, invoicing, multi-currency pricing and 20 languages. Built for Shopify.",
   },
   {
     path: "/pricing",
@@ -143,6 +143,37 @@ const staticRoutes = [
     title: "BMT Request Quote, Hide Price — Shopify App",
     description:
       "Hide prices, products and pages from guests on Shopify, and let buyers request a quote where the price was. Send PDF proposals and convert accepted quotes to draft orders.",
+  },
+  {
+    path: "/request-quote-hide-price-guide",
+    title: "Request Quote & Hide Price Setup Guide — BMT",
+    description:
+      "Hide prices and pages from guests on Shopify, show a Request a quote button in their place, send PDF proposals and convert accepted quotes into draft orders.",
+  },
+  {
+    path: "/request-quote-app-embed-guide",
+    title: "Switch on the App Embed — BMT Request Quote",
+    description: "Switch on the BMT Request Quote, Hide Price app embed in your Shopify theme, save your changes and confirm the green storefront status in the app dashboard.",
+  },
+  {
+    path: "/request-quote-button-guide",
+    title: "Configure the Request for Quote Button — BMT",
+    description: "Configure the Request for Quote button on Shopify: customer visibility, markets, products, styling, email notifications, forms, and the buyer experience.",
+  },
+  {
+    path: "/request-quote-proposal-template-guide",
+    title: "Configure Proposal Template — BMT Request Quote",
+    description: "Customize your Shopify quote proposal template with BMT Request Quote, Hide Price: add your logo, adjust styles, edit content sections, and update the footer.",
+  },
+  {
+    path: "/request-quote-approval-process-guide",
+    title: "Configure Quote Approval — BMT Request Quote",
+    description: "Learn how the BMT Request Quote, Hide Price quote approval workflow operates, from a buyer submitting a quote request to a merchant approving, adjusting, or declining it, and finally creating a draft order.",
+  },
+  {
+    path: "/request-quote-create-proposal-guide",
+    title: "Create Quote Proposals — BMT Request Quote",
+    description: "Create Shopify quote proposals with BMT Request Quote, Hide Price: choose customers, add products, set pricing and expiration, and email proposals or create draft orders.",
   },
   {
     path: "/contact",

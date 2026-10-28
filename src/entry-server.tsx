@@ -51,6 +51,12 @@ import PrivacyCustomerAccountsPortal from "./pages/PrivacyCustomerAccountsPortal
 import Terms from "./pages/Terms";
 import Contact from "./pages/Contact";
 import RequestQuoteHidePrice from "./pages/RequestQuoteHidePrice";
+import RequestQuoteHidePriceGuide from "./pages/RequestQuoteHidePriceGuide";
+import RequestQuoteAppEmbedGuide from "./pages/RequestQuoteAppEmbedGuide";
+import RequestQuoteButtonGuide from "./pages/RequestQuoteButtonGuide";
+import RequestQuoteProposalTemplateGuide from "./pages/RequestQuoteProposalTemplateGuide";
+import RequestQuoteApprovalProcessGuide from "./pages/RequestQuoteApprovalProcessGuide";
+import RequestQuoteCreateProposalGuide from "./pages/RequestQuoteCreateProposalGuide";
 
 // Returns the page HTML plus the title/description/type its SEOHead chose,
 // which the prerender writes into the static <head>.
@@ -98,6 +104,12 @@ export function render(url: string): { html: string; head?: SeoHead } {
             <Route path="/terms" element={<Terms />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/products/bmt-request-quote-hide-price" element={<RequestQuoteHidePrice />} />
+            <Route path="/request-quote-hide-price-guide" element={<RequestQuoteHidePriceGuide />} />
+            <Route path="/request-quote-app-embed-guide" element={<RequestQuoteAppEmbedGuide />} />
+            <Route path="/request-quote-button-guide" element={<RequestQuoteButtonGuide />} />
+            <Route path="/request-quote-proposal-template-guide" element={<RequestQuoteProposalTemplateGuide />} />
+            <Route path="/request-quote-approval-process-guide" element={<RequestQuoteApprovalProcessGuide />} />
+            <Route path="/request-quote-create-proposal-guide" element={<RequestQuoteCreateProposalGuide />} />
           </Routes>
           </Suspense>
         </StaticRouter>

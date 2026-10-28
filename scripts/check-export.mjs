@@ -33,6 +33,8 @@
 //      sitemap, robots.txt, llms.txt and the JSON-LD (export 17, 2026-10-04),
 //      which would have told Google the real pages are duplicates of the
 //      preview. The same export raised SEO_TITLE_MAX to 72 (checks 19, 24).
+//  12. removed sections the owner chose to keep: Pricing in the header,
+//      the FAQ, the Support section (exports 19 and 20; check 25).
 //
 // Classes 1-7 came from Lovable editing a copy that never had this repo's
 // changes. Since 2026-09-18 scripts/sync-to-lovable.sh pushes this repo into
@@ -320,7 +322,21 @@ const linkedGuides = new Set([...relatedSrc.matchAll(/path:\s*"([^"]+)"/g)].map(
 for (const g of linkedGuides) {
   if (!appRoutes.has(g)) fail("related-guides", `RelatedGuides links ${g}, which has no <Route> in App.tsx`);
 }
+// The BMT Request Quote, Hide Price app has its own guide family: the product
+// page links its main guide, which links each task guide from the matching
+// section. Those are checked for that chain instead of article links.
+const RQ_MAIN_GUIDE = "/request-quote-hide-price-guide";
+const rqProductPage = readFileSync(resolve(ROOT, "src/pages/RequestQuoteHidePrice.tsx"), "utf8");
+const rqMainGuide = readFileSync(resolve(ROOT, "src/pages/RequestQuoteHidePriceGuide.tsx"), "utf8");
 for (const r of appRoutes) {
+  if (r.startsWith("/request-quote-") && r.endsWith("-guide")) {
+    if (r === RQ_MAIN_GUIDE) {
+      if (!rqProductPage.includes(`"${r}"`)) fail("related-guides", `${r} is not linked from the Request Quote product page`);
+    } else if (!rqMainGuide.includes(`"${r}"`)) {
+      fail("related-guides", `${r} is not linked from ${RQ_MAIN_GUIDE} (src/pages/RequestQuoteHidePriceGuide.tsx)`);
+    }
+    continue;
+  }
   if (r.endsWith("-guide") && !linkedGuides.has(r)) {
     fail("related-guides", `guide ${r} is not linked from any article — add it to src/components/RelatedGuides.tsx`);
   }
@@ -529,6 +545,27 @@ for (const f of published) {
 if (!seoHead.includes(`BASE_URL = "${SITE}"`)) fail("site-domain", `src/components/SEOHead.tsx BASE_URL must be "${SITE}"`);
 if (!prerenderSrc.includes(`BASE = "${SITE}"`)) fail("site-domain", `scripts/prerender.mjs BASE must be "${SITE}"`);
 
+// ---------------------------------------------------------------- check 25
+// Owner decision, 18 Oct 2026: Pricing stays in the header and footer, and the
+// FAQ (with its FAQPage data) and the Support section stay on / and /pricing.
+// Export 19 removed them and, after they were restored, export 20 removed the
+// header link again (Lovable's roadmap.md still listed the old removal).
+const headerSrc = readFileSync(resolve(ROOT, "src/components/Header.tsx"), "utf8");
+const footerSrc = readFileSync(resolve(ROOT, "src/components/Footer.tsx"), "utf8");
+if (!/label:\s*"Pricing",\s*href:\s*"\/pricing"/.test(headerSrc)) fail("kept-sections", "src/components/Header.tsx must keep the Pricing menu item (/pricing)");
+if (!footerSrc.includes('to="/pricing"')) fail("kept-sections", "src/components/Footer.tsx must keep the Pricing link");
+if (!footerSrc.includes('to="/#faq"')) fail("kept-sections", "src/components/Footer.tsx must keep the FAQ link (/#faq)");
+for (const page of ["src/pages/Index.tsx", "src/pages/PricingPage.tsx"]) {
+  const src = readFileSync(resolve(ROOT, page), "utf8");
+  if (!src.includes("<FAQ />")) fail("kept-sections", `${page} must render <FAQ />`);
+  if (!src.includes("FAQPage")) fail("kept-sections", `${page} must keep the FAQPage JSON-LD`);
+  if (!src.includes("<Support />")) fail("kept-sections", `${page} must render <Support />`);
+}
+const supportSrc = readFileSync(resolve(ROOT, "src/components/Support.tsx"), "utf8");
+if (!supportSrc.includes("Live Chat Support") || !supportSrc.includes("Book a Session")) {
+  fail("kept-sections", "src/components/Support.tsx must keep the live chat / book a session / documentation section");
+}
+
 // ---------------------------------------------------------------- report
 const checks = [
   "no .asset.json stubs (imports or files)",
@@ -556,6 +593,7 @@ const checks = [
   "bun.lock matches package.json (Lovable's install)",
   "blog publish dates unchanged; updated dates consistent",
   "published URLs use https://blumacawtech.com",
+  "Pricing, FAQ and Support sections kept (owner decision)",
 ];
 
 if (failures.length === 0) {
