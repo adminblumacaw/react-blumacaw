@@ -61,7 +61,7 @@ const usePurposes: [string, string][] = [
   ["Security", "Detecting unauthorized access, fraud, misuse, and operational incidents"],
   ["Analytics", "Understanding website and service activity"],
   ["Legal compliance", "Maintaining records and responding to valid legal obligations or requests"],
-  ["Marketing", "Communicating about relevant BluMacawTech offerings where permitted"],
+  ["Marketing", "Communicating about relevant BlumacawTech offerings where permitted"],
   ["Business administration", "Managing contracts, partners, service providers, and operational records"],
 ];
 
@@ -69,14 +69,14 @@ const Privacy = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Privacy Policy — BluMacawTech"
-        description="How BluMacawTech collects, uses, shares, stores and deletes personal information across its Shopify apps, agency services, affiliate program and website."
+        title="Privacy Policy — BlumacawTech"
+        description="How BlumacawTech collects, uses, shares, stores and deletes personal information across its Shopify apps, agency services, affiliate program and website."
         canonicalPath="/privacy"
       />
       <Header />
       <main className="container mx-auto px-4 py-16 max-w-3xl">
         <h1 className="text-4xl font-bold mb-3">Privacy Policy</h1>
-        <p className="text-muted-foreground">BluMacawTech</p>
+        <p className="text-muted-foreground">BlumacawTech</p>
         <p className="text-muted-foreground mb-12">
           Effective date: {EFFECTIVE_DATE} · Last updated: {EFFECTIVE_DATE}
           <br />
@@ -84,9 +84,9 @@ const Privacy = () => {
         </p>
 
         <Section id="introduction" title="1. Introduction">
-          <p>Welcome to BluMacawTech.</p>
+          <p>Welcome to BlumacawTech.</p>
           <p>
-            BluMacawTech (“BluMacawTech”, “BMT”, “we”, “us”, or “our”) is a technology business based in Bengaluru,
+            BlumacawTech (“BlumacawTech”, “BMT”, “we”, “us”, or “our”) is a technology business based in Bengaluru,
             Karnataka, India, specializing in Shopify applications, ecommerce development, consulting, and technology
             services.
           </p>
@@ -124,7 +124,7 @@ const Privacy = () => {
             </li>
             <li>
               <strong>Affiliate and Partner Program:</strong> programs allowing approved individuals, agencies,
-              developers, consultants, and other partners to refer merchants to eligible BluMacawTech products and earn
+              developers, consultants, and other partners to refer merchants to eligible BlumacawTech products and earn
               commissions according to applicable program terms.
             </li>
             <li>
@@ -145,10 +145,10 @@ const Privacy = () => {
 
         <Section id="who-we-are" title="2. Who We Are and Our Responsibilities">
           <p>
-            BluMacawTech may handle personal information in different capacities depending on the service and the
+            BlumacawTech may handle personal information in different capacities depending on the service and the
             circumstances.
           </p>
-          <Sub title="2.1 When BluMacawTech acts as a data controller" />
+          <Sub title="2.1 When BlumacawTech acts as a data controller" />
           <p>We generally determine the purposes and methods of processing personal information relating to:</p>
           <List
             items={[
@@ -162,14 +162,14 @@ const Privacy = () => {
             ]}
           />
           <p>
-            For these activities, BluMacawTech generally acts as a data controller or equivalent entity under applicable
+            For these activities, BlumacawTech generally acts as a data controller or equivalent entity under applicable
             privacy laws.
           </p>
-          <Sub title="2.2 When BluMacawTech acts as a data processor" />
+          <Sub title="2.2 When BlumacawTech acts as a data processor" />
           <p>
             When merchants use our Shopify applications to manage information relating to their customers, buyers,
             wholesale applicants, or orders, the merchant generally determines the purposes for which that information
-            is processed. BluMacawTech processes such information on behalf of the merchant to deliver the
+            is processed. BlumacawTech processes such information on behalf of the merchant to deliver the
             functionality they have configured.
           </p>
           <p>
@@ -179,14 +179,14 @@ const Privacy = () => {
           <List
             items={[
               "The merchant or client generally acts as the data controller.",
-              "BluMacawTech generally acts as a data processor or service provider.",
+              "BlumacawTech generally acts as a data processor or service provider.",
               "We process personal information in accordance with the relevant service instructions, agreements, and applicable law.",
               "We do not acquire ownership of a merchant’s or client’s customer information.",
             ]}
           />
           <p>
             Some processing activities, such as our independent security logging and legal compliance, may be
-            undertaken by BluMacawTech in its own capacity.
+            undertaken by BlumacawTech in its own capacity.
           </p>
           <Sub title="2.3 Merchant responsibilities" />
           <p>
@@ -198,7 +198,7 @@ const Privacy = () => {
 
         <Section id="information-we-collect" title="3. Information We Collect">
           <p>
-            The information we collect depends on how you interact with BluMacawTech. We seek to collect and process
+            The information we collect depends on how you interact with BlumacawTech. We seek to collect and process
             only information reasonably necessary for the relevant business purpose.
           </p>
           <Sub title="3.1 Merchant and Shopify store information" />
@@ -225,7 +225,7 @@ const Privacy = () => {
             Access to particular information depends on the application’s granted Shopify permissions and the
             functionality used by the merchant. An application’s ability to access a category of Shopify information
             does not necessarily mean that all information in that category is copied or permanently stored by
-            BluMacawTech.
+            BlumacawTech.
           </p>
           <Sub title="3.2 Customer and wholesale buyer information" />
           <p>
@@ -275,7 +275,7 @@ const Privacy = () => {
             interact with our content.
           </p>
           <Sub title="3.4 Sales, support, and communication information" />
-          <p>When you contact BluMacawTech, we may collect:</p>
+          <p>When you contact BlumacawTech, we may collect:</p>
           <List
             items={[
               "Your name, email address, and other contact information.",
@@ -408,7 +408,7 @@ const Privacy = () => {
               <>
                 We use this access solely to create a “BlueMacaw Invoices” folder and upload the merchant’s own invoice
                 documents to it. Documents synchronized through this feature are stored in the merchant’s connected Google
-                Drive; BluMacawTech does not retain separate copies of them for the Drive integration.
+                Drive; BlumacawTech does not retain separate copies of them for the Drive integration.
               </>,
               <>
                 The Google credential (refresh token) is stored encrypted and is never shared. Google user data is not
@@ -487,7 +487,7 @@ const Privacy = () => {
             requested, the use of that information, and the subsequent commercial relationship with the buyer.
           </p>
           <p>
-            Files attached to quote requests are stored in a private Google Cloud Storage bucket. BluMacawTech does not
+            Files attached to quote requests are stored in a private Google Cloud Storage bucket. BlumacawTech does not
             independently use a merchant’s quotation submissions to market unrelated products or services to those
             buyers.
           </p>
@@ -506,7 +506,7 @@ const Privacy = () => {
             activity is performed to enforce the merchant’s storefront configuration.
           </p>
           <p>
-            BluMacawTech does not independently use such access-control information to create advertising profiles of
+            BlumacawTech does not independently use such access-control information to create advertising profiles of
             individual shoppers.
           </p>
           <Sub title="5.6 Moving settings from BMT B2B Wholesale Pricing" />
@@ -519,7 +519,7 @@ const Privacy = () => {
 
         <Section id="agency" title="6. Privacy Practices for Shopify Agency Services">
           <p>
-            BluMacawTech provides Shopify agency, ecommerce development, and related technology services to business
+            BlumacawTech provides Shopify agency, ecommerce development, and related technology services to business
             customers. These services may include:
           </p>
           <List
@@ -627,8 +627,8 @@ const Privacy = () => {
             Program: <Ext href="https://blumacawtech.com/affiliate">https://blumacawtech.com/affiliate</Ext>
           </p>
           <p>
-            BluMacawTech operates an affiliate and partner program through which eligible individuals and organizations
-            can refer merchants to participating BluMacawTech products.
+            BlumacawTech operates an affiliate and partner program through which eligible individuals and organizations
+            can refer merchants to participating BlumacawTech products.
           </p>
           <Sub title="7.1 Affiliate application information" />
           <p>When an individual or business applies to join our affiliate program, we may collect:</p>
@@ -703,13 +703,13 @@ const Privacy = () => {
           </p>
           <p>
             Payment providers may process additional information for identity verification, compliance, fraud
-            prevention, and payment delivery under their own privacy policies. BluMacawTech does not require access to
+            prevention, and payment delivery under their own privacy policies. BlumacawTech does not require access to
             an affiliate’s payment account password.
           </p>
           <Sub title="7.5 Sharing referral and conversion information" />
           <p>
             To operate the affiliate program, limited referral, conversion, and commission information may be available
-            to authorized BluMacawTech personnel and approved affiliate tracking or payment service providers.
+            to authorized BlumacawTech personnel and approved affiliate tracking or payment service providers.
           </p>
           <p>
             Affiliate dashboards or communications may show information necessary to understand referral performance and
@@ -776,7 +776,7 @@ const Privacy = () => {
 
         <Section id="legal-bases" title="9. Legal Bases for Processing">
           <p>
-            Where applicable privacy law requires a legal basis, BluMacawTech processes personal information based on
+            Where applicable privacy law requires a legal basis, BlumacawTech processes personal information based on
             one or more of the following:
           </p>
           <List
@@ -806,7 +806,7 @@ const Privacy = () => {
             ]}
           />
           <p>
-            Where BluMacawTech acts as a processor for a Shopify merchant or agency client, the merchant or client is
+            Where BlumacawTech acts as a processor for a Shopify merchant or agency client, the merchant or client is
             generally responsible for establishing the lawful basis for its customer-data processing. We follow
             applicable consent and other lawful-processing requirements in the jurisdictions in which our services
             operate.
@@ -815,7 +815,7 @@ const Privacy = () => {
 
         <Section id="cookies" title="10. Cookies, Analytics, and Tracking Technologies">
           <p>
-            BluMacawTech uses cookies and similar technologies where necessary for website operation, analytics,
+            BlumacawTech uses cookies and similar technologies where necessary for website operation, analytics,
             security, and affiliate attribution.
           </p>
           <Sub title="10.1 Essential cookies" />
@@ -947,7 +947,7 @@ const Privacy = () => {
           </p>
           <Sub title="11.10 Business transfers" />
           <p>
-            If BluMacawTech undergoes a merger, restructuring, acquisition, or sale of relevant business assets,
+            If BlumacawTech undergoes a merger, restructuring, acquisition, or sale of relevant business assets,
             necessary information may be transferred subject to applicable confidentiality, privacy, and legal
             requirements.
           </p>
@@ -963,7 +963,7 @@ const Privacy = () => {
 
         <Section id="storage-and-transfers" title="12. Data Storage and International Transfers">
           <p>
-            BluMacawTech operates from India and serves merchants, customers, and business partners in multiple
+            BlumacawTech operates from India and serves merchants, customers, and business partners in multiple
             countries.
           </p>
           <p>
@@ -1106,13 +1106,13 @@ const Privacy = () => {
           />
           <Sub title="15.1 Shopify customer requests" />
           <p>
-            If you are a customer of a merchant using a BluMacawTech application, we recommend contacting that merchant
+            If you are a customer of a merchant using a BlumacawTech application, we recommend contacting that merchant
             first. The merchant generally controls the personal information processed through its Shopify store and
             determines how customer privacy requests should be handled.
           </p>
           <p>
             We assist the merchant with applicable access, correction, and deletion requests. You may also contact
-            BluMacawTech if you are unable to identify the relevant merchant or require help identifying the
+            BlumacawTech if you are unable to identify the relevant merchant or require help identifying the
             appropriate process.
           </p>
           <Sub title="15.2 Agency customer requests" />
@@ -1134,7 +1134,7 @@ const Privacy = () => {
 
         <Section id="regional" title="16. Regional Privacy Disclosures">
           <p>
-            BluMacawTech serves customers internationally and recognizes that privacy rights and obligations differ by
+            BlumacawTech serves customers internationally and recognizes that privacy rights and obligations differ by
             jurisdiction.
           </p>
           <Sub title="16.1 European Economic Area and United Kingdom" />
@@ -1154,7 +1154,7 @@ const Privacy = () => {
             certain uses of sensitive information.
           </p>
           <p>
-            In the context of the processing described in this policy, BluMacawTech does not sell personal information
+            In the context of the processing described in this policy, BlumacawTech does not sell personal information
             or share personal information for cross-context behavioral advertising. We do not use merchant customer data
             for unrelated targeted advertising, and we do not discriminate against individuals for exercising applicable
             privacy rights.
@@ -1165,7 +1165,7 @@ const Privacy = () => {
           </p>
           <Sub title="16.3 India" />
           <p>
-            BluMacawTech is based in India and is subject to applicable Indian privacy and information-technology laws.
+            BlumacawTech is based in India and is subject to applicable Indian privacy and information-technology laws.
             Where applicable, we recognize obligations under the Digital Personal Data Protection Act, 2023, and
             associated rules as the relevant provisions come into force.
           </p>
@@ -1184,7 +1184,7 @@ const Privacy = () => {
 
         <Section id="marketing" title="17. Marketing and Business Communications">
           <p>
-            BluMacawTech may communicate with merchants, prospective customers, clients, affiliates, and other business
+            BlumacawTech may communicate with merchants, prospective customers, clients, affiliates, and other business
             contacts regarding our services. Communications may include:
           </p>
           <List
@@ -1213,7 +1213,7 @@ const Privacy = () => {
             administrative communications.
           </p>
           <p>
-            We do not add buyers whose information is processed through a merchant’s store to unrelated BluMacawTech
+            We do not add buyers whose information is processed through a merchant’s store to unrelated BlumacawTech
             marketing lists merely because they used that store.
           </p>
         </Section>
@@ -1249,7 +1249,7 @@ const Privacy = () => {
 
         <Section id="children" title="19. Children’s Privacy">
           <p>
-            BluMacawTech’s website, Shopify applications, agency services, and affiliate program are primarily intended
+            BlumacawTech’s website, Shopify applications, agency services, and affiliate program are primarily intended
             for businesses, merchants, and professional users. They are not designed or marketed specifically to
             children.
           </p>
@@ -1282,7 +1282,7 @@ const Privacy = () => {
           />
           <p>
             These services may have their own privacy policies, contractual terms, and information-processing
-            practices. BluMacawTech is not responsible for independent third-party privacy practices except to the
+            practices. BlumacawTech is not responsible for independent third-party privacy practices except to the
             extent required by applicable law or an agreement governing our use of those services.
           </p>
           <p>We encourage users to review the relevant third-party privacy notices before providing personal information.</p>
@@ -1315,7 +1315,7 @@ const Privacy = () => {
             a data protection grievance, please contact:
           </p>
           <div className="rounded-xl border border-border/60 bg-card p-5 space-y-1 text-sm">
-            <p className="font-semibold text-foreground">BluMacawTech</p>
+            <p className="font-semibold text-foreground">BlumacawTech</p>
             <p>Business location: Bengaluru, Karnataka, India</p>
             <p>Registered business address: B49 St Anns CGHS LTD, Plot 8A, Sector 7, Dwarka, New Delhi 110075</p>
             <p>
@@ -1333,7 +1333,7 @@ const Privacy = () => {
             accordance with applicable legal requirements. Where a request relates to a Shopify merchant’s or agency
             client’s customer information, we may need to coordinate with that merchant or client before taking action.
           </p>
-          <p className="text-sm">© 2026 BluMacawTech. All rights reserved.</p>
+          <p className="text-sm">© 2026 BlumacawTech. All rights reserved.</p>
         </Section>
       </main>
       <Footer />
