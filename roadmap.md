@@ -1,5 +1,8 @@
 # Listing Content Sync
 
+- [x] Refresh homepage and blog facts from the October 27 Shopify listing, preserving layouts, article publication dates, and unrelated pages.
+- [x] Verify homepage, article updates, and matching metadata. Browser checks passed for homepage ratings, the newest testimonial, all 19 article updates and publication/modified dates; no runtime errors or article phone overflow; build OK.
+
 - [x] Compare the live Shopify listing with current website claims.
 - [x] Update outdated copy, pricing, reviews, and search/AI summaries where needed.
 - [x] Verify affected pages and publishing checks; preserve existing design and public URLs. Browser checks passed; export check retains its pre-existing tracked-environment-file warning.
@@ -61,3 +64,8 @@
 # Guide Closing Callout
 
 - [x] On the Configure Request Quote, Hide Price guide, set the closing callout heading to "Try the Request Quote, Hide Price on Shopify", rewrite its description for that app, and point Get Started at https://apps.shopify.com/bmt-request-quote-hide-price. BookOnboarding now takes optional heading/description/appUrl with the previous wording as defaults, so every other page is unchanged. Verified in the browser: new heading and description show, Get Started opens the Request Quote listing, Book Free Onboarding still opens the calendar, documentation and blog keep the original wording; build OK.
+
+# Blog dates (owner decision, 25 Sep 2026)
+
+- Publish dates (date/isoDate) never change. A refresh sets updated/updatedIsoDate instead. The 27 Oct refresh moved all 19 publish dates to Oct 27; they were restored to the originals with updated set to Oct 27.
+

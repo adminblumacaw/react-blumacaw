@@ -49,6 +49,25 @@ const RequestQuoteAppEmbedGuide = () => (
           <Alert><AlertTriangle className="h-4 w-4" /><AlertDescription><strong>Prerequisites:</strong> Install BMT Request Quote, Hide Price and have access to your Shopify theme editor.</AlertDescription></Alert>
         </div>
       </section>
+      <section className="py-12 px-4">
+        <div className="container mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Video Tutorial</h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+              Watch the app embed being switched on, then use the steps below to do the same in your own theme.
+            </p>
+          </div>
+          <div className="max-w-4xl mx-auto">
+            <div className="aspect-video rounded-lg overflow-hidden shadow-glow">
+              <video controls className="w-full h-full object-cover" poster="/placeholder.svg">
+                <source src="https://storage.googleapis.com/bmt-videos/Enabling%20App%20Embed%20Feature.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 px-4">
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold text-center mb-12">Step-by-Step Configuration Guide</h2>

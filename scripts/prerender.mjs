@@ -100,7 +100,7 @@ const staticRoutes = [
     path: "/",
     title: "BMT B2B Wholesale Pricing — Shopify Wholesale & Bulk Orders",
     description:
-      "BMT B2B Wholesale Pricing turns one Shopify store into a wholesale channel with customer-specific pricing, a gated B2B catalogue, CSV/Excel and quick ordering, order limits, requests for quote, net terms, multi-language invoicing, multi-currency, and Shopify POS discounts. Free plan available.",
+      "Turn your Shopify store into a wholesale channel with customer-specific pricing, registration, a gated B2B catalogue, CSV/XLSX bulk orders, Request for Quote, net terms, invoicing, multi-currency pricing and 20 languages. Built for Shopify.",
   },
   {
     path: "/pricing",

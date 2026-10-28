@@ -17,7 +17,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <SEOHead
         title="BMT B2B Wholesale Pricing — Shopify Wholesale & Bulk Order App"
-      description="Turn your Shopify store into a wholesale channel without a second site. Customer-specific pricing, pricing imports, quick ordering, a gated B2B catalogue, order controls, Request for Quote, net terms, multi-language invoices, multi-currency, and Shopify POS discounts. Built for Shopify."
+      description="Turn your Shopify store into a wholesale channel with customer-specific pricing, registration, a gated B2B catalogue, CSV/XLSX bulk orders, Request for Quote, net terms, invoicing, multi-currency pricing and 20 languages. Built for Shopify."
         canonicalPath="/"
         jsonLd={{
           "@context": "https://schema.org",
@@ -48,7 +48,7 @@ const Index = () => {
                 }
               })),
 
-              "description": "Turn your Shopify store into a wholesale channel without running a second site. Set customer-specific wholesale, fixed or volume pricing; accept CSV or XLSX purchase order uploads; provide a quick order form; enforce order limits and case-pack multiples; gate pages behind login or approval; offer requests for quote and net terms; invoice in multiple languages and currencies; and enable wholesale discounts on Shopify POS. Built for Shopify.",
+              "description": "Turn your Shopify store into a wholesale channel without running a second site. Set customer-specific wholesale, fixed or volume pricing; accept CSV or XLSX bulk orders; provide a quick order form; enforce order limits and case-pack multiples; gate pages behind login or approval; offer Request for Quote and net terms; generate invoices; support multi-currency pricing and 20 languages; and enable wholesale discounts on Shopify POS. Built for Shopify.",
               "featureList": [
                 "Customer-specific wholesale pricing",
                 "Volume and tiered pricing",
@@ -63,7 +63,8 @@ const Index = () => {
                 "Manual and draft orders",
                 "Net payment terms",
                 "Shopify Markets and multi-currency pricing",
-                "Multi-language invoicing",
+                "20 supported languages",
+                "Invoice generation, automatic invoice emails and Google Drive sync on Expert",
                 "Shopify POS wholesale discounts",
                 "Expert plan Pricing APIs",
                 "API access and webhooks",
@@ -72,7 +73,7 @@ const Index = () => {
               "inLanguage": ["en","fr","nl","it","cs","es","ja","zh-Hans","zh-Hant","de","fi","nb","pt-PT","ro","sv","tr","da","el","he","ko"],
               "url": "https://blumacawtech.com",
               "publisher": { "@type": "Organization", "name": "BlumacawTech", "logo": "https://blumacawtech.com/lovable-uploads/b52f750b-46cc-4ce0-837a-2569d777018d.png" },
-              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "25" }
+              "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "26" }
             },
             {
               "@type": "FAQPage",
