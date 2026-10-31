@@ -27,6 +27,7 @@ const GUIDES = {
   orderLimits: { path: "/order-limits-guide", title: "Configure wholesale order limits" },
   enableOrderLimits: { path: "/enable-order-limits-guide", title: "Enable order limits on your store" },
   paymentTerms: { path: "/custom-payment-terms-guide", title: "Create custom payment terms (Net 30/60)" },
+  payLater: { path: "/pay-later-payment-rules-guide", title: "Configure Pay Later payment rules" },
   shippingRules: { path: "/custom-shipping-rules-guide", title: "Set up custom shipping rules" },
   lockHidePrice: { path: "/lock-page-hide-price-guide", title: "Lock pages and hide prices" },
   quickOrder: { path: "/quick-order-form-guide", title: "Set up a quick order form" },
@@ -35,7 +36,7 @@ const GUIDES = {
 const G = GUIDES;
 
 export const RELATED_GUIDES: Record<string, Guide[]> = {
-  "faire-alternative-vs-shopify-wholesale": [G.pricingRules, G.customerGroups, G.registrationForm, G.shippingRules, G.paymentTerms],
+  "faire-alternative-vs-shopify-wholesale": [G.pricingRules, G.customerGroups, G.registrationForm, G.shippingRules, G.paymentTerms, G.payLater],
   "from-faire-to-shopify-independent-wholesale-channel": [G.pricingRules, G.customerGroups, G.registrationForm, G.paymentTerms, G.shippingRules],
   "bmt-european-dtc-brand-replaced-multiple-b2b-apps": [G.registrationForm, G.approveCustomers, G.pricingRules, G.lockHidePrice, G.orderLimits],
   "sami-b2b-wholesale-pricing-alternatives": [G.pricingRules, G.registrationForm, G.orderLimits, G.quickOrder],
@@ -58,7 +59,7 @@ export const RELATED_GUIDES: Record<string, Guide[]> = {
   "best-shopify-wholesale-apps-2026": [G.pricingRules, G.volumeDiscounts, G.orderLimits, G.bulkUpload],
   "bmt-perfect-for-d2c-brands-expanding-wholesale": [G.wholesalePricing, G.customerGroups, G.registrationForm],
   "bmt-smarter-choice-than-traditional-wholesale-apps": [G.wholesalePricing, G.pricingRules, G.enableOrderLimits],
-  "bmt-b2b-partner-established-us-shopify-store": [G.customerGroups, G.paymentTerms, G.shippingRules],
+  "bmt-b2b-partner-established-us-shopify-store": [G.customerGroups, G.paymentTerms, G.payLater, G.shippingRules],
   "merchant-increased-b2b-revenue-40-percent": [G.volumeDiscounts, G.bulkUpload, G.quickOrder],
   "shopify-wholesale-app-small-business": [G.wholesalePricing, G.pricingRules, G.orderLimits, G.enableOrderLimits],
 };

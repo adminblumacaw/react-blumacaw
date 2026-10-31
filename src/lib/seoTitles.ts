@@ -13,6 +13,7 @@
 export const SEO_TITLE_MAX = 60;
 
 export const SEO_TITLES: Record<string, string> = {
+  "/blog/bold-custom-pricing-alternatives": "5 Bold Custom Pricing Alternatives for Shopify (2026)",
   "/": "BMT B2B Wholesale Pricing — Shopify Wholesale & Bulk Orders",
   "/blog": "Shopify Wholesale Tips & Guides | BMT B2B Blog",
   "/blogs/b2b-wholesale/faire-alternative-shopify": "Faire vs Shopify Wholesale: Best Faire Alternative?",

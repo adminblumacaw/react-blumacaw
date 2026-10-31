@@ -42,6 +42,7 @@ import EnableRegistrationFormGuide from "./pages/EnableRegistrationFormGuide";
 import OrderLimitsGuide from "./pages/OrderLimitsGuide";
 import EnableOrderLimitsGuide from "./pages/EnableOrderLimitsGuide";
 import CustomPaymentTermsGuide from "./pages/CustomPaymentTermsGuide";
+import PayLaterPaymentRulesGuide from "./pages/PayLaterPaymentRulesGuide";
 import CustomShippingRulesGuide from "./pages/CustomShippingRulesGuide";
 import LockPageHidePriceGuide from "./pages/LockPageHidePriceGuide";
 import QuickOrderFormGuide from "./pages/QuickOrderFormGuide";
@@ -95,6 +96,7 @@ export function render(url: string): { html: string; head?: SeoHead } {
             <Route path="/order-limits-guide" element={<OrderLimitsGuide />} />
             <Route path="/enable-order-limits-guide" element={<EnableOrderLimitsGuide />} />
             <Route path="/custom-payment-terms-guide" element={<CustomPaymentTermsGuide />} />
+            <Route path="/pay-later-payment-rules-guide" element={<PayLaterPaymentRulesGuide />} />
             <Route path="/custom-shipping-rules-guide" element={<CustomShippingRulesGuide />} />
             <Route path="/lock-page-hide-price-guide" element={<LockPageHidePriceGuide />} />
             <Route path="/quick-order-form-guide" element={<QuickOrderFormGuide />} />

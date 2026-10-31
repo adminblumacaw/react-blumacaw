@@ -1,3 +1,4 @@
+import BoldAlternativesArticle from "@/components/blog/BoldAlternativesArticle";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEOHead from "@/components/SEOHead";
@@ -96,6 +97,10 @@ interface BlogPostData {
 }
 
 const posts: Record<string, BlogPostData> = {
+  "bold-custom-pricing-alternatives": {
+    keywords: ["Bold Custom Pricing alternatives", "Bold custom pricing", "Bold custom pricing Shopify", "Shopify wholesale", "B2B pricing", "customer tags", "wholesale migration"],
+    content: <BoldAlternativesArticle />,
+  },
   "faire-alternative-vs-shopify-wholesale": {
     keywords: ["Faire alternative", "Faire vs Shopify", "Faire vs Shopify wholesale", "Shopify wholesale", "Shopify B2B", "Shopify B2B without Plus", "wholesale marketplace alternative"],
     faq: [

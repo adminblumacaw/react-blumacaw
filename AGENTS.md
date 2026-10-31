@@ -9,3 +9,5 @@
 - More rules for keeping the live site intact are in README.md under "How this site ships".
 - `public/developers/api/` is a private, standalone page (the BMT app's API reference). Never add it to the router, the prerender list, the sitemap, llms.txt or any menu. See README.md, "Private pages".
 - Keep Pricing in the header menu and the footer, the FAQ section (compact, with its FAQPage data) on the homepage and /pricing, and the Support section (live chat, book a session, documentation). The owner decided to keep these on 18 Oct 2026; scripts/check-export.mjs fails without them.
+
+- Keep long imported blog article bodies in focused components under src/components/blog, registered by slug in BlogPost.tsx; this preserves the shared article renderer without expanding its monolithic content map.

@@ -23,6 +23,7 @@ const EnableRegistrationFormGuide = lazy(() => import("./pages/EnableRegistratio
 const OrderLimitsGuide = lazy(() => import("./pages/OrderLimitsGuide"));
 const EnableOrderLimitsGuide = lazy(() => import("./pages/EnableOrderLimitsGuide"));
 const CustomPaymentTermsGuide = lazy(() => import("./pages/CustomPaymentTermsGuide"));
+const PayLaterPaymentRulesGuide = lazy(() => import("./pages/PayLaterPaymentRulesGuide"));
 const CustomShippingRulesGuide = lazy(() => import("./pages/CustomShippingRulesGuide"));
 const LockPageHidePriceGuide = lazy(() => import("./pages/LockPageHidePriceGuide"));
 const QuickOrderFormGuide = lazy(() => import("./pages/QuickOrderFormGuide"));
@@ -78,6 +79,7 @@ const AppRoutes = () => {
           <Route path="/order-limits-guide" element={<OrderLimitsGuide />} />
           <Route path="/enable-order-limits-guide" element={<EnableOrderLimitsGuide />} />
           <Route path="/custom-payment-terms-guide" element={<CustomPaymentTermsGuide />} />
+          <Route path="/pay-later-payment-rules-guide" element={<PayLaterPaymentRulesGuide />} />
           <Route path="/custom-shipping-rules-guide" element={<CustomShippingRulesGuide />} />
           <Route path="/lock-page-hide-price-guide" element={<LockPageHidePriceGuide />} />
           <Route path="/quick-order-form-guide" element={<QuickOrderFormGuide />} />

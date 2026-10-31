@@ -188,6 +188,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://blumacawtech.com/pay-later-payment-rules-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://blumacawtech.com/custom-shipping-rules-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -246,5 +251,11 @@
     <loc>https://blumacawtech.com/request-quote-create-proposal-guide</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://blumacawtech.com/blog/bold-custom-pricing-alternatives</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -1,5 +1,12 @@
 # Listing Content Sync
 
+## New Bold Custom Pricing article
+
+- [x] Refresh the existing article from the specified Copy of Blog tab, preserving its content, 30 images, alt text, and eight tables. Verified updated introduction, removed review screenshots, all images and exact alt text, listing navigation, canonical address, and desktop/phone views; build OK.
+
+- [x] Add the complete Blog tab from the supplied Google document, preserving all 33 images, supplied alt text, eight tables, and article links. Corrected the source's placeholder Claude link to the Shopify app listing.
+- [x] Register the article in blog metadata and discovery files; verified listing navigation, article title and conclusion, all images and exact alt text, canonical address, and desktop/phone layout. Build OK; export checks retain only the pre-existing tracked-environment-file warning.
+
 - [x] Refresh homepage and blog facts from the October 27 Shopify listing, preserving layouts, article publication dates, and unrelated pages.
 - [x] Verify homepage, article updates, and matching metadata. Browser checks passed for homepage ratings, the newest testimonial, all 19 article updates and publication/modified dates; no runtime errors or article phone overflow; build OK.
 
@@ -69,3 +76,7 @@
 
 - Publish dates (date/isoDate) never change. A refresh sets updated/updatedIsoDate instead. The 27 Oct refresh moved all 19 publish dates to Oct 27; they were restored to the originals with updated set to Oct 27.
 
+
+# Pay Later Payment Rules Guide
+
+- [x] Add "Configure Payment Rules for Pay Later Button" guide under Custom Payment Rules on the Documentation page, from the shared Google Doc.
