@@ -272,6 +272,12 @@ const staticRoutes = [
       "Step-by-step guide to creating custom payment terms like Net 30, Net 60, and Net 45 in Shopify and controlling visibility with BMT B2B Wholesale Pricing payment rules.",
   },
   {
+    path: "/pay-later-payment-rules-guide",
+    title: "Configure Pay Later Payment Rules — BMT B2B Wholesale",
+    description:
+      "Configure payment rules for the Pay Later button in BMT B2B Wholesale Pricing: choose customers, products and markets, set net payment terms, emails, and the button's appearance.",
+  },
+  {
     path: "/custom-shipping-rules-guide",
     title: "Set Up Custom Shipping Rules in Shopify — BMT B2B Wholesale Pricing",
     description:

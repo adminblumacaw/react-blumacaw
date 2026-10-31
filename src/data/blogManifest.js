@@ -4,6 +4,19 @@
 // dateModified and the sitemap's lastmod). scripts/check-export.mjs fails if a
 // published date moves.
 export const blogPosts = [
+{
+  "slug": "bold-custom-pricing-alternatives",
+  "category": "Guide",
+  "title": "5 Bold Custom Pricing Alternatives for Shopify Wholesale (2026) That Keep Your Customer Tags",
+  "excerpt": "Compare five Bold Custom Pricing alternatives by customer-tag migration, wholesale features, pricing, and setup risk.",
+  "readTime": "18 min read",
+  "date": "Oct 29, 2026",
+  "isoDate": "2026-10-29",
+  "updated": "Oct 29, 2026",
+  "updatedIsoDate": "2026-10-29",
+  "path": "/blog/bold-custom-pricing-alternatives",
+  "metaDescription": "Compare 5 Bold Custom Pricing alternatives for Shopify wholesale. Keep customer tags and compare pricing, NET terms, signup approval, and migration."
+},
   {
     "slug": "faire-alternative-vs-shopify-wholesale",
     "url": "/blogs/b2b-wholesale/faire-alternative-shopify",

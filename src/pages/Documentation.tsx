@@ -76,7 +76,8 @@ const Documentation = () => {
       title: "Custom Payment Rules",
       description: "Set net terms like Net 15, Net 30, or Net 60 and control which payment methods customers see at checkout",
       items: [
-        { text: "Create Custom Payment Terms in Shopify", href: "/custom-payment-terms-guide" }
+        { text: "Create Custom Payment Terms in Shopify", href: "/custom-payment-terms-guide" },
+        { text: "Configure Payment Rules for Pay Later Button", href: "/pay-later-payment-rules-guide" }
       ]
     },
     {

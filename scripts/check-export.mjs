@@ -483,6 +483,7 @@ if (existsSync(bunLockPath)) {
 // stored once, in src/data/blogManifest.js, which the article page, /blog,
 // the homepage cards and the prerender all read.
 const PUBLISHED = {
+  "bold-custom-pricing-alternatives": "2026-10-29",
   "faire-alternative-vs-shopify-wholesale": "2026-10-04",
   "from-faire-to-shopify-independent-wholesale-channel": "2026-10-04",
   "bmt-european-dtc-brand-replaced-multiple-b2b-apps": "2026-09-28",
