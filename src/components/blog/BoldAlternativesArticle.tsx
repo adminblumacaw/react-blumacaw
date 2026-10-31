@@ -34,7 +34,7 @@ export default function BoldAlternativesArticle() {
   return (<>
 <p>{"Your wholesale prices probably still load. Bold Custom Pricing is still running in your store, so nothing forces you to act today."}</p>
 <p>{"The real question is what “still running” is worth now that the app is no longer available on the Shopify App Store."}</p>
-<p>{"That’s the choice you face. Switch now and you can test your prices on your own schedule. Wait, and you may have to rebuild them in a hurry if something breaks."}</p>
+<p>{"That’s the choice you face. Switch now to have a quiet week, test your prices, and move on. If you wait, you may have to switch during an outage while buyers ask why their prices changed."}</p>
 <p>{"I understand the hesitation. You’ve built customer tags, price lists, and quantity breaks in Bold. Rebuilding them sounds like weeks of work with plenty of room for mistakes."}</p>
 <p>{"So I compared 5 Bold Custom Pricing alternatives based on what matters during that move. I looked at whether your Bold tags carry over, how each option compares on price, and which ones include signup approval, minimum orders, and NET terms that Bold doesn’t include."}</p>
 <p>{"Disclosure: BMT B2B Wholesale Pricing, the first option below, is our own app."}</p>
@@ -53,7 +53,7 @@ export default function BoldAlternativesArticle() {
 <h3><strong>{"What Bold doesn’t cover"}</strong></h3>
 <p>{"Does it include signup approval, minimum orders, and NET 30 terms that Bold Custom Pricing doesn’t include? If you filled those gaps with other apps or theme code, the right alternative can remove those patches."}</p>
 <h3><strong>{"How many apps a complete setup needs"}</strong></h3>
-<p>{"How many apps do you need for a complete setup? Every extra app is one more thing that can break, so this matters as much as any feature."}</p>
+<p>{"How many apps do you need for a complete setup? After the outages Bold merchants reported this year, this matters as much as any feature."}</p>
 <h3><strong>{"Whether it meets Shopify’s standards"}</strong></h3>
 <p>{"Native B2B is part of Shopify itself. BMT, Wholesale Pricing Discount, and BSS all carry the Built for Shopify badge."}</p>
 <h2><strong>{"The 5 Best Bold Custom Pricing Alternatives in 2026"}</strong></h2>
@@ -103,7 +103,7 @@ export default function BoldAlternativesArticle() {
 <li><strong>{"Test everything before switching. "}</strong>{"Log in with a test customer for each tag and confirm that the prices match what the group pays today."}</li>
 <li><strong>{"Remove Bold completely. "}</strong>{"After uninstalling Bold Custom Pricing, check your theme for leftover Bold code, such as the quantity grid on product pages. Bold’s support team can remove it after you give them collaborator access."}</li>
 </ul>
-<p>{"You don’t need to handle the move alone. BMT offers a free 30-minute onboarding session to help with the move."}</p>
+<p>{"You don’t need to handle the move alone. BMT offers free migration support and a 30-minute setup with 0% downtime during the switch."}</p>
 <h2><strong>{"2. Shopify Native B2B"}</strong></h2>
 <p>{"Shopify’s built-in B2B tools now come with the Basic, Grow, and Advanced plans at no extra cost. You don’t need to install an app or rely on a third-party developer to run it."}</p>
 <p>{"It covers the core "}<a href={"https://blumacawtech.com/blog/best-shopify-wholesale-apps"}>{"Shopify wholesale"}</a>{" features. Buyers apply through an account request form, and you can set quantity limits and volume price breaks for each variant."}</p>
@@ -213,9 +213,9 @@ export default function BoldAlternativesArticle() {
 <p>{"The add-on apps are billed separately. BSS B2B Lock offers a free plan, while paid plans follow your Shopify tier, starting at $9.99 on Basic. BSS B2B Quote costs between $19 and $79 a month."}</p>
 <p>{"If you use Bold’s Complete plan for variant-level price lists and POS pricing, the closest BSS option is Platinum at $99, plus Lock if you also need to hide prices from guests."}</p>
 <h2><strong>{"Conclusion: Which is the Best Bold Custom Pricing Alternative"}</strong></h2>
-<p>{"Before Bold charges you for another month, decide whether staying is worth it. You’re paying for an app that’s no longer listed on the Shopify App Store, while signup approvals, minimum orders, and NET terms still depend on other apps or your inbox."}</p>
+<p>{"Before Bold charges you for another month, decide whether staying is worth it. You’re paying for an app merchants reported down for weeks this year, while signup approvals, minimum orders, and NET terms still depend on other apps or your inbox."}</p>
 <p>{"For most stores, BMT B2B Wholesale Pricing is the best move. It reads the tags you already use and brings the missing wholesale tasks into one place. If it offers more than you need, the table above can point you toward a lighter option."}</p>
 <p>{"Run a test before your next bill. Install "}<a href={"https://apps.shopify.com/blumacawtech"} onClick={(event) => { event.preventDefault(); openExternalUrl("https://apps.shopify.com/blumacawtech"); }}>{"BMT B2B Wholesale Pricing"}</a>{" on the Free plan, rebuild your largest Bold tag, and log in as a test customer from that group."}</p>
-<p>{"If the prices you see match what that group pays in Bold today, move your remaining tags over. BMT’s free 30-minute onboarding session can help you set it up."}</p>
+<p>{"If the prices you see match what that group pays in Bold today, move your remaining tags over. BMT’s free migration support sets it up with you in 30 minutes, and your store stays live with 0% downtime while it switches."}</p>
   </>);
 }
